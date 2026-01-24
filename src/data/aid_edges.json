@@ -1,0 +1,182 @@
+[
+    {
+        "org_id": "wfp",
+        "region_id": "syria-aleppo",
+        "aid_type": "food",
+        "project_count": 12
+    },
+    {
+        "org_id": "wfp",
+        "region_id": "syria-idlib",
+        "aid_type": "food",
+        "project_count": 8
+    },
+    {
+        "org_id": "wfp",
+        "region_id": "yemen-sanaa",
+        "aid_type": "food",
+        "project_count": 15
+    },
+    {
+        "org_id": "wfp",
+        "region_id": "yemen-taiz",
+        "aid_type": "food",
+        "project_count": 10
+    },
+    {
+        "org_id": "wfp",
+        "region_id": "sudan-darfur",
+        "aid_type": "food",
+        "project_count": 20
+    },
+    {
+        "org_id": "wfp",
+        "region_id": "somalia-mogadishu",
+        "aid_type": "food",
+        "project_count": 14
+    },
+    {
+        "org_id": "msf",
+        "region_id": "syria-aleppo",
+        "aid_type": "medical",
+        "project_count": 6
+    },
+    {
+        "org_id": "msf",
+        "region_id": "syria-idlib",
+        "aid_type": "medical",
+        "project_count": 9
+    },
+    {
+        "org_id": "msf",
+        "region_id": "yemen-sanaa",
+        "aid_type": "medical",
+        "project_count": 7
+    },
+    {
+        "org_id": "msf",
+        "region_id": "sudan-khartoum",
+        "aid_type": "medical",
+        "project_count": 5
+    },
+    {
+        "org_id": "msf",
+        "region_id": "afghanistan-kabul",
+        "aid_type": "medical",
+        "project_count": 8
+    },
+    {
+        "org_id": "icrc",
+        "region_id": "syria-damascus",
+        "aid_type": "medical",
+        "project_count": 4
+    },
+    {
+        "org_id": "icrc",
+        "region_id": "yemen-aden",
+        "aid_type": "medical",
+        "project_count": 3
+    },
+    {
+        "org_id": "icrc",
+        "region_id": "afghanistan-herat",
+        "aid_type": "infrastructure",
+        "project_count": 2
+    },
+    {
+        "org_id": "unhcr",
+        "region_id": "syria-idlib",
+        "aid_type": "infrastructure",
+        "project_count": 5
+    },
+    {
+        "org_id": "unhcr",
+        "region_id": "sudan-darfur",
+        "aid_type": "infrastructure",
+        "project_count": 7
+    },
+    {
+        "org_id": "unhcr",
+        "region_id": "somalia-baidoa",
+        "aid_type": "infrastructure",
+        "project_count": 4
+    },
+    {
+        "org_id": "unicef",
+        "region_id": "syria-aleppo",
+        "aid_type": "food",
+        "project_count": 5
+    },
+    {
+        "org_id": "unicef",
+        "region_id": "yemen-sanaa",
+        "aid_type": "food",
+        "project_count": 8
+    },
+    {
+        "org_id": "unicef",
+        "region_id": "yemen-taiz",
+        "aid_type": "medical",
+        "project_count": 4
+    },
+    {
+        "org_id": "unicef",
+        "region_id": "afghanistan-kabul",
+        "aid_type": "food",
+        "project_count": 6
+    },
+    {
+        "org_id": "unicef",
+        "region_id": "somalia-mogadishu",
+        "aid_type": "medical",
+        "project_count": 5
+    },
+    {
+        "org_id": "oxfam",
+        "region_id": "yemen-aden",
+        "aid_type": "infrastructure",
+        "project_count": 3
+    },
+    {
+        "org_id": "oxfam",
+        "region_id": "sudan-khartoum",
+        "aid_type": "food",
+        "project_count": 4
+    },
+    {
+        "org_id": "irc",
+        "region_id": "syria-damascus",
+        "aid_type": "food",
+        "project_count": 3
+    },
+    {
+        "org_id": "irc",
+        "region_id": "afghanistan-herat",
+        "aid_type": "medical",
+        "project_count": 2
+    },
+    {
+        "org_id": "irc",
+        "region_id": "somalia-baidoa",
+        "aid_type": "food",
+        "project_count": 2
+    },
+    {
+        "org_id": "who",
+        "region_id": "sudan-khartoum",
+        "aid_type": "medical",
+        "project_count": 6
+    },
+    {
+        "org_id": "who",
+        "region_id": "sudan-darfur",
+        "aid_type": "medical",
+        "project_count": 4
+    },
+    {
+        "org_id": "who",
+        "region_id": "afghanistan-kabul",
+        "aid_type": "medical",
+        "project_count": 3
+    }
+]

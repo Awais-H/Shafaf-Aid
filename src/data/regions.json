@@ -1,0 +1,86 @@
+[
+    {
+        "id": "syria-aleppo",
+        "country_id": "syria",
+        "name": "Aleppo",
+        "population": 4500000,
+        "need_level": "high"
+    },
+    {
+        "id": "syria-idlib",
+        "country_id": "syria",
+        "name": "Idlib",
+        "population": 3000000,
+        "need_level": "high"
+    },
+    {
+        "id": "syria-damascus",
+        "country_id": "syria",
+        "name": "Damascus",
+        "population": 2500000,
+        "need_level": "medium"
+    },
+    {
+        "id": "yemen-sanaa",
+        "country_id": "yemen",
+        "name": "Sanaa",
+        "population": 4000000,
+        "need_level": "high"
+    },
+    {
+        "id": "yemen-aden",
+        "country_id": "yemen",
+        "name": "Aden",
+        "population": 1200000,
+        "need_level": "medium"
+    },
+    {
+        "id": "yemen-taiz",
+        "country_id": "yemen",
+        "name": "Taiz",
+        "population": 2800000,
+        "need_level": "high"
+    },
+    {
+        "id": "sudan-khartoum",
+        "country_id": "sudan",
+        "name": "Khartoum",
+        "population": 6000000,
+        "need_level": "high"
+    },
+    {
+        "id": "sudan-darfur",
+        "country_id": "sudan",
+        "name": "Darfur",
+        "population": 9000000,
+        "need_level": "high"
+    },
+    {
+        "id": "afghanistan-kabul",
+        "country_id": "afghanistan",
+        "name": "Kabul",
+        "population": 4500000,
+        "need_level": "high"
+    },
+    {
+        "id": "afghanistan-herat",
+        "country_id": "afghanistan",
+        "name": "Herat",
+        "population": 2000000,
+        "need_level": "medium"
+    },
+    {
+        "id": "somalia-mogadishu",
+        "country_id": "somalia",
+        "name": "Mogadishu",
+        "population": 2500000,
+        "need_level": "high"
+    },
+    {
+        "id": "somalia-baidoa",
+        "country_id": "somalia",
+        "name": "Baidoa",
+        "population": 800000,
+        "need_level": "high"
+    }
+]

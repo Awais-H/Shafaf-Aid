@@ -1,0 +1,32 @@
+[
+    {
+        "id": "syria",
+        "name": "Syria",
+        "population": 21500000,
+        "need_level": "high"
+    },
+    {
+        "id": "yemen",
+        "name": "Yemen",
+        "population": 33000000,
+        "need_level": "high"
+    },
+    {
+        "id": "sudan",
+        "name": "Sudan",
+        "population": 45000000,
+        "need_level": "high"
+    },
+    {
+        "id": "afghanistan",
+        "name": "Afghanistan",
+        "population": 40000000,
+        "need_level": "high"
+    },
+    {
+        "id": "somalia",
+        "name": "Somalia",
+        "population": 17000000,
+        "need_level": "high"
+    }
+]

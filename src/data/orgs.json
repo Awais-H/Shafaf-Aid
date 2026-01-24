@@ -1,0 +1,34 @@
+[
+    {
+        "id": "wfp",
+        "name": "World Food Programme"
+    },
+    {
+        "id": "msf",
+        "name": "Médecins Sans Frontières"
+    },
+    {
+        "id": "icrc",
+        "name": "International Committee of the Red Cross"
+    },
+    {
+        "id": "unhcr",
+        "name": "UN Refugee Agency"
+    },
+    {
+        "id": "unicef",
+        "name": "UNICEF"
+    },
+    {
+        "id": "oxfam",
+        "name": "Oxfam International"
+    },
+    {
+        "id": "irc",
+        "name": "International Rescue Committee"
+    },
+    {
+        "id": "who",
+        "name": "World Health Organization"
+    }
+]
