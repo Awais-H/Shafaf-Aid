@@ -70,6 +70,10 @@ export default function MapView({
     y: number;
     object: MapPoint | null;
   } | null>(null);
+  
+  // Delayed hover ID for smooth transitions
+  const [delayedHoverId, setDelayedHoverId] = useState<string | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Animation loop for pulse/glow effects
   useEffect(() => {
@@ -113,17 +117,40 @@ export default function MapView({
     [onPointClick]
   );
 
-  // Handle point hover
+  // Handle point hover with slight delay for smooth effect
   const handlePointHover = useCallback((info: any) => {
+    // Clear any pending hover timeout
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    
     if (info.object) {
+      const point = info.object as MapPoint;
       setHoverInfo({
         x: info.x,
         y: info.y,
-        object: info.object as MapPoint,
+        object: point,
       });
+      // Small delay before applying hover effect
+      hoverTimeoutRef.current = setTimeout(() => {
+        setDelayedHoverId(point.id);
+      }, 50);
     } else {
       setHoverInfo(null);
+      // Slightly longer delay when leaving for smoother exit
+      hoverTimeoutRef.current = setTimeout(() => {
+        setDelayedHoverId(null);
+      }, 80);
     }
+  }, []);
+  
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
   }, []);
 
   // Handle region polygon click
@@ -136,6 +163,9 @@ export default function MapView({
     },
     [onRegionClick]
   );
+
+  // Use delayed hover ID for smooth highlight effect
+  const hoveredId = delayedHoverId;
 
   // Build layers
   const layers = [];
@@ -160,6 +190,7 @@ export default function MapView({
       onPointClick: handlePointClick,
       onPointHover: handlePointHover,
       selectedId,
+      hoveredId,
       showGlow,
       showPulse,
     })

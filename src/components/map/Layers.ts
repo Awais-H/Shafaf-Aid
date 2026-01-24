@@ -18,6 +18,7 @@ export interface LayerProps {
   onPointClick?: (info: any) => void;
   onPointHover?: (info: any) => void;
   selectedId?: string | null;
+  hoveredId?: string | null;
 }
 
 export interface GeoJsonLayerProps {
@@ -34,9 +35,10 @@ export interface GeoJsonLayerProps {
 
 /**
  * Creates the base scatterplot layer for data points
+ * Includes hover highlight effect
  */
 export function createBasePointLayer(props: LayerProps) {
-  const { points, onPointClick, onPointHover, selectedId } = props;
+  const { points, onPointClick, onPointHover, selectedId, hoveredId } = props;
 
   return new ScatterplotLayer({
     id: 'base-points',
@@ -47,28 +49,47 @@ export function createBasePointLayer(props: LayerProps) {
     filled: true,
     radiusScale: 1,
     radiusMinPixels: 8,
-    radiusMaxPixels: 40,
+    radiusMaxPixels: 50,
     lineWidthMinPixels: 1,
     getPosition: (d: MapPoint) => d.coordinates,
     getRadius: (d: MapPoint) => {
-      // Size based on value and selection
       const baseSize = 20000 + d.value * 50000;
-      return d.id === selectedId ? baseSize * 1.3 : baseSize;
+      // Selected nodes are larger
+      if (d.id === selectedId) return baseSize * 1.3;
+      // Hovered nodes pop up slightly
+      if (d.id === hoveredId) return baseSize * 1.15;
+      return baseSize;
     },
-    getFillColor: (d: MapPoint) => getInterpolatedCoverageColor(d.normalizedValue),
-    getLineColor: (d: MapPoint) => {
-      if (d.id === selectedId) {
-        return [255, 255, 255, 255];
+    getFillColor: (d: MapPoint) => {
+      const color = getInterpolatedCoverageColor(d.normalizedValue);
+      // Brighten on hover
+      if (d.id === hoveredId) {
+        return [
+          Math.min(255, color[0] + 30),
+          Math.min(255, color[1] + 30),
+          Math.min(255, color[2] + 30),
+          255,
+        ] as [number, number, number, number];
       }
+      return color;
+    },
+    getLineColor: (d: MapPoint) => {
+      if (d.id === selectedId) return [255, 255, 255, 255];
+      if (d.id === hoveredId) return [255, 255, 255, 220];
       return [255, 255, 255, 100];
     },
-    getLineWidth: (d: MapPoint) => (d.id === selectedId ? 3 : 1),
+    getLineWidth: (d: MapPoint) => {
+      if (d.id === selectedId) return 3;
+      if (d.id === hoveredId) return 2;
+      return 1;
+    },
     onClick: onPointClick,
     onHover: onPointHover,
     updateTriggers: {
-      getRadius: [selectedId],
-      getLineColor: [selectedId],
-      getLineWidth: [selectedId],
+      getRadius: [selectedId, hoveredId],
+      getFillColor: [hoveredId],
+      getLineColor: [selectedId, hoveredId],
+      getLineWidth: [selectedId, hoveredId],
     },
   });
 }
@@ -79,9 +100,10 @@ export function createBasePointLayer(props: LayerProps) {
 
 /**
  * Creates a soft glow effect layer behind points
+ * Responds to hover with brighter glow
  */
 export function createGlowLayer(props: LayerProps) {
-  const { points, time } = props;
+  const { points, time, hoveredId } = props;
 
   return new ScatterplotLayer({
     id: 'glow-layer',
@@ -92,20 +114,25 @@ export function createGlowLayer(props: LayerProps) {
     filled: true,
     radiusScale: 1,
     radiusMinPixels: 20,
-    radiusMaxPixels: 80,
+    radiusMaxPixels: 100,
     getPosition: (d: MapPoint) => d.coordinates,
     getRadius: (d: MapPoint) => {
+      const baseSize = 30000 + d.value * 80000;
       // Subtle breathing effect
       const breath = 1 + Math.sin(time * 2) * 0.1;
-      return (30000 + d.value * 80000) * breath;
+      // Expand glow on hover
+      const hoverScale = d.id === hoveredId ? 1.3 : 1;
+      return baseSize * breath * hoverScale;
     },
     getFillColor: (d: MapPoint) => {
       const color = getInterpolatedCoverageColor(d.normalizedValue);
-      // More transparent for glow
-      return [color[0], color[1], color[2], 60];
+      // Brighter glow on hover
+      const alpha = d.id === hoveredId ? 100 : 60;
+      return [color[0], color[1], color[2], alpha];
     },
     updateTriggers: {
-      getRadius: [time],
+      getRadius: [time, hoveredId],
+      getFillColor: [hoveredId],
     },
   });
 }
@@ -213,6 +240,7 @@ export interface AllLayersProps {
   onPointClick?: (info: any) => void;
   onPointHover?: (info: any) => void;
   selectedId?: string | null;
+  hoveredId?: string | null;
   showGlow?: boolean;
   showPulse?: boolean;
 }
@@ -227,6 +255,7 @@ export function createAllPointLayers(props: AllLayersProps) {
     onPointClick,
     onPointHover,
     selectedId,
+    hoveredId,
     showGlow = true,
     showPulse = true,
   } = props;
@@ -235,7 +264,7 @@ export function createAllPointLayers(props: AllLayersProps) {
 
   // Glow layer (bottom)
   if (showGlow) {
-    layers.push(createGlowLayer({ points, time }));
+    layers.push(createGlowLayer({ points, time, hoveredId }));
   }
 
   // Pulse layer (middle)
@@ -251,6 +280,7 @@ export function createAllPointLayers(props: AllLayersProps) {
       onPointClick,
       onPointHover,
       selectedId,
+      hoveredId,
     })
   );
 
