@@ -19,14 +19,27 @@ export default function ExplainDrawer() {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 z-50"
+        className="fixed inset-0 z-50"
+        style={{ background: 'rgba(0, 0, 0, 0.7)' }}
         onClick={toggleExplainDrawer}
       />
 
       {/* Drawer */}
-      <div className="fixed right-0 top-0 bottom-0 w-[480px] max-w-full bg-gray-900 z-50 overflow-hidden flex flex-col shadow-xl">
+      <div 
+        className="fixed right-0 top-0 bottom-0 w-[480px] max-w-full z-50 overflow-hidden flex flex-col"
+        style={{
+          background: '#0A0A0A',
+          boxShadow: '0 0 60px rgba(0, 0, 0, 0.8)',
+        }}
+      >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-700 bg-gray-800">
+        <div 
+          className="flex items-center justify-between px-6 py-4"
+          style={{
+            background: 'rgba(15, 15, 15, 0.9)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+          }}
+        >
           <div>
             <h2 className="text-xl font-bold text-white">Methodology</h2>
             <p className="text-sm text-gray-400 mt-0.5">
@@ -259,8 +272,14 @@ export default function ExplainDrawer() {
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-gray-700 bg-gray-800">
-          <p className="text-gray-500 text-xs">
+        <div 
+          className="px-6 py-4"
+          style={{
+            background: 'rgba(15, 15, 15, 0.9)',
+            borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+          }}
+        >
+          <p style={{ color: 'rgba(255, 255, 255, 0.35)', fontSize: '12px' }}>
             For questions about methodology, contact the development team or refer
             to the project documentation.
           </p>

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@deck.gl/core": "^9.0.16",
+    "@deck.gl/geo-layers": "^9.0.16",
     "@deck.gl/layers": "^9.0.16",
     "@deck.gl/react": "^9.0.16",
     "@supabase/supabase-js": "^2.45.0",

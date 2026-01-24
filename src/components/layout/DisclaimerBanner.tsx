@@ -2,7 +2,7 @@
 
 /**
  * Disclaimer banner component
- * Communicates data interpretation guidance
+ * Communicates data interpretation guidance with glassmorphism styling
  */
 
 import React, { useState } from 'react';
@@ -11,12 +11,18 @@ export default function DisclaimerBanner() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="bg-gray-800/60 border-b border-gray-700/50">
+    <div 
+      style={{
+        background: 'rgba(10, 10, 10, 0.6)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.04)',
+      }}
+    >
       <div className="px-4 py-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <svg
-              className="w-4 h-4 text-gray-400 flex-shrink-0"
+              className="w-4 h-4 flex-shrink-0"
+              style={{ color: 'rgba(255, 255, 255, 0.4)' }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -28,20 +34,27 @@ export default function DisclaimerBanner() {
                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span className="text-gray-300 text-sm">
+            <span className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
               Coverage indices are relative and normalized within the current view.
             </span>
           </div>
           <button
             onClick={() => setExpanded(!expanded)}
-            className="text-gray-400 hover:text-gray-300 text-xs underline ml-4 flex-shrink-0"
+            className="text-xs underline ml-4 flex-shrink-0 transition-colors duration-200"
+            style={{ color: 'rgba(255, 255, 255, 0.4)' }}
           >
             {expanded ? 'Less' : 'More info'}
           </button>
         </div>
 
         {expanded && (
-          <div className="mt-2 pt-2 border-t border-gray-700/30 text-gray-400 text-xs space-y-1">
+          <div 
+            className="mt-2 pt-2 text-xs space-y-1"
+            style={{ 
+              borderTop: '1px solid rgba(255, 255, 255, 0.04)',
+              color: 'rgba(255, 255, 255, 0.4)',
+            }}
+          >
             <p>
               • Coverage indices indicate potential gaps, not absolute coverage levels.
             </p>
