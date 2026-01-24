@@ -2,15 +2,16 @@
 
 /**
  * 3D Globe View component
- * Displays data on a rotating 3D globe with dot-matrix styling
+ * Displays data on a rotating 3D globe with country outlines
  */
 
 import React, { useCallback, useEffect, useRef, useState, useMemo } from 'react';
 import { DeckGL } from '@deck.gl/react';
 import { _GlobeView as DeckGlobeView } from '@deck.gl/core';
-import { ScatterplotLayer } from '@deck.gl/layers';
+import { ScatterplotLayer, GeoJsonLayer } from '@deck.gl/layers';
 import type { MapPoint } from '@/core/data/schema';
 import { getInterpolatedCoverageColor } from '@/app_state/selectors';
+import { MAP_CONFIG } from '@/core/graph/constants';
 
 // ============================================================================
 // Types
@@ -19,7 +20,8 @@ import { getInterpolatedCoverageColor } from '@/app_state/selectors';
 interface GlobeViewProps {
   points: MapPoint[];
   onPointClick?: (point: MapPoint) => void;
-  scrollProgress?: number; // 0 = globe view, 1 = flat view
+  introComplete?: boolean;
+  onIntroComplete?: () => void;
   autoRotate?: boolean;
 }
 
@@ -30,86 +32,72 @@ interface GlobeViewState {
 }
 
 // ============================================================================
-// Globe Dot Grid Generation
-// ============================================================================
-
-interface GlobeDot {
-  position: [number, number, number];
-  color: [number, number, number, number];
-}
-
-/**
- * Generates a grid of dots on a sphere surface
- */
-function generateGlobeDots(density: number = 80): GlobeDot[] {
-  const dots: GlobeDot[] = [];
-  
-  // Generate dots using fibonacci sphere distribution for even spacing
-  const numPoints = density * density;
-  const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-  
-  for (let i = 0; i < numPoints; i++) {
-    const y = 1 - (i / (numPoints - 1)) * 2; // -1 to 1
-    const radius = Math.sqrt(1 - y * y);
-    const theta = goldenAngle * i;
-    
-    const x = Math.cos(theta) * radius;
-    const z = Math.sin(theta) * radius;
-    
-    // Convert to lng/lat for deck.gl
-    const lng = Math.atan2(z, x) * (180 / Math.PI);
-    const lat = Math.asin(y) * (180 / Math.PI);
-    
-    // Skip some dots for land/water pattern effect
-    const noise = Math.sin(lng * 0.1) * Math.cos(lat * 0.1);
-    if (Math.random() > 0.3 + noise * 0.2) continue;
-    
-    dots.push({
-      position: [lng, lat, 0],
-      color: [10, 10, 10, 255], // Very dark dots
-    });
-  }
-  
-  return dots;
-}
-
-// ============================================================================
 // Component
 // ============================================================================
 
 export default function GlobeMapView({
   points,
   onPointClick,
-  scrollProgress = 0,
+  introComplete = false,
+  onIntroComplete,
   autoRotate = true,
 }: GlobeViewProps) {
-  // View state
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
+  const [geoData, setGeoData] = useState<any>(null);
+  
   const [viewState, setViewState] = useState<GlobeViewState>({
-    longitude: -40,
-    latitude: 20,
-    zoom: 0.8,
+    longitude: 30,
+    latitude: 15,
+    zoom: 1.0,
   });
   
-  // Animation state
+  const [hasInteracted, setHasInteracted] = useState(false);
   const [animationTime, setAnimationTime] = useState(0);
   const animationRef = useRef<number>();
   const rotationRef = useRef<number>();
   
-  // Hover state
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [hoverInfo, setHoverInfo] = useState<{
+    x: number;
+    y: number;
+    object: MapPoint | null;
+  } | null>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
-  // Generate globe dots once
-  const globeDots = useMemo(() => generateGlobeDots(70), []);
+  // Load GeoJSON data
+  useEffect(() => {
+    fetch('/world-simplified.json')
+      .then(res => res.json())
+      .then(data => setGeoData(data))
+      .catch(err => console.error('Failed to load world geo data:', err));
+  }, []);
+  
+  // Track container size
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerSize({
+          width: containerRef.current.offsetWidth,
+          height: containerRef.current.offsetHeight,
+        });
+      }
+    };
+    
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
   
   // Auto-rotation
   useEffect(() => {
+    if (hasInteracted || introComplete) return;
     if (!autoRotate) return;
     
     const rotate = () => {
       setViewState(prev => ({
         ...prev,
-        longitude: prev.longitude + 0.05,
+        longitude: prev.longitude + 0.02,
       }));
       rotationRef.current = requestAnimationFrame(rotate);
     };
@@ -121,12 +109,12 @@ export default function GlobeMapView({
         cancelAnimationFrame(rotationRef.current);
       }
     };
-  }, [autoRotate]);
+  }, [autoRotate, hasInteracted, introComplete]);
   
-  // Animation loop for effects
+  // Animation loop for marker breathing
   useEffect(() => {
     const animate = () => {
-      setAnimationTime(prev => (prev + 0.002) % 1);
+      setAnimationTime(prev => (prev + MAP_CONFIG.PULSE_SPEED) % 1);
       animationRef.current = requestAnimationFrame(animate);
     };
     
@@ -139,7 +127,6 @@ export default function GlobeMapView({
     };
   }, []);
   
-  // Cleanup hover timeout
   useEffect(() => {
     return () => {
       if (hoverTimeoutRef.current) {
@@ -148,15 +135,34 @@ export default function GlobeMapView({
     };
   }, []);
 
-  // Handle view state changes
   const handleViewStateChange = useCallback(
     ({ viewState: newViewState }: { viewState: GlobeViewState }) => {
       setViewState(newViewState);
+      
+      if (!hasInteracted && newViewState.zoom > 1.3) {
+        setHasInteracted(true);
+        onIntroComplete?.();
+      }
     },
-    []
+    [hasInteracted, onIntroComplete]
   );
 
-  // Handle point click
+  const handleWheel = useCallback((e: React.WheelEvent) => {
+    if (!introComplete && !hasInteracted) {
+      const zoomDelta = e.deltaY > 0 ? 0.04 : -0.04;
+      setViewState(prev => {
+        const newZoom = Math.max(0.6, Math.min(3, prev.zoom + zoomDelta));
+        
+        if (newZoom > 1.4 && !hasInteracted) {
+          setHasInteracted(true);
+          onIntroComplete?.();
+        }
+        
+        return { ...prev, zoom: newZoom };
+      });
+    }
+  }, [introComplete, hasInteracted, onIntroComplete]);
+
   const handlePointClick = useCallback(
     (info: any) => {
       if (info.object && onPointClick) {
@@ -166,19 +172,21 @@ export default function GlobeMapView({
     [onPointClick]
   );
 
-  // Handle point hover
   const handlePointHover = useCallback((info: any) => {
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
     }
     
     if (info.object) {
+      const point = info.object as MapPoint;
+      setHoverInfo({ x: info.x, y: info.y, object: point });
       hoverTimeoutRef.current = setTimeout(() => {
-        setHoveredId((info.object as MapPoint).id);
+        setHoveredId(point.id);
       }, 50);
     } else {
       hoverTimeoutRef.current = setTimeout(() => {
         setHoveredId(null);
+        setHoverInfo(null);
       }, 80);
     }
   }, []);
@@ -187,101 +195,107 @@ export default function GlobeMapView({
   const layers = useMemo(() => {
     const result = [];
     
-    // Globe dot grid layer (background)
-    result.push(
-      new ScatterplotLayer({
-        id: 'globe-dots',
-        data: globeDots,
-        pickable: false,
-        opacity: 0.8,
-        stroked: false,
-        filled: true,
-        radiusScale: 1,
-        radiusMinPixels: 1.5,
-        radiusMaxPixels: 2.5,
-        getPosition: (d: GlobeDot) => d.position,
-        getRadius: 15000,
-        getFillColor: [30, 30, 30, 255],
-      })
-    );
+    // Country outlines layer
+    if (geoData) {
+      result.push(
+        new GeoJsonLayer({
+          id: 'country-outlines',
+          data: geoData,
+          pickable: false,
+          stroked: true,
+          filled: true,
+          lineWidthMinPixels: 0.5,
+          lineWidthMaxPixels: 2,
+          getLineColor: [60, 60, 60, 200],
+          getFillColor: [30, 30, 30, 40],
+          getLineWidth: 1,
+        })
+      );
+    }
     
     // Glow layer for data points
     result.push(
       new ScatterplotLayer({
-        id: 'globe-glow',
+        id: 'marker-glow',
         data: points,
         pickable: false,
-        opacity: 0.6,
+        opacity: MAP_CONFIG.GLOW_INTENSITY,
         stroked: false,
         filled: true,
         radiusScale: 1,
         radiusMinPixels: 20,
-        radiusMaxPixels: 80,
+        radiusMaxPixels: 100,
         getPosition: (d: MapPoint) => d.coordinates,
         getRadius: (d: MapPoint) => {
-          const baseSize = 80000 + d.value * 150000;
+          const baseSize = 60000 + d.value * 120000;
           const breath = 1 + Math.sin(animationTime * Math.PI * 2) * 0.1;
           const hoverScale = d.id === hoveredId ? 1.3 : 1;
           return baseSize * breath * hoverScale;
         },
         getFillColor: (d: MapPoint) => {
-          // Warm orange/red glow
-          const isHighGap = d.normalizedValue < 0.5;
-          if (isHighGap) {
-            return [255, 106, 61, 80]; // Warm orange glow
-          }
-          return [255, 150, 100, 60];
+          const color = getInterpolatedCoverageColor(d.normalizedValue);
+          const alpha = d.id === hoveredId ? 100 : 60;
+          return [color[0], color[1], color[2], alpha];
         },
         updateTriggers: {
           getRadius: [animationTime, hoveredId],
-        },
-      })
-    );
-    
-    // Main data points
-    result.push(
-      new ScatterplotLayer({
-        id: 'globe-points',
-        data: points,
-        pickable: true,
-        opacity: 1,
-        stroked: true,
-        filled: true,
-        radiusScale: 1,
-        radiusMinPixels: 8,
-        radiusMaxPixels: 40,
-        lineWidthMinPixels: 1,
-        getPosition: (d: MapPoint) => d.coordinates,
-        getRadius: (d: MapPoint) => {
-          const baseSize = 40000 + d.value * 80000;
-          if (d.id === hoveredId) return baseSize * 1.2;
-          return baseSize;
-        },
-        getFillColor: (d: MapPoint) => {
-          // Warm orange for markers - matching design system
-          const brightness = d.id === hoveredId ? 1.2 : 1;
-          return [
-            Math.min(255, 255 * brightness),
-            Math.min(255, 77 * brightness),
-            Math.min(255, 45 * brightness),
-            255,
-          ] as [number, number, number, number];
-        },
-        getLineColor: [255, 255, 255, 150],
-        getLineWidth: 1,
-        onClick: handlePointClick,
-        onHover: handlePointHover,
-        updateTriggers: {
-          getRadius: [hoveredId],
           getFillColor: [hoveredId],
         },
       })
     );
     
+    // Main markers
+    result.push(
+      new ScatterplotLayer({
+        id: 'markers',
+        data: points,
+        pickable: true,
+        opacity: 0.9,
+        stroked: true,
+        filled: true,
+        radiusScale: 1,
+        radiusMinPixels: 8,
+        radiusMaxPixels: 50,
+        lineWidthMinPixels: 1,
+        getPosition: (d: MapPoint) => d.coordinates,
+        getRadius: (d: MapPoint) => {
+          const baseSize = 20000 + d.value * 50000;
+          if (d.id === hoveredId) return baseSize * 1.15;
+          return baseSize;
+        },
+        getFillColor: (d: MapPoint) => {
+          const color = getInterpolatedCoverageColor(d.normalizedValue);
+          if (d.id === hoveredId) {
+            return [
+              Math.min(255, color[0] + 30),
+              Math.min(255, color[1] + 30),
+              Math.min(255, color[2] + 30),
+              255,
+            ] as [number, number, number, number];
+          }
+          return color;
+        },
+        getLineColor: (d: MapPoint) => {
+          if (d.id === hoveredId) return [255, 255, 255, 220];
+          return [255, 255, 255, 100];
+        },
+        getLineWidth: (d: MapPoint) => {
+          if (d.id === hoveredId) return 2;
+          return 1;
+        },
+        onClick: handlePointClick,
+        onHover: handlePointHover,
+        updateTriggers: {
+          getRadius: [hoveredId],
+          getFillColor: [hoveredId],
+          getLineColor: [hoveredId],
+        },
+      })
+    );
+    
     return result;
-  }, [globeDots, points, animationTime, hoveredId, handlePointClick, handlePointHover]);
+  }, [geoData, points, animationTime, hoveredId, handlePointClick, handlePointHover]);
 
-  // Globe view configuration
   const views = useMemo(() => [
     new DeckGlobeView({
       id: 'globe',
@@ -289,25 +303,78 @@ export default function GlobeMapView({
     }),
   ], []);
 
+  // Calculate the actual globe size in pixels
+  const minDim = Math.min(containerSize.width, containerSize.height);
+  const globeDiameter = minDim * 0.42 * Math.pow(2, viewState.zoom - 1);
+
   return (
-    <div className="relative w-full h-full bg-black">
-      <DeckGL
-        views={views}
-        viewState={viewState}
-        onViewStateChange={handleViewStateChange}
-        controller={true}
-        layers={layers}
-        getCursor={({ isHovering }) => (isHovering ? 'pointer' : 'grab')}
-        style={{ background: '#050505' }}
-      />
+    <div 
+      ref={containerRef}
+      className="relative w-full h-full flex items-center justify-center"
+      style={{ background: 'transparent' }}
+      onWheel={handleWheel}
+    >
+      {/* White circle background that matches globe */}
+      {containerSize.width > 0 && (
+        <div 
+          className="absolute pointer-events-none rounded-full"
+          style={{
+            width: `${globeDiameter}px`,
+            height: `${globeDiameter}px`,
+            background: 'radial-gradient(circle at 30% 30%, #ffffff 0%, #f5f5f5 50%, #e8e8e8 80%, #d8d8d8 100%)',
+            boxShadow: '0 4px 60px rgba(0,0,0,0.3)',
+            transition: 'width 0.15s ease-out, height 0.15s ease-out',
+          }}
+        />
+      )}
       
-      {/* Globe edge glow effect */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 80% 80% at 50% 40%, transparent 40%, rgba(0,0,0,0.8) 70%, #050505 100%)',
-        }}
-      />
+      {/* DeckGL Globe */}
+      <div className="absolute inset-0">
+        <DeckGL
+          views={views}
+          viewState={viewState}
+          onViewStateChange={handleViewStateChange}
+          controller={{
+            scrollZoom: introComplete || hasInteracted,
+            dragPan: introComplete || hasInteracted,
+            dragRotate: true,
+            doubleClickZoom: true,
+            touchZoom: true,
+            touchRotate: true,
+            keyboard: true,
+          }}
+          layers={layers}
+          getCursor={({ isHovering, isDragging }) => {
+            if (isDragging) return 'grabbing';
+            if (isHovering) return 'pointer';
+            return 'grab';
+          }}
+          style={{ background: 'transparent' }}
+        />
+      </div>
+
+      {/* Hover Tooltip */}
+      {hoverInfo && hoverInfo.object && (
+        <div
+          className="absolute pointer-events-none text-white px-3 py-2 rounded-lg shadow-lg text-sm"
+          style={{
+            left: hoverInfo.x + 10,
+            top: hoverInfo.y + 10,
+            zIndex: 50,
+            background: 'rgba(10, 10, 10, 0.9)',
+            backdropFilter: 'blur(8px)',
+            border: '1px solid rgba(255,255,255,0.1)',
+          }}
+        >
+          <div className="font-semibold">{hoverInfo.object.name}</div>
+          <div className="text-gray-300 text-xs mt-1">
+            Coverage: {(hoverInfo.object.normalizedValue * 100).toFixed(1)}%
+          </div>
+          <div className="text-gray-400 text-xs">
+            Click for details
+          </div>
+        </div>
+      )}
     </div>
   );
 }

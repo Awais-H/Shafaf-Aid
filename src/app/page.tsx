@@ -16,8 +16,7 @@ import { getWorldViewState } from '@/components/map/MapUtils';
 import type { MapPoint } from '@/core/data/schema';
 
 import MapView from '@/components/map/MapView';
-import GlobeView from '@/components/map/GlobeView';
-import HeroSection from '@/components/layout/HeroSection';
+import MapboxGlobe from '@/components/map/MapboxGlobe';
 import ViewToggle from '@/components/layout/ViewToggle';
 import Header from '@/components/layout/Header';
 import Legend from '@/components/layout/Legend';
@@ -31,8 +30,12 @@ export default function WorldPage() {
   // View mode: '3d' (globe) or '2d' (flat map)
   const [viewMode, setViewMode] = useState<'2d' | '3d'>('3d');
   
-  // Scroll progress for transitions (0 = top, 1 = scrolled)
-  const [scrollProgress, setScrollProgress] = useState(0);
+  // Track if intro is complete (title hidden, full interaction enabled)
+  const [introComplete, setIntroComplete] = useState(false);
+  
+  // Title opacity (fades as user scrolls/zooms)
+  const [titleOpacity, setTitleOpacity] = useState(1);
+  
   const containerRef = useRef<HTMLDivElement>(null);
   
   // Store state
@@ -51,16 +54,22 @@ export default function WorldPage() {
   // Initial view state
   const initialViewState = useMemo(() => getWorldViewState(), []);
 
-  // Handle scroll for hero fade effect in 3D mode
+  // Handle scroll/wheel in 3D intro mode - fades title
   useEffect(() => {
-    if (viewMode !== '3d') return;
+    if (viewMode !== '3d' || introComplete) return;
     
     const handleWheel = (e: WheelEvent) => {
-      // Update scroll progress based on scroll direction
-      setScrollProgress(prev => {
-        const delta = e.deltaY > 0 ? 0.1 : -0.1;
-        return Math.max(0, Math.min(1, prev + delta));
-      });
+      if (e.deltaY > 0) {
+        setTitleOpacity(prev => {
+          const newOpacity = Math.max(0, prev - 0.1);
+          if (newOpacity <= 0) {
+            setIntroComplete(true);
+          }
+          return newOpacity;
+        });
+      } else if (!introComplete) {
+        setTitleOpacity(prev => Math.min(1, prev + 0.08));
+      }
     };
     
     window.addEventListener('wheel', handleWheel, { passive: true });
@@ -68,14 +77,13 @@ export default function WorldPage() {
     return () => {
       window.removeEventListener('wheel', handleWheel);
     };
-  }, [viewMode]);
-  
-  // Reset scroll progress when switching to 3D
-  useEffect(() => {
-    if (viewMode === '3d') {
-      setScrollProgress(0);
-    }
-  }, [viewMode]);
+  }, [viewMode, introComplete]);
+
+  // Handle intro complete from GlobeView
+  const handleIntroComplete = useCallback(() => {
+    setIntroComplete(true);
+    setTitleOpacity(0);
+  }, []);
 
   // Load data on mount
   useEffect(() => {
@@ -90,7 +98,6 @@ export default function WorldPage() {
         
         setAppData(data);
         
-        // Compute world scores
         const scores = computeWorldScores(data);
         setWorldScores(scores);
         
@@ -110,7 +117,7 @@ export default function WorldPage() {
     };
   }, [setLoading, setError, setAppData, setWorldScores, setCurrentView]);
 
-  // Handle country click - navigate to country view
+  // Handle country click
   const handleCountryClick = useCallback(
     (point: MapPoint) => {
       if (point.type === 'country') {
@@ -131,18 +138,8 @@ export default function WorldPage() {
       <div className="fixed inset-0 bg-[#050505] flex items-center justify-center">
         <div className="text-center max-w-md px-6">
           <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-red-500/20 flex items-center justify-center">
-            <svg
-              className="w-8 h-8 text-red-500"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-              />
+            <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
           </div>
           <h2 className="text-xl font-semibold text-white mb-2">Error Loading Data</h2>
@@ -158,18 +155,42 @@ export default function WorldPage() {
     );
   }
 
-  // Calculate hero opacity based on scroll progress
-  const heroOpacity = Math.max(0, 1 - scrollProgress * 2);
-  const showSidebar = viewMode === '2d' || scrollProgress > 0.5;
+  const showUI = viewMode === '2d' || introComplete;
 
   return (
-    <div ref={containerRef} className="fixed inset-0 flex flex-col bg-[#050505]">
-      {/* Header - only show in 2D mode or when scrolled */}
+    <div ref={containerRef} className="fixed inset-0 flex flex-col bg-[#050505] overflow-hidden">
+      {/* "Shafaf" title - centered above the globe */}
+      {viewMode === '3d' && titleOpacity > 0 && (
+        <div 
+          className="fixed inset-0 flex flex-col items-center pointer-events-none select-none"
+          style={{ 
+            zIndex: 5,
+            opacity: titleOpacity,
+            transition: 'opacity 0.4s ease-out',
+            paddingTop: '8vh',
+          }}
+        >
+          <h1 
+            className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-center"
+            style={{
+              color: 'rgba(120, 120, 120, 0.8)',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Shafaf
+          </h1>
+        </div>
+      )}
+      
+      {/* Header */}
       <div 
-        className="transition-all duration-300"
+        className="transition-all duration-700 ease-out"
         style={{
-          opacity: viewMode === '2d' ? 1 : scrollProgress,
-          transform: viewMode === '2d' ? 'none' : `translateY(${(1 - scrollProgress) * -100}%)`,
+          opacity: showUI ? 1 : 0,
+          transform: showUI ? 'translateY(0)' : 'translateY(-100%)',
+          pointerEvents: showUI ? 'auto' : 'none',
+          zIndex: 30,
         }}
       >
         <Header />
@@ -177,21 +198,23 @@ export default function WorldPage() {
 
       {/* Disclaimer Banner - only in 2D mode */}
       {viewMode === '2d' && (
-        <div className="pt-14">
+        <div className="pt-14" style={{ zIndex: 25 }}>
           <DisclaimerBanner />
         </div>
       )}
 
       {/* Main content */}
       <div className="flex-1 flex relative">
-        {/* Left Sidebar - Curated Countries (visible in 2D or when scrolled in 3D) */}
+        {/* Left Sidebar */}
         <div 
-          className="w-56 border-r border-gray-800/50 flex flex-col z-10 transition-all duration-500"
+          className="w-56 border-r border-gray-800/30 flex flex-col transition-all duration-700 ease-out"
           style={{
-            background: 'rgba(5, 5, 5, 0.95)',
-            backdropFilter: 'blur(12px)',
-            opacity: showSidebar ? 1 : 0,
-            transform: showSidebar ? 'translateX(0)' : 'translateX(-100%)',
+            background: 'rgba(8, 8, 8, 0.95)',
+            backdropFilter: 'blur(16px)',
+            opacity: showUI ? 1 : 0,
+            transform: showUI ? 'translateX(0)' : 'translateX(-100%)',
+            pointerEvents: showUI ? 'auto' : 'none',
+            zIndex: 20,
           }}
         >
           <div className="p-4">
@@ -204,19 +227,19 @@ export default function WorldPage() {
                 <li key={country.id}>
                   <button
                     onClick={() => router.push(`/country/${country.id}`)}
-                    className="w-full text-left px-3 py-2 rounded-lg hover:bg-white/5 transition-colors flex items-center justify-between group"
+                    className="w-full text-left px-3 py-2 rounded-lg hover:bg-white/5 transition-all duration-300 flex items-center justify-between group"
                   >
-                    <span className="text-gray-300 text-sm group-hover:text-white">
+                    <span className="text-gray-300 text-sm group-hover:text-white transition-colors">
                       {country.name}
                     </span>
                     {score && (
                       <span
-                        className={`text-xs px-1.5 py-0.5 rounded ${
+                        className={`text-xs px-1.5 py-0.5 rounded transition-colors ${
                           score.normalizedCoverage < 0.33
-                            ? 'bg-red-900/50 text-red-400'
+                            ? 'bg-red-900/40 text-red-400'
                             : score.normalizedCoverage < 0.66
-                            ? 'bg-yellow-900/50 text-yellow-400'
-                            : 'bg-green-900/50 text-green-400'
+                            ? 'bg-yellow-900/40 text-yellow-400'
+                            : 'bg-green-900/40 text-green-400'
                         }`}
                       >
                         {(score.normalizedCoverage * 100).toFixed(0)}%
@@ -231,21 +254,25 @@ export default function WorldPage() {
 
         {/* Map/Globe Area */}
         <div className="flex-1 relative">
-          {/* 3D Globe View */}
+          {/* 3D Globe View - Real Mapbox globe */}
           {viewMode === '3d' && (
-            <div className="absolute inset-0">
-              <GlobeView
+            <div 
+              className="absolute inset-0"
+              style={{ zIndex: 10 }}
+            >
+              <MapboxGlobe
                 points={mapPoints}
                 onPointClick={handleCountryClick}
-                scrollProgress={scrollProgress}
-                autoRotate={scrollProgress < 0.3}
+                introComplete={introComplete}
+                onIntroComplete={handleIntroComplete}
+                autoRotate={!introComplete}
               />
             </div>
           )}
           
           {/* 2D Map View */}
           {viewMode === '2d' && (
-            <div className="absolute inset-0">
+            <div className="absolute inset-0" style={{ zIndex: 10 }}>
               <MapView
                 points={mapPoints}
                 onPointClick={handleCountryClick}
@@ -256,38 +283,36 @@ export default function WorldPage() {
             </div>
           )}
 
-          {/* Hero Section (3D mode only) */}
-          {viewMode === '3d' && (
-            <HeroSection 
-              opacity={heroOpacity} 
-              visible={scrollProgress < 1}
-            />
-          )}
-
-          {/* View Toggle - Top Right */}
-          <div className="absolute top-4 right-4 z-30">
+          {/* View Toggle */}
+          <div 
+            className="absolute top-4 right-4 z-30 transition-opacity duration-500"
+            style={{ opacity: showUI ? 1 : 0.6 }}
+          >
             <ViewToggle view={viewMode} onChange={setViewMode} />
           </div>
 
-          {/* Scroll Hint (3D mode, when not scrolled) */}
-          {viewMode === '3d' && scrollProgress < 0.3 && (
+          {/* Scroll Hint */}
+          {viewMode === '3d' && !introComplete && titleOpacity > 0.3 && (
             <div 
-              className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-center transition-opacity duration-500"
-              style={{ opacity: 1 - scrollProgress * 3 }}
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-center transition-all duration-500"
+              style={{ opacity: titleOpacity }}
             >
               <p className="text-gray-500 text-sm mb-2">Scroll to explore</p>
-              <div className="w-6 h-10 rounded-full border-2 border-gray-600 mx-auto flex items-start justify-center p-1">
+              <div className="w-6 h-10 rounded-full border-2 border-gray-600/50 mx-auto flex items-start justify-center p-1">
                 <div 
                   className="w-1.5 h-2.5 bg-gray-500 rounded-full animate-bounce"
-                  style={{ animationDuration: '1.5s' }}
+                  style={{ animationDuration: '2s' }}
                 />
               </div>
             </div>
           )}
 
-          {/* Legend - Bottom Right (show when sidebar visible) */}
-          {showSidebar && (
-            <div className="absolute right-4 bottom-4 z-10 transition-opacity duration-300">
+          {/* Legend */}
+          {showUI && (
+            <div 
+              className="absolute right-4 bottom-4 z-20 transition-all duration-500"
+              style={{ opacity: showUI ? 1 : 0 }}
+            >
               <Legend />
             </div>
           )}

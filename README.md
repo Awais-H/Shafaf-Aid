@@ -26,7 +26,8 @@ npm run dev
 ## Tech Stack
 
 - **Next.js 14** (App Router) + TypeScript
-- **MapLibre GL JS** + **deck.gl** for performant map visualization
+- **Mapbox GL JS** for real-world explorable globe/map visualization
+- **deck.gl** for high-performance data layers
 - **Zustand** for state management
 - **Supabase** support for production data (optional)
 - **Tailwind CSS** for styling
@@ -59,13 +60,21 @@ Create a `.env.local` file:
 # Data mode: 'static' or 'supabase'
 NEXT_PUBLIC_DATA_MODE=static
 
+# Mapbox Access Token (required for globe/map visualization)
+# Get your free token at: https://account.mapbox.com/access-tokens/
+NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_public_token
+
 # Supabase (required only for supabase mode)
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
-
-# Map tiles (optional, uses default dark basemap)
-NEXT_PUBLIC_MAP_TILES_URL=https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json
 ```
+
+### Getting a Mapbox Token
+
+1. Create a free account at [mapbox.com](https://account.mapbox.com/)
+2. Go to Access Tokens page
+3. Copy your default public token or create a new one
+4. Add it to `.env.local` as `NEXT_PUBLIC_MAPBOX_TOKEN`
 
 ## Demo Script
 
