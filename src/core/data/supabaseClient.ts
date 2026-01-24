@@ -3,9 +3,20 @@
  * Creates and exports the Supabase client for data fetching
  */
 
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type SupabaseClient = any;
 let supabaseClient: SupabaseClient | null = null;
+let createClient: ((url: string, key: string, options?: unknown) => SupabaseClient) | null = null;
+
+// Dynamic import to handle missing supabase package gracefully
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const supabase = require('@supabase/supabase-js');
+  createClient = supabase.createClient;
+} catch {
+  // Supabase package not installed - will use static data mode
+  createClient = null;
+}
 
 /**
  * Gets or creates the Supabase client
@@ -21,6 +32,11 @@ export function getSupabaseClient(): SupabaseClient | null {
 
   if (!supabaseUrl || !supabaseAnonKey) {
     console.warn('Supabase not configured. Using static data mode.');
+    return null;
+  }
+
+  if (!createClient) {
+    console.warn('Supabase package not installed. Using static data mode.');
     return null;
   }
 

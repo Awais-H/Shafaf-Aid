@@ -55,7 +55,7 @@ export function validateRegion(region: Partial<Region>): region is Region {
     Array.isArray(region.centroid) &&
     region.centroid.length === 2 &&
     typeof region.population === 'number' &&
-    region.population >= 0 &&
+    region.population > 0 &&
     ['low', 'medium', 'high'].includes(region.needLevel as string)
   );
 }
@@ -212,16 +212,16 @@ export function sanitizeForDemo(data: AppData): AppData {
   const countries = data.countries.filter(validateCountry);
   const regions = data.regions.filter(validateRegion);
   const organizations = data.organizations.filter(validateOrganization);
-  
+
   // Build valid ID sets
   const validCountryIds = new Set(countries.map(c => c.id));
   const validRegionIds = new Set(regions.map(r => r.id));
   const validOrgIds = new Set(organizations.map(o => o.id));
-  
+
   // Filter regions to only those with valid countries
   const validRegions = regions.filter(r => validCountryIds.has(r.countryId));
   const finalRegionIds = new Set(validRegions.map(r => r.id));
-  
+
   // Filter edges to only those with valid orgs and regions
   const aidEdges = data.aidEdges
     .filter(validateAidEdge)
@@ -233,4 +233,78 @@ export function sanitizeForDemo(data: AppData): AppData {
     organizations,
     aidEdges,
   };
+}
+
+// ============================================================================
+// Strict Sanity Checks (Throws Errors)
+// ============================================================================
+
+const VALID_AID_TYPES = ['food', 'medical', 'infrastructure'] as const;
+
+/**
+ * Runs strict sanity checks that throw errors for invalid data
+ * Use this in development/testing to catch data issues early
+ */
+export function runSanityChecks(data: AppData): void {
+  const countryIds = new Set<string>();
+  const regionIds = new Set<string>();
+  const orgIds = new Set<string>();
+
+  // Validate countries
+  for (const country of data.countries) {
+    if (!country.id || typeof country.id !== 'string') {
+      throw new Error(`Invalid country: missing or invalid id - ${JSON.stringify(country)}`);
+    }
+    if (!country.name || typeof country.name !== 'string') {
+      throw new Error(`Invalid country ${country.id}: missing or invalid name`);
+    }
+    countryIds.add(country.id);
+  }
+
+  // Validate regions
+  for (const region of data.regions) {
+    if (!region.id || typeof region.id !== 'string') {
+      throw new Error(`Invalid region: missing or invalid id - ${JSON.stringify(region)}`);
+    }
+    if (!region.countryId || !countryIds.has(region.countryId)) {
+      throw new Error(`Region ${region.id}: references non-existent country ${region.countryId}`);
+    }
+    if (typeof region.population !== 'number' || region.population <= 0) {
+      throw new Error(`Region ${region.id}: population must be > 0, got ${region.population}`);
+    }
+    if (!['low', 'medium', 'high'].includes(region.needLevel)) {
+      throw new Error(`Region ${region.id}: invalid needLevel ${region.needLevel}`);
+    }
+    regionIds.add(region.id);
+  }
+
+  // Validate organizations
+  for (const org of data.organizations) {
+    if (!org.id || typeof org.id !== 'string') {
+      throw new Error(`Invalid organization: missing or invalid id - ${JSON.stringify(org)}`);
+    }
+    if (!org.name || typeof org.name !== 'string') {
+      throw new Error(`Invalid organization ${org.id}: missing or invalid name`);
+    }
+    orgIds.add(org.id);
+  }
+
+  // Validate aid edges
+  for (const edge of data.aidEdges) {
+    if (!edge.id || typeof edge.id !== 'string') {
+      throw new Error(`Invalid aid edge: missing or invalid id - ${JSON.stringify(edge)}`);
+    }
+    if (!edge.orgId || !orgIds.has(edge.orgId)) {
+      throw new Error(`Aid edge ${edge.id}: references non-existent org ${edge.orgId}`);
+    }
+    if (!edge.regionId || !regionIds.has(edge.regionId)) {
+      throw new Error(`Aid edge ${edge.id}: references non-existent region ${edge.regionId}`);
+    }
+    if (!VALID_AID_TYPES.includes(edge.aidType as typeof VALID_AID_TYPES[number])) {
+      throw new Error(`Aid edge ${edge.id}: unknown aid_type "${edge.aidType}". Must be one of: ${VALID_AID_TYPES.join(', ')}`);
+    }
+    if (typeof edge.projectCount !== 'number' || edge.projectCount < 0) {
+      throw new Error(`Aid edge ${edge.id}: projectCount must be >= 0, got ${edge.projectCount}`);
+    }
+  }
 }
