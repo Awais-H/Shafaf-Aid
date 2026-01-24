@@ -230,52 +230,11 @@ export default function ExplainDrawer() {
             </p>
           </section>
 
-          {/* Synthetic Data Policy */}
-          <section>
-            <h3 className="text-lg font-semibold text-white mb-3">
-              Synthetic Data Policy
-            </h3>
-            <div className="bg-yellow-900/30 border border-yellow-700/50 rounded-lg p-4 space-y-3">
-              <p className="text-yellow-200 text-sm">
-                <strong>This demo uses synthetic data</strong> generated for
-                demonstration and testing purposes. The data does not represent
-                actual humanitarian aid coverage.
-              </p>
-              <div className="text-yellow-200/80 text-sm space-y-2">
-                <p>Synthetic data characteristics:</p>
-                <ul className="list-disc list-inside space-y-1 text-xs">
-                  <li>
-                    Geographic coordinates are based on real country/region
-                    locations
-                  </li>
-                  <li>
-                    Population figures are approximations, not official statistics
-                  </li>
-                  <li>Organization names are fictional or simplified</li>
-                  <li>
-                    Aid edge data is generated to create realistic patterns of
-                    coverage gaps
-                  </li>
-                  <li>
-                    Need levels are assigned randomly with regional weighting
-                  </li>
-                </ul>
-              </div>
-              <p className="text-yellow-200/80 text-sm">
-                All synthetic records are marked with{' '}
-                <code className="bg-yellow-900/50 px-1 rounded">
-                  isSynthetic: true
-                </code>{' '}
-                in the data model.
-              </p>
-            </div>
-          </section>
-
           {/* Graph Model */}
           <section>
             <h3 className="text-lg font-semibold text-white mb-3">Graph Model</h3>
             <p className="text-gray-300 text-sm mb-3">
-              AidGap uses a bipartite graph model to represent aid coverage:
+              This tool uses a bipartite graph model to represent aid coverage:
             </p>
             <div className="bg-gray-800 rounded-lg p-4 space-y-2 text-sm">
               <div className="flex items-center gap-2">

@@ -8,7 +8,7 @@
 import React, { useEffect, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useViewStore } from '@/app_state/viewStore';
-import { useWorldMapPoints, useWorldSummary, useCuratedCountries } from '@/app_state/selectors';
+import { useWorldMapPoints, useCuratedCountries } from '@/app_state/selectors';
 import { loadAppData } from '@/core/data/loadData';
 import { computeWorldScores } from '@/core/graph/metrics';
 import { getWorldViewState } from '@/components/map/MapUtils';
@@ -35,7 +35,6 @@ export default function WorldPage() {
   
   // Derived state
   const mapPoints = useWorldMapPoints();
-  const worldSummary = useWorldSummary();
   const curatedCountries = useCuratedCountries();
   
   // Initial view state
@@ -133,83 +132,58 @@ export default function WorldPage() {
       </div>
 
       {/* Main content */}
-      <div className="flex-1 relative">
-        {/* Map */}
-        <MapView
-          points={mapPoints}
-          onPointClick={handleCountryClick}
-          showGlow={true}
-          showPulse={true}
-          initialViewState={initialViewState}
-        />
-
-        {/* Legend */}
-        <div className="absolute left-4 bottom-4 z-10">
-          <Legend title="Coverage Gap" showNeedLevels={false} />
+      <div className="flex-1 flex relative">
+        {/* Left Sidebar - Curated Countries */}
+        <div className="w-56 bg-gray-900/95 border-r border-gray-700 flex flex-col z-10">
+          <div className="p-4">
+            <h3 className="text-white font-semibold text-sm mb-1">Countries</h3>
+            <p className="text-gray-500 text-xs">Select to explore regions</p>
+          </div>
+          <div className="flex-1 overflow-y-auto px-2 pb-4">
+            <ul className="space-y-1">
+              {curatedCountries.map(({ country, score }) => (
+                <li key={country.id}>
+                  <button
+                    onClick={() => router.push(`/country/${country.id}`)}
+                    className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-between group"
+                  >
+                    <span className="text-gray-300 text-sm group-hover:text-white">
+                      {country.name}
+                    </span>
+                    {score && (
+                      <span
+                        className={`text-xs px-1.5 py-0.5 rounded ${
+                          score.normalizedCoverage < 0.33
+                            ? 'bg-red-900/50 text-red-400'
+                            : score.normalizedCoverage < 0.66
+                            ? 'bg-yellow-900/50 text-yellow-400'
+                            : 'bg-green-900/50 text-green-400'
+                        }`}
+                      >
+                        {(score.normalizedCoverage * 100).toFixed(0)}%
+                      </span>
+                    )}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Summary Stats */}
-        {worldSummary && (
-          <div className="absolute right-4 bottom-4 z-10 bg-gray-900/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-700 max-w-xs">
-            <h3 className="text-white font-semibold text-sm mb-3">World Overview</h3>
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              <div>
-                <span className="text-gray-400 block text-xs">Countries</span>
-                <span className="text-white font-medium">{worldSummary.totalCountries}</span>
-              </div>
-              <div>
-                <span className="text-gray-400 block text-xs">Regions</span>
-                <span className="text-white font-medium">{worldSummary.totalRegions}</span>
-              </div>
-              <div>
-                <span className="text-gray-400 block text-xs">Organizations</span>
-                <span className="text-white font-medium">{worldSummary.totalOrgs}</span>
-              </div>
-              <div>
-                <span className="text-gray-400 block text-xs">Aid Activities</span>
-                <span className="text-white font-medium">{worldSummary.totalAidEdges}</span>
-              </div>
-            </div>
-            <div className="mt-3 pt-3 border-t border-gray-700">
-              <div className="flex justify-between text-xs">
-                <span className="text-red-400">High gap: {worldSummary.highGapCount}</span>
-                <span className="text-green-400">Well covered: {worldSummary.lowGapCount}</span>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Map Area */}
+        <div className="flex-1 relative">
+          <MapView
+            points={mapPoints}
+            onPointClick={handleCountryClick}
+            showGlow={true}
+            showPulse={true}
+            initialViewState={initialViewState}
+          />
 
-        {/* Curated Countries Guide */}
-        <div className="absolute left-4 top-4 z-10 bg-gray-900/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-700">
-          <h3 className="text-white font-semibold text-sm mb-2">Curated Countries</h3>
-          <p className="text-gray-400 text-xs mb-3">Click a country to explore regional coverage</p>
-          <ul className="space-y-1">
-            {curatedCountries.map(({ country, score }) => (
-              <li key={country.id}>
-                <button
-                  onClick={() => router.push(`/country/${country.id}`)}
-                  className="w-full text-left px-2 py-1.5 rounded hover:bg-gray-800 transition-colors flex items-center justify-between group"
-                >
-                  <span className="text-gray-300 text-sm group-hover:text-white">
-                    {country.name}
-                  </span>
-                  {score && (
-                    <span
-                      className={`text-xs px-1.5 py-0.5 rounded ${
-                        score.normalizedCoverage < 0.33
-                          ? 'bg-red-900/50 text-red-400'
-                          : score.normalizedCoverage < 0.66
-                          ? 'bg-yellow-900/50 text-yellow-400'
-                          : 'bg-green-900/50 text-green-400'
-                      }`}
-                    >
-                      {(score.normalizedCoverage * 100).toFixed(0)}%
-                    </span>
-                  )}
-                </button>
-              </li>
-            ))}
-          </ul>
+          {/* Legend - Bottom Right */}
+          <div className="absolute right-4 bottom-4 z-10">
+            <Legend />
+          </div>
         </div>
       </div>
 

@@ -8,7 +8,7 @@
 import React, { useEffect, useCallback, useMemo, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useViewStore } from '@/app_state/viewStore';
-import { useRegionMapPoints, useCountrySummary } from '@/app_state/selectors';
+import { useRegionMapPoints } from '@/app_state/selectors';
 import { loadAppData, loadCountryData } from '@/core/data/loadData';
 import { computeCountryScores, getRegionDetail } from '@/core/graph/metrics';
 import { getCountryViewState } from '@/components/map/MapUtils';
@@ -49,7 +49,6 @@ export default function CountryPage() {
 
   // Derived state
   const mapPoints = useRegionMapPoints();
-  const countrySummary = useCountrySummary();
 
   // Get country info
   const country = useMemo(
@@ -236,87 +235,14 @@ export default function CountryPage() {
       </div>
 
       {/* Main content */}
-      <div className="flex-1 relative">
-        {/* Map */}
-        <MapView
-          points={mapPoints}
-          regionGeoJson={regionGeoJson}
-          onPointClick={handleRegionClick}
-          onRegionClick={handlePolygonClick}
-          selectedId={selectedRegionId}
-          showGlow={true}
-          showPulse={true}
-          initialViewState={initialViewState}
-        />
-
-        {/* Legend */}
-        <div className="absolute left-4 bottom-4 z-10">
-          <Legend title="Regional Coverage" showNeedLevels={true} />
-        </div>
-
-        {/* Country Summary */}
-        {countrySummary && (
-          <div className="absolute right-4 bottom-4 z-10 bg-gray-900/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-700 max-w-xs">
-            <h3 className="text-white font-semibold text-sm mb-3">
-              {countrySummary.countryName}
-            </h3>
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              <div>
-                <span className="text-gray-400 block text-xs">Regions</span>
-                <span className="text-white font-medium">
-                  {countrySummary.totalRegions}
-                </span>
-              </div>
-              <div>
-                <span className="text-gray-400 block text-xs">Organizations</span>
-                <span className="text-white font-medium">
-                  {countrySummary.totalOrgs}
-                </span>
-              </div>
-              <div>
-                <span className="text-gray-400 block text-xs">Avg Coverage</span>
-                <span className="text-white font-medium">
-                  {(countrySummary.averageCoverage * 100).toFixed(1)}%
-                </span>
-              </div>
-              <div>
-                <span className="text-gray-400 block text-xs">Variance</span>
-                <span className="text-white font-medium">
-                  {(countrySummary.coverageVariance * 100).toFixed(1)}%
-                </span>
-              </div>
-            </div>
-
-            {/* High gap regions */}
-            {countrySummary.highGapRegions.length > 0 && (
-              <div className="mt-3 pt-3 border-t border-gray-700">
-                <h4 className="text-red-400 text-xs font-medium mb-2">
-                  High Gap Regions ({countrySummary.highGapRegions.length})
-                </h4>
-                <ul className="space-y-1">
-                  {countrySummary.highGapRegions.slice(0, 3).map((region) => (
-                    <li key={region.regionId}>
-                      <button
-                        onClick={() => selectRegion(region.regionId)}
-                        className="text-xs text-gray-400 hover:text-white transition-colors text-left w-full truncate"
-                      >
-                        {region.regionName} ({(region.normalizedCoverage * 100).toFixed(0)}%)
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+      <div className="flex-1 flex relative">
+        {/* Left Sidebar - Regions */}
+        <div className="w-56 bg-gray-900/95 border-r border-gray-700 flex flex-col z-10">
+          <div className="p-4">
+            <h3 className="text-white font-semibold text-sm mb-1">Regions</h3>
+            <p className="text-gray-500 text-xs">Select to view details</p>
           </div>
-        )}
-
-        {/* Regions List */}
-        <div className="absolute left-4 top-4 z-10 bg-gray-900/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-700 max-w-xs max-h-96 overflow-hidden flex flex-col">
-          <h3 className="text-white font-semibold text-sm mb-2">Regions</h3>
-          <p className="text-gray-400 text-xs mb-3">
-            Click a region for detailed coverage analysis
-          </p>
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto px-2 pb-4">
             <ul className="space-y-1">
               {countryScores
                 .sort((a, b) => a.normalizedCoverage - b.normalizedCoverage)
@@ -324,7 +250,7 @@ export default function CountryPage() {
                   <li key={score.regionId}>
                     <button
                       onClick={() => selectRegion(score.regionId)}
-                      className={`w-full text-left px-2 py-1.5 rounded hover:bg-gray-800 transition-colors flex items-center justify-between group ${
+                      className={`w-full text-left px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-between group ${
                         selectedRegionId === score.regionId ? 'bg-gray-700' : ''
                       }`}
                     >
@@ -346,6 +272,25 @@ export default function CountryPage() {
                   </li>
                 ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Map Area */}
+        <div className="flex-1 relative">
+          <MapView
+            points={mapPoints}
+            regionGeoJson={regionGeoJson}
+            onPointClick={handleRegionClick}
+            onRegionClick={handlePolygonClick}
+            selectedId={selectedRegionId}
+            showGlow={true}
+            showPulse={true}
+            initialViewState={initialViewState}
+          />
+
+          {/* Legend - Bottom Right */}
+          <div className="absolute right-4 bottom-4 z-10">
+            <Legend />
           </div>
         </div>
       </div>

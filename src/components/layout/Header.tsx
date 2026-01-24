@@ -8,7 +8,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { useViewStore } from '@/app_state/viewStore';
-import { getDataMode } from '@/core/data/supabaseClient';
 
 export default function Header() {
   const currentView = useViewStore((state) => state.currentView);
@@ -16,7 +15,6 @@ export default function Header() {
   const appData = useViewStore((state) => state.appData);
   const toggleExplainDrawer = useViewStore((state) => state.toggleExplainDrawer);
 
-  const dataMode = getDataMode();
   const selectedCountry = appData?.countries.find(
     (c) => c.id === selectedCountryId
   );
@@ -24,16 +22,10 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700">
       <div className="flex items-center justify-between px-4 py-3">
-        {/* Logo and Title */}
+        {/* Title */}
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AG</span>
-            </div>
-            <div>
-              <h1 className="text-lg font-bold text-white">Shafaf Aid</h1>
-              <p className="text-xs text-gray-400">AidGap Explorer</p>
-            </div>
+            <h1 className="text-lg font-bold text-white">Shafaf Aid</h1>
           </Link>
 
           {/* Breadcrumb Navigation */}
@@ -61,17 +53,6 @@ export default function Header() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-3">
-          {/* Data mode indicator */}
-          <div
-            className={`px-2 py-1 rounded text-xs font-medium ${
-              dataMode === 'supabase'
-                ? 'bg-green-900/50 text-green-400 border border-green-700'
-                : 'bg-blue-900/50 text-blue-400 border border-blue-700'
-            }`}
-          >
-            {dataMode === 'supabase' ? 'Live Data' : 'Demo Mode'}
-          </div>
-
           {/* Explain button */}
           <button
             onClick={toggleExplainDrawer}
