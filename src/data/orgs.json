@@ -1,34 +1,62 @@
 [
-    {
-        "id": "wfp",
-        "name": "World Food Programme"
-    },
-    {
-        "id": "msf",
-        "name": "Médecins Sans Frontières"
-    },
-    {
-        "id": "icrc",
-        "name": "International Committee of the Red Cross"
-    },
-    {
-        "id": "unhcr",
-        "name": "UN Refugee Agency"
-    },
-    {
-        "id": "unicef",
-        "name": "UNICEF"
-    },
-    {
-        "id": "oxfam",
-        "name": "Oxfam International"
-    },
-    {
-        "id": "irc",
-        "name": "International Rescue Committee"
-    },
-    {
-        "id": "who",
-        "name": "World Health Organization"
-    }
+  {
+    "id": "world-food-programme",
+    "name": "World Food Programme"
+  },
+  {
+    "id": "medecins-sans-fronti\u00e8res",
+    "name": "M\u00e9decins Sans Fronti\u00e8res"
+  },
+  {
+    "id": "icrc",
+    "name": "ICRC"
+  },
+  {
+    "id": "un-refugee-agency",
+    "name": "UN Refugee Agency"
+  },
+  {
+    "id": "unicef",
+    "name": "UNICEF"
+  },
+  {
+    "id": "oxfam",
+    "name": "Oxfam"
+  },
+  {
+    "id": "international-rescue-committee",
+    "name": "International Rescue Committee"
+  },
+  {
+    "id": "world-health-organization",
+    "name": "World Health Organization"
+  },
+  {
+    "id": "save-the-children",
+    "name": "Save the Children"
+  },
+  {
+    "id": "islamic-relief",
+    "name": "Islamic Relief"
+  },
+  {
+    "id": "care-international",
+    "name": "CARE International"
+  },
+  {
+    "id": "mercy-corps",
+    "name": "Mercy Corps"
+  },
+  {
+    "id": "norwegian-refugee-council",
+    "name": "Norwegian Refugee Council"
+  },
+  {
+    "id": "action-against-hunger",
+    "name": "Action Against Hunger"
+  },
+  {
+    "id": "direct-relief",
+    "name": "Direct Relief"
+  }
 ]

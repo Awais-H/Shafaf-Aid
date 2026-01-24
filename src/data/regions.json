@@ -1,86 +1,226 @@
 [
-    {
-        "id": "syria-aleppo",
-        "country_id": "syria",
-        "name": "Aleppo",
-        "population": 4500000,
-        "need_level": "high"
-    },
-    {
-        "id": "syria-idlib",
-        "country_id": "syria",
-        "name": "Idlib",
-        "population": 3000000,
-        "need_level": "high"
-    },
-    {
-        "id": "syria-damascus",
-        "country_id": "syria",
-        "name": "Damascus",
-        "population": 2500000,
-        "need_level": "medium"
-    },
-    {
-        "id": "yemen-sanaa",
-        "country_id": "yemen",
-        "name": "Sanaa",
-        "population": 4000000,
-        "need_level": "high"
-    },
-    {
-        "id": "yemen-aden",
-        "country_id": "yemen",
-        "name": "Aden",
-        "population": 1200000,
-        "need_level": "medium"
-    },
-    {
-        "id": "yemen-taiz",
-        "country_id": "yemen",
-        "name": "Taiz",
-        "population": 2800000,
-        "need_level": "high"
-    },
-    {
-        "id": "sudan-khartoum",
-        "country_id": "sudan",
-        "name": "Khartoum",
-        "population": 6000000,
-        "need_level": "high"
-    },
-    {
-        "id": "sudan-darfur",
-        "country_id": "sudan",
-        "name": "Darfur",
-        "population": 9000000,
-        "need_level": "high"
-    },
-    {
-        "id": "afghanistan-kabul",
-        "country_id": "afghanistan",
-        "name": "Kabul",
-        "population": 4500000,
-        "need_level": "high"
-    },
-    {
-        "id": "afghanistan-herat",
-        "country_id": "afghanistan",
-        "name": "Herat",
-        "population": 2000000,
-        "need_level": "medium"
-    },
-    {
-        "id": "somalia-mogadishu",
-        "country_id": "somalia",
-        "name": "Mogadishu",
-        "population": 2500000,
-        "need_level": "high"
-    },
-    {
-        "id": "somalia-baidoa",
-        "country_id": "somalia",
-        "name": "Baidoa",
-        "population": 800000,
-        "need_level": "high"
-    }
+  {
+    "id": "syria-aleppo",
+    "country_id": "syria",
+    "name": "Aleppo",
+    "population": 4500000,
+    "need_level": "high"
+  },
+  {
+    "id": "syria-idlib",
+    "country_id": "syria",
+    "name": "Idlib",
+    "population": 3000000,
+    "need_level": "high"
+  },
+  {
+    "id": "syria-damascus",
+    "country_id": "syria",
+    "name": "Damascus",
+    "population": 2500000,
+    "need_level": "medium"
+  },
+  {
+    "id": "syria-homs",
+    "country_id": "syria",
+    "name": "Homs",
+    "population": 1500000,
+    "need_level": "medium"
+  },
+  {
+    "id": "syria-raqqa",
+    "country_id": "syria",
+    "name": "Raqqa",
+    "population": 900000,
+    "need_level": "high"
+  },
+  {
+    "id": "yemen-sanaa",
+    "country_id": "yemen",
+    "name": "Sanaa",
+    "population": 4000000,
+    "need_level": "high"
+  },
+  {
+    "id": "yemen-aden",
+    "country_id": "yemen",
+    "name": "Aden",
+    "population": 1200000,
+    "need_level": "medium"
+  },
+  {
+    "id": "yemen-taiz",
+    "country_id": "yemen",
+    "name": "Taiz",
+    "population": 2800000,
+    "need_level": "high"
+  },
+  {
+    "id": "yemen-hodeidah",
+    "country_id": "yemen",
+    "name": "Hodeidah",
+    "population": 2000000,
+    "need_level": "high"
+  },
+  {
+    "id": "yemen-marib",
+    "country_id": "yemen",
+    "name": "Marib",
+    "population": 1000000,
+    "need_level": "high"
+  },
+  {
+    "id": "sudan-khartoum",
+    "country_id": "sudan",
+    "name": "Khartoum",
+    "population": 6000000,
+    "need_level": "high"
+  },
+  {
+    "id": "sudan-darfur",
+    "country_id": "sudan",
+    "name": "Darfur",
+    "population": 9000000,
+    "need_level": "high"
+  },
+  {
+    "id": "sudan-kordofan",
+    "country_id": "sudan",
+    "name": "Kordofan",
+    "population": 4000000,
+    "need_level": "high"
+  },
+  {
+    "id": "sudan-blue-nile",
+    "country_id": "sudan",
+    "name": "Blue Nile",
+    "population": 1200000,
+    "need_level": "medium"
+  },
+  {
+    "id": "afghanistan-kabul",
+    "country_id": "afghanistan",
+    "name": "Kabul",
+    "population": 4500000,
+    "need_level": "high"
+  },
+  {
+    "id": "afghanistan-herat",
+    "country_id": "afghanistan",
+    "name": "Herat",
+    "population": 2000000,
+    "need_level": "medium"
+  },
+  {
+    "id": "afghanistan-kandahar",
+    "country_id": "afghanistan",
+    "name": "Kandahar",
+    "population": 1500000,
+    "need_level": "high"
+  },
+  {
+    "id": "afghanistan-mazar",
+    "country_id": "afghanistan",
+    "name": "Mazar",
+    "population": 1000000,
+    "need_level": "medium"
+  },
+  {
+    "id": "somalia-mogadishu",
+    "country_id": "somalia",
+    "name": "Mogadishu",
+    "population": 2500000,
+    "need_level": "high"
+  },
+  {
+    "id": "somalia-baidoa",
+    "country_id": "somalia",
+    "name": "Baidoa",
+    "population": 800000,
+    "need_level": "high"
+  },
+  {
+    "id": "somalia-hargeisa",
+    "country_id": "somalia",
+    "name": "Hargeisa",
+    "population": 1200000,
+    "need_level": "low"
+  },
+  {
+    "id": "somalia-kismayo",
+    "country_id": "somalia",
+    "name": "Kismayo",
+    "population": 500000,
+    "need_level": "high"
+  },
+  {
+    "id": "palestine-gaza",
+    "country_id": "palestine",
+    "name": "Gaza",
+    "population": 2300000,
+    "need_level": "high"
+  },
+  {
+    "id": "palestine-west-bank-north",
+    "country_id": "palestine",
+    "name": "West Bank North",
+    "population": 1500000,
+    "need_level": "medium"
+  },
+  {
+    "id": "palestine-west-bank-south",
+    "country_id": "palestine",
+    "name": "West Bank South",
+    "population": 1200000,
+    "need_level": "medium"
+  },
+  {
+    "id": "myanmar-rakhine",
+    "country_id": "myanmar",
+    "name": "Rakhine",
+    "population": 3000000,
+    "need_level": "high"
+  },
+  {
+    "id": "myanmar-yangon",
+    "country_id": "myanmar",
+    "name": "Yangon",
+    "population": 7000000,
+    "need_level": "low"
+  },
+  {
+    "id": "myanmar-mandalay",
+    "country_id": "myanmar",
+    "name": "Mandalay",
+    "population": 1500000,
+    "need_level": "low"
+  },
+  {
+    "id": "ethiopia-tigray",
+    "country_id": "ethiopia",
+    "name": "Tigray",
+    "population": 6000000,
+    "need_level": "high"
+  },
+  {
+    "id": "ethiopia-amhara",
+    "country_id": "ethiopia",
+    "name": "Amhara",
+    "population": 20000000,
+    "need_level": "medium"
+  },
+  {
+    "id": "ethiopia-oromia",
+    "country_id": "ethiopia",
+    "name": "Oromia",
+    "population": 35000000,
+    "need_level": "medium"
+  },
+  {
+    "id": "ethiopia-somali-region",
+    "country_id": "ethiopia",
+    "name": "Somali Region",
+    "population": 5000000,
+    "need_level": "high"
+  }
 ]

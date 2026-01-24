@@ -1,182 +1,1022 @@
 [
-    {
-        "org_id": "wfp",
-        "region_id": "syria-aleppo",
-        "aid_type": "food",
-        "project_count": 12
-    },
-    {
-        "org_id": "wfp",
-        "region_id": "syria-idlib",
-        "aid_type": "food",
-        "project_count": 8
-    },
-    {
-        "org_id": "wfp",
-        "region_id": "yemen-sanaa",
-        "aid_type": "food",
-        "project_count": 15
-    },
-    {
-        "org_id": "wfp",
-        "region_id": "yemen-taiz",
-        "aid_type": "food",
-        "project_count": 10
-    },
-    {
-        "org_id": "wfp",
-        "region_id": "sudan-darfur",
-        "aid_type": "food",
-        "project_count": 20
-    },
-    {
-        "org_id": "wfp",
-        "region_id": "somalia-mogadishu",
-        "aid_type": "food",
-        "project_count": 14
-    },
-    {
-        "org_id": "msf",
-        "region_id": "syria-aleppo",
-        "aid_type": "medical",
-        "project_count": 6
-    },
-    {
-        "org_id": "msf",
-        "region_id": "syria-idlib",
-        "aid_type": "medical",
-        "project_count": 9
-    },
-    {
-        "org_id": "msf",
-        "region_id": "yemen-sanaa",
-        "aid_type": "medical",
-        "project_count": 7
-    },
-    {
-        "org_id": "msf",
-        "region_id": "sudan-khartoum",
-        "aid_type": "medical",
-        "project_count": 5
-    },
-    {
-        "org_id": "msf",
-        "region_id": "afghanistan-kabul",
-        "aid_type": "medical",
-        "project_count": 8
-    },
-    {
-        "org_id": "icrc",
-        "region_id": "syria-damascus",
-        "aid_type": "medical",
-        "project_count": 4
-    },
-    {
-        "org_id": "icrc",
-        "region_id": "yemen-aden",
-        "aid_type": "medical",
-        "project_count": 3
-    },
-    {
-        "org_id": "icrc",
-        "region_id": "afghanistan-herat",
-        "aid_type": "infrastructure",
-        "project_count": 2
-    },
-    {
-        "org_id": "unhcr",
-        "region_id": "syria-idlib",
-        "aid_type": "infrastructure",
-        "project_count": 5
-    },
-    {
-        "org_id": "unhcr",
-        "region_id": "sudan-darfur",
-        "aid_type": "infrastructure",
-        "project_count": 7
-    },
-    {
-        "org_id": "unhcr",
-        "region_id": "somalia-baidoa",
-        "aid_type": "infrastructure",
-        "project_count": 4
-    },
-    {
-        "org_id": "unicef",
-        "region_id": "syria-aleppo",
-        "aid_type": "food",
-        "project_count": 5
-    },
-    {
-        "org_id": "unicef",
-        "region_id": "yemen-sanaa",
-        "aid_type": "food",
-        "project_count": 8
-    },
-    {
-        "org_id": "unicef",
-        "region_id": "yemen-taiz",
-        "aid_type": "medical",
-        "project_count": 4
-    },
-    {
-        "org_id": "unicef",
-        "region_id": "afghanistan-kabul",
-        "aid_type": "food",
-        "project_count": 6
-    },
-    {
-        "org_id": "unicef",
-        "region_id": "somalia-mogadishu",
-        "aid_type": "medical",
-        "project_count": 5
-    },
-    {
-        "org_id": "oxfam",
-        "region_id": "yemen-aden",
-        "aid_type": "infrastructure",
-        "project_count": 3
-    },
-    {
-        "org_id": "oxfam",
-        "region_id": "sudan-khartoum",
-        "aid_type": "food",
-        "project_count": 4
-    },
-    {
-        "org_id": "irc",
-        "region_id": "syria-damascus",
-        "aid_type": "food",
-        "project_count": 3
-    },
-    {
-        "org_id": "irc",
-        "region_id": "afghanistan-herat",
-        "aid_type": "medical",
-        "project_count": 2
-    },
-    {
-        "org_id": "irc",
-        "region_id": "somalia-baidoa",
-        "aid_type": "food",
-        "project_count": 2
-    },
-    {
-        "org_id": "who",
-        "region_id": "sudan-khartoum",
-        "aid_type": "medical",
-        "project_count": 6
-    },
-    {
-        "org_id": "who",
-        "region_id": "sudan-darfur",
-        "aid_type": "medical",
-        "project_count": 4
-    },
-    {
-        "org_id": "who",
-        "region_id": "afghanistan-kabul",
-        "aid_type": "medical",
-        "project_count": 3
-    }
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "syria-raqqa",
+    "aid_type": "infrastructure",
+    "project_count": 4
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "sudan-kordofan",
+    "aid_type": "infrastructure",
+    "project_count": 4
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "medical",
+    "project_count": 12
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "syria-raqqa",
+    "aid_type": "food",
+    "project_count": 9
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "food",
+    "project_count": 14
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "palestine-west-bank-south",
+    "aid_type": "food",
+    "project_count": 13
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "sudan-darfur",
+    "aid_type": "infrastructure",
+    "project_count": 11
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "yemen-sanaa",
+    "aid_type": "infrastructure",
+    "project_count": 12
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "syria-raqqa",
+    "aid_type": "medical",
+    "project_count": 17
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "medical",
+    "project_count": 9
+  },
+  {
+    "org_id": "islamic-relief",
+    "region_id": "sudan-khartoum",
+    "aid_type": "infrastructure",
+    "project_count": 1
+  },
+  {
+    "org_id": "mercy-corps",
+    "region_id": "palestine-gaza",
+    "aid_type": "medical",
+    "project_count": 14
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "sudan-darfur",
+    "aid_type": "infrastructure",
+    "project_count": 3
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "somalia-baidoa",
+    "aid_type": "food",
+    "project_count": 5
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "somalia-mogadishu",
+    "aid_type": "food",
+    "project_count": 5
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "somalia-hargeisa",
+    "aid_type": "food",
+    "project_count": 12
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "syria-aleppo",
+    "aid_type": "infrastructure",
+    "project_count": 13
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "syria-aleppo",
+    "aid_type": "medical",
+    "project_count": 5
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "food",
+    "project_count": 13
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "ethiopia-tigray",
+    "aid_type": "infrastructure",
+    "project_count": 15
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "somalia-mogadishu",
+    "aid_type": "food",
+    "project_count": 6
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "ethiopia-tigray",
+    "aid_type": "medical",
+    "project_count": 7
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "ethiopia-tigray",
+    "aid_type": "infrastructure",
+    "project_count": 3
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "infrastructure",
+    "project_count": 11
+  },
+  {
+    "org_id": "islamic-relief",
+    "region_id": "yemen-sanaa",
+    "aid_type": "medical",
+    "project_count": 2
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "sudan-khartoum",
+    "aid_type": "infrastructure",
+    "project_count": 2
+  },
+  {
+    "org_id": "mercy-corps",
+    "region_id": "yemen-hodeidah",
+    "aid_type": "food",
+    "project_count": 13
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "infrastructure",
+    "project_count": 8
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "food",
+    "project_count": 7
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "yemen-hodeidah",
+    "aid_type": "medical",
+    "project_count": 8
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "ethiopia-tigray",
+    "aid_type": "infrastructure",
+    "project_count": 21
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "food",
+    "project_count": 14
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "yemen-marib",
+    "aid_type": "infrastructure",
+    "project_count": 11
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "medical",
+    "project_count": 15
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "somalia-kismayo",
+    "aid_type": "infrastructure",
+    "project_count": 14
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "yemen-hodeidah",
+    "aid_type": "food",
+    "project_count": 12
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "ethiopia-tigray",
+    "aid_type": "food",
+    "project_count": 15
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "somalia-kismayo",
+    "aid_type": "medical",
+    "project_count": 3
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "syria-idlib",
+    "aid_type": "infrastructure",
+    "project_count": 1
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "ethiopia-amhara",
+    "aid_type": "food",
+    "project_count": 11
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "ethiopia-amhara",
+    "aid_type": "medical",
+    "project_count": 7
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "myanmar-yangon",
+    "aid_type": "food",
+    "project_count": 6
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "somalia-baidoa",
+    "aid_type": "food",
+    "project_count": 15
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "ethiopia-tigray",
+    "aid_type": "infrastructure",
+    "project_count": 15
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "syria-idlib",
+    "aid_type": "infrastructure",
+    "project_count": 15
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "syria-raqqa",
+    "aid_type": "medical",
+    "project_count": 13
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "infrastructure",
+    "project_count": 10
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "somalia-baidoa",
+    "aid_type": "food",
+    "project_count": 9
+  },
+  {
+    "org_id": "islamic-relief",
+    "region_id": "syria-aleppo",
+    "aid_type": "medical",
+    "project_count": 7
+  },
+  {
+    "org_id": "save-the-children",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "food",
+    "project_count": 7
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "syria-raqqa",
+    "aid_type": "food",
+    "project_count": 13
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "syria-idlib",
+    "aid_type": "infrastructure",
+    "project_count": 8
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "sudan-darfur",
+    "aid_type": "infrastructure",
+    "project_count": 11
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "sudan-darfur",
+    "aid_type": "medical",
+    "project_count": 13
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "infrastructure",
+    "project_count": 2
+  },
+  {
+    "org_id": "un-refugee-agency",
+    "region_id": "sudan-darfur",
+    "aid_type": "medical",
+    "project_count": 6
+  },
+  {
+    "org_id": "mercy-corps",
+    "region_id": "sudan-kordofan",
+    "aid_type": "infrastructure",
+    "project_count": 6
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "somalia-mogadishu",
+    "aid_type": "infrastructure",
+    "project_count": 8
+  },
+  {
+    "org_id": "save-the-children",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "infrastructure",
+    "project_count": 5
+  },
+  {
+    "org_id": "save-the-children",
+    "region_id": "syria-idlib",
+    "aid_type": "medical",
+    "project_count": 13
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "sudan-khartoum",
+    "aid_type": "infrastructure",
+    "project_count": 11
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "infrastructure",
+    "project_count": 10
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "somalia-kismayo",
+    "aid_type": "food",
+    "project_count": 5
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "yemen-taiz",
+    "aid_type": "medical",
+    "project_count": 7
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "sudan-darfur",
+    "aid_type": "food",
+    "project_count": 7
+  },
+  {
+    "org_id": "save-the-children",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "medical",
+    "project_count": 14
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "somalia-baidoa",
+    "aid_type": "medical",
+    "project_count": 10
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "sudan-khartoum",
+    "aid_type": "food",
+    "project_count": 15
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "palestine-gaza",
+    "aid_type": "food",
+    "project_count": 11
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "medical",
+    "project_count": 7
+  },
+  {
+    "org_id": "islamic-relief",
+    "region_id": "myanmar-rakhine",
+    "aid_type": "food",
+    "project_count": 8
+  },
+  {
+    "org_id": "islamic-relief",
+    "region_id": "myanmar-yangon",
+    "aid_type": "medical",
+    "project_count": 15
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "yemen-hodeidah",
+    "aid_type": "food",
+    "project_count": 11
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "somalia-baidoa",
+    "aid_type": "food",
+    "project_count": 5
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "afghanistan-mazar",
+    "aid_type": "medical",
+    "project_count": 1
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "somalia-kismayo",
+    "aid_type": "medical",
+    "project_count": 13
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "yemen-marib",
+    "aid_type": "infrastructure",
+    "project_count": 13
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "food",
+    "project_count": 8
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "yemen-hodeidah",
+    "aid_type": "food",
+    "project_count": 6
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "syria-raqqa",
+    "aid_type": "infrastructure",
+    "project_count": 4
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "infrastructure",
+    "project_count": 14
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "ethiopia-tigray",
+    "aid_type": "medical",
+    "project_count": 2
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "palestine-gaza",
+    "aid_type": "food",
+    "project_count": 13
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "syria-raqqa",
+    "aid_type": "infrastructure",
+    "project_count": 11
+  },
+  {
+    "org_id": "islamic-relief",
+    "region_id": "palestine-west-bank-south",
+    "aid_type": "food",
+    "project_count": 12
+  },
+  {
+    "org_id": "islamic-relief",
+    "region_id": "syria-idlib",
+    "aid_type": "infrastructure",
+    "project_count": 14
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "infrastructure",
+    "project_count": 14
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "myanmar-mandalay",
+    "aid_type": "food",
+    "project_count": 14
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "somalia-kismayo",
+    "aid_type": "infrastructure",
+    "project_count": 15
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "syria-damascus",
+    "aid_type": "food",
+    "project_count": 4
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "somalia-mogadishu",
+    "aid_type": "medical",
+    "project_count": 11
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "syria-raqqa",
+    "aid_type": "medical",
+    "project_count": 2
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "myanmar-rakhine",
+    "aid_type": "infrastructure",
+    "project_count": 12
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "medical",
+    "project_count": 15
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "somalia-mogadishu",
+    "aid_type": "infrastructure",
+    "project_count": 1
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "syria-aleppo",
+    "aid_type": "medical",
+    "project_count": 15
+  },
+  {
+    "org_id": "unicef",
+    "region_id": "sudan-kordofan",
+    "aid_type": "food",
+    "project_count": 4
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "sudan-kordofan",
+    "aid_type": "medical",
+    "project_count": 12
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "infrastructure",
+    "project_count": 28
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "infrastructure",
+    "project_count": 4
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "sudan-khartoum",
+    "aid_type": "infrastructure",
+    "project_count": 12
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "somalia-hargeisa",
+    "aid_type": "food",
+    "project_count": 5
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "myanmar-rakhine",
+    "aid_type": "medical",
+    "project_count": 4
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "medical",
+    "project_count": 9
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "yemen-taiz",
+    "aid_type": "medical",
+    "project_count": 10
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "myanmar-yangon",
+    "aid_type": "infrastructure",
+    "project_count": 2
+  },
+  {
+    "org_id": "save-the-children",
+    "region_id": "sudan-khartoum",
+    "aid_type": "medical",
+    "project_count": 12
+  },
+  {
+    "org_id": "mercy-corps",
+    "region_id": "sudan-kordofan",
+    "aid_type": "food",
+    "project_count": 14
+  },
+  {
+    "org_id": "un-refugee-agency",
+    "region_id": "sudan-kordofan",
+    "aid_type": "food",
+    "project_count": 18
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "yemen-sanaa",
+    "aid_type": "medical",
+    "project_count": 3
+  },
+  {
+    "org_id": "save-the-children",
+    "region_id": "sudan-kordofan",
+    "aid_type": "medical",
+    "project_count": 4
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "myanmar-mandalay",
+    "aid_type": "food",
+    "project_count": 1
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "yemen-hodeidah",
+    "aid_type": "food",
+    "project_count": 7
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "somalia-kismayo",
+    "aid_type": "medical",
+    "project_count": 7
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "palestine-west-bank-south",
+    "aid_type": "food",
+    "project_count": 13
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "sudan-darfur",
+    "aid_type": "food",
+    "project_count": 14
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "syria-homs",
+    "aid_type": "infrastructure",
+    "project_count": 1
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "yemen-taiz",
+    "aid_type": "infrastructure",
+    "project_count": 15
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "myanmar-yangon",
+    "aid_type": "food",
+    "project_count": 12
+  },
+  {
+    "org_id": "un-refugee-agency",
+    "region_id": "yemen-marib",
+    "aid_type": "medical",
+    "project_count": 13
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "palestine-gaza",
+    "aid_type": "food",
+    "project_count": 11
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "infrastructure",
+    "project_count": 3
+  },
+  {
+    "org_id": "mercy-corps",
+    "region_id": "somalia-mogadishu",
+    "aid_type": "medical",
+    "project_count": 19
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "sudan-darfur",
+    "aid_type": "infrastructure",
+    "project_count": 7
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "syria-aleppo",
+    "aid_type": "food",
+    "project_count": 3
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "yemen-hodeidah",
+    "aid_type": "food",
+    "project_count": 10
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "somalia-mogadishu",
+    "aid_type": "food",
+    "project_count": 1
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "yemen-sanaa",
+    "aid_type": "infrastructure",
+    "project_count": 6
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "syria-idlib",
+    "aid_type": "medical",
+    "project_count": 4
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "infrastructure",
+    "project_count": 10
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "medical",
+    "project_count": 12
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "palestine-west-bank-north",
+    "aid_type": "medical",
+    "project_count": 8
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "sudan-darfur",
+    "aid_type": "food",
+    "project_count": 13
+  },
+  {
+    "org_id": "save-the-children",
+    "region_id": "sudan-darfur",
+    "aid_type": "food",
+    "project_count": 7
+  },
+  {
+    "org_id": "save-the-children",
+    "region_id": "syria-aleppo",
+    "aid_type": "medical",
+    "project_count": 3
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "syria-idlib",
+    "aid_type": "food",
+    "project_count": 12
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "medical",
+    "project_count": 9
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "syria-raqqa",
+    "aid_type": "food",
+    "project_count": 5
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "myanmar-rakhine",
+    "aid_type": "infrastructure",
+    "project_count": 1
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "infrastructure",
+    "project_count": 11
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "syria-raqqa",
+    "aid_type": "medical",
+    "project_count": 10
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "medical",
+    "project_count": 13
+  },
+  {
+    "org_id": "mercy-corps",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "food",
+    "project_count": 10
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "syria-aleppo",
+    "aid_type": "infrastructure",
+    "project_count": 13
+  },
+  {
+    "org_id": "mercy-corps",
+    "region_id": "palestine-gaza",
+    "aid_type": "infrastructure",
+    "project_count": 15
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "sudan-darfur",
+    "aid_type": "food",
+    "project_count": 19
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "yemen-hodeidah",
+    "aid_type": "medical",
+    "project_count": 9
+  },
+  {
+    "org_id": "islamic-relief",
+    "region_id": "afghanistan-kandahar",
+    "aid_type": "infrastructure",
+    "project_count": 9
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "somalia-baidoa",
+    "aid_type": "infrastructure",
+    "project_count": 5
+  },
+  {
+    "org_id": "direct-relief",
+    "region_id": "palestine-gaza",
+    "aid_type": "medical",
+    "project_count": 8
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "sudan-khartoum",
+    "aid_type": "food",
+    "project_count": 10
+  },
+  {
+    "org_id": "action-against-hunger",
+    "region_id": "sudan-kordofan",
+    "aid_type": "infrastructure",
+    "project_count": 14
+  },
+  {
+    "org_id": "oxfam",
+    "region_id": "afghanistan-herat",
+    "aid_type": "infrastructure",
+    "project_count": 6
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "myanmar-rakhine",
+    "aid_type": "infrastructure",
+    "project_count": 6
+  },
+  {
+    "org_id": "world-health-organization",
+    "region_id": "sudan-khartoum",
+    "aid_type": "food",
+    "project_count": 15
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "ethiopia-amhara",
+    "aid_type": "food",
+    "project_count": 5
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "ethiopia-somali-region",
+    "aid_type": "food",
+    "project_count": 4
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "somalia-mogadishu",
+    "aid_type": "medical",
+    "project_count": 18
+  },
+  {
+    "org_id": "un-refugee-agency",
+    "region_id": "sudan-darfur",
+    "aid_type": "food",
+    "project_count": 10
+  },
+  {
+    "org_id": "care-international",
+    "region_id": "palestine-gaza",
+    "aid_type": "medical",
+    "project_count": 11
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "syria-damascus",
+    "aid_type": "food",
+    "project_count": 7
+  },
+  {
+    "org_id": "islamic-relief",
+    "region_id": "somalia-kismayo",
+    "aid_type": "infrastructure",
+    "project_count": 6
+  },
+  {
+    "org_id": "medecins-sans-fronti\u00e8res",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "medical",
+    "project_count": 10
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "syria-idlib",
+    "aid_type": "food",
+    "project_count": 4
+  },
+  {
+    "org_id": "world-food-programme",
+    "region_id": "myanmar-rakhine",
+    "aid_type": "infrastructure",
+    "project_count": 9
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "sudan-darfur",
+    "aid_type": "medical",
+    "project_count": 8
+  },
+  {
+    "org_id": "icrc",
+    "region_id": "myanmar-rakhine",
+    "aid_type": "food",
+    "project_count": 1
+  },
+  {
+    "org_id": "norwegian-refugee-council",
+    "region_id": "afghanistan-kabul",
+    "aid_type": "medical",
+    "project_count": 10
+  },
+  {
+    "org_id": "un-refugee-agency",
+    "region_id": "yemen-hodeidah",
+    "aid_type": "medical",
+    "project_count": 15
+  },
+  {
+    "org_id": "international-rescue-committee",
+    "region_id": "yemen-marib",
+    "aid_type": "medical",
+    "project_count": 3
+  }
 ]

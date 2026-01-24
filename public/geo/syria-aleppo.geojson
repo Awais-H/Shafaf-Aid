@@ -1,0 +1,71 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Aleppo"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            37.0,
+                            36.0
+                        ],
+                        [
+                            38.0,
+                            36.0
+                        ],
+                        [
+                            38.0,
+                            36.5
+                        ],
+                        [
+                            37.0,
+                            36.5
+                        ],
+                        [
+                            37.0,
+                            36.0
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Idlib"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            36.0,
+                            35.5
+                        ],
+                        [
+                            37.0,
+                            35.5
+                        ],
+                        [
+                            37.0,
+                            36.2
+                        ],
+                        [
+                            36.0,
+                            36.2
+                        ],
+                        [
+                            36.0,
+                            35.5
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}
