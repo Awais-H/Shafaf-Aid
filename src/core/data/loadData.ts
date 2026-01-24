@@ -10,9 +10,50 @@ import type {
   Organization,
   AidEdge,
   ViewportBounds,
+  NeedLevel,
+  AidType,
 } from './schema';
 import { getSupabaseClient, getDataMode } from './supabaseClient';
 import { sanitizeForDemo, validateAppData } from '../graph/sanityChecks';
+
+// ============================================================================
+// Supabase Record Types (snake_case from DB)
+// ============================================================================
+
+interface SupabaseCountry {
+  id: string;
+  name: string;
+  iso2: string;
+  curated: boolean;
+  centroid_lng: number;
+  centroid_lat: number;
+}
+
+interface SupabaseRegion {
+  id: string;
+  country_id: string;
+  name: string;
+  centroid_lng: number;
+  centroid_lat: number;
+  population: number;
+  need_level: NeedLevel;
+}
+
+interface SupabaseOrg {
+  id: string;
+  name: string;
+  type?: string;
+}
+
+interface SupabaseAidEdge {
+  id: string;
+  org_id: string;
+  region_id: string;
+  aid_type: AidType;
+  project_count: number;
+  is_synthetic: boolean;
+  source?: string;
+}
 
 // ============================================================================
 // In-memory cache for viewport queries
@@ -37,15 +78,15 @@ function getCacheKey(bounds: ViewportBounds, zoom: number): string {
 function getCachedData(bounds: ViewportBounds, zoom: number): AppData | null {
   const key = getCacheKey(bounds, zoom);
   const entry = viewportCache.get(key);
-  
+
   if (!entry) return null;
-  
+
   const now = Date.now();
   if (now - entry.timestamp > CACHE_TTL_MS) {
     viewportCache.delete(key);
     return null;
   }
-  
+
   return entry.data;
 }
 
@@ -57,7 +98,7 @@ function setCachedData(bounds: ViewportBounds, zoom: number, data: AppData): voi
     bounds,
     zoom,
   });
-  
+
   // Limit cache size
   if (viewportCache.size > 50) {
     const oldestKey = viewportCache.keys().next().value;
@@ -145,14 +186,14 @@ export async function loadSupabaseData(): Promise<AppData> {
 
     // Transform Supabase records to app schema
     const data: AppData = {
-      countries: (countries || []).map(c => ({
+      countries: (countries || []).map((c: SupabaseCountry) => ({
         id: c.id,
         name: c.name,
         iso2: c.iso2,
         curated: c.curated,
         centroid: [c.centroid_lng || 0, c.centroid_lat || 0] as [number, number],
       })),
-      regions: (regions || []).map(r => ({
+      regions: (regions || []).map((r: SupabaseRegion) => ({
         id: r.id,
         countryId: r.country_id,
         name: r.name,
@@ -160,12 +201,12 @@ export async function loadSupabaseData(): Promise<AppData> {
         population: r.population,
         needLevel: r.need_level,
       })),
-      organizations: (organizations || []).map(o => ({
+      organizations: (organizations || []).map((o: SupabaseOrg) => ({
         id: o.id,
         name: o.name,
         type: o.type,
       })),
-      aidEdges: (aidEdges || []).map(e => ({
+      aidEdges: (aidEdges || []).map((e: SupabaseAidEdge) => ({
         id: e.id,
         orgId: e.org_id,
         regionId: e.region_id,
@@ -211,8 +252,8 @@ export async function loadSupabaseDataByViewport(
 
     if (regionsError) throw regionsError;
 
-    const regionIds = (regions || []).map(r => r.id);
-    const countryIds = [...new Set((regions || []).map(r => r.country_id))];
+    const regionIds = (regions || []).map((r: SupabaseRegion) => r.id);
+    const countryIds = [...new Set((regions || []).map((r: SupabaseRegion) => r.country_id))];
 
     // Fetch related data
     const [
@@ -226,7 +267,7 @@ export async function loadSupabaseDataByViewport(
     if (countriesError) throw countriesError;
     if (edgesError) throw edgesError;
 
-    const orgIds = [...new Set((aidEdges || []).map(e => e.org_id))];
+    const orgIds = [...new Set((aidEdges || []).map((e: SupabaseAidEdge) => e.org_id))];
     const { data: organizations, error: orgsError } = await client
       .from('orgs')
       .select('*')
@@ -236,14 +277,14 @@ export async function loadSupabaseDataByViewport(
 
     // Transform to app schema
     const data: AppData = {
-      countries: (countries || []).map(c => ({
+      countries: (countries || []).map((c: SupabaseCountry) => ({
         id: c.id,
         name: c.name,
         iso2: c.iso2,
         curated: c.curated,
         centroid: [c.centroid_lng || 0, c.centroid_lat || 0] as [number, number],
       })),
-      regions: (regions || []).map(r => ({
+      regions: (regions || []).map((r: SupabaseRegion) => ({
         id: r.id,
         countryId: r.country_id,
         name: r.name,
@@ -251,12 +292,12 @@ export async function loadSupabaseDataByViewport(
         population: r.population,
         needLevel: r.need_level,
       })),
-      organizations: (organizations || []).map(o => ({
+      organizations: (organizations || []).map((o: SupabaseOrg) => ({
         id: o.id,
         name: o.name,
         type: o.type,
       })),
-      aidEdges: (aidEdges || []).map(e => ({
+      aidEdges: (aidEdges || []).map((e: SupabaseAidEdge) => ({
         id: e.id,
         orgId: e.org_id,
         regionId: e.region_id,
@@ -285,11 +326,11 @@ export async function loadSupabaseDataByViewport(
  */
 export async function loadAppData(): Promise<AppData> {
   const mode = getDataMode();
-  
+
   if (mode === 'supabase') {
     return loadSupabaseData();
   }
-  
+
   return loadStaticData();
 }
 
@@ -298,7 +339,7 @@ export async function loadAppData(): Promise<AppData> {
  */
 export async function loadCountryData(countryId: string): Promise<AppData> {
   const allData = await loadAppData();
-  
+
   // Filter to only this country's data
   const regions = allData.regions.filter(r => r.countryId === countryId);
   const regionIds = new Set(regions.map(r => r.id));
@@ -306,7 +347,7 @@ export async function loadCountryData(countryId: string): Promise<AppData> {
   const orgIds = new Set(aidEdges.map(e => e.orgId));
   const organizations = allData.organizations.filter(o => orgIds.has(o.id));
   const countries = allData.countries.filter(c => c.id === countryId);
-  
+
   return {
     countries,
     regions,

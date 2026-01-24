@@ -94,6 +94,7 @@ export interface OrgStat {
   orgId: string;
   orgName: string;
   totalProjects: number;
+  weightedPresence: number;
   aidTypes: AidType[];
   regionsCovered: number;
 }

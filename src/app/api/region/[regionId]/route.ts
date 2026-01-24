@@ -10,13 +10,13 @@ import { getRegionDetail } from '@/core/graph/metrics';
 import { getTopOrgsForRegion } from '@/core/graph/ranking';
 
 interface RouteParams {
-  params: {
+  params: Promise<{
     regionId: string;
-  };
+  }>;
 }
 
 export async function GET(request: NextRequest, { params }: RouteParams) {
-  const { regionId } = params;
+  const { regionId } = await params;
   const dataMode = getDataMode();
 
   try {
@@ -64,7 +64,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       if (edgesError) throw edgesError;
 
       // Fetch organizations
-      const orgIds = [...new Set((aidEdges || []).map((e) => e.org_id))];
+      const orgIds = [...new Set((aidEdges || []).map((e: { org_id: string }) => e.org_id))];
       const { data: organizations, error: orgsError } = await client
         .from('orgs')
         .select('*')
@@ -108,7 +108,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       }
 
       const orgsList = Array.from(orgPresence.entries()).map(([orgId, info]) => {
-        const org = (organizations || []).find((o) => o.id === orgId);
+        const org = (organizations || []).find((o: { id: string; name?: string }) => o.id === orgId);
         return {
           orgId,
           orgName: org?.name || orgId,

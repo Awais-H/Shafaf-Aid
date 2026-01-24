@@ -49,6 +49,7 @@ export function getTopOrgsForRegion(
             orgId,
             orgName: org?.name || orgId,
             totalProjects: stat.totalProjects,
+            weightedPresence: stat.weightedPresence,
             aidTypes: Array.from(stat.aidTypes),
             regionsCovered: regionsForOrg.length,
         });
@@ -99,6 +100,7 @@ export function getTopOrgsGlobal(
             orgId,
             orgName: org?.name || orgId,
             totalProjects: stat.totalProjects,
+            weightedPresence: stat.weightedPresence,
             aidTypes: Array.from(stat.aidTypes),
             regionsCovered: stat.regions.size,
         });
@@ -158,6 +160,7 @@ export function getTopOrgsForCountry(
             orgId,
             orgName: org?.name || orgId,
             totalProjects: stat.totalProjects,
+            weightedPresence: stat.weightedPresence,
             aidTypes: Array.from(stat.aidTypes),
             regionsCovered: stat.regions.size,
         });

@@ -10,7 +10,7 @@ import { computeWorldScores, computeCountryScores } from '@/core/graph/metrics';
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  
+
   // Parse viewport bounds
   const minLng = parseFloat(searchParams.get('minLng') || '-180');
   const maxLng = parseFloat(searchParams.get('maxLng') || '180');
@@ -51,8 +51,8 @@ export async function GET(request: NextRequest) {
       }
 
       // Get related data
-      const regionIds = (regions || []).map((r) => r.id);
-      const countryIds = [...new Set((regions || []).map((r) => r.country_id))];
+      const regionIds = (regions || []).map((r: { id: string }) => r.id);
+      const countryIds = [...new Set((regions || []).map((r: { country_id: string }) => r.country_id))];
 
       const [
         { data: countries, error: countriesError },
@@ -65,7 +65,7 @@ export async function GET(request: NextRequest) {
       if (countriesError) throw countriesError;
       if (edgesError) throw edgesError;
 
-      const orgIds = [...new Set((aidEdges || []).map((e) => e.org_id))];
+      const orgIds = [...new Set((aidEdges || []).map((e: { org_id: string }) => e.org_id))];
       const { data: organizations, error: orgsError } = await client
         .from('orgs')
         .select('*')

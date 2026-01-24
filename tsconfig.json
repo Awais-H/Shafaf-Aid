@@ -27,7 +27,8 @@
       ]
     },
     "baseUrl": ".",
-    "target": "ES2017"
+    "target": "ES2017",
+    "downlevelIteration": true
   },
   "include": [
     "next-env.d.ts",

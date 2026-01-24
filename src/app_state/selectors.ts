@@ -17,23 +17,27 @@ import { COVERAGE_COLORS } from '@/core/graph/constants';
 export function useWorldMapPoints(): MapPoint[] {
   const worldScores = useViewStore((state) => state.worldScores);
   const appData = useViewStore((state) => state.appData);
-  
+
   if (!appData) return [];
-  
-  return worldScores.map((score) => {
-    const country = appData.countries.find((c) => c.id === score.countryId);
-    if (!country) return null;
-    
-    return {
-      id: score.countryId,
-      coordinates: country.centroid,
-      value: score.rawCoverage,
-      normalizedValue: score.normalizedCoverage,
-      type: 'country' as const,
-      name: score.countryName,
-      data: score,
-    };
-  }).filter((p): p is MapPoint => p !== null);
+
+  const points = worldScores
+    .map((score) => {
+      const country = appData.countries.find((c) => c.id === score.countryId);
+      if (!country) return null;
+
+      return {
+        id: score.countryId,
+        coordinates: country.centroid,
+        value: score.rawCoverage,
+        normalizedValue: score.normalizedCoverage,
+        type: 'country' as const,
+        name: score.countryName,
+        data: score,
+      };
+    })
+    .filter((p): p is NonNullable<typeof p> => p !== null);
+
+  return points as MapPoint[];
 }
 
 /**
@@ -42,23 +46,27 @@ export function useWorldMapPoints(): MapPoint[] {
 export function useRegionMapPoints(): MapPoint[] {
   const countryScores = useViewStore((state) => state.countryScores);
   const appData = useViewStore((state) => state.appData);
-  
+
   if (!appData) return [];
-  
-  return countryScores.map((score) => {
-    const region = appData.regions.find((r) => r.id === score.regionId);
-    if (!region) return null;
-    
-    return {
-      id: score.regionId,
-      coordinates: region.centroid,
-      value: score.rawCoverage,
-      normalizedValue: score.normalizedCoverage,
-      type: 'region' as const,
-      name: score.regionName,
-      data: score,
-    };
-  }).filter((p): p is MapPoint => p !== null);
+
+  const points = countryScores
+    .map((score) => {
+      const region = appData.regions.find((r) => r.id === score.regionId);
+      if (!region) return null;
+
+      return {
+        id: score.regionId,
+        coordinates: region.centroid,
+        value: score.rawCoverage,
+        normalizedValue: score.normalizedCoverage,
+        type: 'region' as const,
+        name: score.regionName,
+        data: score,
+      };
+    })
+    .filter((p): p is NonNullable<typeof p> => p !== null);
+
+  return points as MapPoint[];
 }
 
 // ============================================================================
@@ -74,7 +82,7 @@ export function getCoverageColor(
 ): [number, number, number, number] {
   // Invert so that LOW coverage = HIGH gap = RED
   const gapValue = 1 - normalizedCoverage;
-  
+
   if (gapValue > 0.66) {
     // High gap - red
     return [...COVERAGE_COLORS.HIGH_GAP, 200];
@@ -95,13 +103,13 @@ export function getInterpolatedCoverageColor(
 ): [number, number, number, number] {
   // Invert so that LOW coverage = HIGH gap = RED
   const gapValue = 1 - normalizedCoverage;
-  
+
   const red = COVERAGE_COLORS.HIGH_GAP;
   const yellow = COVERAGE_COLORS.MEDIUM_GAP;
   const green = COVERAGE_COLORS.LOW_GAP;
-  
+
   let r: number, g: number, b: number;
-  
+
   if (gapValue > 0.5) {
     // Interpolate between yellow and red
     const t = (gapValue - 0.5) * 2;
@@ -115,10 +123,10 @@ export function getInterpolatedCoverageColor(
     g = green[1] + (yellow[1] - green[1]) * t;
     b = green[2] + (yellow[2] - green[2]) * t;
   }
-  
+
   // Alpha based on gap intensity
   const alpha = 140 + gapValue * 80;
-  
+
   return [Math.round(r), Math.round(g), Math.round(b), Math.round(alpha)];
 }
 
@@ -143,14 +151,14 @@ export interface WorldSummary {
 export function useWorldSummary(): WorldSummary | null {
   const appData = useViewStore((state) => state.appData);
   const worldScores = useViewStore((state) => state.worldScores);
-  
+
   if (!appData || worldScores.length === 0) return null;
-  
+
   const coverages = worldScores.map((s) => s.normalizedCoverage);
   const mean = coverages.reduce((a, b) => a + b, 0) / coverages.length;
   const variance =
     coverages.reduce((acc, c) => acc + Math.pow(c - mean, 2), 0) / coverages.length;
-  
+
   return {
     totalCountries: appData.countries.length,
     totalRegions: appData.regions.length,
@@ -180,17 +188,17 @@ export function useCountrySummary(): CountrySummary | null {
   const appData = useViewStore((state) => state.appData);
   const selectedCountryId = useViewStore((state) => state.selectedCountryId);
   const countryScores = useViewStore((state) => state.countryScores);
-  
+
   if (!appData || !selectedCountryId || countryScores.length === 0) return null;
-  
+
   const country = appData.countries.find((c) => c.id === selectedCountryId);
   if (!country) return null;
-  
+
   const coverages = countryScores.map((s) => s.normalizedCoverage);
   const mean = coverages.reduce((a, b) => a + b, 0) / coverages.length;
   const variance =
     coverages.reduce((acc, c) => acc + Math.pow(c - mean, 2), 0) / coverages.length;
-  
+
   // Get unique org count
   const regionIds = new Set(countryScores.map((s) => s.regionId));
   const orgIds = new Set(
@@ -198,7 +206,7 @@ export function useCountrySummary(): CountrySummary | null {
       .filter((e) => regionIds.has(e.regionId))
       .map((e) => e.orgId)
   );
-  
+
   return {
     countryName: country.name,
     totalRegions: countryScores.length,
@@ -224,7 +232,7 @@ export function useCountrySummary(): CountrySummary | null {
 export function useSelectedCountry() {
   const appData = useViewStore((state) => state.appData);
   const selectedCountryId = useViewStore((state) => state.selectedCountryId);
-  
+
   if (!appData || !selectedCountryId) return null;
   return appData.countries.find((c) => c.id === selectedCountryId) || null;
 }
@@ -235,9 +243,9 @@ export function useSelectedCountry() {
 export function useCuratedCountries() {
   const appData = useViewStore((state) => state.appData);
   const worldScores = useViewStore((state) => state.worldScores);
-  
+
   if (!appData) return [];
-  
+
   const curatedCountries = appData.countries.filter((c) => c.curated);
   return curatedCountries.map((country) => {
     const score = worldScores.find((s) => s.countryId === country.id);
