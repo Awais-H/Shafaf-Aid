@@ -1,14 +1,10 @@
 {
-  "updated": "2026-01-24T23:03:02.084Z",
-  "source": "HDX 3W Automated Ingestion (+ 4 fallback)",
-  "successful_countries": [
-    "somalia",
-    "south_sudan"
-  ],
+  "updated": "2026-01-24T23:41:43.427Z",
+  "source": "HDX HAPI / Unified Humanitarian Standards",
   "stats": {
     "countries": 6,
-    "regions": 114,
-    "orgs": 282,
-    "edges": 11071
+    "regions": 97,
+    "orgs": 879,
+    "edges": 21752
   }
 }
