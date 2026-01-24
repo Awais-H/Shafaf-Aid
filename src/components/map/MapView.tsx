@@ -1,0 +1,203 @@
+'use client';
+
+/**
+ * Main map view component for AidGap
+ * Integrates MapLibre GL JS with deck.gl for visualization
+ */
+
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import Map from 'react-map-gl/maplibre';
+import { DeckGL } from '@deck.gl/react';
+import type { MapViewState, MapPoint } from '@/core/data/schema';
+import { useViewStore } from '@/app_state/viewStore';
+import { createAllPointLayers, createRegionPolygonLayer } from './Layers';
+import { getMapStyleUrl } from './MapUtils';
+import { MAP_CONFIG } from '@/core/graph/constants';
+import type { RegionFeatureCollection } from './RegionPolygons';
+
+import 'maplibre-gl/dist/maplibre-gl.css';
+
+// ============================================================================
+// Types
+// ============================================================================
+
+interface MapViewProps {
+  points: MapPoint[];
+  regionGeoJson?: RegionFeatureCollection | null;
+  onPointClick?: (point: MapPoint) => void;
+  onRegionClick?: (regionId: string) => void;
+  selectedId?: string | null;
+  showGlow?: boolean;
+  showPulse?: boolean;
+  initialViewState?: MapViewState;
+}
+
+// ============================================================================
+// Component
+// ============================================================================
+
+export default function MapView({
+  points,
+  regionGeoJson,
+  onPointClick,
+  onRegionClick,
+  selectedId,
+  showGlow = true,
+  showPulse = true,
+  initialViewState,
+}: MapViewProps) {
+  const setMapViewState = useViewStore((state) => state.setMapViewState);
+  const storeViewState = useViewStore((state) => state.mapViewState);
+  
+  // Animation state
+  const [animationTime, setAnimationTime] = useState(0);
+  const animationRef = useRef<number>();
+  
+  // View state
+  const [viewState, setViewState] = useState<MapViewState>(
+    initialViewState || {
+      longitude: MAP_CONFIG.INITIAL_VIEW.longitude,
+      latitude: MAP_CONFIG.INITIAL_VIEW.latitude,
+      zoom: MAP_CONFIG.INITIAL_VIEW.zoom,
+      pitch: MAP_CONFIG.INITIAL_VIEW.pitch,
+      bearing: MAP_CONFIG.INITIAL_VIEW.bearing,
+    }
+  );
+
+  // Hover state for tooltips
+  const [hoverInfo, setHoverInfo] = useState<{
+    x: number;
+    y: number;
+    object: MapPoint | null;
+  } | null>(null);
+
+  // Animation loop for pulse/glow effects
+  useEffect(() => {
+    const animate = () => {
+      setAnimationTime((prev) => (prev + MAP_CONFIG.PULSE_SPEED) % 1);
+      animationRef.current = requestAnimationFrame(animate);
+    };
+    
+    animationRef.current = requestAnimationFrame(animate);
+    
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
+
+  // Update view state when initialViewState changes
+  useEffect(() => {
+    if (initialViewState) {
+      setViewState(initialViewState);
+    }
+  }, [initialViewState]);
+
+  // Handle view state changes
+  const handleViewStateChange = useCallback(
+    ({ viewState: newViewState }: { viewState: MapViewState }) => {
+      setViewState(newViewState);
+      setMapViewState(newViewState);
+    },
+    [setMapViewState]
+  );
+
+  // Handle point click
+  const handlePointClick = useCallback(
+    (info: any) => {
+      if (info.object && onPointClick) {
+        onPointClick(info.object as MapPoint);
+      }
+    },
+    [onPointClick]
+  );
+
+  // Handle point hover
+  const handlePointHover = useCallback((info: any) => {
+    if (info.object) {
+      setHoverInfo({
+        x: info.x,
+        y: info.y,
+        object: info.object as MapPoint,
+      });
+    } else {
+      setHoverInfo(null);
+    }
+  }, []);
+
+  // Handle region polygon click
+  const handleRegionClick = useCallback(
+    (info: any) => {
+      const regionId = info.object?.properties?.id;
+      if (regionId && onRegionClick) {
+        onRegionClick(regionId);
+      }
+    },
+    [onRegionClick]
+  );
+
+  // Build layers
+  const layers = [];
+
+  // Add region polygons if available (for country view)
+  if (regionGeoJson) {
+    layers.push(
+      createRegionPolygonLayer({
+        data: regionGeoJson,
+        onFeatureClick: handleRegionClick,
+        onFeatureHover: handlePointHover,
+        selectedId,
+      })
+    );
+  }
+
+  // Add point layers
+  layers.push(
+    ...createAllPointLayers({
+      points,
+      time: animationTime,
+      onPointClick: handlePointClick,
+      onPointHover: handlePointHover,
+      selectedId,
+      showGlow,
+      showPulse,
+    })
+  );
+
+  return (
+    <div className="relative w-full h-full">
+      <DeckGL
+        viewState={viewState}
+        onViewStateChange={handleViewStateChange}
+        controller={true}
+        layers={layers}
+        getCursor={({ isHovering }) => (isHovering ? 'pointer' : 'grab')}
+      >
+        <Map
+          mapStyle={getMapStyleUrl()}
+          attributionControl={false}
+        />
+      </DeckGL>
+
+      {/* Hover Tooltip */}
+      {hoverInfo && hoverInfo.object && (
+        <div
+          className="absolute pointer-events-none z-10 bg-gray-900/95 text-white px-3 py-2 rounded-lg shadow-lg text-sm"
+          style={{
+            left: hoverInfo.x + 10,
+            top: hoverInfo.y + 10,
+          }}
+        >
+          <div className="font-semibold">{hoverInfo.object.name}</div>
+          <div className="text-gray-300 text-xs mt-1">
+            Coverage: {(hoverInfo.object.normalizedValue * 100).toFixed(1)}%
+          </div>
+          <div className="text-gray-400 text-xs">
+            Click for details
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
