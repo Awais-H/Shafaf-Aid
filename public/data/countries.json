@@ -1,0 +1,62 @@
+[
+  {
+    "id": "somalia",
+    "name": "Somalia",
+    "iso2": "SO",
+    "curated": true,
+    "centroid": [
+      45,
+      6
+    ]
+  },
+  {
+    "id": "bangladesh",
+    "name": "Bangladesh",
+    "iso2": "BG",
+    "curated": true,
+    "centroid": [
+      90,
+      24
+    ]
+  },
+  {
+    "id": "yemen",
+    "name": "Yemen",
+    "iso2": "YE",
+    "curated": true,
+    "centroid": [
+      48,
+      15.5
+    ]
+  },
+  {
+    "id": "south_sudan",
+    "name": "South Sudan",
+    "iso2": "SS",
+    "curated": true,
+    "centroid": [
+      30,
+      7
+    ]
+  },
+  {
+    "id": "afghanistan",
+    "name": "Afghanistan",
+    "iso2": "AF",
+    "curated": true,
+    "centroid": [
+      66,
+      33
+    ]
+  },
+  {
+    "id": "palestine",
+    "name": "Palestine",
+    "iso2": "PS",
+    "curated": true,
+    "centroid": [
+      35.2,
+      31.9
+    ]
+  }
+]

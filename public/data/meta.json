@@ -1,0 +1,14 @@
+{
+  "updated": "2026-01-24T23:03:02.084Z",
+  "source": "HDX 3W Automated Ingestion (+ 4 fallback)",
+  "successful_countries": [
+    "somalia",
+    "south_sudan"
+  ],
+  "stats": {
+    "countries": 6,
+    "regions": 114,
+    "orgs": 282,
+    "edges": 11071
+  }
+}
