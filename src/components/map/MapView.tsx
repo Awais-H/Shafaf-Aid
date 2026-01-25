@@ -1,234 +1,145 @@
 'use client';
 
 /**
- * Main map view component for AidGap
- * Integrates MapLibre GL JS with deck.gl for visualization
+ * Map view: DeckGL (reverse-controlled) + MapLibre base map.
+ * Supports donor (world/country) and mosques modes, point + optional GeoJSON layers.
  */
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Map from 'react-map-gl/maplibre';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { DeckGL } from '@deck.gl/react';
-import type { MapViewState, MapPoint } from '@/core/data/schema';
-import { useViewStore } from '@/app_state/viewStore';
-import { createAllPointLayers, createRegionPolygonLayer } from './Layers';
-import { getMapStyleUrl } from './MapUtils';
-import { MAP_CONFIG } from '@/core/graph/constants';
-import type { RegionFeatureCollection } from './RegionPolygons';
-
+import { Map } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import type { MapPoint } from '@/core/data/schema';
+import { createAllPointLayers, createRegionPolygonLayer } from './Layers';
+import { createMosqueHotspotLayers } from './LayersMosque';
+import { getRegionFillColor } from './RegionPolygons';
+import type { RegionFeatureCollection } from './RegionPolygons';
+import { getMapStyleUrl, getWorldViewState } from './MapUtils';
 
-// ============================================================================
-// Types
-// ============================================================================
-
-interface MapViewProps {
+export interface MapViewProps {
   points: MapPoint[];
-  regionGeoJson?: RegionFeatureCollection | null;
+  initialViewState?: { longitude: number; latitude: number; zoom: number; pitch?: number; bearing?: number } | null;
   onPointClick?: (point: MapPoint) => void;
   onRegionClick?: (regionId: string) => void;
+  /** For country view: pass regionGeoJson from createSyntheticGeoJson. */
+  regionGeoJson?: GeoJSON.FeatureCollection | RegionFeatureCollection | null;
   selectedId?: string | null;
   showGlow?: boolean;
   showPulse?: boolean;
-  initialViewState?: MapViewState;
+  mode?: 'donor' | 'mosques';
+  resizeKey?: string;
 }
-
-// ============================================================================
-// Component
-// ============================================================================
 
 export default function MapView({
   points,
-  regionGeoJson,
+  initialViewState,
   onPointClick,
   onRegionClick,
-  selectedId,
+  regionGeoJson,
+  selectedId = null,
   showGlow = true,
   showPulse = true,
-  initialViewState,
+  mode = 'donor',
+  resizeKey,
 }: MapViewProps) {
-  const setMapViewState = useViewStore((state) => state.setMapViewState);
-  const storeViewState = useViewStore((state) => state.mapViewState);
-  
-  // Animation state
-  const [animationTime, setAnimationTime] = useState(0);
-  const animationRef = useRef<number>();
-  
-  // View state
-  const [viewState, setViewState] = useState<MapViewState>(
-    initialViewState || {
-      longitude: MAP_CONFIG.INITIAL_VIEW.longitude,
-      latitude: MAP_CONFIG.INITIAL_VIEW.latitude,
-      zoom: MAP_CONFIG.INITIAL_VIEW.zoom,
-      pitch: MAP_CONFIG.INITIAL_VIEW.pitch,
-      bearing: MAP_CONFIG.INITIAL_VIEW.bearing,
-    }
-  );
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [time, setTime] = useState(0);
 
-  // Hover state for tooltips
-  const [hoverInfo, setHoverInfo] = useState<{
-    x: number;
-    y: number;
-    object: MapPoint | null;
-  } | null>(null);
-  
-  // Delayed hover ID for smooth transitions
-  const [delayedHoverId, setDelayedHoverId] = useState<string | null>(null);
-  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Animation loop for pulse/glow effects
   useEffect(() => {
-    const animate = () => {
-      setAnimationTime((prev) => (prev + MAP_CONFIG.PULSE_SPEED) % 1);
-      animationRef.current = requestAnimationFrame(animate);
+    let raf: number;
+    const tick = () => {
+      setTime((t) => t + 0.016);
+      raf = requestAnimationFrame(tick);
     };
-    
-    animationRef.current = requestAnimationFrame(animate);
-    
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, []);
 
-  // Update view state when initialViewState changes
-  useEffect(() => {
-    if (initialViewState) {
-      setViewState(initialViewState);
-    }
-  }, [initialViewState]);
-
-  // Handle view state changes
-  const handleViewStateChange = useCallback(
-    ({ viewState: newViewState }: { viewState: MapViewState }) => {
-      setViewState(newViewState);
-      setMapViewState(newViewState);
-    },
-    [setMapViewState]
-  );
-
-  // Handle point click
   const handlePointClick = useCallback(
-    (info: any) => {
-      if (info.object && onPointClick) {
-        onPointClick(info.object as MapPoint);
-      }
+    (info: { object?: MapPoint }) => {
+      if (info.object && onPointClick) onPointClick(info.object);
     },
     [onPointClick]
   );
 
-  // Handle point hover with slight delay for smooth effect
-  const handlePointHover = useCallback((info: any) => {
-    // Clear any pending hover timeout
-    if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current);
-    }
-    
-    if (info.object) {
-      const point = info.object as MapPoint;
-      setHoverInfo({
-        x: info.x,
-        y: info.y,
-        object: point,
-      });
-      // Small delay before applying hover effect
-      hoverTimeoutRef.current = setTimeout(() => {
-        setDelayedHoverId(point.id);
-      }, 50);
-    } else {
-      setHoverInfo(null);
-      // Slightly longer delay when leaving for smoother exit
-      hoverTimeoutRef.current = setTimeout(() => {
-        setDelayedHoverId(null);
-      }, 80);
-    }
-  }, []);
-  
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (hoverTimeoutRef.current) {
-        clearTimeout(hoverTimeoutRef.current);
-      }
-    };
+  const handlePointHover = useCallback((info: { object?: MapPoint }) => {
+    setHoveredId(info.object?.id ?? null);
   }, []);
 
-  // Handle region polygon click
   const handleRegionClick = useCallback(
-    (info: any) => {
-      const regionId = info.object?.properties?.id;
-      if (regionId && onRegionClick) {
-        onRegionClick(regionId);
-      }
+    (info: { object?: GeoJSON.Feature }) => {
+      const id = info.object?.properties && (info.object.properties as { id?: string }).id;
+      if (id && onRegionClick) onRegionClick(id);
     },
     [onRegionClick]
   );
 
-  // Use delayed hover ID for smooth highlight effect
-  const hoveredId = delayedHoverId;
+  const viewState = initialViewState ?? getWorldViewState();
 
-  // Build layers
-  const layers = [];
-
-  // Add region polygons if available (for country view)
-  if (regionGeoJson) {
-    layers.push(
-      createRegionPolygonLayer({
-        data: regionGeoJson,
-        onFeatureClick: handleRegionClick,
-        onFeatureHover: handlePointHover,
-        selectedId,
-      })
-    );
-  }
-
-  // Add point layers
-  layers.push(
-    ...createAllPointLayers({
-      points,
-      time: animationTime,
-      onPointClick: handlePointClick,
-      onPointHover: handlePointHover,
-      selectedId,
-      hoveredId,
-      showGlow,
-      showPulse,
-    })
-  );
+  const layers = useMemo(() => {
+    const all: any[] = [];
+    if (mode === 'mosques') {
+      all.push(
+        ...createMosqueHotspotLayers({
+          points,
+          time,
+          onPointClick: handlePointClick,
+          onPointHover: handlePointHover,
+          selectedId,
+          hoveredId,
+          showGlow,
+          showPulse,
+        })
+      );
+    } else {
+      all.push(
+        ...createAllPointLayers({
+          points,
+          time,
+          onPointClick: handlePointClick,
+          onPointHover: handlePointHover,
+          selectedId,
+          hoveredId,
+          showGlow,
+          showPulse,
+        })
+      );
+    }
+    if (regionGeoJson && mode === 'donor') {
+      all.push(
+        createRegionPolygonLayer({
+          data: regionGeoJson as GeoJSON.FeatureCollection,
+          onFeatureClick: handleRegionClick,
+          selectedId,
+          getColor: (f) => getRegionFillColor(f),
+        })
+      );
+    }
+    return all;
+  }, [
+    mode,
+    points,
+    time,
+    handlePointClick,
+    handlePointHover,
+    handleRegionClick,
+    selectedId,
+    hoveredId,
+    showGlow,
+    showPulse,
+    regionGeoJson,
+  ]);
 
   return (
     <div className="relative w-full h-full">
       <DeckGL
-        viewState={viewState}
-        onViewStateChange={handleViewStateChange}
-        controller={true}
+        initialViewState={viewState}
+        controller
         layers={layers}
         getCursor={({ isHovering }) => (isHovering ? 'pointer' : 'grab')}
       >
-        <Map
-          mapStyle={getMapStyleUrl()}
-          attributionControl={false}
-        />
+        <Map mapStyle={getMapStyleUrl()} />
       </DeckGL>
-
-      {/* Hover Tooltip */}
-      {hoverInfo && hoverInfo.object && (
-        <div
-          className="absolute pointer-events-none z-10 bg-gray-900/95 text-white px-3 py-2 rounded-lg shadow-lg text-sm"
-          style={{
-            left: hoverInfo.x + 10,
-            top: hoverInfo.y + 10,
-          }}
-        >
-          <div className="font-semibold">{hoverInfo.object.name}</div>
-          <div className="text-gray-300 text-xs mt-1">
-            Coverage: {(hoverInfo.object.normalizedValue * 100).toFixed(1)}%
-          </div>
-          <div className="text-gray-400 text-xs">
-            Click for details
-          </div>
-        </div>
-      )}
     </div>
   );
 }

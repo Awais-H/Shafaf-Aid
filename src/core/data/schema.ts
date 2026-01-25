@@ -1,11 +1,14 @@
 /**
  * Core data types for AidGap
- * These types define the structure of all data flowing through the application
+ * Countries, regions, organizations, aid edges, map state, scores, and mosque types
  */
 
 // ============================================================================
-// Base Entity Types
+// Raw Data
 // ============================================================================
+
+export type AidType = 'food' | 'medical' | 'infrastructure';
+export type NeedLevel = 'low' | 'medium' | 'high';
 
 export interface Country {
   id: string;
@@ -19,7 +22,7 @@ export interface Region {
   id: string;
   countryId: string;
   name: string;
-  centroid: [number, number]; // [lng, lat]
+  centroid: [number, number];
   population: number;
   needLevel: NeedLevel;
 }
@@ -27,11 +30,8 @@ export interface Region {
 export interface Organization {
   id: string;
   name: string;
-  type?: string;
+  type: string;
 }
-
-export type AidType = 'food' | 'medical' | 'infrastructure';
-export type NeedLevel = 'low' | 'medium' | 'high';
 
 export interface AidEdge {
   id: string;
@@ -43,14 +43,40 @@ export interface AidEdge {
   source?: string;
 }
 
+export interface AppData {
+  countries: Country[];
+  regions: Region[];
+  organizations: Organization[];
+  aidEdges: AidEdge[];
+}
+
 // ============================================================================
-// Computed/Derived Types
+// Map & Viewport
+// ============================================================================
+
+export interface ViewportBounds {
+  minLng: number;
+  maxLng: number;
+  minLat: number;
+  maxLat: number;
+}
+
+export interface MapViewState {
+  longitude: number;
+  latitude: number;
+  zoom: number;
+  pitch: number;
+  bearing: number;
+}
+
+// ============================================================================
+// Scores & Detail
 // ============================================================================
 
 export interface WorldScore {
   countryId: string;
   countryName: string;
-  normalizedCoverage: number; // 0-1, relative to current view
+  normalizedCoverage: number;
   rawCoverage: number;
   topOrgs: string[];
   regionCount: number;
@@ -60,42 +86,12 @@ export interface WorldScore {
 export interface RegionScore {
   regionId: string;
   regionName: string;
-  normalizedCoverage: number; // 0-1, relative to current view
+  normalizedCoverage: number;
   rawCoverage: number;
   variance: number;
-  overlap: number; // degree centrality
+  overlap: number;
   population: number;
   needLevel: NeedLevel;
-}
-
-export interface RegionDetail {
-  regionId: string;
-  regionName: string;
-  countryId: string;
-  countryName: string;
-  population: number;
-  needFactor: number;
-  needLevel: NeedLevel;
-  coverageIndex: number;
-  normalizedCoverage: number;
-  organizations: OrganizationPresence[];
-  aidTypes: AidTypeBreakdown[];
-  overlapIntensity: number;
-}
-
-export interface OrganizationPresence {
-  orgId: string;
-  orgName: string;
-  aidTypes: AidType[];
-  projectCount: number;
-}
-
-export interface OrgStat {
-  orgId: string;
-  orgName: string;
-  totalProjects: number;
-  aidTypes: AidType[];
-  regionsCovered: number;
 }
 
 export interface AidTypeBreakdown {
@@ -109,11 +105,34 @@ export interface OverlapStat {
   regionId: string;
   degreeCentrality: number;
   orgCount: number;
-  sharedOrgs: string[]; // orgs that also operate in neighboring regions
+  sharedOrgs: string[];
+}
+
+export interface RegionDetail {
+  regionId: string;
+  regionName: string;
+  countryId: string;
+  countryName: string;
+  population: number;
+  needFactor: number;
+  needLevel: NeedLevel;
+  coverageIndex: number;
+  normalizedCoverage: number;
+  organizations: { orgId: string; orgName: string; aidTypes: AidType[]; projectCount: number }[];
+  aidTypes: AidTypeBreakdown[];
+  overlapIntensity: number;
+}
+
+export interface OrgStat {
+  orgId: string;
+  orgName: string;
+  totalProjects: number;
+  aidTypes: AidType[];
+  regionsCovered: number;
 }
 
 // ============================================================================
-// Graph Types
+// Graph (buildGraph)
 // ============================================================================
 
 export interface GraphNode {
@@ -136,55 +155,50 @@ export interface Graph {
 }
 
 // ============================================================================
-// Data Loading Types
+// Map Points (donor + mosque)
 // ============================================================================
 
-export interface AppData {
-  countries: Country[];
-  regions: Region[];
-  organizations: Organization[];
-  aidEdges: AidEdge[];
+export interface HotspotScore {
+  tier: 'country' | 'city' | 'mosque';
+  mosqueName?: string;
+  mosqueId?: string;
+  mosqueNeedScore: number;
+  normalizedNeed: number;
 }
 
-export interface ViewportBounds {
-  minLng: number;
-  maxLng: number;
-  minLat: number;
-  maxLat: number;
-}
-
-export type DataMode = 'static' | 'supabase';
-
-// ============================================================================
-// Map Types
-// ============================================================================
+export type MapPointData = HotspotScore | Record<string, unknown>;
 
 export interface MapPoint {
   id: string;
-  coordinates: [number, number];
+  coordinates: [number, number]; // [lng, lat]
   value: number;
   normalizedValue: number;
-  type: 'country' | 'region';
+  type: 'country' | 'region' | 'mosque';
+  name?: string;
+  data?: MapPointData;
+}
+
+// ============================================================================
+// Mosque (mosques feature)
+// ============================================================================
+
+export type MosqueUrgency = 'low' | 'med' | 'high';
+
+export interface Mosque {
+  id: string;
   name: string;
-  data: WorldScore | RegionScore;
+  country: string;
+  city: string;
+  lat: number;
+  lng: number;
+  website?: string;
 }
 
-export interface MapViewState {
-  longitude: number;
-  latitude: number;
-  zoom: number;
-  pitch: number;
-  bearing: number;
-}
-
-// ============================================================================
-// UI State Types
-// ============================================================================
-
-export interface ViewState {
-  currentView: 'world' | 'country' | 'region';
-  selectedCountryId: string | null;
-  selectedRegionId: string | null;
-  sidePanelOpen: boolean;
-  explainDrawerOpen: boolean;
+export interface MosqueWithFunding extends Mosque {
+  goalAmount: number;
+  raisedAmount: number;
+  urgency: MosqueUrgency;
+  emergencyAppeal?: string;
+  necessityScore: number;
+  normalizedNecessity: number;
 }

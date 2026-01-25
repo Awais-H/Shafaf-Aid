@@ -1,0 +1,22 @@
+[
+  { "id": "m1", "name": "Badshahi Mosque", "country": "Pakistan", "city": "Lahore", "lat": 31.5881, "lng": 74.3093, "website": "https://example.com/badshahi" },
+  { "id": "m2", "name": "Data Darbar", "country": "Pakistan", "city": "Lahore", "lat": 31.5724, "lng": 74.3090 },
+  { "id": "m3", "name": "Shah Jahan Mosque", "country": "Pakistan", "city": "Thatta", "lat": 24.7472, "lng": 67.9236 },
+  { "id": "m4", "name": "Masjid-e-Tooba", "country": "Pakistan", "city": "Karachi", "lat": 24.8434, "lng": 67.0652 },
+  { "id": "m5", "name": "Faisal Mosque", "country": "Pakistan", "city": "Islamabad", "lat": 33.7295, "lng": 73.0372, "website": "https://example.com/faisal" },
+  { "id": "m6", "name": "Lal Masjid", "country": "Pakistan", "city": "Islamabad", "lat": 33.7100, "lng": 73.0889 },
+  { "id": "m7", "name": "Al-Azhar Mosque", "country": "Egypt", "city": "Cairo", "lat": 30.0444, "lng": 31.2357 },
+  { "id": "m8", "name": "Ibn Tulun Mosque", "country": "Egypt", "city": "Cairo", "lat": 30.0296, "lng": 31.2494 },
+  { "id": "m9", "name": "Al-Qaed Ibrahim Mosque", "country": "Egypt", "city": "Alexandria", "lat": 31.2001, "lng": 29.9187 },
+  { "id": "m10", "name": "Sultan Ahmed Mosque", "country": "Turkey", "city": "Istanbul", "lat": 41.0054, "lng": 28.9768 },
+  { "id": "m11", "name": "Süleymaniye Mosque", "country": "Turkey", "city": "Istanbul", "lat": 41.0162, "lng": 28.9640 },
+  { "id": "m12", "name": "Baitul Mukarram", "country": "Bangladesh", "city": "Dhaka", "lat": 23.7272, "lng": 90.4093 },
+  { "id": "m13", "name": "Star Mosque", "country": "Bangladesh", "city": "Dhaka", "lat": 23.7166, "lng": 90.3958 },
+  { "id": "m14", "name": "Al-Haram Mosque", "country": "Saudi Arabia", "city": "Makkah", "lat": 21.4225, "lng": 39.8262 },
+  { "id": "m15", "name": "Al-Masjid an-Nabawi", "country": "Saudi Arabia", "city": "Madinah", "lat": 24.4672, "lng": 39.6111 },
+  { "id": "m16", "name": "Jamiatul Hidayah", "country": "Pakistan", "city": "Lahore", "lat": 31.5204, "lng": 74.3587 },
+  { "id": "m17", "name": "Grand Mosque of Sana'a", "country": "Yemen", "city": "Sana'a", "lat": 15.3520, "lng": 44.2065 },
+  { "id": "m18", "name": "Al-Nour Mosque", "country": "Yemen", "city": "Aden", "lat": 12.7855, "lng": 45.0187 },
+  { "id": "m19", "name": "Jamia Mosque Nairobi", "country": "Kenya", "city": "Nairobi", "lat": -1.2833, "lng": 36.8167 },
+  { "id": "m20", "name": "Mogadishu Central Mosque", "country": "Somalia", "city": "Mogadishu", "lat": 2.0469, "lng": 45.3182 }
+]

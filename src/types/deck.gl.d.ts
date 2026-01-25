@@ -6,6 +6,7 @@ declare module '@deck.gl/react' {
   import { ComponentType } from 'react';
   
   export interface DeckGLProps {
+    initialViewState?: any;
     viewState?: any;
     onViewStateChange?: (params: { viewState: any }) => void;
     controller?: boolean | object;

@@ -1,0 +1,12 @@
+[
+  { "id": "mock-tor-1", "name": "Islamic Foundation of Toronto", "lat": 43.7580, "lng": -79.2730 },
+  { "id": "mock-tor-2", "name": "Jami Mosque", "lat": 43.6510, "lng": -79.3870 },
+  { "id": "mock-tor-3", "name": "Madina Masjid", "lat": 43.7420, "lng": -79.5910 },
+  { "id": "mock-tor-4", "name": "Baitul Mukarram Mosque", "lat": 43.6890, "lng": -79.4420 },
+  { "id": "mock-tor-5", "name": "ICNA Canada Masjid", "lat": 43.7120, "lng": -79.5280 },
+  { "id": "mock-tor-6", "name": "Maple Leaf Mosque", "lat": 43.6680, "lng": -79.3820 },
+  { "id": "mock-tor-7", "name": "Scarborough Muslim Association", "lat": 43.7730, "lng": -79.2570 },
+  { "id": "mock-tor-8", "name": "North York Islamic Centre", "lat": 43.7690, "lng": -79.4120 },
+  { "id": "mock-tor-9", "name": "West End Islamic Centre", "lat": 43.6410, "lng": -79.4980 },
+  { "id": "mock-tor-10", "name": "Downtown Toronto Masjid", "lat": 43.6530, "lng": -79.3830 }
+]

@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "clean": "rimraf .next node_modules",
-    "generate-data": "npx ts-node --esm scripts/generateSyntheticData.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@deck.gl/core": "^9.0.16",
