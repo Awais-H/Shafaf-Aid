@@ -196,6 +196,9 @@ export default function MapboxGlobe({
 
     // Only show country names at low zoom (country level)
     if (viewState.zoom < 5) {
+      // Check if country-fills layer exists before querying
+      if (!map.getLayer('country-fills')) return;
+      
       // Query our invisible country fill layer
       const features = map.queryRenderedFeatures(event.point, {
         layers: ['country-fills']
