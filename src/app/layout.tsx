@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { AuthProvider } from '@/components/auth/AuthProvider';
+import { AIChatWindow } from '@/components/ai/AIChatWindow';
 
 export const metadata: Metadata = {
   title: 'Shafaf Aid - AidGap Explorer',
@@ -18,6 +19,8 @@ export default function RootLayout({
       <body className="bg-gray-900 text-white antialiased">
         <AuthProvider>
           {children}
+          {/* Global AI Chatbot - Available on all pages */}
+          <AIChatWindow />
         </AuthProvider>
       </body>
     </html>

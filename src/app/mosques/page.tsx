@@ -76,7 +76,7 @@ function MosqueCard({
 
             {mosque.emergencyAppeal && (
                 <div className="mt-2 px-2 py-1 bg-red-900/30 border border-red-800/50 rounded text-xs text-red-400">
-                    ⚠️ {mosque.emergencyAppeal}
+                    [!] {mosque.emergencyAppeal}
                 </div>
             )}
         </div>

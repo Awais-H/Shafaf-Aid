@@ -69,40 +69,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (!supabase) return;
 
         try {
-            // Check Admin Profile first
-            const { data: adminData } = await supabase
+            // Check Admin Profile - just check if row exists
+            const { data: adminData, error: adminError } = await supabase
                 .from('admin_profiles')
-                .select('role')
+                .select('user_id')
                 .eq('user_id', userId)
-                .single();
+                .maybeSingle();
 
-            if (adminData?.role) {
+            if (adminData && !adminError) {
                 setRole('admin');
                 setLoading(false);
                 return;
             }
 
-            // Check Mosque Profile
-            const { data: mosqueData } = await supabase
+            // Check Mosque Profile - just check if row exists
+            const { data: mosqueData, error: mosqueError } = await supabase
                 .from('mosque_profiles')
-                .select('role')
+                .select('user_id')
                 .eq('user_id', userId)
-                .single();
+                .maybeSingle();
 
-            if (mosqueData?.role) {
+            if (mosqueData && !mosqueError) {
                 setRole('mosque');
                 setLoading(false);
                 return;
             }
 
-            // Check Donor Profile
-            const { data: donorData } = await supabase
+            // Check Donor Profile - just check if row exists
+            const { data: donorData, error: donorError } = await supabase
                 .from('donor_profiles')
-                .select('role')
+                .select('user_id')
                 .eq('user_id', userId)
-                .single();
+                .maybeSingle();
 
-            if (donorData?.role) {
+            if (donorData && !donorError) {
                 setRole('donor');
                 setLoading(false);
                 return;

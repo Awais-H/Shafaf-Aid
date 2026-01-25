@@ -104,7 +104,7 @@ export default function DonorRequestDetail() {
                 {/* Hero Section */}
                 <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 mb-8 relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-6 opacity-10">
-                        <span className="text-9xl">🕌</span>
+                        <svg className="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.84L18 11v7H6v-7l6-5.16z" /></svg>
                     </div>
 
                     <div className="relative z-10">

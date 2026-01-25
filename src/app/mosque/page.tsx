@@ -65,7 +65,7 @@ export default function MosqueDashboard() {
 
                 {requests.length === 0 ? (
                     <div className="bg-gray-800 rounded-xl p-12 text-center border border-gray-700">
-                        <div className="text-4xl mb-4">📝</div>
+                        <div className="w-16 h-16 mx-auto mb-4 text-gray-500"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z" /></svg></div>
                         <h3 className="text-xl font-semibold mb-2">No Requests Yet</h3>
                         <p className="text-gray-400 mb-6">Create your first aid request to start receiving support.</p>
                         <Link
@@ -87,8 +87,8 @@ export default function MosqueDashboard() {
                                     <div>
                                         <div className="flex items-center gap-3 mb-2">
                                             <span className={`px-2 py-1 rounded text-xs font-semibold uppercase tracking-wider ${req.status === 'approved' ? 'bg-green-900/40 text-green-400' :
-                                                    req.status === 'rejected' ? 'bg-red-900/40 text-red-400' :
-                                                        'bg-yellow-900/40 text-yellow-400'
+                                                req.status === 'rejected' ? 'bg-red-900/40 text-red-400' :
+                                                    'bg-yellow-900/40 text-yellow-400'
                                                 }`}>
                                                 {req.status}
                                             </span>

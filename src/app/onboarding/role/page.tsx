@@ -41,17 +41,8 @@ export default function OnboardingPage() {
         setError(null);
 
         try {
-            // 1. Create main profile
-            const { error: profileError } = await supabase
-                .from('profiles')
-                .insert({
-                    user_id: user.id,
-                    role: selectedRole
-                });
-
-            if (profileError) throw profileError;
-
-            // 2. Create specific profile
+            // Create the appropriate profile based on role
+            // NOTE: The deprecated 'profiles' table is no longer used
             if (selectedRole === 'donor') {
                 const { error: donorError } = await supabase
                     .from('donor_profiles')
@@ -106,7 +97,7 @@ export default function OnboardingPage() {
                                 onClick={() => handleRoleSelect('donor')}
                                 className="group relative p-8 bg-gray-900 border-2 border-gray-700 rounded-xl hover:border-blue-500 transition-all text-left"
                             >
-                                <div className="text-4xl mb-4">💙</div>
+                                <div className="w-12 h-12 mb-4 text-blue-400"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg></div>
                                 <h3 className="text-xl font-semibold text-white mb-2">I want to Donate</h3>
                                 <p className="text-gray-400 text-sm">Find urgent needs and support verified mosques and organizations.</p>
                                 <div className="absolute inset-0 border-2 border-blue-500 rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none" />
@@ -116,7 +107,7 @@ export default function OnboardingPage() {
                                 onClick={() => handleRoleSelect('mosque')}
                                 className="group relative p-8 bg-gray-900 border-2 border-gray-700 rounded-xl hover:border-green-500 transition-all text-left"
                             >
-                                <div className="text-4xl mb-4">🕌</div>
+                                <div className="w-12 h-12 mb-4 text-green-400"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.84L18 11v7H6v-7l6-5.16z" /></svg></div>
                                 <h3 className="text-xl font-semibold text-white mb-2">I represent a Mosque</h3>
                                 <p className="text-gray-400 text-sm">Submit aid requests and track funding for your community needs.</p>
                                 <div className="absolute inset-0 border-2 border-green-500 rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none" />

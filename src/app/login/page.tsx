@@ -80,40 +80,40 @@ export default function LoginPage() {
                 if (data.user) {
                     const userId = data.user.id;
 
-                    // Check Admin Profile
+                    // Check Admin Profile - just check if row exists
                     const { data: adminProfile } = await supabase
                         .from('admin_profiles')
-                        .select('role')
+                        .select('user_id')
                         .eq('user_id', userId)
-                        .single();
+                        .maybeSingle();
 
-                    if (adminProfile?.role) {
+                    if (adminProfile) {
                         router.refresh();
                         router.push('/admin');
                         return;
                     }
 
-                    // Check Mosque Profile
+                    // Check Mosque Profile - just check if row exists
                     const { data: mosqueProfile } = await supabase
                         .from('mosque_profiles')
-                        .select('role')
+                        .select('user_id')
                         .eq('user_id', userId)
-                        .single();
+                        .maybeSingle();
 
-                    if (mosqueProfile?.role) {
+                    if (mosqueProfile) {
                         router.refresh();
                         router.push('/mosque');
                         return;
                     }
 
-                    // Check Donor Profile
+                    // Check Donor Profile - just check if row exists
                     const { data: donorProfile } = await supabase
                         .from('donor_profiles')
-                        .select('role')
+                        .select('user_id')
                         .eq('user_id', userId)
-                        .single();
+                        .maybeSingle();
 
-                    if (donorProfile?.role) {
+                    if (donorProfile) {
                         router.refresh();
                         router.push('/donor');
                         return;

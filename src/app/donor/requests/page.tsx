@@ -51,8 +51,8 @@ export default function BrowseRequestsPage() {
                             key={cat}
                             onClick={() => setFilter(cat)}
                             className={`px-4 py-2 rounded-full text-sm font-medium capitalize whitespace-nowrap transition-colors ${filter === cat
-                                    ? 'bg-blue-600 text-white'
-                                    : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+                                ? 'bg-blue-600 text-white'
+                                : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
                                 }`}
                         >
                             {cat}
@@ -84,9 +84,9 @@ export default function BrowseRequestsPage() {
                                             {req.purpose_detail}
                                         </h3>
                                         <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
-                                            <span>🕌 {req.mosque_profiles?.mosque_name || 'Verified Mosque'}</span>
+                                            <span>{req.mosque_profiles?.mosque_name || 'Verified Mosque'}</span>
                                             <span>•</span>
-                                            <span>📍 {req.mosque_profiles?.city || req.region_focus}, {req.mosque_profiles?.country}</span>
+                                            <span>{req.mosque_profiles?.city || req.region_focus}, {req.mosque_profiles?.country}</span>
                                         </div>
                                     </div>
                                     <div className="px-6 py-4 bg-gray-800/50 border-t border-gray-700 flex justify-between items-center">

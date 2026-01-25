@@ -49,7 +49,7 @@ export function AIChatWindow() {
                 <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-900/95">
                     {messages.length === 0 && (
                         <div className="text-center text-gray-500 text-sm mt-10">
-                            <p>👋 Hi! Ask me about global aid needs.</p>
+                            <p>Hi! Ask me about global aid needs.</p>
                             <p className="text-xs mt-2">"Which country needs the most help?"</p>
                         </div>
                     )}
@@ -97,7 +97,7 @@ export function AIChatWindow() {
                             disabled={loading || !input.trim()}
                             className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white p-2 rounded-lg transition-colors"
                         >
-                            ➤
+                            Send
                         </button>
                     </div>
                 </form>
@@ -112,7 +112,7 @@ export function AIChatWindow() {
                 {isOpen ? (
                     <span className="text-xl">✕</span>
                 ) : (
-                    <span className="text-2xl">🤖</span>
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
                 )}
             </button>
         </div>
