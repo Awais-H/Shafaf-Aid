@@ -1,46 +1,67 @@
 /**
  * Supabase client configuration for AidGap
- * Creates and exports the Supabase client for data fetching
+ * Creates and exports the Supabase client for data fetching and auth
  */
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-let supabaseClient: SupabaseClient | null = null;
+// Environment variables
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 /**
- * Gets or creates the Supabase client
- * Returns null if Supabase is not configured
+ * Creates a Supabase client for use in the browser
  */
-export function getSupabaseClient(): SupabaseClient | null {
-  if (supabaseClient) {
-    return supabaseClient;
-  }
-
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
+export function createBrowserClient(): SupabaseClient | null {
   if (!supabaseUrl || !supabaseAnonKey) {
     console.warn('Supabase not configured. Using static data mode.');
     return null;
   }
 
-  supabaseClient = createClient(supabaseUrl, supabaseAnonKey, {
+  return createClient(supabaseUrl, supabaseAnonKey, {
     auth: {
-      persistSession: false, // Don't persist session for demo
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true,
     },
   });
+}
 
-  return supabaseClient;
+/**
+ * Creates a Supabase client for use in server components/actions
+ * Note: Without @supabase/ssr, this won't automatically handle cookies.
+ * For a full production app, we'd use @supabase/ssr.
+ * For this implementation, we'll mostly rely on client-side auth
+ * and pass tokens if needed, or use a basic client for data fetching.
+ */
+export function createServerClient(): SupabaseClient | null {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return null;
+  }
+
+  return createClient(supabaseUrl, supabaseAnonKey, {
+    auth: {
+      persistSession: false,
+    },
+  });
+}
+
+/**
+ * Singleton client for legacy support (existing code)
+ */
+let legacyClient: SupabaseClient | null = null;
+
+export function getSupabaseClient(): SupabaseClient | null {
+  if (legacyClient) return legacyClient;
+  legacyClient = createBrowserClient();
+  return legacyClient;
 }
 
 /**
  * Checks if Supabase is configured and available
  */
 export function isSupabaseConfigured(): boolean {
-  return !!(
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  );
+  return !!(supabaseUrl && supabaseAnonKey);
 }
 
 /**

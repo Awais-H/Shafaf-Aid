@@ -8,6 +8,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { useViewStore } from '@/app_state/viewStore';
+import { useAuth } from '@/components/auth/AuthProvider';
+import { useRouter } from 'next/navigation';
+import { getDataMode } from '@/core/data/supabaseClient';
 
 export default function Header() {
   const currentView = useViewStore((state) => state.currentView);
@@ -15,12 +18,14 @@ export default function Header() {
   const appData = useViewStore((state) => state.appData);
   const toggleExplainDrawer = useViewStore((state) => state.toggleExplainDrawer);
 
+  const dataMode = getDataMode();
+
   const selectedCountry = appData?.countries.find(
     (c) => c.id === selectedCountryId
   );
 
   return (
-    <header 
+    <header
       className="fixed top-0 left-0 right-0 z-50 border-b"
       style={{
         background: 'rgba(5, 5, 5, 0.9)',
@@ -33,7 +38,7 @@ export default function Header() {
         {/* Title */}
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <h1 
+            <h1
               className="text-lg font-semibold"
               style={{ color: 'rgba(255, 255, 255, 0.85)' }}
             >
@@ -45,11 +50,10 @@ export default function Header() {
           <nav className="flex items-center gap-2 ml-4 text-sm">
             <Link
               href="/"
-              className={`px-3 py-1 rounded-lg transition-all duration-200 ${
-                currentView === 'world'
+              className={`px-3 py-1 rounded-lg transition-all duration-200 ${currentView === 'world'
                   ? 'bg-white/10 text-white'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
-              }`}
+                }`}
             >
               World
             </Link>
@@ -66,6 +70,16 @@ export default function Header() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-3">
+          {/* Data mode indicator */}
+          <div
+            className={`px-2 py-1 rounded text-xs font-medium ${dataMode === 'supabase'
+              ? 'bg-green-900/50 text-green-400 border border-green-700'
+              : 'bg-blue-900/50 text-blue-400 border border-blue-700'
+              }`}
+          >
+            {dataMode === 'supabase' ? 'Live Data' : 'Demo Mode'}
+          </div>
+
           {/* Explain button */}
           <button
             onClick={toggleExplainDrawer}
@@ -87,8 +101,46 @@ export default function Header() {
             </svg>
             Explain
           </button>
+          <AuthButtons />
         </div>
       </div>
     </header>
+  );
+}
+
+function AuthButtons() {
+  const { user, role, loading, signOut } = useAuth();
+  const router = useRouter();
+
+  if (loading) return null;
+
+  if (!user) {
+    return (
+      <Link
+        href="/login"
+        className="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors"
+      >
+        Login
+      </Link>
+    );
+  }
+
+  const dashboardLink = role === 'donor' ? '/donor' : role === 'mosque' ? '/mosque' : '/admin';
+
+  return (
+    <div className="flex items-center gap-3 border-l border-white/10 pl-3 ml-2">
+      <Link
+        href={dashboardLink}
+        className="text-sm text-gray-300 hover:text-white capitalize"
+      >
+        {role || 'Dashboard'}
+      </Link>
+      <button
+        onClick={signOut}
+        className="text-xs text-red-400 hover:text-red-300"
+      >
+        Sign Out
+      </button>
+    </div>
   );
 }
