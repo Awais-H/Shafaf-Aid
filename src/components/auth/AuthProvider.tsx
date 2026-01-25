@@ -69,20 +69,46 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (!supabase) return;
 
         try {
-            const { data, error } = await supabase
-                .from('profiles')
+            // Check Admin Profile
+            const { data: adminData } = await supabase
+                .from('admin_profiles')
                 .select('role')
                 .eq('user_id', userId)
                 .single();
 
-            if (!error && data) {
-                setRole(data.role as any);
-            } else {
-                console.warn('User has no profile role yet');
-                setRole(null);
+            if (adminData) {
+                setRole('admin');
+                return;
             }
+
+            // Check Mosque Profile
+            const { data: mosqueData } = await supabase
+                .from('mosque_profiles')
+                .select('role')
+                .eq('user_id', userId)
+                .single();
+
+            if (mosqueData) {
+                setRole('mosque');
+                return;
+            }
+
+            // Check Donor Profile
+            const { data: donorData } = await supabase
+                .from('donor_profiles')
+                .select('role')
+                .eq('user_id', userId)
+                .single();
+
+            if (donorData) {
+                setRole('donor');
+                return;
+            }
+
+            setRole(null);
         } catch (err) {
             console.error('Error fetching role:', err);
+            setRole(null);
         } finally {
             setLoading(false);
         }

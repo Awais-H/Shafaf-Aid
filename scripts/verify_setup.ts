@@ -35,7 +35,7 @@ async function verifySetup() {
     console.log(`   URL: ${supabaseUrl}`);
 
     // Check expected tables
-    const tables = ['aid_requests', 'donor_pledges', 'mosque_profiles', 'donor_profiles', 'countries', 'regions', 'orgs', 'aid_edges', 'profiles'];
+    const tables = ['aid_requests', 'donor_pledges', 'mosque_profiles', 'donor_profiles', 'admin_profiles', 'countries', 'regions', 'orgs', 'aid_edges'];
 
     console.log('\n🔍 Checking for expected tables...');
 

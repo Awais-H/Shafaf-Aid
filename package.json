@@ -15,6 +15,7 @@
     "@deck.gl/geo-layers": "^9.0.16",
     "@deck.gl/layers": "^9.0.16",
     "@deck.gl/react": "^9.0.16",
+    "@google/generative-ai": "^0.24.1",
     "@supabase/supabase-js": "^2.45.0",
     "@types/mapbox-gl": "^3.4.1",
     "mapbox-gl": "^3.18.1",
@@ -26,11 +27,13 @@
     "zustand": "^4.5.4"
   },
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/node": "^20.14.0",
     "@types/pg": "^8.16.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.23",
+    "dotenv": "^17.2.3",
     "eslint": "^8.57.0",
     "eslint-config-next": "15.1.4",
     "pg": "^8.17.2",
