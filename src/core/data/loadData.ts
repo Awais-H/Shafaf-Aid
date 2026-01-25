@@ -164,6 +164,7 @@ export async function loadSupabaseData(): Promise<AppData> {
         id: o.id,
         name: o.name,
         type: o.type,
+        website_url: o.website_url,
       })),
       aidEdges: (aidEdges || []).map(e => ({
         id: e.id,
@@ -255,6 +256,7 @@ export async function loadSupabaseDataByViewport(
         id: o.id,
         name: o.name,
         type: o.type,
+        website_url: o.website_url,
       })),
       aidEdges: (aidEdges || []).map(e => ({
         id: e.id,

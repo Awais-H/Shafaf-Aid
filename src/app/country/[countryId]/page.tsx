@@ -39,8 +39,7 @@ export default function CountryPage() {
   const setLoading = useViewStore((state) => state.setLoading);
   const setError = useViewStore((state) => state.setError);
   const setAppData = useViewStore((state) => state.setAppData);
-  const setCountryScores = useViewStore((state) => state.setCountryScores);
-  const selectCountry = useViewStore((state) => state.selectCountry);
+  const selectCountryWithScores = useViewStore((state) => state.selectCountryWithScores);
   const selectRegion = useViewStore((state) => state.selectRegion);
   const setRegionDetail = useViewStore((state) => state.setRegionDetail);
 
@@ -93,12 +92,9 @@ export default function CountryPage() {
           setAppData(data);
         }
 
-        // Set selected country
-        selectCountry(countryId);
-
-        // Compute country scores
+        // Compute country scores, then batch update store for smooth transition
         const scores = computeCountryScores(countryId, data);
-        setCountryScores(scores);
+        selectCountryWithScores(countryId, scores);
 
         setLoading(false);
       } catch (err) {
@@ -119,8 +115,7 @@ export default function CountryPage() {
     setLoading,
     setError,
     setAppData,
-    selectCountry,
-    setCountryScores,
+    selectCountryWithScores,
   ]);
 
   // Load region detail when a region is selected
@@ -236,34 +231,36 @@ export default function CountryPage() {
 
       {/* Main content */}
       <div className="flex-1 flex relative">
-        {/* Left Sidebar - Regions */}
-        <div className="w-56 bg-gray-900/95 border-r border-gray-700 flex flex-col z-10">
-          <div className="p-4">
-            <h3 className="text-white font-semibold text-sm mb-1">Regions</h3>
-            <p className="text-gray-500 text-xs">Select to view details</p>
+        {/* Left Sidebar - Regions (Command Center) */}
+        <div className="w-56 bg-slate-950/95 border-r border-slate-700/60 flex flex-col z-10 backdrop-blur-sm transition-opacity duration-300">
+          <div className="p-4 border-b border-slate-700/40">
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-1">Regions</h3>
+            <p className="text-slate-500 text-xs">Select to view details</p>
           </div>
-          <div className="flex-1 overflow-y-auto px-2 pb-4">
-            <ul className="space-y-1">
+          <div className="flex-1 overflow-y-auto px-2 py-3">
+            <ul className="space-y-0.5">
               {countryScores
                 .sort((a, b) => a.normalizedCoverage - b.normalizedCoverage)
                 .map((score) => (
                   <li key={score.regionId}>
                     <button
                       onClick={() => selectRegion(score.regionId)}
-                      className={`w-full text-left px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-between group ${
-                        selectedRegionId === score.regionId ? 'bg-gray-700' : ''
+                      className={`w-full text-left px-3 py-2 rounded-lg transition-all duration-200 flex items-center justify-between group ${
+                        selectedRegionId === score.regionId
+                          ? 'bg-cyan-500/15 border border-cyan-500/40 text-white'
+                          : 'hover:bg-slate-800/80 border border-transparent'
                       }`}
                     >
-                      <span className="text-gray-300 text-sm group-hover:text-white truncate flex-1 mr-2">
+                      <span className="text-slate-300 text-sm group-hover:text-white truncate flex-1 mr-2">
                         {score.regionName}
                       </span>
                       <span
-                        className={`text-xs px-1.5 py-0.5 rounded flex-shrink-0 ${
+                        className={`text-xs font-mono tabular-nums px-1.5 py-0.5 rounded flex-shrink-0 ${
                           score.normalizedCoverage < 0.33
                             ? 'bg-red-900/50 text-red-400'
                             : score.normalizedCoverage < 0.66
-                            ? 'bg-yellow-900/50 text-yellow-400'
-                            : 'bg-green-900/50 text-green-400'
+                            ? 'bg-amber-900/50 text-amber-400'
+                            : 'bg-emerald-900/50 text-emerald-400'
                         }`}
                       >
                         {(score.normalizedCoverage * 100).toFixed(0)}%

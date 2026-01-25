@@ -1,8 +1,9 @@
 'use client';
 
 /**
- * Side panel component for AidGap
- * Shows region details when a region is selected
+ * Side panel component for Shafaf Aid 2.0
+ * Shows region details with simulation capability
+ * Command Center aesthetic with glassmorphism
  */
 
 import React from 'react';
@@ -13,6 +14,7 @@ import { getInterpolatedCoverageColor } from '@/app_state/selectors';
 import MetricCard from '../ui/MetricCard';
 import BarBreakdown from '../ui/BarBreakdown';
 import TopList from '../ui/TopList';
+import SimulationSlider from '../ui/SimulationSlider';
 
 interface SidePanelProps {
   detail: RegionDetail | null;
@@ -33,10 +35,10 @@ export default function SidePanel({ detail, isLoading }: SidePanelProps) {
         onClick={closeSidePanel}
       />
 
-      {/* Panel */}
-      <div className="fixed right-0 top-16 bottom-0 w-96 bg-gray-900 border-l border-gray-700 z-50 overflow-hidden flex flex-col">
+      {/* Panel — Command Center aesthetic */}
+      <div className="fixed right-0 top-16 bottom-0 w-96 bg-slate-950/98 border-l border-slate-700/60 z-50 overflow-hidden flex flex-col backdrop-blur-sm shadow-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-700 bg-gray-800">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-slate-700/60 bg-slate-900/80">
           <div>
             <h2 className="text-lg font-semibold text-white">
               {detail?.regionName || 'Loading...'}
@@ -72,32 +74,33 @@ export default function SidePanel({ detail, isLoading }: SidePanelProps) {
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
             </div>
           ) : detail ? (
-            <div className="p-4 space-y-4">
+            <div className="p-4 space-y-4 transition-opacity duration-300">
               {/* Coverage Index Card */}
-              <div className="bg-gray-800 rounded-lg p-4">
+              <div className="bg-slate-900/80 rounded-lg p-4 border border-slate-700/40">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-sm font-medium text-gray-400">Coverage Index</h3>
+                  <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">Coverage Index</h3>
                   <CoverageIndicator value={detail.normalizedCoverage} />
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-white">
+                  <span className="text-3xl font-bold text-white tabular-nums">
                     {(detail.normalizedCoverage * 100).toFixed(1)}%
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-slate-500 font-mono">
                     (raw: {detail.coverageIndex.toFixed(3)})
                   </span>
                 </div>
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-slate-500 mt-1">
                   Relative to other regions in this country
                 </p>
               </div>
 
-              {/* Key Metrics */}
+              {/* Key Metrics (clickable → data sources) */}
               <div className="grid grid-cols-2 gap-3">
                 <MetricCard
                   label="Population"
                   value={formatNumber(detail.population)}
                   icon="users"
+                  sourceUrl="https://data.humdata.org"
                 />
                 <MetricCard
                   label="Need Level"
@@ -105,11 +108,27 @@ export default function SidePanel({ detail, isLoading }: SidePanelProps) {
                   subvalue={`Factor: ×${NEED_FACTORS[detail.needLevel]}`}
                   icon="alert"
                   highlight={detail.needLevel === 'high'}
+                  sourceUrl="https://www.ipcinfo.org"
+                />
+                <MetricCard
+                  label="IPC Phase"
+                  value={detail.ipcPhase ?? '—'}
+                  subvalue="Food security"
+                  icon="alert"
+                  sourceUrl="https://www.ipcinfo.org"
+                />
+                <MetricCard
+                  label="Conflict Events"
+                  value={formatNumber(detail.conflictEvents ?? 0)}
+                  subvalue="ACLED"
+                  icon="chart"
+                  sourceUrl="https://acleddata.com"
                 />
                 <MetricCard
                   label="Organizations"
                   value={detail.organizations.length.toString()}
                   icon="building"
+                  sourceUrl="https://fts.unocha.org"
                 />
                 <MetricCard
                   label="Overlap Intensity"
@@ -120,8 +139,8 @@ export default function SidePanel({ detail, isLoading }: SidePanelProps) {
               </div>
 
               {/* Aid Type Breakdown */}
-              <div className="bg-gray-800 rounded-lg p-4">
-                <h3 className="text-sm font-medium text-gray-400 mb-3">
+              <div className="bg-slate-900/80 rounded-lg p-4 border border-slate-700/40">
+                <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider mb-3">
                   Aid Type Distribution
                 </h3>
                 <BarBreakdown
@@ -135,8 +154,8 @@ export default function SidePanel({ detail, isLoading }: SidePanelProps) {
               </div>
 
               {/* Organizations List */}
-              <div className="bg-gray-800 rounded-lg p-4">
-                <h3 className="text-sm font-medium text-gray-400 mb-3">
+              <div className="bg-slate-900/80 rounded-lg p-4 border border-slate-700/40">
+                <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider mb-3">
                   Organizations Operating ({detail.organizations.length})
                 </h3>
                 <TopList
@@ -145,16 +164,20 @@ export default function SidePanel({ detail, isLoading }: SidePanelProps) {
                     name: org.orgName,
                     value: org.projectCount,
                     subtext: org.aidTypes.join(', '),
+                    linkUrl: org.website_url,
                   }))}
                   maxItems={10}
                 />
               </div>
 
+              {/* Simulation Slider - What-If Analysis */}
+              <SimulationSlider />
+
               {/* Synthetic Data Notice */}
-              <div className="bg-yellow-900/30 border border-yellow-700/50 rounded-lg p-3">
+              <div className="bg-amber-950/30 border border-amber-700/40 rounded-lg p-3">
                 <div className="flex items-start gap-2">
                   <svg
-                    className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0"
+                    className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -167,10 +190,10 @@ export default function SidePanel({ detail, isLoading }: SidePanelProps) {
                     />
                   </svg>
                   <div>
-                    <p className="text-xs text-yellow-400 font-medium">
+                    <p className="text-xs text-amber-400 font-medium">
                       Synthetic Demo Data
                     </p>
-                    <p className="text-xs text-yellow-400/70 mt-0.5">
+                    <p className="text-xs text-amber-400/70 mt-0.5">
                       This data is generated for demonstration purposes and does
                       not represent real aid coverage.
                     </p>
@@ -217,9 +240,9 @@ function getAidTypeColor(aidType: string): string {
     case 'medical':
       return '#ef4444'; // red
     case 'infrastructure':
-      return '#3b82f6'; // blue
+      return '#38bdf8'; // sky
     default:
-      return '#6b7280'; // gray
+      return '#64748b'; // slate
   }
 }
 

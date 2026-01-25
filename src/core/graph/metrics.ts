@@ -276,6 +276,7 @@ export function getRegionDetail(regionId: string, data: AppData): RegionDetail |
       orgName: org?.name || orgId,
       aidTypes: Array.from(info.aidTypes),
       projectCount: info.projectCount,
+      website_url: org?.website_url,
     };
   }).sort((a, b) => b.projectCount - a.projectCount);
   
@@ -285,6 +286,10 @@ export function getRegionDetail(regionId: string, data: AppData): RegionDetail |
   // Calculate overlap intensity
   const overlapStat = computeOverlapIntensity(regionId, data);
   
+  // Derive IPC Phase and conflict events if missing (synthetic fallback)
+  const ipcPhase = region.ipcPhase ?? (region.needLevel === 'high' ? 'Phase 4' : region.needLevel === 'medium' ? 'Phase 3' : 'Phase 2');
+  const conflictEvents = region.conflictEvents ?? (region.needLevel === 'high' ? 240 : region.needLevel === 'medium' ? 80 : 12);
+
   return {
     regionId,
     regionName: region.name,
@@ -298,6 +303,8 @@ export function getRegionDetail(regionId: string, data: AppData): RegionDetail |
     organizations,
     aidTypes,
     overlapIntensity: overlapStat.degreeCentrality,
+    ipcPhase,
+    conflictEvents,
   };
 }
 

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import GlobalSearch from '@/components/layout/GlobalSearch';
 
 export const metadata: Metadata = {
-  title: 'Shafaf Aid - AidGap Explorer',
-  description: 'Exploratory analytics platform for humanitarian aid coverage analysis using graph theory and geospatial visualization',
-  keywords: ['humanitarian aid', 'coverage analysis', 'geospatial', 'visualization'],
+  title: 'Shafaf Aid 2.0 - Humanitarian Command Center',
+  description: 'Advanced analytics platform for humanitarian aid coverage analysis with simulation and real-time visualization',
+  keywords: ['humanitarian aid', 'coverage analysis', 'geospatial', 'visualization', 'simulation'],
 };
 
 export default function RootLayout({
@@ -14,8 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-900 text-white antialiased">
+      <body className="bg-cmd-bg text-white antialiased font-inter">
         {children}
+        <GlobalSearch />
       </body>
     </html>
   );

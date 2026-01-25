@@ -12,6 +12,8 @@ interface MetricCardProps {
   subvalue?: string;
   icon?: 'users' | 'building' | 'alert' | 'layers' | 'chart';
   highlight?: boolean;
+  /** When set, the card is a clickable link to the data source (opens in new tab) */
+  sourceUrl?: string;
 }
 
 const icons = {
@@ -67,21 +69,22 @@ const icons = {
   ),
 };
 
+const sourceIcon = (
+  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+  </svg>
+);
+
 export default function MetricCard({
   label,
   value,
   subvalue,
   icon,
   highlight,
+  sourceUrl,
 }: MetricCardProps) {
-  return (
-    <div
-      className={`rounded-lg p-3 ${
-        highlight
-          ? 'bg-red-900/30 border border-red-700/50'
-          : 'bg-gray-800'
-      }`}
-    >
+  const base = (
+    <>
       <div className="flex items-center gap-2 mb-1">
         {icon && (
           <span className={highlight ? 'text-red-400' : 'text-gray-500'}>
@@ -89,6 +92,11 @@ export default function MetricCard({
           </span>
         )}
         <span className="text-xs text-gray-400">{label}</span>
+        {sourceUrl && (
+          <span className="ml-auto text-cyan-400/70 group-hover:text-cyan-300" title="View data source">
+            {sourceIcon}
+          </span>
+        )}
       </div>
       <div className={`text-xl font-bold ${highlight ? 'text-red-300' : 'text-white'}`}>
         {value}
@@ -96,6 +104,24 @@ export default function MetricCard({
       {subvalue && (
         <div className="text-xs text-gray-500 mt-0.5">{subvalue}</div>
       )}
-    </div>
+    </>
   );
+
+  const cardClass = `rounded-lg p-3 transition-all duration-200 ${
+    highlight ? 'bg-red-900/30 border border-red-700/50' : 'bg-slate-900/80 border border-slate-700/40'
+  } ${sourceUrl ? 'group cursor-pointer hover:bg-slate-800/80 hover:border-cyan-500/40' : ''}`;
+
+  if (sourceUrl) {
+    return (
+      <a
+        href={sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`block ${cardClass} no-underline text-inherit focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:ring-inset rounded-lg`}
+      >
+        {base}
+      </a>
+    );
+  }
+  return <div className={cardClass}>{base}</div>;
 }

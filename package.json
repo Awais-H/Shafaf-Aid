@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rimraf .next node_modules",
-    "generate-data": "npx ts-node --esm scripts/generateSyntheticData.ts"
+    "generate-data": "node scripts/generateData.mjs"
   },
   "dependencies": {
     "@deck.gl/core": "^9.0.16",

@@ -1,8 +1,8 @@
 'use client';
 
 /**
- * Header component for AidGap
- * Shows app title, navigation, and data mode indicator
+ * Header component for Shafaf Aid 2.0
+ * Shows app title, navigation, search, and data mode indicator
  */
 
 import React from 'react';
@@ -14,6 +14,7 @@ export default function Header() {
   const selectedCountryId = useViewStore((state) => state.selectedCountryId);
   const appData = useViewStore((state) => state.appData);
   const toggleExplainDrawer = useViewStore((state) => state.toggleExplainDrawer);
+  const toggleSearch = useViewStore((state) => state.toggleSearch);
 
   const selectedCountry = appData?.countries.find(
     (c) => c.id === selectedCountryId
@@ -66,10 +67,33 @@ export default function Header() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-3">
+          {/* Search button */}
+          <button
+            onClick={toggleSearch}
+            className="px-3 py-1.5 rounded-lg bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-all duration-200 text-sm flex items-center gap-2 font-inter"
+            style={{ border: '1px solid rgba(255, 255, 255, 0.06)' }}
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+            <span className="hidden sm:inline">Search</span>
+            <kbd className="hidden md:inline px-1.5 py-0.5 text-xs bg-white/10 rounded font-mono">⌘K</kbd>
+          </button>
+
           {/* Explain button */}
           <button
             onClick={toggleExplainDrawer}
-            className="px-3 py-1.5 rounded-lg bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-all duration-200 text-sm flex items-center gap-2"
+            className="px-3 py-1.5 rounded-lg bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-all duration-200 text-sm flex items-center gap-2 font-inter"
             style={{ border: '1px solid rgba(255, 255, 255, 0.06)' }}
           >
             <svg

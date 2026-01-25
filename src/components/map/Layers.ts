@@ -1,11 +1,11 @@
 /**
- * deck.gl layer factories for AidGap map visualization
- * Creates glow, pulse, and heat layers for coverage visualization
+ * deck.gl layer factories for Shafaf Aid 2.0 map visualization
+ * Creates dual-layer visualization: Choropleth + Proportional Circles
  */
 
 import { ScatterplotLayer, GeoJsonLayer } from '@deck.gl/layers';
 import type { MapPoint } from '@/core/data/schema';
-import { getInterpolatedCoverageColor } from '@/app_state/selectors';
+import { getInterpolatedCoverageColor, type EnhancedRegionPoint } from '@/app_state/selectors';
 import { MAP_CONFIG } from '@/core/graph/constants';
 
 // ============================================================================
@@ -19,6 +19,10 @@ export interface LayerProps {
   onPointHover?: (info: any) => void;
   selectedId?: string | null;
   hoveredId?: string | null;
+}
+
+export interface EnhancedLayerProps extends LayerProps {
+  points: EnhancedRegionPoint[];
 }
 
 export interface GeoJsonLayerProps {
@@ -283,6 +287,133 @@ export function createAllPointLayers(props: AllLayersProps) {
       hoveredId,
     })
   );
+
+  return layers;
+}
+
+// ============================================================================
+// Dual-Layer Visualization (Choropleth + Proportional Circles)
+// ============================================================================
+
+/**
+ * Creates proportional circles layer showing project volume
+ * Circle size = total project count, Color = coverage index
+ */
+export function createProportionalCirclesLayer(props: EnhancedLayerProps) {
+  const { points, onPointClick, onPointHover, selectedId, hoveredId } = props;
+  
+  // Calculate max project count for normalization
+  const maxProjects = Math.max(...points.map(p => p.totalProjectCount), 1);
+
+  return new ScatterplotLayer({
+    id: 'proportional-circles',
+    data: points,
+    pickable: true,
+    opacity: 0.75,
+    stroked: true,
+    filled: true,
+    radiusScale: 1,
+    radiusMinPixels: 6,
+    radiusMaxPixels: 45,
+    lineWidthMinPixels: 1,
+    getPosition: (d: EnhancedRegionPoint) => d.coordinates,
+    getRadius: (d: EnhancedRegionPoint) => {
+      // Radius based on project count (sqrt for area scaling)
+      const normalized = d.totalProjectCount / maxProjects;
+      const baseSize = 8000 + Math.sqrt(normalized) * 40000;
+      if (d.id === selectedId) return baseSize * 1.2;
+      if (d.id === hoveredId) return baseSize * 1.1;
+      return baseSize;
+    },
+    getFillColor: (d: EnhancedRegionPoint) => {
+      const color = getInterpolatedCoverageColor(d.normalizedValue);
+      if (d.id === hoveredId) {
+        return [color[0], color[1], color[2], 220] as [number, number, number, number];
+      }
+      return [color[0], color[1], color[2], 180] as [number, number, number, number];
+    },
+    getLineColor: (d: EnhancedRegionPoint) => {
+      if (d.id === selectedId) return [255, 255, 255, 255];
+      if (d.id === hoveredId) return [255, 255, 255, 200];
+      return [255, 255, 255, 80];
+    },
+    getLineWidth: (d: EnhancedRegionPoint) => {
+      if (d.id === selectedId) return 2;
+      if (d.id === hoveredId) return 1.5;
+      return 1;
+    },
+    onClick: onPointClick,
+    onHover: onPointHover,
+    updateTriggers: {
+      getRadius: [selectedId, hoveredId, maxProjects],
+      getFillColor: [hoveredId],
+      getLineColor: [selectedId, hoveredId],
+      getLineWidth: [selectedId, hoveredId],
+    },
+  });
+}
+
+export interface DualLayerProps {
+  points: EnhancedRegionPoint[];
+  regionGeoJson: GeoJSON.FeatureCollection | null;
+  time: number;
+  onPointClick?: (info: any) => void;
+  onPointHover?: (info: any) => void;
+  onRegionClick?: (info: any) => void;
+  onRegionHover?: (info: any) => void;
+  selectedId?: string | null;
+  hoveredId?: string | null;
+  showChoropleth?: boolean;
+  showCircles?: boolean;
+}
+
+/**
+ * Creates dual-layer visualization:
+ * - Layer A (Choropleth): Region polygons colored by coverage
+ * - Layer B (Proportional Circles): Circle size = project volume
+ */
+export function createDualLayers(props: DualLayerProps) {
+  const {
+    points,
+    regionGeoJson,
+    time,
+    onPointClick,
+    onPointHover,
+    onRegionClick,
+    onRegionHover,
+    selectedId,
+    hoveredId,
+    showChoropleth = true,
+    showCircles = true,
+  } = props;
+
+  const layers = [];
+
+  // Layer A: Choropleth (bottom)
+  if (showChoropleth && regionGeoJson) {
+    layers.push(
+      createRegionPolygonLayer({
+        data: regionGeoJson,
+        onFeatureClick: onRegionClick,
+        onFeatureHover: onRegionHover,
+        selectedId,
+      })
+    );
+  }
+
+  // Layer B: Proportional Circles (top)
+  if (showCircles && points.length > 0) {
+    layers.push(
+      createProportionalCirclesLayer({
+        points,
+        time,
+        onPointClick,
+        onPointHover,
+        selectedId,
+        hoveredId,
+      })
+    );
+  }
 
   return layers;
 }

@@ -1,11 +1,207 @@
 /**
- * Derived selectors for AidGap UI
+ * Derived selectors for Shafaf Aid 2.0 UI
  * Computes derived values from the store for efficient re-rendering
+ * Uses shallow comparison to prevent unnecessary re-renders
  */
 
+import { useMemo } from 'react';
 import { useViewStore } from './viewStore';
-import type { MapPoint, WorldScore, RegionScore } from '@/core/data/schema';
+import type { MapPoint, WorldScore, RegionScore, ViewportBounds, Region, Organization } from '@/core/data/schema';
 import { COVERAGE_COLORS } from '@/core/graph/constants';
+import { simulateAidAddition, calculateCoverageIndex } from '@/core/coverage';
+
+// ============================================================================
+// Stable Selectors (use Zustand shallow for performance)
+// ============================================================================
+
+/** Selector for map-only data to prevent sidebar updates from triggering map re-renders */
+export const useMapData = () => useViewStore((state) => ({
+  mapViewState: state.mapViewState,
+  isTransitioning: state.isTransitioning,
+  selectedCountryId: state.selectedCountryId,
+  selectedRegionId: state.selectedRegionId,
+}));
+
+/** Selector for sidebar-only data */
+export const useSidebarData = () => useViewStore((state) => ({
+  regionDetail: state.regionDetail,
+  simulation: state.simulation,
+  sidePanelOpen: state.sidePanelOpen,
+}));
+
+// ============================================================================
+// Bounding Box & Focus Transition
+// ============================================================================
+
+/**
+ * Calculates bounding box for country regions
+ */
+export function useCountryBounds(): ViewportBounds | null {
+  const appData = useViewStore((state) => state.appData);
+  const selectedCountryId = useViewStore((state) => state.selectedCountryId);
+  
+  return useMemo(() => {
+    if (!appData || !selectedCountryId) return null;
+    
+    const regions = appData.regions.filter((r) => r.countryId === selectedCountryId);
+    if (regions.length === 0) return null;
+    
+    let minLng = Infinity, maxLng = -Infinity;
+    let minLat = Infinity, maxLat = -Infinity;
+    
+    for (const region of regions) {
+      const [lng, lat] = region.centroid;
+      minLng = Math.min(minLng, lng);
+      maxLng = Math.max(maxLng, lng);
+      minLat = Math.min(minLat, lat);
+      maxLat = Math.max(maxLat, lat);
+    }
+    
+    // Add padding (10% of range)
+    const lngPadding = (maxLng - minLng) * 0.15 || 1;
+    const latPadding = (maxLat - minLat) * 0.15 || 1;
+    
+    return {
+      minLng: minLng - lngPadding,
+      maxLng: maxLng + lngPadding,
+      minLat: minLat - latPadding,
+      maxLat: maxLat + latPadding,
+    };
+  }, [appData, selectedCountryId]);
+}
+
+// ============================================================================
+// Simulation Selectors
+// ============================================================================
+
+/**
+ * Computes simulated coverage index based on slider value
+ */
+export function useSimulatedCoverage() {
+  const regionDetail = useViewStore((state) => state.regionDetail);
+  const simulation = useViewStore((state) => state.simulation);
+  const appData = useViewStore((state) => state.appData);
+  
+  return useMemo(() => {
+    if (!regionDetail || !simulation.enabled || !appData) {
+      return null;
+    }
+    
+    const region = appData.regions.find((r) => r.id === regionDetail.regionId);
+    if (!region) return null;
+    
+    const edges = appData.aidEdges
+      .filter((e) => e.regionId === regionDetail.regionId)
+      .map((e) => ({ aidType: e.aidType, projectCount: e.projectCount }));
+    
+    const result = simulateAidAddition({
+      population: region.population,
+      needLevel: region.needLevel,
+      aidEdges: edges,
+      additionalAid: simulation.additionalAid,
+      aidType: simulation.aidType,
+    });
+    
+    return result;
+  }, [regionDetail, simulation, appData]);
+}
+
+// ============================================================================
+// Search Selectors
+// ============================================================================
+
+export interface SearchItem {
+  id: string;
+  type: 'region' | 'organization';
+  name: string;
+  subtitle: string;
+  countryId?: string;
+}
+
+/**
+ * Gets all searchable items (regions + organizations)
+ */
+export function useSearchItems(): SearchItem[] {
+  const appData = useViewStore((state) => state.appData);
+  
+  return useMemo(() => {
+    if (!appData) return [];
+    
+    const items: SearchItem[] = [];
+    
+    // Add regions
+    for (const region of appData.regions) {
+      const country = appData.countries.find((c) => c.id === region.countryId);
+      items.push({
+        id: region.id,
+        type: 'region',
+        name: region.name,
+        subtitle: country?.name || region.countryId,
+        countryId: region.countryId,
+      });
+    }
+    
+    // Add organizations
+    for (const org of appData.organizations) {
+      items.push({
+        id: org.id,
+        type: 'organization',
+        name: org.name,
+        subtitle: org.type || 'Organization',
+      });
+    }
+    
+    return items;
+  }, [appData]);
+}
+
+// ============================================================================
+// Enhanced Region Data for Dual-Layer Visualization
+// ============================================================================
+
+export interface EnhancedRegionPoint extends MapPoint {
+  totalProjectCount: number;
+  aidBreakdown: { food: number; medical: number; infrastructure: number };
+}
+
+/**
+ * Gets region points with total project count for proportional circles
+ */
+export function useEnhancedRegionPoints(): EnhancedRegionPoint[] {
+  const countryScores = useViewStore((state) => state.countryScores);
+  const appData = useViewStore((state) => state.appData);
+  
+  return useMemo(() => {
+    if (!appData) return [];
+    
+    return countryScores.map((score) => {
+      const region = appData.regions.find((r) => r.id === score.regionId);
+      if (!region) return null;
+      
+      // Calculate total projects and breakdown
+      const edges = appData.aidEdges.filter((e) => e.regionId === score.regionId);
+      const breakdown = { food: 0, medical: 0, infrastructure: 0 };
+      let totalProjectCount = 0;
+      
+      for (const edge of edges) {
+        breakdown[edge.aidType] += edge.projectCount;
+        totalProjectCount += edge.projectCount;
+      }
+      
+      return {
+        id: score.regionId,
+        coordinates: region.centroid,
+        value: score.rawCoverage,
+        normalizedValue: score.normalizedCoverage,
+        type: 'region' as const,
+        name: score.regionName,
+        data: score,
+        totalProjectCount,
+        aidBreakdown: breakdown,
+      };
+    }).filter((p): p is EnhancedRegionPoint => p !== null);
+  }, [countryScores, appData]);
+}
 
 // ============================================================================
 // Map Point Selectors

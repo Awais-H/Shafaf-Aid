@@ -22,12 +22,26 @@ export interface Region {
   centroid: [number, number]; // [lng, lat]
   population: number;
   needLevel: NeedLevel;
+  /** IPC Phase (e.g. "Phase 3"); synthetic if absent */
+  ipcPhase?: string;
+  /** Conflict event count; synthetic if absent */
+  conflictEvents?: number;
+  /** Volatility score 0-1 based on conflict data */
+  volatility?: number;
+  /** Dynamic need factor adjusted by volatility */
+  dynamicNeedFactor?: number;
 }
 
 export interface Organization {
   id: string;
   name: string;
   type?: string;
+  /** Official homepage or OCHA FTS profile; used for clickable org links */
+  website_url?: string;
+  /** Organization logo URL (placeholder or actual) */
+  logo_url?: string;
+  /** Country-specific intervention page deep links */
+  country_deeplinks?: Record<string, string>;
 }
 
 export type AidType = 'food' | 'medical' | 'infrastructure';
@@ -81,6 +95,10 @@ export interface RegionDetail {
   organizations: OrganizationPresence[];
   aidTypes: AidTypeBreakdown[];
   overlapIntensity: number;
+  /** IPC Phase (e.g. "Phase 3"); for clickable source link */
+  ipcPhase?: string;
+  /** Conflict event count; for clickable source link */
+  conflictEvents?: number;
 }
 
 export interface OrganizationPresence {
@@ -88,6 +106,8 @@ export interface OrganizationPresence {
   orgName: string;
   aidTypes: AidType[];
   projectCount: number;
+  /** Official homepage or OCHA FTS profile; used for clickable org links */
+  website_url?: string;
 }
 
 export interface OrgStat {

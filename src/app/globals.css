@@ -2,10 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
+/* ============================================================================
+   Command Center Base Styles
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 :root {
-  --foreground: #ffffff;
-  --background: #111827;
+  --foreground: #e2e8f0;
+  --background: #0a0a0f;
+  --panel-bg: rgba(15, 17, 21, 0.95);
+  --border-color: #1e293b;
+  --accent-cyan: #06b6d4;
+  --accent-cyan-glow: rgba(6, 182, 212, 0.15);
+  --grid-color: rgba(30, 41, 59, 0.5);
 }
 
 html {
@@ -15,7 +25,69 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font classes */
+.font-inter {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Menlo', 'Monaco', monospace;
+}
+
+/* Tabular numbers for alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* ============================================================================
+   Command Center Grid System
+   ============================================================================ */
+
+.cmd-grid {
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.cmd-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+}
+
+/* ============================================================================
+   Glassmorphism
+   ============================================================================ */
+
+.glass {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-hover:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* High-gap region glow */
+.high-gap-glow {
+  box-shadow: 0 0 20px 0 rgba(220, 53, 69, 0.2),
+              inset 0 0 30px 0 rgba(220, 53, 69, 0.05);
+  border-color: rgba(220, 53, 69, 0.4);
+}
+
+/* Cyan accent glow */
+.accent-glow {
+  box-shadow: 0 0 15px 0 var(--accent-cyan-glow);
 }
 
 /* Scrollbar styling */
@@ -171,4 +243,79 @@ body {
 .coverage-well-covered {
   background-color: rgba(40, 167, 69, 0.3);
   color: rgb(40, 167, 69);
+}
+
+/* ============================================================================
+   Slider Styling
+   ============================================================================ */
+
+input[type='range'].slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+input[type='range'].slider-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  cursor: pointer;
+  border: 2px solid #0f1115;
+  box-shadow: 0 0 10px var(--accent-cyan-glow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type='range'].slider-thumb::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+}
+
+input[type='range'].slider-thumb::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  cursor: pointer;
+  border: 2px solid #0f1115;
+  box-shadow: 0 0 10px var(--accent-cyan-glow);
+}
+
+/* ============================================================================
+   Sparkline SVG Styles
+   ============================================================================ */
+
+.sparkline-bar {
+  transition: height 0.2s ease;
+}
+
+.sparkline-bar:hover {
+  opacity: 0.9;
+}
+
+/* ============================================================================
+   Focus States (Command Center style)
+   ============================================================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================================================
+   Selection
+   ============================================================================ */
+
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: white;
 }

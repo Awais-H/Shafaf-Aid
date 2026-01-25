@@ -69,6 +69,19 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
 NEXT_PUBLIC_MAP_TILES_URL=https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json
 ```
 
+## Suggested Real Data Sources
+
+The province/region detail metrics link to these external data sources:
+
+| Metric | Source | URL |
+|--------|--------|-----|
+| Population / Admin | Humanitarian Data Exchange | https://data.humdata.org |
+| Food Security / IPC | IPC Info | https://www.ipcinfo.org |
+| Conflict Events | ACLED | https://acleddata.com |
+| NGO Activity | OCHA FTS | https://fts.unocha.org |
+
+Organization links in the "Organizations Operating" list use each org’s official homepage (e.g. WFP, ICRC, MSF) or OCHA FTS profile.
+
 ## Troubleshooting
 
 ### Cache Issues
