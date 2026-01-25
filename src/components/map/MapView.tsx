@@ -29,6 +29,7 @@ interface MapViewProps {
   selectedId?: string | null;
   showGlow?: boolean;
   showPulse?: boolean;
+  mosqueMode?: boolean;
   initialViewState?: MapViewState;
 }
 
@@ -44,6 +45,7 @@ export default function MapView({
   selectedId,
   showGlow = true,
   showPulse = true,
+  mosqueMode = false,
   initialViewState,
 }: MapViewProps) {
   const setMapViewState = useViewStore((state) => state.setMapViewState);
@@ -193,6 +195,7 @@ export default function MapView({
       hoveredId,
       showGlow,
       showPulse,
+      mosqueMode,
     })
   );
 

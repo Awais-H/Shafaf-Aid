@@ -19,6 +19,7 @@ export interface LayerProps {
   onPointHover?: (info: any) => void;
   selectedId?: string | null;
   hoveredId?: string | null;
+  mosqueMode?: boolean;
 }
 
 export interface GeoJsonLayerProps {
@@ -36,9 +37,13 @@ export interface GeoJsonLayerProps {
 /**
  * Creates the base scatterplot layer for data points
  * Includes hover highlight effect
+ * In mosque mode, uses smaller radii to match reduced glow.
  */
 export function createBasePointLayer(props: LayerProps) {
-  const { points, onPointClick, onPointHover, selectedId, hoveredId } = props;
+  const { points, onPointClick, onPointHover, selectedId, hoveredId, mosqueMode } = props;
+  const sizeScale = mosqueMode ? 0.28 : 1;
+  const minPx = mosqueMode ? 4 : 8;
+  const maxPx = mosqueMode ? 20 : 50;
 
   return new ScatterplotLayer({
     id: 'base-points',
@@ -48,12 +53,12 @@ export function createBasePointLayer(props: LayerProps) {
     stroked: true,
     filled: true,
     radiusScale: 1,
-    radiusMinPixels: 8,
-    radiusMaxPixels: 50,
+    radiusMinPixels: minPx,
+    radiusMaxPixels: maxPx,
     lineWidthMinPixels: 1,
     getPosition: (d: MapPoint) => d.coordinates,
     getRadius: (d: MapPoint) => {
-      const baseSize = 20000 + d.value * 50000;
+      const baseSize = (20000 + d.value * 50000) * sizeScale;
       // Selected nodes are larger
       if (d.id === selectedId) return baseSize * 1.3;
       // Hovered nodes pop up slightly
@@ -86,7 +91,7 @@ export function createBasePointLayer(props: LayerProps) {
     onClick: onPointClick,
     onHover: onPointHover,
     updateTriggers: {
-      getRadius: [selectedId, hoveredId],
+      getRadius: [selectedId, hoveredId, mosqueMode],
       getFillColor: [hoveredId],
       getLineColor: [selectedId, hoveredId],
       getLineWidth: [selectedId, hoveredId],
@@ -101,9 +106,13 @@ export function createBasePointLayer(props: LayerProps) {
 /**
  * Creates a soft glow effect layer behind points
  * Responds to hover with brighter glow
+ * In mosque mode, uses smaller radii for less overlap.
  */
 export function createGlowLayer(props: LayerProps) {
-  const { points, time, hoveredId } = props;
+  const { points, time, hoveredId, mosqueMode } = props;
+  const sizeScale = mosqueMode ? 0.28 : 1;
+  const minPx = mosqueMode ? 8 : 20;
+  const maxPx = mosqueMode ? 40 : 100;
 
   return new ScatterplotLayer({
     id: 'glow-layer',
@@ -113,11 +122,11 @@ export function createGlowLayer(props: LayerProps) {
     stroked: false,
     filled: true,
     radiusScale: 1,
-    radiusMinPixels: 20,
-    radiusMaxPixels: 100,
+    radiusMinPixels: minPx,
+    radiusMaxPixels: maxPx,
     getPosition: (d: MapPoint) => d.coordinates,
     getRadius: (d: MapPoint) => {
-      const baseSize = 30000 + d.value * 80000;
+      const baseSize = (30000 + d.value * 80000) * sizeScale;
       // Subtle breathing effect
       const breath = 1 + Math.sin(time * 2) * 0.1;
       // Expand glow on hover
@@ -131,7 +140,7 @@ export function createGlowLayer(props: LayerProps) {
       return [color[0], color[1], color[2], alpha];
     },
     updateTriggers: {
-      getRadius: [time, hoveredId],
+      getRadius: [time, hoveredId, mosqueMode],
       getFillColor: [hoveredId],
     },
   });
@@ -143,9 +152,13 @@ export function createGlowLayer(props: LayerProps) {
 
 /**
  * Creates animated pulse rings around high-gap areas
+ * In mosque mode, uses smaller radii.
  */
 export function createPulseLayer(props: LayerProps) {
-  const { points, time } = props;
+  const { points, time, mosqueMode } = props;
+  const sizeScale = mosqueMode ? 0.28 : 1;
+  const minPx = mosqueMode ? 6 : 15;
+  const maxPx = mosqueMode ? 40 : 100;
 
   // Filter to only show pulse for high-gap areas (low coverage)
   const highGapPoints = points.filter((p) => p.normalizedValue < 0.4);
@@ -158,8 +171,8 @@ export function createPulseLayer(props: LayerProps) {
     stroked: true,
     filled: false,
     radiusScale: 1,
-    radiusMinPixels: 15,
-    radiusMaxPixels: 100,
+    radiusMinPixels: minPx,
+    radiusMaxPixels: maxPx,
     lineWidthMinPixels: 2,
     lineWidthMaxPixels: 4,
     getPosition: (d: MapPoint) => d.coordinates,
@@ -167,7 +180,7 @@ export function createPulseLayer(props: LayerProps) {
       // Expanding pulse animation
       const pulsePhase = (time + d.id.charCodeAt(0) * 0.1) % 1;
       const expandFactor = 1 + pulsePhase * 1.5;
-      return (25000 + d.value * 60000) * expandFactor;
+      return (25000 + d.value * 60000) * sizeScale * expandFactor;
     },
     getLineColor: (d: MapPoint) => {
       // Fade out as ring expands
@@ -178,7 +191,7 @@ export function createPulseLayer(props: LayerProps) {
     },
     getLineWidth: 2,
     updateTriggers: {
-      getRadius: [time],
+      getRadius: [time, mosqueMode],
       getLineColor: [time],
     },
   });
@@ -243,6 +256,7 @@ export interface AllLayersProps {
   hoveredId?: string | null;
   showGlow?: boolean;
   showPulse?: boolean;
+  mosqueMode?: boolean;
 }
 
 /**
@@ -258,18 +272,19 @@ export function createAllPointLayers(props: AllLayersProps) {
     hoveredId,
     showGlow = true,
     showPulse = true,
+    mosqueMode = false,
   } = props;
 
   const layers = [];
 
   // Glow layer (bottom)
   if (showGlow) {
-    layers.push(createGlowLayer({ points, time, hoveredId }));
+    layers.push(createGlowLayer({ points, time, hoveredId, mosqueMode }));
   }
 
   // Pulse layer (middle)
   if (showPulse) {
-    layers.push(createPulseLayer({ points, time }));
+    layers.push(createPulseLayer({ points, time, mosqueMode }));
   }
 
   // Base points (top)
@@ -281,6 +296,7 @@ export function createAllPointLayers(props: AllLayersProps) {
       onPointHover,
       selectedId,
       hoveredId,
+      mosqueMode,
     })
   );
 

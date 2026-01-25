@@ -164,9 +164,9 @@ export interface MapPoint {
   coordinates: [number, number];
   value: number;
   normalizedValue: number;
-  type: 'country' | 'region';
+  type: 'country' | 'region' | 'mosque';
   name: string;
-  data: WorldScore | RegionScore;
+  data: WorldScore | RegionScore | HotspotScore;
 }
 
 export interface MapViewState {
@@ -187,4 +187,37 @@ export interface ViewState {
   selectedRegionId: string | null;
   sidePanelOpen: boolean;
   explainDrawerOpen: boolean;
+}
+
+// ============================================================================
+// Mosque Types
+// ============================================================================
+
+export type MosqueUrgency = 'low' | 'med' | 'high';
+
+export interface Mosque {
+  id: string;
+  name: string;
+  country: string;
+  city: string;
+  lat: number;
+  lng: number;
+  website?: string;
+}
+
+export interface MosqueWithFunding extends Mosque {
+  goalAmount: number;
+  raisedAmount: number;
+  urgency: MosqueUrgency;
+  emergencyAppeal?: string;
+  necessityScore: number;
+  normalizedNecessity: number;
+}
+
+export interface HotspotScore {
+  tier: 'country' | 'city' | 'mosque';
+  mosqueName?: string;
+  mosqueId?: string;
+  mosqueNeedScore: number;
+  normalizedNeed: number;
 }

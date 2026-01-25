@@ -21,6 +21,7 @@ import MapboxGlobe from '@/components/map/MapboxGlobe';
 import ViewToggle from '@/components/layout/ViewToggle';
 import Header from '@/components/layout/Header';
 import Legend from '@/components/layout/Legend';
+import ExplainButton from '@/components/layout/ExplainButton';
 import DisclaimerBanner from '@/components/layout/DisclaimerBanner';
 import ExplainDrawer from '@/components/layout/ExplainDrawer';
 import LoadingState from '@/components/layout/LoadingState';
@@ -183,12 +184,7 @@ export default function WorldPage() {
         <Header />
       </div>
 
-      {/* Disclaimer Banner - only in 2D mode */}
-      {viewMode === '2d' && (
-        <div className="pt-14" style={{ zIndex: 25 }}>
-          <DisclaimerBanner />
-        </div>
-      )}
+
 
       {/* Main content */}
       <div className="flex-1 flex relative">
@@ -269,13 +265,7 @@ export default function WorldPage() {
             </div>
           )}
 
-          {/* View Toggle */}
-          <div
-            className="absolute top-4 right-4 z-30 transition-opacity duration-500"
-            style={{ opacity: showUI ? 1 : 0.6 }}
-          >
-            <ViewToggle view={viewMode} onChange={setViewMode} />
-          </div>
+
 
           {/* Legend */}
           {showUI && (
@@ -288,6 +278,20 @@ export default function WorldPage() {
           )}
         </div>
       </div>
+
+      {/* View Toggle - Only appears after Shafaf title disappears */}
+      <div
+        className="fixed top-20 right-4 z-40 transition-opacity duration-500"
+        style={{
+          opacity: showUI ? 1 : 0,
+          pointerEvents: showUI ? 'auto' : 'none',
+        }}
+      >
+        <ViewToggle view={viewMode} onChange={setViewMode} />
+      </div>
+
+      {/* Explain - icon only, bottom left */}
+      <ExplainButton opacity={showUI ? 1 : 0.6} />
 
       {/* Explain Drawer */}
       <ExplainDrawer />

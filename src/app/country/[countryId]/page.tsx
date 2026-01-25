@@ -19,6 +19,7 @@ import MapView from '@/components/map/MapView';
 import Header from '@/components/layout/Header';
 import Legend from '@/components/layout/Legend';
 import SidePanel from '@/components/layout/SidePanel';
+import ExplainButton from '@/components/layout/ExplainButton';
 import DisclaimerBanner from '@/components/layout/DisclaimerBanner';
 import ExplainDrawer from '@/components/layout/ExplainDrawer';
 import LoadingState from '@/components/layout/LoadingState';
@@ -294,6 +295,9 @@ export default function CountryPage() {
           </div>
         </div>
       </div>
+
+      {/* Explain - icon only, bottom left */}
+      <ExplainButton />
 
       {/* Side Panel for Region Detail */}
       <SidePanel detail={regionDetail} isLoading={detailLoading} />

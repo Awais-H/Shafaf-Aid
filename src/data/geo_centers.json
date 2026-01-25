@@ -1,0 +1,280 @@
+{
+    "Canada": {
+        "Toronto": {
+            "lat": 43.6532,
+            "lng": -79.3832,
+            "radius": 25000
+        },
+        "Waterloo": {
+            "lat": 43.4643,
+            "lng": -80.5204,
+            "radius": 20000
+        }
+    },
+    "USA": {
+        "New York": {
+            "lat": 40.7128,
+            "lng": -74.006,
+            "radius": 30000
+        },
+        "Los Angeles": {
+            "lat": 34.0522,
+            "lng": -118.2437,
+            "radius": 35000
+        },
+        "Chicago": {
+            "lat": 41.8781,
+            "lng": -87.6298,
+            "radius": 28000
+        },
+        "Houston": {
+            "lat": 29.7604,
+            "lng": -95.3698,
+            "radius": 32000
+        },
+        "Detroit": {
+            "lat": 42.3314,
+            "lng": -83.0458,
+            "radius": 25000
+        }
+    },
+    "United Kingdom": {
+        "London": {
+            "lat": 51.5074,
+            "lng": -0.1278,
+            "radius": 30000
+        },
+        "Birmingham": {
+            "lat": 52.4862,
+            "lng": -1.8904,
+            "radius": 22000
+        },
+        "Manchester": {
+            "lat": 53.4808,
+            "lng": -2.2426,
+            "radius": 20000
+        },
+        "Bradford": {
+            "lat": 53.796,
+            "lng": -1.7594,
+            "radius": 18000
+        },
+        "Leicester": {
+            "lat": 52.6369,
+            "lng": -1.1398,
+            "radius": 15000
+        }
+    },
+    "Pakistan": {
+        "Lahore": {
+            "lat": 31.5204,
+            "lng": 74.3587,
+            "radius": 28000
+        },
+        "Karachi": {
+            "lat": 24.8607,
+            "lng": 67.0011,
+            "radius": 35000
+        },
+        "Islamabad": {
+            "lat": 33.6844,
+            "lng": 73.0479,
+            "radius": 20000
+        },
+        "Rawalpindi": {
+            "lat": 33.6007,
+            "lng": 73.0679,
+            "radius": 18000
+        },
+        "Faisalabad": {
+            "lat": 31.4504,
+            "lng": 73.135,
+            "radius": 22000
+        }
+    },
+    "Egypt": {
+        "Cairo": {
+            "lat": 30.0444,
+            "lng": 31.2357,
+            "radius": 30000
+        },
+        "Alexandria": {
+            "lat": 31.2001,
+            "lng": 29.9187,
+            "radius": 22000
+        },
+        "Giza": {
+            "lat": 30.0131,
+            "lng": 31.2089,
+            "radius": 15000
+        }
+    },
+    "Turkey": {
+        "Istanbul": {
+            "lat": 41.0082,
+            "lng": 28.9784,
+            "radius": 35000
+        },
+        "Ankara": {
+            "lat": 39.9334,
+            "lng": 32.8597,
+            "radius": 25000
+        },
+        "Izmir": {
+            "lat": 38.4237,
+            "lng": 27.1428,
+            "radius": 20000
+        }
+    },
+    "Bangladesh": {
+        "Dhaka": {
+            "lat": 23.8103,
+            "lng": 90.4125,
+            "radius": 30000
+        },
+        "Chittagong": {
+            "lat": 22.3569,
+            "lng": 91.7832,
+            "radius": 22000
+        },
+        "Sylhet": {
+            "lat": 24.8949,
+            "lng": 91.8687,
+            "radius": 15000
+        }
+    },
+    "Malaysia": {
+        "Kuala Lumpur": {
+            "lat": 3.139,
+            "lng": 101.6869,
+            "radius": 28000
+        },
+        "George Town": {
+            "lat": 5.4164,
+            "lng": 100.3327,
+            "radius": 15000
+        },
+        "Johor Bahru": {
+            "lat": 1.4927,
+            "lng": 103.7414,
+            "radius": 18000
+        }
+    },
+    "Saudi Arabia": {
+        "Makkah": {
+            "lat": 21.4225,
+            "lng": 39.8262,
+            "radius": 25000
+        },
+        "Madinah": {
+            "lat": 24.4672,
+            "lng": 39.6111,
+            "radius": 20000
+        },
+        "Riyadh": {
+            "lat": 24.7136,
+            "lng": 46.6753,
+            "radius": 30000
+        },
+        "Jeddah": {
+            "lat": 21.5433,
+            "lng": 39.1728,
+            "radius": 28000
+        }
+    },
+    "Indonesia": {
+        "Jakarta": {
+            "lat": -6.2088,
+            "lng": 106.8456,
+            "radius": 35000
+        },
+        "Surabaya": {
+            "lat": -7.2575,
+            "lng": 112.7521,
+            "radius": 25000
+        },
+        "Bandung": {
+            "lat": -6.9175,
+            "lng": 107.6191,
+            "radius": 20000
+        }
+    },
+    "India": {
+        "Mumbai": {
+            "lat": 19.076,
+            "lng": 72.8777,
+            "radius": 35000
+        },
+        "Delhi": {
+            "lat": 28.7041,
+            "lng": 77.1025,
+            "radius": 35000
+        },
+        "Hyderabad": {
+            "lat": 17.385,
+            "lng": 78.4867,
+            "radius": 28000
+        },
+        "Bangalore": {
+            "lat": 12.9716,
+            "lng": 77.5946,
+            "radius": 30000
+        },
+        "Chennai": {
+            "lat": 13.0827,
+            "lng": 80.2707,
+            "radius": 25000
+        }
+    },
+    "Australia": {
+        "Sydney": {
+            "lat": -33.8688,
+            "lng": 151.2093,
+            "radius": 30000
+        },
+        "Melbourne": {
+            "lat": -37.8136,
+            "lng": 144.9631,
+            "radius": 28000
+        },
+        "Brisbane": {
+            "lat": -27.4698,
+            "lng": 153.0251,
+            "radius": 22000
+        }
+    },
+    "Germany": {
+        "Berlin": {
+            "lat": 52.52,
+            "lng": 13.405,
+            "radius": 28000
+        },
+        "Frankfurt": {
+            "lat": 50.1109,
+            "lng": 8.6821,
+            "radius": 20000
+        },
+        "Cologne": {
+            "lat": 50.9375,
+            "lng": 6.9603,
+            "radius": 18000
+        }
+    },
+    "France": {
+        "Paris": {
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "radius": 30000
+        },
+        "Marseille": {
+            "lat": 43.2965,
+            "lng": 5.3698,
+            "radius": 22000
+        },
+        "Lyon": {
+            "lat": 45.764,
+            "lng": 4.8357,
+            "radius": 20000
+        }
+    }
+}

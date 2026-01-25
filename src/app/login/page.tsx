@@ -96,75 +96,110 @@ export default function LoginPage() {
         }
     };
 
+    const handleGoogleSignIn = async () => {
+        if (!supabase) {
+            setError('Supabase client not available');
+            return;
+        }
+
+        try {
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                    redirectTo: `${window.location.origin}/auth/callback`,
+                },
+            });
+            if (error) throw error;
+        } catch (err: any) {
+            setError(err.message);
+        }
+    };
+
     return (
-        <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
-            <div className="w-full max-w-md bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-700">
-                <h1 className="text-2xl font-bold text-white mb-6 text-center">
-                    {isSignUp ? 'Create Account' : 'Welcome Back'}
+        <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4">
+            <div className="w-full max-w-md bg-[#18181b] rounded-2xl shadow-2xl p-8 border border-[#27272a]">
+                {/* Logo Icon */}
+                <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-[#27272a] flex items-center justify-center">
+                        <svg
+                            className="w-6 h-6 text-emerald-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                            />
+                        </svg>
+                    </div>
+                </div>
+
+                {/* Product Name */}
+                <h1 className="text-2xl font-bold text-white mb-8 text-center">
+                    Shafaf
                 </h1>
 
                 {error && (
-                    <div className="bg-red-900/50 border border-red-500/50 text-red-200 p-3 rounded-lg mb-4 text-sm">
+                    <div className="bg-red-900/30 border border-red-500/30 text-red-300 p-3 rounded-xl mb-4 text-sm">
                         {error}
                     </div>
                 )}
 
                 {successMessage && (
-                    <div className="bg-green-900/50 border border-green-500/50 text-green-200 p-3 rounded-lg mb-4 text-sm">
+                    <div className="bg-emerald-900/30 border border-emerald-500/30 text-emerald-300 p-3 rounded-xl mb-4 text-sm">
                         {successMessage}
                     </div>
                 )}
 
                 <form onSubmit={handleAuth} className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-1">Email</label>
-                        <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                            required
-                        />
-                    </div>
+                    {/* Email Input */}
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email"
+                        className="w-full bg-[#27272a] border-none rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:ring-2 focus:ring-emerald-500/50 outline-none transition-all"
+                        required
+                    />
 
-                    <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-1">Password</label>
-                        <input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                            required
-                            minLength={6}
-                        />
-                    </div>
+                    {/* Password Input */}
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Password"
+                        className="w-full bg-[#27272a] border-none rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:ring-2 focus:ring-emerald-500/50 outline-none transition-all"
+                        required
+                        minLength={6}
+                    />
 
                     {/* Role Selection - Only for Sign Up */}
                     {isSignUp && (
-                        <div>
-                            <label className="block text-sm font-medium text-gray-400 mb-2">I am a...</label>
+                        <div className="pt-2">
+                            <label className="block text-sm font-medium text-gray-400 mb-3">I am a...</label>
                             <div className="grid grid-cols-2 gap-3">
                                 <button
                                     type="button"
                                     onClick={() => setSelectedRole('donor')}
-                                    className={`p-4 rounded-lg border-2 transition-all text-center ${selectedRole === 'donor'
-                                            ? 'border-blue-500 bg-blue-500/20 text-white'
-                                            : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'
+                                    className={`p-4 rounded-xl border-2 transition-all text-center ${selectedRole === 'donor'
+                                        ? 'border-emerald-500 bg-emerald-500/20 text-white'
+                                        : 'border-[#27272a] bg-[#27272a] text-gray-400 hover:border-[#3f3f46]'
                                         }`}
                                 >
-                                    <div className="text-2xl mb-1">💝</div>
                                     <div className="font-semibold">Donor</div>
                                     <div className="text-xs opacity-70">I want to give</div>
                                 </button>
                                 <button
                                     type="button"
                                     onClick={() => setSelectedRole('mosque')}
-                                    className={`p-4 rounded-lg border-2 transition-all text-center ${selectedRole === 'mosque'
-                                            ? 'border-emerald-500 bg-emerald-500/20 text-white'
-                                            : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'
+                                    className={`p-4 rounded-xl border-2 transition-all text-center ${selectedRole === 'mosque'
+                                        ? 'border-emerald-500 bg-emerald-500/20 text-white'
+                                        : 'border-[#27272a] bg-[#27272a] text-gray-400 hover:border-[#3f3f46]'
                                         }`}
                                 >
-                                    <div className="text-2xl mb-1">🕌</div>
                                     <div className="font-semibold">Mosque</div>
                                     <div className="text-xs opacity-70">I need support</div>
                                 </button>
@@ -172,27 +207,56 @@ export default function LoginPage() {
                         </div>
                     )}
 
+                    {/* Sign In / Create Account Button */}
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-6"
+                        className="w-full bg-[#27272a] hover:bg-[#3f3f46] text-white font-medium py-3.5 px-4 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-2"
                     >
-                        {loading ? 'Processing...' : isSignUp ? 'Create Account' : 'Sign In'}
+                        {loading ? 'Processing...' : isSignUp ? 'Create Account' : 'Sign in'}
+                    </button>
+
+                    {/* Continue with Google Button */}
+                    <button
+                        type="button"
+                        onClick={handleGoogleSignIn}
+                        className="w-full bg-[#27272a] hover:bg-[#3f3f46] text-white font-medium py-3.5 px-4 rounded-xl transition-colors flex items-center justify-center gap-3"
+                    >
+                        <svg className="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                fill="#4285F4"
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            />
+                            <path
+                                fill="#34A853"
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            />
+                            <path
+                                fill="#FBBC05"
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                            />
+                            <path
+                                fill="#EA4335"
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            />
+                        </svg>
+                        Continue with Google
                     </button>
                 </form>
 
-                <div className="mt-6 text-center text-sm text-gray-400">
+                {/* Toggle Sign Up / Sign In Link */}
+                <div className="mt-6 text-center text-sm text-gray-500">
                     <p>
-                        {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
+                        {isSignUp ? 'Already have an account? ' : "Don't have an account? "}
                         <button
                             onClick={() => {
                                 setIsSignUp(!isSignUp);
                                 setError(null);
                                 setSuccessMessage(null);
                             }}
-                            className="text-blue-400 hover:text-blue-300 font-medium ml-1"
+                            className="text-white hover:underline font-medium"
                         >
-                            {isSignUp ? 'Sign In' : 'Sign Up'}
+                            {isSignUp ? 'Sign in' : 'Sign up, it\'s free!'}
                         </button>
                     </p>
                 </div>

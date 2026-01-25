@@ -7,18 +7,15 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useViewStore } from '@/app_state/viewStore';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { useRouter } from 'next/navigation';
-import { getDataMode } from '@/core/data/supabaseClient';
 
 export default function Header() {
   const currentView = useViewStore((state) => state.currentView);
   const selectedCountryId = useViewStore((state) => state.selectedCountryId);
   const appData = useViewStore((state) => state.appData);
-  const toggleExplainDrawer = useViewStore((state) => state.toggleExplainDrawer);
-
-  const dataMode = getDataMode();
 
   const selectedCountry = appData?.countries.find(
     (c) => c.id === selectedCountryId
@@ -50,9 +47,9 @@ export default function Header() {
           <nav className="flex items-center gap-2 ml-4 text-sm">
             <Link
               href="/"
-              className={`px-3 py-1 rounded-lg transition-all duration-200 ${currentView === 'world'
-                  ? 'bg-white/10 text-white'
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${currentView === 'world'
+                ? 'bg-white/10 text-white'
+                : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
                 }`}
             >
               World
@@ -60,7 +57,7 @@ export default function Header() {
             {selectedCountry && (
               <>
                 <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>/</span>
-                <span className="px-3 py-1 rounded-lg bg-white/10 text-white">
+                <span className="px-4 py-2 rounded-lg text-sm font-medium bg-white/10 text-white">
                   {selectedCountry.name}
                 </span>
               </>
@@ -70,41 +67,31 @@ export default function Header() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-3">
-          {/* Data mode indicator */}
-          <div
-            className={`px-2 py-1 rounded text-xs font-medium ${dataMode === 'supabase'
-              ? 'bg-green-900/50 text-green-400 border border-green-700'
-              : 'bg-blue-900/50 text-blue-400 border border-blue-700'
-              }`}
-          >
-            {dataMode === 'supabase' ? 'Live Data' : 'Demo Mode'}
-          </div>
-
-          {/* Explain button */}
-          <button
-            onClick={toggleExplainDrawer}
-            className="px-3 py-1.5 rounded-lg bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-all duration-200 text-sm flex items-center gap-2"
-            style={{ border: '1px solid rgba(255, 255, 255, 0.06)' }}
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            Explain
-          </button>
+          <MosquesOrDonationsLink />
           <AuthButtons />
         </div>
       </div>
     </header>
+  );
+}
+
+function MosquesOrDonationsLink() {
+  const pathname = usePathname();
+  const onMosquesPage = pathname === '/mosques' || pathname.startsWith('/mosques/');
+  const base =
+    'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-gray-400 hover:text-gray-200 hover:bg-white/5';
+
+  if (onMosquesPage) {
+    return (
+      <Link href="/" className={base}>
+        Donations
+      </Link>
+    );
+  }
+  return (
+    <Link href="/mosques" className={base}>
+      Mosques
+    </Link>
   );
 }
 
@@ -118,7 +105,7 @@ function AuthButtons() {
     return (
       <Link
         href="/login"
-        className="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors"
+        className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-white/10 text-white hover:bg-white/15"
       >
         Login
       </Link>
@@ -128,16 +115,16 @@ function AuthButtons() {
   const dashboardLink = role === 'donor' ? '/donor' : role === 'mosque' ? '/mosque' : '/admin';
 
   return (
-    <div className="flex items-center gap-3 border-l border-white/10 pl-3 ml-2">
+    <div className="flex items-center gap-2 border-l border-white/10 pl-3 ml-2">
       <Link
         href={dashboardLink}
-        className="text-sm text-gray-300 hover:text-white capitalize"
+        className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-gray-400 hover:text-gray-200 hover:bg-white/5 capitalize"
       >
         {role || 'Dashboard'}
       </Link>
       <button
         onClick={signOut}
-        className="text-xs text-red-400 hover:text-red-300"
+        className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-red-400 hover:text-red-300 hover:bg-white/5"
       >
         Sign Out
       </button>
