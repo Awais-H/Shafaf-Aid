@@ -12,19 +12,28 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 /**
  * Creates a Supabase client for use in the browser
  */
+let browserClient: SupabaseClient | null = null;
+
+/**
+ * Creates a Supabase client for use in the browser
+ */
 export function createBrowserClient(): SupabaseClient | null {
   if (!supabaseUrl || !supabaseAnonKey) {
     console.warn('Supabase not configured. Using static data mode.');
     return null;
   }
 
-  return createClient(supabaseUrl, supabaseAnonKey, {
+  if (browserClient) return browserClient;
+
+  browserClient = createClient(supabaseUrl, supabaseAnonKey, {
     auth: {
       persistSession: true,
       autoRefreshToken: true,
       detectSessionInUrl: true,
     },
   });
+
+  return browserClient;
 }
 
 /**

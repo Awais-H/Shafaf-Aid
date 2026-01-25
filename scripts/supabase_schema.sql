@@ -1,8 +1,20 @@
--- Enable RLS
-alter table auth.users enable row level security;
+-- Enable RLS (Auth users table is managed by Supabase, so we verify RLS on our tables)
+
+-- HELPER FUNCTIONS
+-- use security definer to bypass RLS recursion when checking admin status
+CREATE OR REPLACE FUNCTION public.is_admin()
+RETURNS boolean AS $$
+BEGIN
+  RETURN EXISTS (
+    SELECT 1 FROM public.profiles 
+    WHERE user_id = auth.uid() 
+    AND role = 'admin'
+  );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 
 -- PROFILES
-create table public.profiles (
+create table if not exists public.profiles (
   user_id uuid primary key references auth.users(id) on delete cascade,
   role text check (role in ('donor','mosque','admin')) not null,
   created_at timestamp with time zone default now()
@@ -10,14 +22,14 @@ create table public.profiles (
 alter table public.profiles enable row level security;
 
 -- DONOR PROFILES
-create table public.donor_profiles (
+create table if not exists public.donor_profiles (
   user_id uuid primary key references auth.users(id) on delete cascade,
   display_name text
 );
 alter table public.donor_profiles enable row level security;
 
 -- MOSQUE PROFILES
-create table public.mosque_profiles (
+create table if not exists public.mosque_profiles (
   user_id uuid primary key references auth.users(id) on delete cascade,
   mosque_name text not null,
   website_url text not null,
@@ -29,7 +41,7 @@ create table public.mosque_profiles (
 alter table public.mosque_profiles enable row level security;
 
 -- AID REQUESTS
-create table public.aid_requests (
+create table if not exists public.aid_requests (
   id uuid primary key default gen_random_uuid(),
   mosque_user_id uuid references auth.users(id) on delete cascade not null,
   purpose_category text check (purpose_category in ('food','orphans','education','medical','shelter','other')) not null,
@@ -47,7 +59,7 @@ create table public.aid_requests (
 alter table public.aid_requests enable row level security;
 
 -- DONOR PLEDGES
-create table public.donor_pledges (
+create table if not exists public.donor_pledges (
   id uuid primary key default gen_random_uuid(),
   request_id uuid references public.aid_requests(id) on delete cascade not null,
   donor_user_id uuid references auth.users(id) on delete cascade not null,
@@ -57,9 +69,51 @@ create table public.donor_pledges (
 );
 alter table public.donor_pledges enable row level security;
 
+-- MAP DATA TABLES (Required for Supabase Data Mode)
+create table if not exists public.countries (
+  id text primary key, -- utilizing ISO code or similar string ID from HDX
+  name text not null,
+  iso2 text,
+  curated boolean default false,
+  centroid_lng float,
+  centroid_lat float
+);
+alter table public.countries enable row level security;
+
+create table if not exists public.regions (
+  id text primary key,
+  country_id text references public.countries(id) on delete cascade,
+  name text not null,
+  centroid_lng float,
+  centroid_lat float,
+  population int,
+  need_level text
+);
+alter table public.regions enable row level security;
+
+create table if not exists public.orgs (
+  id text primary key,
+  name text not null,
+  type text
+);
+alter table public.orgs enable row level security;
+
+create table if not exists public.aid_edges (
+  id text primary key,
+  org_id text references public.orgs(id) on delete cascade,
+  region_id text references public.regions(id) on delete cascade,
+  aid_type text,
+  project_count int,
+  is_synthetic boolean default false,
+  source text
+);
+alter table public.aid_edges enable row level security;
+
+
 -- RLS POLICIES
 
 -- profiles
+-- DROP POLICY IF EXISTS "Users can view own profile" ON public.profiles;
 create policy "Users can view own profile" on public.profiles
   for select using (auth.uid() = user_id);
 create policy "Users can insert own profile" on public.profiles
@@ -113,40 +167,28 @@ create policy "Mosques can view pledges for their approved requests" on public.d
     )
   );
 
--- ADMIN POLICIES (Assuming admin role check via profiles table)
--- Note: Recursive policies can be dangerous, so we'll use a secure function or simpler check if possible.
--- For now, let's assume we can check the role directly from the JWT if using custom claims, 
--- but since we are using a profiles table, we'll maintain a separate admin policy set.
-
--- Simplified Admin Access (can check if user_id exists in profiles where role='admin')
--- Ideally, use custom claims. For MVP using profiles table lookup:
+-- ADMIN POLICIES (Using infinite-recursion-safe function)
 
 create policy "Admins can view profiles" on public.profiles
-  for select using (
-    exists (select 1 from public.profiles where user_id = auth.uid() and role = 'admin')
-  );
+  for select using ( is_admin() );
 
 create policy "Admins can view donor profiles" on public.donor_profiles
-  for select using (
-    exists (select 1 from public.profiles where user_id = auth.uid() and role = 'admin')
-  );
+  for select using ( is_admin() );
 
 create policy "Admins can view mosque profiles" on public.mosque_profiles
-  for select using (
-    exists (select 1 from public.profiles where user_id = auth.uid() and role = 'admin')
-  );
+  for select using ( is_admin() );
 
 create policy "Admins can view all requests" on public.aid_requests
-  for select using (
-    exists (select 1 from public.profiles where user_id = auth.uid() and role = 'admin')
-  );
+  for select using ( is_admin() );
 
 create policy "Admins can update requests" on public.aid_requests
-  for update using (
-    exists (select 1 from public.profiles where user_id = auth.uid() and role = 'admin')
-  );
+  for update using ( is_admin() );
 
 create policy "Admins can view all pledges" on public.donor_pledges
-  for select using (
-    exists (select 1 from public.profiles where user_id = auth.uid() and role = 'admin')
-  );
+  for select using ( is_admin() );
+
+-- MAP DATA PUBLIC ACCESS
+create policy "Public view countries" on public.countries for select using (true);
+create policy "Public view regions" on public.regions for select using (true);
+create policy "Public view orgs" on public.orgs for select using (true);
+create policy "Public view aid_edges" on public.aid_edges for select using (true);

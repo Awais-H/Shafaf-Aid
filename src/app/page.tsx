@@ -14,6 +14,7 @@ import { loadAppData } from '@/core/data/loadData';
 import { computeWorldScores } from '@/core/graph/metrics';
 import { getWorldViewState } from '@/components/map/MapUtils';
 import type { MapPoint } from '@/core/data/schema';
+import { useAuth } from '@/components/auth/AuthProvider';
 
 import MapView from '@/components/map/MapView';
 import MapboxGlobe from '@/components/map/MapboxGlobe';
@@ -26,18 +27,21 @@ import LoadingState from '@/components/layout/LoadingState';
 
 export default function WorldPage() {
   const router = useRouter();
-  
+
+  // Auth check
+  const { user, loading: authLoading } = useAuth();
+
   // View mode: '3d' (globe) or '2d' (flat map)
   const [viewMode, setViewMode] = useState<'2d' | '3d'>('3d');
-  
+
   // Track if intro is complete (title hidden, full interaction enabled)
   const [introComplete, setIntroComplete] = useState(false);
-  
+
   // Title opacity (fades as user scrolls/zooms)
   const [titleOpacity, setTitleOpacity] = useState(1);
-  
+
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // Store state
   const isLoading = useViewStore((state) => state.isLoading);
   const error = useViewStore((state) => state.error);
@@ -46,18 +50,25 @@ export default function WorldPage() {
   const setAppData = useViewStore((state) => state.setAppData);
   const setWorldScores = useViewStore((state) => state.setWorldScores);
   const setCurrentView = useViewStore((state) => state.setCurrentView);
-  
+
   // Derived state
   const mapPoints = useWorldMapPoints();
   const curatedCountries = useCuratedCountries();
-  
+
   // Initial view state
   const initialViewState = useMemo(() => getWorldViewState(), []);
+
+  // Auth redirect: if not loading and no user, go to login
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/login');
+    }
+  }, [authLoading, user, router]);
 
   // Handle scroll/wheel in 3D intro mode - fades title
   useEffect(() => {
     if (viewMode !== '3d' || introComplete) return;
-    
+
     const handleWheel = (e: WheelEvent) => {
       if (e.deltaY > 0) {
         setTitleOpacity(prev => {
@@ -71,9 +82,9 @@ export default function WorldPage() {
         setTitleOpacity(prev => Math.min(1, prev + 0.08));
       }
     };
-    
+
     window.addEventListener('wheel', handleWheel, { passive: true });
-    
+
     return () => {
       window.removeEventListener('wheel', handleWheel);
     };
@@ -93,14 +104,14 @@ export default function WorldPage() {
       try {
         setLoading(true);
         const data = await loadAppData();
-        
+
         if (!mounted) return;
-        
+
         setAppData(data);
-        
+
         const scores = computeWorldScores(data);
         setWorldScores(scores);
-        
+
         setCurrentView('world');
         setLoading(false);
       } catch (err) {
@@ -160,7 +171,7 @@ export default function WorldPage() {
   return (
     <div ref={containerRef} className="fixed inset-0 flex flex-col bg-[#050505] overflow-hidden">
       {/* Header */}
-      <div 
+      <div
         className="transition-all duration-700 ease-out"
         style={{
           opacity: showUI ? 1 : 0,
@@ -182,7 +193,7 @@ export default function WorldPage() {
       {/* Main content */}
       <div className="flex-1 flex relative">
         {/* Left Sidebar */}
-        <div 
+        <div
           className="w-56 border-r border-gray-800/30 flex flex-col transition-all duration-700 ease-out"
           style={{
             background: 'rgba(8, 8, 8, 0.95)',
@@ -210,13 +221,12 @@ export default function WorldPage() {
                     </span>
                     {score && (
                       <span
-                        className={`text-xs px-1.5 py-0.5 rounded transition-colors ${
-                          score.normalizedCoverage < 0.33
-                            ? 'bg-red-900/40 text-red-400'
-                            : score.normalizedCoverage < 0.66
+                        className={`text-xs px-1.5 py-0.5 rounded transition-colors ${score.normalizedCoverage < 0.33
+                          ? 'bg-red-900/40 text-red-400'
+                          : score.normalizedCoverage < 0.66
                             ? 'bg-yellow-900/40 text-yellow-400'
                             : 'bg-green-900/40 text-green-400'
-                        }`}
+                          }`}
                       >
                         {(score.normalizedCoverage * 100).toFixed(0)}%
                       </span>
@@ -232,7 +242,7 @@ export default function WorldPage() {
         <div className="flex-1 relative">
           {/* 3D Globe View - Real Mapbox globe */}
           {viewMode === '3d' && (
-            <div 
+            <div
               className="absolute inset-0"
               style={{ zIndex: 10 }}
             >
@@ -245,7 +255,7 @@ export default function WorldPage() {
               />
             </div>
           )}
-          
+
           {/* 2D Map View */}
           {viewMode === '2d' && (
             <div className="absolute inset-0" style={{ zIndex: 10 }}>
@@ -260,7 +270,7 @@ export default function WorldPage() {
           )}
 
           {/* View Toggle */}
-          <div 
+          <div
             className="absolute top-4 right-4 z-30 transition-opacity duration-500"
             style={{ opacity: showUI ? 1 : 0.6 }}
           >
@@ -269,7 +279,7 @@ export default function WorldPage() {
 
           {/* Legend */}
           {showUI && (
-            <div 
+            <div
               className="absolute right-4 bottom-4 z-20 transition-all duration-500"
               style={{ opacity: showUI ? 1 : 0 }}
             >
