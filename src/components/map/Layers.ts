@@ -12,11 +12,22 @@ import { MAP_CONFIG } from '@/core/graph/constants';
 // Type Definitions
 // ============================================================================
 
+/** deck.gl picking event info structure */
+export interface PickingInfo<T = unknown> {
+  x: number;
+  y: number;
+  coordinate?: [number, number];
+  object?: T;
+  index: number;
+  layer?: { id: string };
+  picked: boolean;
+}
+
 export interface LayerProps {
   points: MapPoint[];
   time: number;
-  onPointClick?: (info: any) => void;
-  onPointHover?: (info: any) => void;
+  onPointClick?: (info: PickingInfo<MapPoint>) => void;
+  onPointHover?: (info: PickingInfo<MapPoint>) => void;
   selectedId?: string | null;
   hoveredId?: string | null;
   mosqueMode?: boolean;
@@ -24,8 +35,8 @@ export interface LayerProps {
 
 export interface GeoJsonLayerProps {
   data: GeoJSON.FeatureCollection;
-  onFeatureClick?: (info: any) => void;
-  onFeatureHover?: (info: any) => void;
+  onFeatureClick?: (info: PickingInfo<GeoJSON.Feature>) => void;
+  onFeatureHover?: (info: PickingInfo<GeoJSON.Feature>) => void;
   selectedId?: string | null;
   getColor?: (feature: GeoJSON.Feature) => [number, number, number, number];
 }
@@ -250,8 +261,8 @@ export function createRegionPolygonLayer(props: GeoJsonLayerProps) {
 export interface AllLayersProps {
   points: MapPoint[];
   time: number;
-  onPointClick?: (info: any) => void;
-  onPointHover?: (info: any) => void;
+  onPointClick?: (info: PickingInfo<MapPoint>) => void;
+  onPointHover?: (info: PickingInfo<MapPoint>) => void;
   selectedId?: string | null;
   hoveredId?: string | null;
   showGlow?: boolean;

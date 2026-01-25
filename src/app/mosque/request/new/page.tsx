@@ -34,7 +34,7 @@ export default function NewRequestWizard() {
         supporting_link: ''
     });
 
-    const updateField = (key: string, val: any) => {
+    const updateField = (key: string, val: string | number) => {
         setFormData(prev => ({ ...prev, [key]: val }));
     };
 
@@ -79,9 +79,9 @@ export default function NewRequestWizard() {
 
             if (error) throw error;
             router.push('/mosque');
-        } catch (err: any) {
+        } catch (err: unknown) {
             console.error('Submission error:', err);
-            setError(err.message);
+            setError(err instanceof Error ? err.message : 'An error occurred');
             setSubmitting(false);
         }
     };
@@ -116,8 +116,8 @@ export default function NewRequestWizard() {
                                         key={cat.id}
                                         onClick={() => updateField('purpose_category', cat.id)}
                                         className={`p-4 rounded-xl border-2 text-left transition-all ${formData.purpose_category === cat.id
-                                                ? 'border-green-500 bg-green-900/20'
-                                                : 'border-gray-700 hover:border-gray-500 bg-gray-900'
+                                            ? 'border-green-500 bg-green-900/20'
+                                            : 'border-gray-700 hover:border-gray-500 bg-gray-900'
                                             }`}
                                     >
                                         <div className="font-semibold text-white text-lg mb-1">{cat.label}</div>
@@ -156,13 +156,13 @@ export default function NewRequestWizard() {
                                         key={level}
                                         onClick={() => updateField('urgency_level', level)}
                                         className={`p-4 rounded-xl border-2 flex items-center gap-4 transition-all ${formData.urgency_level === level
-                                                ? 'border-green-500 bg-green-900/20'
-                                                : 'border-gray-700 bg-gray-900 hover:bg-gray-800'
+                                            ? 'border-green-500 bg-green-900/20'
+                                            : 'border-gray-700 bg-gray-900 hover:bg-gray-800'
                                             }`}
                                     >
                                         <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${level >= 4 ? 'bg-red-500 text-white' :
-                                                level === 3 ? 'bg-yellow-500 text-black' :
-                                                    'bg-blue-500 text-white'
+                                            level === 3 ? 'bg-yellow-500 text-black' :
+                                                'bg-blue-500 text-white'
                                             }`}>
                                             {level}
                                         </div>

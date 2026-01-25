@@ -178,7 +178,7 @@ export default function MapboxGlobe({
   }, [hasInteracted, showTitle, onIntroComplete]);
 
   // Handle marker click
-  const handleClick = useCallback((event: any) => {
+  const handleClick = useCallback((event: MapLayerMouseEvent) => {
     const features = event.features;
     if (features && features.length > 0) {
       const clickedFeature = features[0];

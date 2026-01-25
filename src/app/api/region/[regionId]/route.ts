@@ -10,13 +10,13 @@ import { getRegionDetail } from '@/core/graph/metrics';
 import { getTopOrgsForRegion } from '@/core/graph/ranking';
 
 interface RouteParams {
-  params: {
+  params: Promise<{
     regionId: string;
-  };
+  }>;
 }
 
 export async function GET(request: NextRequest, { params }: RouteParams) {
-  const { regionId } = params;
+  const { regionId } = await params;
   const dataMode = getDataMode();
 
   try {

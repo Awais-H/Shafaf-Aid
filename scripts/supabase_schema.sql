@@ -1,34 +1,37 @@
--- Enable RLS (Auth users table is managed by Supabase, so we verify RLS on our tables)
+-- Enable RLS
+-- (auth.users is managed by Supabase)
 
 -- HELPER FUNCTIONS
--- use security definer to bypass RLS recursion when checking admin status
+-- Securely check if user is an admin by checking admin_profiles table
 CREATE OR REPLACE FUNCTION public.is_admin()
 RETURNS boolean AS $$
 BEGIN
   RETURN EXISTS (
-    SELECT 1 FROM public.profiles 
-    WHERE user_id = auth.uid() 
-    AND role = 'admin'
+    SELECT 1 FROM public.admin_profiles 
+    WHERE user_id = auth.uid()
   );
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
--- PROFILES
-create table if not exists public.profiles (
+-- 1. ADMIN PROFILES (New)
+create table if not exists public.admin_profiles (
   user_id uuid primary key references auth.users(id) on delete cascade,
-  role text check (role in ('donor','mosque','admin')) not null,
+  display_name text,
+  role text default 'admin' check (role = 'admin'),
   created_at timestamp with time zone default now()
 );
-alter table public.profiles enable row level security;
+alter table public.admin_profiles enable row level security;
 
--- DONOR PROFILES
+-- 2. DONOR PROFILES
 create table if not exists public.donor_profiles (
   user_id uuid primary key references auth.users(id) on delete cascade,
-  display_name text
+  display_name text,
+  role text default 'donor' check (role = 'donor'),
+  created_at timestamp with time zone default now()
 );
 alter table public.donor_profiles enable row level security;
 
--- MOSQUE PROFILES
+-- 3. MOSQUE PROFILES
 create table if not exists public.mosque_profiles (
   user_id uuid primary key references auth.users(id) on delete cascade,
   mosque_name text not null,
@@ -36,9 +39,14 @@ create table if not exists public.mosque_profiles (
   country text not null,
   city text not null,
   contact_email text not null,
-  short_description text
+  short_description text,
+  role text default 'mosque' check (role = 'mosque'),
+  created_at timestamp with time zone default now()
 );
 alter table public.mosque_profiles enable row level security;
+
+-- NOTE: public.profiles is DEPRECATED and REMOVED. 
+-- All logic must use admin_profiles, donor_profiles, or mosque_profiles.
 
 -- AID REQUESTS
 create table if not exists public.aid_requests (
@@ -71,7 +79,7 @@ alter table public.donor_pledges enable row level security;
 
 -- MAP DATA TABLES (Required for Supabase Data Mode)
 create table if not exists public.countries (
-  id text primary key, -- utilizing ISO code or similar string ID from HDX
+  id text primary key, 
   name text not null,
   iso2 text,
   curated boolean default false,
@@ -109,54 +117,93 @@ create table if not exists public.aid_edges (
 );
 alter table public.aid_edges enable row level security;
 
+-- COMPUTED ANALYTICS TABLES (New)
+create table if not exists public.country_scores (
+  country_id text primary key references public.countries(id) on delete cascade,
+  raw_coverage float,
+  normalized_coverage float,
+  region_count int,
+  total_aid_presence float,
+  updated_at timestamp with time zone default now()
+);
+alter table public.country_scores enable row level security;
+
+create table if not exists public.region_analytics (
+  region_id text primary key references public.regions(id) on delete cascade,
+  country_id text references public.countries(id) on delete cascade,
+  coverage_index float,
+  normalized_coverage float,
+  need_factor float,
+  overlap_score float,
+  updated_at timestamp with time zone default now()
+);
+alter table public.region_analytics enable row level security;
+
 
 -- RLS POLICIES
 
--- profiles
--- DROP POLICY IF EXISTS "Users can view own profile" ON public.profiles;
-create policy "Users can view own profile" on public.profiles
+-- admin_profiles
+drop policy if exists "Admins can view own profile" on public.admin_profiles;
+create policy "Admins can view own profile" on public.admin_profiles
   for select using (auth.uid() = user_id);
-create policy "Users can insert own profile" on public.profiles
-  for insert with check (auth.uid() = user_id);
-create policy "Users can update own profile" on public.profiles
+
+drop policy if exists "Admins can update own profile" on public.admin_profiles;
+create policy "Admins can update own profile" on public.admin_profiles
   for update using (auth.uid() = user_id);
 
 -- donor_profiles
+drop policy if exists "Donors can view own profile" on public.donor_profiles;
 create policy "Donors can view own profile" on public.donor_profiles
   for select using (auth.uid() = user_id);
+
+drop policy if exists "Donors can insert own profile" on public.donor_profiles;
 create policy "Donors can insert own profile" on public.donor_profiles
   for insert with check (auth.uid() = user_id);
+
+drop policy if exists "Donors can update own profile" on public.donor_profiles;
 create policy "Donors can update own profile" on public.donor_profiles
   for update using (auth.uid() = user_id);
 
 -- mosque_profiles
+drop policy if exists "Mosques can view own profile" on public.mosque_profiles;
 create policy "Mosques can view own profile" on public.mosque_profiles
   for select using (auth.uid() = user_id);
+
+drop policy if exists "Mosques can insert own profile" on public.mosque_profiles;
 create policy "Mosques can insert own profile" on public.mosque_profiles
   for insert with check (auth.uid() = user_id);
+
+drop policy if exists "Mosques can update own profile" on public.mosque_profiles;
 create policy "Mosques can update own profile" on public.mosque_profiles
   for update using (auth.uid() = user_id);
 
 -- aid_requests
+drop policy if exists "Mosques can insert requests" on public.aid_requests;
 create policy "Mosques can insert requests" on public.aid_requests
   for insert with check (auth.uid() = mosque_user_id);
   
+drop policy if exists "Mosques can view own requests" on public.aid_requests;
 create policy "Mosques can view own requests" on public.aid_requests
   for select using (auth.uid() = mosque_user_id);
 
+drop policy if exists "Mosques can update own submitted requests" on public.aid_requests;
 create policy "Mosques can update own submitted requests" on public.aid_requests
   for update using (auth.uid() = mosque_user_id and status = 'submitted');
 
+drop policy if exists "Donors and public can view approved requests" on public.aid_requests;
 create policy "Donors and public can view approved requests" on public.aid_requests
   for select using (status = 'approved');
 
 -- donor_pledges
+drop policy if exists "Donors can insert own pledges" on public.donor_pledges;
 create policy "Donors can insert own pledges" on public.donor_pledges
   for insert with check (auth.uid() = donor_user_id);
 
+drop policy if exists "Donors can view own pledges" on public.donor_pledges;
 create policy "Donors can view own pledges" on public.donor_pledges
   for select using (auth.uid() = donor_user_id);
 
+drop policy if exists "Mosques can view pledges for their approved requests" on public.donor_pledges;
 create policy "Mosques can view pledges for their approved requests" on public.donor_pledges
   for select using (
     exists (
@@ -167,28 +214,63 @@ create policy "Mosques can view pledges for their approved requests" on public.d
     )
   );
 
--- ADMIN POLICIES (Using infinite-recursion-safe function)
+-- ADMIN POLICIES (Using is_admin function)
 
-create policy "Admins can view profiles" on public.profiles
+-- Admin rights on all profiles
+drop policy if exists "Admins can view admin profiles" on public.admin_profiles;
+create policy "Admins can view admin profiles" on public.admin_profiles
   for select using ( is_admin() );
 
+drop policy if exists "Admins can view donor profiles" on public.donor_profiles;
 create policy "Admins can view donor profiles" on public.donor_profiles
   for select using ( is_admin() );
 
+drop policy if exists "Admins can view mosque profiles" on public.mosque_profiles;
 create policy "Admins can view mosque profiles" on public.mosque_profiles
   for select using ( is_admin() );
 
+-- Admin rights on requests
+drop policy if exists "Admins can view all requests" on public.aid_requests;
 create policy "Admins can view all requests" on public.aid_requests
   for select using ( is_admin() );
 
+drop policy if exists "Admins can update requests" on public.aid_requests;
 create policy "Admins can update requests" on public.aid_requests
   for update using ( is_admin() );
 
+-- Admin rights on pledges
+drop policy if exists "Admins can view all pledges" on public.donor_pledges;
 create policy "Admins can view all pledges" on public.donor_pledges
   for select using ( is_admin() );
 
--- MAP DATA PUBLIC ACCESS
-create policy "Public view countries" on public.countries for select using (true);
-create policy "Public view regions" on public.regions for select using (true);
-create policy "Public view orgs" on public.orgs for select using (true);
-create policy "Public view aid_edges" on public.aid_edges for select using (true);
+-- MAP DATA & ANALYTICS PUBLIC ACCESS (Allow Ingestion)
+
+-- countries
+drop policy if exists "Public manage countries" on public.countries;
+create policy "Public manage countries" on public.countries
+  for all using (true) with check (true);
+
+-- regions
+drop policy if exists "Public manage regions" on public.regions;
+create policy "Public manage regions" on public.regions
+  for all using (true) with check (true);
+
+-- orgs
+drop policy if exists "Public manage orgs" on public.orgs;
+create policy "Public manage orgs" on public.orgs
+  for all using (true) with check (true);
+
+-- aid_edges
+drop policy if exists "Public manage aid_edges" on public.aid_edges;
+create policy "Public manage aid_edges" on public.aid_edges
+  for all using (true) with check (true);
+
+-- country_scores
+drop policy if exists "Public manage country_scores" on public.country_scores;
+create policy "Public manage country_scores" on public.country_scores
+  for all using (true) with check (true);
+
+-- region_analytics
+drop policy if exists "Public manage region_analytics" on public.region_analytics;
+create policy "Public manage region_analytics" on public.region_analytics
+  for all using (true) with check (true);

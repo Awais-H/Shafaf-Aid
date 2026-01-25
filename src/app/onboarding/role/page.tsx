@@ -78,9 +78,9 @@ export default function OnboardingPage() {
             }
 
             router.refresh();
-        } catch (err: any) {
+        } catch (err: unknown) {
             console.error('Onboarding error:', err);
-            setError(err.message || 'Failed to create profile');
+            setError(err instanceof Error ? err.message : 'Failed to create profile');
             // If profile creation failed, we might want to rollback or handle partial state
             // For MVP, we'll just show error
         } finally {

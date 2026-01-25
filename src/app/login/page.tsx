@@ -89,8 +89,8 @@ export default function LoginPage() {
                     }
                 }
             }
-        } catch (err: any) {
-            setError(err.message);
+        } catch (err: unknown) {
+            setError(err instanceof Error ? err.message : 'An error occurred');
         } finally {
             setLoading(false);
         }
@@ -184,9 +184,15 @@ export default function LoginPage() {
                                 <button
                                     type="button"
                                     onClick={() => setSelectedRole('donor')}
+<<<<<<< HEAD
                                     className={`p-4 rounded-xl border-2 transition-all text-center ${selectedRole === 'donor'
                                         ? 'border-emerald-500 bg-emerald-500/20 text-white'
                                         : 'border-[#27272a] bg-[#27272a] text-gray-400 hover:border-[#3f3f46]'
+=======
+                                    className={`p-4 rounded-lg border-2 transition-all text-center ${selectedRole === 'donor'
+                                        ? 'border-blue-500 bg-blue-500/20 text-white'
+                                        : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'
+>>>>>>> f6959e1b9d809f2d57cda93365c267f3fbaec05f
                                         }`}
                                 >
                                     <div className="font-semibold">Donor</div>
@@ -195,9 +201,15 @@ export default function LoginPage() {
                                 <button
                                     type="button"
                                     onClick={() => setSelectedRole('mosque')}
+<<<<<<< HEAD
                                     className={`p-4 rounded-xl border-2 transition-all text-center ${selectedRole === 'mosque'
                                         ? 'border-emerald-500 bg-emerald-500/20 text-white'
                                         : 'border-[#27272a] bg-[#27272a] text-gray-400 hover:border-[#3f3f46]'
+=======
+                                    className={`p-4 rounded-lg border-2 transition-all text-center ${selectedRole === 'mosque'
+                                        ? 'border-emerald-500 bg-emerald-500/20 text-white'
+                                        : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'
+>>>>>>> f6959e1b9d809f2d57cda93365c267f3fbaec05f
                                         }`}
                                 >
                                     <div className="font-semibold">Mosque</div>
