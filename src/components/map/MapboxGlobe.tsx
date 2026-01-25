@@ -7,10 +7,10 @@
  */
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Map, { Source, Layer, useMap } from 'react-map-gl';
-import type { MapRef, ViewStateChangeEvent } from 'react-map-gl';
+import Map, { Source, Layer } from 'react-map-gl';
+import type { MapRef, ViewStateChangeEvent, MapLayerMouseEvent } from 'react-map-gl';
+import type { Map as MapboxMap } from 'mapbox-gl';
 import type { MapPoint } from '@/core/data/schema';
-import type { CircleLayer } from 'mapbox-gl';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -36,7 +36,8 @@ const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || 'pk.eyJ1IjoiYW1hYW4
 // Layer Styles
 // ============================================================================
 
-const glowLayerStyle: CircleLayer = {
+// Layer styles (cast as any to handle Mapbox expression types)
+const glowLayerStyle: any = {
   id: 'marker-glow',
   type: 'circle',
   paint: {
@@ -60,7 +61,7 @@ const glowLayerStyle: CircleLayer = {
   },
 };
 
-const markerLayerStyle: CircleLayer = {
+const markerLayerStyle: any = {
   id: 'markers',
   type: 'circle',
   paint: {
@@ -104,6 +105,10 @@ export default function MapboxGlobe({
     zoom: 1.5,
   });
   const rotationRef = useRef<number | null>(null);
+  
+  // Country hover state - track hovered country name
+  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Convert points to GeoJSON
   const geojsonData: GeoJSON.FeatureCollection = {
@@ -153,6 +158,133 @@ export default function MapboxGlobe({
     }
   }, [points, onPointClick]);
 
+  // Handle country hover - show native Mapbox labels on hover
+  const handleMouseMove = useCallback((event: MapLayerMouseEvent) => {
+    const map = mapRef.current?.getMap();
+    if (!map) return;
+
+    // Only show country names at low zoom (country level)
+    if (viewState.zoom < 5) {
+      // Query our invisible country fill layer
+      const features = map.queryRenderedFeatures(event.point, {
+        layers: ['country-fills']
+      });
+
+      if (features && features.length > 0) {
+        const countryFeature = features[0];
+        const name = countryFeature.properties?.name_en || countryFeature.properties?.name;
+        
+        if (name && name !== hoveredCountry) {
+          // Clear any pending timeout
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+          }
+          
+          // Show instantly - no delay
+          setHoveredCountry(name);
+          updateCountryLabelVisibility(map, name);
+        }
+        return;
+      }
+    }
+
+    // No country under mouse - hide with slight delay
+    if (hoveredCountry) {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+      
+      hoverTimeoutRef.current = setTimeout(() => {
+        setHoveredCountry(null);
+        const map = mapRef.current?.getMap();
+        if (map) {
+          updateCountryLabelVisibility(map, null);
+        }
+      }, 40); // 40ms delay before hiding
+    }
+  }, [viewState.zoom, hoveredCountry]);
+
+  // Update country label visibility based on hover
+  const updateCountryLabelVisibility = useCallback((map: MapboxMap, countryName: string | null) => {
+    const style = map.getStyle();
+    if (!style?.layers) return;
+
+    style.layers.forEach((layer) => {
+      const layerId = layer.id.toLowerCase();
+      
+      // Find country label layers
+      if (layerId.includes('country') && layerId.includes('label')) {
+        if (countryName) {
+          // Show only the hovered country's label
+          map.setFilter(layer.id, ['==', ['get', 'name_en'], countryName]);
+          map.setLayoutProperty(layer.id, 'visibility', 'visible');
+          // Move label layer to top so it's above markers
+          map.moveLayer(layer.id);
+        } else {
+          // Hide all country labels
+          map.setLayoutProperty(layer.id, 'visibility', 'none');
+        }
+      }
+    });
+  }, []);
+
+  // Clean up timeouts
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    };
+  }, []);
+
+  // Hide country labels initially - they'll show on hover
+  const onMapLoad = useCallback(() => {
+    const map = mapRef.current?.getMap();
+    if (!map) return;
+
+    // Wait for style to load
+    if (!map.isStyleLoaded()) {
+      map.once('style.load', () => onMapLoad());
+      return;
+    }
+
+    // Add invisible country fill layer for hover detection
+    // This uses the same source as admin boundaries
+    if (!map.getLayer('country-fills')) {
+      map.addSource('country-boundaries', {
+        type: 'vector',
+        url: 'mapbox://mapbox.country-boundaries-v1'
+      });
+
+      map.addLayer({
+        id: 'country-fills',
+        type: 'fill',
+        source: 'country-boundaries',
+        'source-layer': 'country_boundaries',
+        paint: {
+          'fill-color': 'transparent',
+          'fill-opacity': 0
+        }
+      }, 'country-label'); // Add below country labels
+    }
+
+    // Hide country labels - they'll show on hover instead
+    const style = map.getStyle();
+    if (style?.layers) {
+      style.layers.forEach((layer) => {
+        const layerId = layer.id.toLowerCase();
+        
+        // Hide country labels initially (they show on hover)
+        if (layerId.includes('country') && layerId.includes('label')) {
+          map.setLayoutProperty(layer.id, 'visibility', 'none');
+        }
+        
+        // Hide continent labels
+        if (layerId.includes('continent')) {
+          map.setLayoutProperty(layer.id, 'visibility', 'none');
+        }
+      });
+    }
+  }, []);
+
   // Auto rotation effect
   useEffect(() => {
     if (hasInteracted || introComplete || !autoRotate) {
@@ -196,6 +328,8 @@ export default function MapboxGlobe({
         onDragStart={handleInteractionStart}
         onZoomStart={handleInteractionStart}
         onClick={handleClick}
+        onMouseMove={handleMouseMove}
+        onLoad={onMapLoad}
         mapboxAccessToken={MAPBOX_TOKEN}
         mapStyle="mapbox://styles/mapbox/dark-v11"
         projection={{ name: 'globe' }}
@@ -206,7 +340,7 @@ export default function MapboxGlobe({
           'space-color': 'rgba(5, 5, 5, 1)',
           'star-intensity': 0.15,
         }}
-        interactiveLayerIds={['markers']}
+        interactiveLayerIds={['markers', 'country-fills']}
         style={{ width: '100%', height: '100%' }}
         attributionControl={false}
         cursor="grab"
