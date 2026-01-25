@@ -1,5 +1,5 @@
 /**
- * Global view state store for AidGap
+ * Global view state store for Shafaf
  * Manages current view, selections, and UI state
  */
 

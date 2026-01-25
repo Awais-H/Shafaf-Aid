@@ -1,5 +1,5 @@
 /**
- * Graph construction utilities for AidGap
+ * Graph construction utilities for Shafaf
  * Builds a bipartite graph from organizations and regions connected by aid edges
  */
 

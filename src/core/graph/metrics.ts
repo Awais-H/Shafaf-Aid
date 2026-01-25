@@ -1,5 +1,5 @@
 /**
- * Core metrics calculation engine for AidGap
+ * Core metrics calculation engine for Shafaf
  * Implements Coverage Index, normalization, centrality, and variance calculations
  */
 

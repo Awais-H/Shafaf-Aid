@@ -72,7 +72,7 @@ export function useGeminiChat() {
             const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
             const prompt = `
-        System: You are a helpful assistant for "UmmaHacks AidGap", a humanitarian aid platform.
+        System: You are a helpful assistant for "UmmaHacks Shafaf", a humanitarian aid platform.
         Use the following real-time data context to answer the user's question.
         
         ${context}

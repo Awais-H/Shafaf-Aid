@@ -1,5 +1,5 @@
 /**
- * Constants for AidGap calculations
+ * Constants for Shafaf calculations
  * These weights and factors are used in the Coverage Index formula
  */
 

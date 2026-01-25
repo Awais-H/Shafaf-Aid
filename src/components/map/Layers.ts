@@ -1,5 +1,5 @@
 /**
- * deck.gl layer factories for AidGap map visualization
+ * deck.gl layer factories for Shafaf map visualization
  * Creates glow, pulse, and heat layers for coverage visualization
  */
 

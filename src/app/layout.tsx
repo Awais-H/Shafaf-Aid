@@ -4,9 +4,9 @@ import { AuthProvider } from '@/components/auth/AuthProvider';
 import { AIChatWindow } from '@/components/ai/AIChatWindow';
 
 export const metadata: Metadata = {
-  title: 'Shafaf Aid - AidGap Explorer',
-  description: 'Exploratory analytics platform for humanitarian aid coverage analysis using graph theory and geospatial visualization',
-  keywords: ['humanitarian aid', 'coverage analysis', 'geospatial', 'visualization'],
+  title: 'Shafaf - Global Aid Explorer',
+  description: 'Shafaf: Exploratory analytics platform for humanitarian aid coverage analysis using graph theory and geospatial visualization',
+  keywords: ['humanitarian aid', 'coverage analysis', 'geospatial', 'visualization', 'shafaf'],
 };
 
 export default function RootLayout({

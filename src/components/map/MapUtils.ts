@@ -1,5 +1,5 @@
 /**
- * Map utility functions for AidGap
+ * Map utility functions for Shafaf
  * Provides zoom, bounds, and view transition helpers
  */
 

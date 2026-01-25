@@ -1,5 +1,5 @@
 /**
- * Region polygon utilities for AidGap
+ * Region polygon utilities for Shafaf
  * Handles GeoJSON data processing for country view
  */
 

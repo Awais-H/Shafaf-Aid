@@ -35,7 +35,7 @@ export function AIChatWindow() {
                 <div className="bg-gray-800 p-3 border-b border-gray-700 flex justify-between items-center">
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                        <span className="font-semibold text-white">AidGap Assistant</span>
+                        <span className="font-semibold text-white">Shafaf Assistant</span>
                     </div>
                     <button
                         onClick={() => setIsOpen(false)}

@@ -1,5 +1,5 @@
 /**
- * Core data types for AidGap
+ * Core data types for Shafaf
  * These types define the structure of all data flowing through the application
  */
 

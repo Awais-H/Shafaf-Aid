@@ -1,5 +1,5 @@
 /**
- * Synthetic data generator for AidGap stress testing
+ * Synthetic data generator for Shafaf stress testing
  * Generates large datasets for performance testing (50k+ points)
  * 
  * Usage: npx ts-node --esm scripts/generateSyntheticData.ts

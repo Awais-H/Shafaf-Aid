@@ -1,5 +1,5 @@
 /**
- * Ranking utilities for AidGap
+ * Ranking utilities for Shafaf
  * Provides top-k queries and sorting for organizations and regions
  */
 

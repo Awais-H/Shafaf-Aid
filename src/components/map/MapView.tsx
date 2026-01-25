@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Main map view component for AidGap
+ * Main map view component for Shafaf
  * Integrates MapLibre GL JS with deck.gl for visualization
  */
 

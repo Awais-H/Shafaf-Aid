@@ -1,5 +1,5 @@
 /**
- * Derived selectors for AidGap UI
+ * Derived selectors for Shafaf UI
  * Computes derived values from the store for efficient re-rendering
  */
 

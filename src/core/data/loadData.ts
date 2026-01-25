@@ -1,5 +1,5 @@
 /**
- * Data loading utilities for AidGap
+ * Data loading utilities for Shafaf
  * Supports both static (JSON) and Supabase data sources
  */
 

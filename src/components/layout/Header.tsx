@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Header component for AidGap
+ * Header component for Shafaf
  * Shows app title, navigation, and data mode indicator
  */
 

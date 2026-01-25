@@ -1,5 +1,5 @@
 /**
- * Supabase client configuration for AidGap
+ * Supabase client configuration for Shafaf
  * Creates and exports the Supabase client for data fetching and auth
  */
 

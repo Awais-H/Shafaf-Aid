@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Side panel component for AidGap
+ * Side panel component for Shafaf
  * Shows region details when a region is selected
  */
 

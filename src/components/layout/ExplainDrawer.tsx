@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Explain drawer component for AidGap
+ * Explain drawer component for Shafaf
  * Shows formulas, weights, and methodology documentation
  */
 

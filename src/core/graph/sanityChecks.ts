@@ -1,5 +1,5 @@
 /**
- * Sanity checks and safety utilities for AidGap
+ * Sanity checks and safety utilities for Shafaf
  * Prevents divide-by-zero, clamps extreme values, and validates data
  */
 
