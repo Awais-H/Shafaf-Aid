@@ -159,30 +159,6 @@ export default function WorldPage() {
 
   return (
     <div ref={containerRef} className="fixed inset-0 flex flex-col bg-[#050505] overflow-hidden">
-      {/* "Shafaf" title - centered above the globe */}
-      {viewMode === '3d' && titleOpacity > 0 && (
-        <div 
-          className="fixed inset-0 flex flex-col items-center pointer-events-none select-none"
-          style={{ 
-            zIndex: 5,
-            opacity: titleOpacity,
-            transition: 'opacity 0.4s ease-out',
-            paddingTop: '8vh',
-          }}
-        >
-          <h1 
-            className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-center"
-            style={{
-              color: 'rgba(120, 120, 120, 0.8)',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            Shafaf
-          </h1>
-        </div>
-      )}
-      
       {/* Header */}
       <div 
         className="transition-all duration-700 ease-out"
@@ -290,22 +266,6 @@ export default function WorldPage() {
           >
             <ViewToggle view={viewMode} onChange={setViewMode} />
           </div>
-
-          {/* Scroll Hint */}
-          {viewMode === '3d' && !introComplete && titleOpacity > 0.3 && (
-            <div 
-              className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-center transition-all duration-500"
-              style={{ opacity: titleOpacity }}
-            >
-              <p className="text-gray-500 text-sm mb-2">Scroll to explore</p>
-              <div className="w-6 h-10 rounded-full border-2 border-gray-600/50 mx-auto flex items-start justify-center p-1">
-                <div 
-                  className="w-1.5 h-2.5 bg-gray-500 rounded-full animate-bounce"
-                  style={{ animationDuration: '2s' }}
-                />
-              </div>
-            </div>
-          )}
 
           {/* Legend */}
           {showUI && (

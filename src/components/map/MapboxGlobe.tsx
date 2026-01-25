@@ -344,8 +344,11 @@ export default function MapboxGlobe({
     };
   }, [hasInteracted, introComplete, autoRotate]);
 
-  // Calculate globe position - in intro mode, push it down so only top half shows
-  const globeOffset = showTitle ? '45vh' : '0';
+  // Calculate globe position - in intro mode, push it down and center on full screen
+  // Sidebar is 224px (w-56), so offset left by half to center on full viewport initially
+  // When transitioning, move right to center in the map pane
+  const globeOffsetY = showTitle ? '45vh' : '0';
+  const globeOffsetX = showTitle ? '-112px' : '0'; // Half of sidebar width (224/2)
 
   return (
     <div 
@@ -354,12 +357,12 @@ export default function MapboxGlobe({
       style={{ background: '#050505' }}
       onWheel={handleWheel}
     >
-      {/* Map container - slides up when transitioning to explore mode */}
+      {/* Map container - slides up and right when transitioning to explore mode */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          transform: `translateY(${globeOffset})`,
+          transform: `translate(${globeOffsetX}, ${globeOffsetY})`,
           transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
         }}
       >
@@ -401,8 +404,9 @@ export default function MapboxGlobe({
           className="absolute inset-x-0 top-0 pointer-events-none flex flex-col items-center"
           style={{
             opacity: titleOpacity,
-            transition: 'opacity 0.6s ease-out',
+            transition: 'opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
             paddingTop: '12vh',
+            transform: `translateX(${globeOffsetX})`,
           }}
         >
           <h1
@@ -430,10 +434,11 @@ export default function MapboxGlobe({
       {/* Scroll hint - shows during intro */}
       {showTitle && (
         <div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 pointer-events-none"
+          className="absolute bottom-8 left-1/2 pointer-events-none"
           style={{
             opacity: titleOpacity * 0.5,
-            transition: 'opacity 0.6s ease-out',
+            transition: 'opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+            transform: `translate(calc(-50% + ${globeOffsetX}), 0)`,
           }}
         >
           <div className="flex flex-col items-center gap-2 text-white/40 text-sm">
