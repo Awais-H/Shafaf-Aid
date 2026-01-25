@@ -22,17 +22,6 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 // ============================================================================
 
 interface MapViewProps {
-<<<<<<< HEAD
-  points: MapPoint[];
-  regionGeoJson?: RegionFeatureCollection | null;
-  onPointClick?: (point: MapPoint) => void;
-  onRegionClick?: (regionId: string) => void;
-  selectedId?: string | null;
-  showGlow?: boolean;
-  showPulse?: boolean;
-  mosqueMode?: boolean;
-  initialViewState?: MapViewState;
-=======
     points: MapPoint[];
     regionGeoJson?: RegionFeatureCollection | null;
     onPointClick?: (point: MapPoint) => void;
@@ -40,8 +29,8 @@ interface MapViewProps {
     selectedId?: string | null;
     showGlow?: boolean;
     showPulse?: boolean;
+    mosqueMode?: boolean;
     initialViewState?: MapViewState;
->>>>>>> f6959e1b9d809f2d57cda93365c267f3fbaec05f
 }
 
 // ============================================================================
@@ -49,17 +38,6 @@ interface MapViewProps {
 // ============================================================================
 
 export default function MapView({
-<<<<<<< HEAD
-  points,
-  regionGeoJson,
-  onPointClick,
-  onRegionClick,
-  selectedId,
-  showGlow = true,
-  showPulse = true,
-  mosqueMode = false,
-  initialViewState,
-=======
     points,
     regionGeoJson,
     onPointClick,
@@ -67,8 +45,8 @@ export default function MapView({
     selectedId,
     showGlow = true,
     showPulse = true,
+    mosqueMode = false,
     initialViewState,
->>>>>>> f6959e1b9d809f2d57cda93365c267f3fbaec05f
 }: MapViewProps) {
     const setMapViewState = useViewStore((state) => state.setMapViewState);
     const storeViewState = useViewStore((state) => state.mapViewState);
@@ -88,29 +66,12 @@ export default function MapView({
         }
     );
 
-<<<<<<< HEAD
-  // Add point layers
-  layers.push(
-    ...createAllPointLayers({
-      points,
-      time: animationTime,
-      onPointClick: handlePointClick,
-      onPointHover: handlePointHover,
-      selectedId,
-      hoveredId,
-      showGlow,
-      showPulse,
-      mosqueMode,
-    })
-  );
-=======
     // Hover state for tooltips
     const [hoverInfo, setHoverInfo] = useState<{
         x: number;
         y: number;
         object: MapPoint | null;
     } | null>(null);
->>>>>>> f6959e1b9d809f2d57cda93365c267f3fbaec05f
 
     // Delayed hover ID for smooth transitions
     const [delayedHoverId, setDelayedHoverId] = useState<string | null>(null);

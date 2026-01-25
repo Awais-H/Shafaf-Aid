@@ -44,8 +44,8 @@ function MosqueCard({
         <div
             onClick={onClick}
             className={`p-4 rounded-lg border cursor-pointer transition-all duration-200 ${selected
-                    ? 'bg-white/10 border-blue-500'
-                    : 'bg-white/5 border-gray-800 hover:bg-white/8 hover:border-gray-700'
+                ? 'bg-white/10 border-blue-500'
+                : 'bg-white/5 border-gray-800 hover:bg-white/8 hover:border-gray-700'
                 }`}
         >
             <div className="flex justify-between items-start mb-2">
@@ -134,6 +134,7 @@ export default function MosquesPage() {
         }
 
         async function fetchData() {
+            if (!geoCenters) return;
             setIsLoadingMosques(true);
             try {
                 let data: MosqueWithFunding[];
