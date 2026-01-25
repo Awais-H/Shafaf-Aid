@@ -3,6 +3,10 @@
  */
 
 import type { Mosque, MosqueWithFunding, MosqueUrgency } from '@/core/data/schema';
+import curatedMosquesJson from '@/data/curated_mosques.json';
+
+type CuratedMosque = { id: string; name: string; city: string; lat: number; lng: number; address?: string };
+const CURATED_MOSQUES = curatedMosquesJson as Record<string, Record<string, CuratedMosque[]>>;
 
 export interface GeoCenter {
     lat: number;
@@ -201,12 +205,25 @@ function generateSyntheticMosquesForCity(
     return out;
 }
 
-/** Fetch mosques for a single city (center + radius), attach funding. Use real API; fallback to synthetic for any city when API empty/fails. */
+/** Fetch mosques for a single city (center + radius), attach funding. Use curated overrides when present; else real API; fallback to synthetic. */
 export async function fetchMosquesForCity(
     geo: GeoCenter,
     country: string,
     city: string
 ): Promise<MosqueWithFunding[]> {
+    const curated = CURATED_MOSQUES[country]?.[city];
+    if (curated && curated.length > 0) {
+        const mosques: Mosque[] = curated.map((c) => ({
+            id: c.id,
+            name: c.name,
+            country,
+            city: c.city,
+            lat: c.lat,
+            lng: c.lng,
+        }));
+        return mosques.map((m) => attachSyntheticFunding(m, country, m.city));
+    }
+
     let mosques: Mosque[];
 
     try {

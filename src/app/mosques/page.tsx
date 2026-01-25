@@ -136,6 +136,7 @@ export default function MosquesPage() {
         async function fetchData() {
             if (!geoCenters) return;
             setIsLoadingMosques(true);
+            setMosques([]);
             try {
                 let data: MosqueWithFunding[];
                 if (selectedCity) {
@@ -248,19 +249,19 @@ export default function MosquesPage() {
             <div className="flex-1 flex pt-14">
                 {/* Left Sidebar */}
                 <div
-                    className="w-72 border-r border-gray-800/30 flex flex-col"
+                    className="w-72 border-r border-gray-800/30 flex flex-col min-h-0"
                     style={{
                         background: 'rgba(8, 8, 8, 0.95)',
                         backdropFilter: 'blur(16px)',
                     }}
                 >
-                    <div className="p-4 border-b border-gray-800/30">
+                    <div className="p-4 border-b border-gray-800/30 shrink-0">
                         <h3 className="text-white font-semibold text-sm mb-1">Mosques</h3>
                         <p className="text-gray-500 text-xs">Select country & city to explore</p>
                     </div>
 
                     {/* Country/City Selectors */}
-                    <div className="p-4 space-y-3 border-b border-gray-800/30">
+                    <div className="p-4 space-y-3 border-b border-gray-800/30 shrink-0">
                         <div>
                             <label className="block text-xs text-gray-400 mb-1">Country</label>
                             <select
@@ -292,8 +293,8 @@ export default function MosquesPage() {
                         )}
                     </div>
 
-                    {/* Mosque List */}
-                    <div className="flex-1 overflow-y-auto p-2">
+                    {/* Mosque List - scrollable */}
+                    <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden p-2">
                         {!selectedCountry ? (
                             <div className="text-center text-gray-500 text-sm py-8">
                                 Select a country to view mosques and donation needs.

@@ -1,0 +1,38 @@
+{
+    "Canada": {
+        "Waterloo": [
+            {
+                "id": "kitchener-masjid",
+                "name": "Kitchener Masjid (Muslim Association of Canada)",
+                "city": "Kitchener",
+                "lat": 43.46479,
+                "lng": -80.46043,
+                "address": "1017 Victoria Street North, Kitchener"
+            },
+            {
+                "id": "icw-waterloo",
+                "name": "Islamic Centre of Waterloo (ICW)",
+                "city": "Waterloo",
+                "lat": 43.46852,
+                "lng": -80.58916,
+                "address": "510 Erbsville Road, Waterloo"
+            },
+            {
+                "id": "al-salaam-kitchener",
+                "name": "Al-Salaam Islamic Centre",
+                "city": "Kitchener",
+                "lat": 43.43658,
+                "lng": -80.48410,
+                "address": "300 Mill Street, Kitchener"
+            },
+            {
+                "id": "waterloo-masjid",
+                "name": "Waterloo Masjid (Muslim Society of Waterloo & Wellington Counties)",
+                "city": "Waterloo",
+                "lat": 43.45906,
+                "lng": -80.53547,
+                "address": "213 Erb Street West, Waterloo"
+            }
+        ]
+    }
+}
