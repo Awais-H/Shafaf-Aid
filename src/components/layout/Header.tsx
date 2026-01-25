@@ -13,6 +13,7 @@ export default function Header() {
   const isMosquesMode = pathname?.startsWith('/mosques') ?? false;
 
   return (
+<<<<<<< HEAD
     <header className="fixed top-0 left-0 right-0 h-14 bg-gray-900/95 border-b border-gray-700 z-30 flex items-center px-4 gap-4">
       <Link
         href="/"
@@ -30,6 +31,77 @@ export default function Header() {
       >
         Mosques
       </Link>
+=======
+    <header 
+      className="fixed top-0 left-0 right-0 z-50 border-b"
+      style={{
+        background: 'rgba(5, 5, 5, 0.9)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderColor: 'rgba(255, 255, 255, 0.06)',
+      }}
+    >
+      <div className="flex items-center justify-between px-4 py-3">
+        {/* Title */}
+        <div className="flex items-center gap-4">
+          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <h1 
+              className="text-lg font-semibold"
+              style={{ color: 'rgba(255, 255, 255, 0.85)' }}
+            >
+              Shafaf
+            </h1>
+          </Link>
+
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center gap-2 ml-4 text-sm">
+            <Link
+              href="/"
+              className={`px-3 py-1 rounded-lg transition-all duration-200 ${
+                currentView === 'world'
+                  ? 'bg-white/10 text-white'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              World
+            </Link>
+            {selectedCountry && (
+              <>
+                <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>/</span>
+                <span className="px-3 py-1 rounded-lg bg-white/10 text-white">
+                  {selectedCountry.name}
+                </span>
+              </>
+            )}
+          </nav>
+        </div>
+
+        {/* Right side actions */}
+        <div className="flex items-center gap-3">
+          {/* Explain button */}
+          <button
+            onClick={toggleExplainDrawer}
+            className="px-3 py-1.5 rounded-lg bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-all duration-200 text-sm flex items-center gap-2"
+            style={{ border: '1px solid rgba(255, 255, 255, 0.06)' }}
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            Explain
+          </button>
+        </div>
+      </div>
+>>>>>>> origin/main
     </header>
   );
 }

@@ -47,6 +47,15 @@ body {
   display: none !important;
 }
 
+/* Mapbox GL overrides */
+.mapboxgl-ctrl-attrib {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
 /* Deck.gl canvas */
 .deck-canvas {
   position: absolute;
