@@ -95,7 +95,7 @@ function normalizeApiResponse(
 ): Mosque[] {
     const list: unknown[] = Array.isArray(raw)
         ? raw
-        : (raw as Record<string, unknown>)?.data?.masjids ?? (raw as Record<string, unknown>)?.masjids ?? (raw as Record<string, unknown>)?.data ?? [];
+        : (raw as any)?.data?.masjids ?? (raw as any)?.masjids ?? (raw as any)?.data ?? [];
     const out: Mosque[] = [];
     const seen = new Set<string>();
 
@@ -228,7 +228,7 @@ export async function fetchMosquesForCity(
 
     try {
         const raw = await fetchMasjidNearMe(geo.lat, geo.lng, geo.radius);
-        const list = (raw as Record<string, unknown>)?.data?.masjids;
+        const list = (raw as any)?.data?.masjids;
         mosques = Array.isArray(list)
             ? normalizeApiResponse(raw, country, city)
             : [];

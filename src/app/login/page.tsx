@@ -37,27 +37,35 @@ export default function LoginPage() {
                 });
                 if (signUpError) throw signUpError;
 
-                // If signup successful and we have a user, create their profile with selected role
+                // If signup successful and we have a user, create profile based on role
                 if (authData.user) {
-                    const { error: profileError } = await supabase
-                        .from('profiles')
-                        .insert({
-                            user_id: authData.user.id,
-                            role: selectedRole,
-                        });
+                    if (selectedRole === 'donor') {
+                        // Donor: create donor_profiles entry directly
+                        const { error: profileError } = await supabase
+                            .from('donor_profiles')
+                            .insert({
+                                user_id: authData.user.id,
+                                display_name: email.split('@')[0],
+                            });
 
-                    if (profileError) {
-                        console.error('Profile creation error:', profileError);
-                        // Don't throw - user is created, profile might need RLS fix
-                    }
+                        if (profileError) {
+                            console.error('Donor profile creation error:', profileError);
+                        }
 
-                    // Check if email confirmation is required
-                    if (authData.session) {
-                        // No email confirmation needed, redirect based on role
-                        router.refresh();
-                        router.push(selectedRole === 'donor' ? '/donor' : '/mosque');
+                        if (authData.session) {
+                            router.refresh();
+                            router.push('/donor');
+                        } else {
+                            setSuccessMessage('Check your email to confirm your account!');
+                        }
                     } else {
-                        setSuccessMessage('Check your email to confirm your account!');
+                        // Mosque: redirect to onboarding to collect required mosque details
+                        if (authData.session) {
+                            router.refresh();
+                            router.push('/onboarding/role');
+                        } else {
+                            setSuccessMessage('Check your email to confirm your account, then complete your mosque profile!');
+                        }
                     }
                 }
             } else {
@@ -68,25 +76,52 @@ export default function LoginPage() {
                 });
                 if (signInError) throw signInError;
 
-                // Fetch user role to redirect to correct dashboard
+                // Fetch user role from profile tables to redirect to correct dashboard
                 if (data.user) {
-                    const { data: profile } = await supabase
-                        .from('profiles')
+                    const userId = data.user.id;
+
+                    // Check Admin Profile
+                    const { data: adminProfile } = await supabase
+                        .from('admin_profiles')
                         .select('role')
-                        .eq('user_id', data.user.id)
+                        .eq('user_id', userId)
                         .single();
 
-                    router.refresh();
-                    if (profile?.role === 'admin') {
+                    if (adminProfile?.role) {
+                        router.refresh();
                         router.push('/admin');
-                    } else if (profile?.role === 'mosque') {
-                        router.push('/mosque');
-                    } else if (profile?.role === 'donor') {
-                        router.push('/donor');
-                    } else {
-                        // No role yet, go to main page
-                        router.push('/');
+                        return;
                     }
+
+                    // Check Mosque Profile
+                    const { data: mosqueProfile } = await supabase
+                        .from('mosque_profiles')
+                        .select('role')
+                        .eq('user_id', userId)
+                        .single();
+
+                    if (mosqueProfile?.role) {
+                        router.refresh();
+                        router.push('/mosque');
+                        return;
+                    }
+
+                    // Check Donor Profile
+                    const { data: donorProfile } = await supabase
+                        .from('donor_profiles')
+                        .select('role')
+                        .eq('user_id', userId)
+                        .single();
+
+                    if (donorProfile?.role) {
+                        router.refresh();
+                        router.push('/donor');
+                        return;
+                    }
+
+                    // No profile found - send to onboarding
+                    router.refresh();
+                    router.push('/onboarding/role');
                 }
             }
         } catch (err: unknown) {

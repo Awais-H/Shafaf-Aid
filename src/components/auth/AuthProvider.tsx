@@ -69,15 +69,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (!supabase) return;
 
         try {
-            // Check Admin Profile
+            // Check Admin Profile first
             const { data: adminData } = await supabase
                 .from('admin_profiles')
                 .select('role')
                 .eq('user_id', userId)
                 .single();
 
-            if (adminData) {
+            if (adminData?.role) {
                 setRole('admin');
+                setLoading(false);
                 return;
             }
 
@@ -88,8 +89,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                 .eq('user_id', userId)
                 .single();
 
-            if (mosqueData) {
+            if (mosqueData?.role) {
                 setRole('mosque');
+                setLoading(false);
                 return;
             }
 
@@ -100,11 +102,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                 .eq('user_id', userId)
                 .single();
 
-            if (donorData) {
+            if (donorData?.role) {
                 setRole('donor');
+                setLoading(false);
                 return;
             }
 
+            // No profile found
             setRole(null);
         } catch (err) {
             console.error('Error fetching role:', err);
