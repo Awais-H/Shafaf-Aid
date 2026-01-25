@@ -1,0 +1,4632 @@
+[
+  {
+    "id": "org_halo_trust__ht_",
+    "name": "HALO Trust (HT)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sos_children_s_villages_somali",
+    "name": "SOS children’s villages Somalia (SOS CV SO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_save_the_children_internationa",
+    "name": "Save The Children International (SCI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_cash_consortium__concer",
+    "name": "Somali cash consortium (Concern Worldwide- lead Agency)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somaliland_skills_training_ass",
+    "name": "Somaliland Skills Training Association (SOSTA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_taakulo_somaliland_community__",
+    "name": "Taakulo Somaliland Community (TASCO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_food_programme__wfp_",
+    "name": "World Food Programme (WFP)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_vision_international__wv",
+    "name": "World Vision International (WVI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_candlelight_for_environment__e",
+    "name": "Candlelight for Environment, Education and Health (CEEH)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_islamic_relief_worldwide__irw_",
+    "name": "Islamic Relief Worldwide (IRW)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_marginalized_inclusion_network",
+    "name": "Marginalized Inclusion Network (MIN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_employment_social_",
+    "name": "Ministry Of Employment Social Affairs And Family (MESAF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_women__family_affa",
+    "name": "Ministry Of Women, Family Affairs And Human Rights Of Hirshabelle State Of Somalia (MoWHRD Hirshabelle)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_network_against_female_genital",
+    "name": "Network Against Female Genital Mutilation in Somaliland (NAFIS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_plan_international__pi_",
+    "name": "PLAN International (PI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_qatar_charity__qc_",
+    "name": "Qatar Charity (QC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_qatar_red_crescent_society__qr",
+    "name": "Qatar Red Crescent Society (QRCS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_awareness_and_social_de",
+    "name": "Somali Awareness And Social Development Organization (SASDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_welthhungerrhilfe__whh_",
+    "name": "WelthHungerrhilfe (WHH)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_s_action_for_advocacy_an",
+    "name": "Women'S Action For Advocacy And Progress Organization (WAAPO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_nations_high_commission",
+    "name": "United Nations High Commissioner for Refugees (UNHCR)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_norwegian_refugee_council__nrc",
+    "name": "Norwegian Refugee Council (NRC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_against_hunger__acf_",
+    "name": "Action Against Hunger (ACF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_contre_lafeim__acf_",
+    "name": "Action Contre Lafeim (ACF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_adventist_development_and_reli",
+    "name": "Adventist Development and Relief Agency (ADRA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_african_social_empowerment_net",
+    "name": "African Social Empowerment Network (ASEN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_minority_rights_and",
+    "name": "Agency For Minority Rights And Development (AMARD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_alight_american_refugee_commit",
+    "name": "Alight American Refugee Committee (ALIGHT-ARC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_centre_for_rural_prosperity_an",
+    "name": "Centre for Rural Prosperity and Development (CRPD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_finn_church_aid__fca_",
+    "name": "Finn Church Aid (FCA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_gargaar_relief_and_development",
+    "name": "Gargaar Relief And Development Organization (GREDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_integrated_community_action_ne",
+    "name": "Integrated Community Action Network (ICAN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_kalkal_human_rights_developmen",
+    "name": "Kalkal Human Rights Development Organization (KAHRDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mandher_relief_and_development",
+    "name": "Mandher Relief and Development Organization (MARDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mandhere_relief_and_developmen",
+    "name": "Mandhere Relief and Development Organisation (MRDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_minority_empowerment_and_devel",
+    "name": "Minority Empowerment And Development Agency (MEDA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_children_walfare_and_ri",
+    "name": "Somali Children Walfare and Rights Watch (SCWRW)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somaliland_women_development_a",
+    "name": "Somaliland Women Development Association (SWDA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_nations_children_s_fund",
+    "name": "United Nations Children's Fund (UNICEF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_wajir_south_development_associ",
+    "name": "Wajir South Development Association (WASDA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_medair",
+    "name": "MEDAIR",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_technical_cooperati",
+    "name": "Agency for Technical Cooperation and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_concern_worldwide__cww_",
+    "name": "Concern WorldWide (CWW)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_golweyne_relief_and_rehabilita",
+    "name": "Golweyne Relief and Rehabilitation (GRR)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_african_relief_and_development",
+    "name": "African Relief and Development (ARD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_empowerment___social",
+    "name": "Community Empowerment & Social Development Organization (CESDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_dignity_first_somalia__dfs_",
+    "name": "Dignity First Somalia (DFS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mustaqbal_development_and_reli",
+    "name": "Mustaqbal Development and Relief Organization (MURDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_salama_medical_agency__sama_",
+    "name": "Salama Medical Agency (SAMA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_secours_islamique_france__sif_",
+    "name": "Secours Islamique France (SIF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_livelihood_initiative_a",
+    "name": "Somali Livelihood Initiative and Disability Organization (LIDOSOM)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_youth_in_action__yia_",
+    "name": "Youth in Action (YIA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_dardo_aid__da_",
+    "name": "DARDO AID (DA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_daryeel_bulsho_guud__dbg_",
+    "name": "Daryeel Bulsho Guud (DBG)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_district_administration_office",
+    "name": "District Administration Office (dao)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_international_organization_for",
+    "name": "International Organization for Migration (IOM)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_muslim_aid_uk__somalia__mauk_s",
+    "name": "Muslim Aid UK -Somalia (MAUK-SO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_resilience_integration_sustabi",
+    "name": "Resilience Integration Sustability and Empowerment (RISE)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rural_education_and_agricultur",
+    "name": "Rural Education and Agriculture Development Organization (READO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sws_commission_for_refugees_an",
+    "name": "SWS commission for Refugees and IDPs (SWSCRI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_daryeel_aid_for_relief_and_dev",
+    "name": "daryeel Aid for Relief and Development organization (DDRO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_cooperazione_e_sviluppo_fondaz",
+    "name": "Cooperazione e Sviluppo Fondazione Onlus (CESVI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_formal_education_network_for_p",
+    "name": "Formal Education Network for Private Schools (FENPS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ifrah_foundation__if_",
+    "name": "Ifrah Foundation (IF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_marginalized_communities_advoc",
+    "name": "Marginalized Communities Advocacy Network (MCAN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_health__moh_",
+    "name": "Ministry of Health (MOH)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_population_services_internatio",
+    "name": "Population Services International (PSI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_youthlink__soyl_",
+    "name": "Somali Youthlink (SOYL)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_windle_international_somalia__",
+    "name": "Windle International Somalia (WIS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_youthlink__yl_",
+    "name": "YouthLink (YL)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_elman_peace_and_human_rights_c",
+    "name": "Elman Peace and Human Rights Center (EPHRC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hope_in_life_international__hi",
+    "name": "Hope In Life International (HILI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_horn_aid_for_development_and_h",
+    "name": "Horn Aid for Development and Human Right (HADHR)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_access_development_and_relief_",
+    "name": "ACCESS DEVELOPMENT AND RELIEF ORG (ADRO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aid_vision__av_",
+    "name": "Aid Vision (AV)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_banadir_primary_health_care_ce",
+    "name": "Banadir Primary Health Care Center (BPHCC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_care_international__care_",
+    "name": "Care International (CARE)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_centre_for_empowering_marginal",
+    "name": "Centre for Empowering Marginalized Communities (CEMCo)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_children_s_legal_defense_cente",
+    "name": "Children's Legal Defense Center (CLDC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_comitato_europeo_per_la_formaz",
+    "name": "Comitato Europeo per la Formazione e l'Agricoltura (CEFA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_comitato_internazionale_per_lo",
+    "name": "Comitato Internazionale per lo Sviluppo dei Popoli (CISP)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_elman_peace_center__epc_",
+    "name": "Elman Peace Center (EPC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_human_appeal__ha_",
+    "name": "Human Appeal (HA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_human_development_concern__hdc",
+    "name": "Human Development Concern (HDC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_umbrella_for_reli",
+    "name": "Humanitarian Umbrella For Relief And Development Organization (HURDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_international_medical_corps__i",
+    "name": "International Medical Corps (IMC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_international_rescue_committee",
+    "name": "International Rescue Committee (IRC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_lm_international__lmi_",
+    "name": "LM International (LMI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_lifeline_gedo_organization__ll",
+    "name": "Lifeline-Gedo Organization (LLG)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nomadic_assistance_for_peace_a",
+    "name": "Nomadic Assistance for Peace and Development (NAPAD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_northern_frontier_youth_league",
+    "name": "Northern Frontier Youth League (NoFYL)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_oxfam__oxfam_",
+    "name": "OXFAM (OXFAM)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_peace_hub_foundation__phf_",
+    "name": "Peace Hub Foundation (PHF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_polish_humanitarian_action__pa",
+    "name": "Polish Humanitarian Action (PAH)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ras_awad_welfare_association__",
+    "name": "Ras-Awad Welfare Association (RAWA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rural_development_support_agen",
+    "name": "Rural Development Support Agency (RDSA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_save_somali_women_and_children",
+    "name": "Save Somali Women and Children (SSWC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_aid__sa_",
+    "name": "Somali Aid (SA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_community_concern__scc_",
+    "name": "Somali Community Concern (SCC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_women_development_centr",
+    "name": "Somali Women Development Centre (SWDC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_women_and_child_care_as",
+    "name": "Somali Women and Child Care Association (SWCCA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_young_doctors_associati",
+    "name": "Somali Young Doctors Association (SOYDA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_pioneers_for_peace_and_l",
+    "name": "Women Pioneers for Peace and Life (HINNA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_resilience_initiative__w",
+    "name": "Women Resilience Initiative (WRI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_s_initiative_for_sustain",
+    "name": "Women's Initiative for Sustainable Future (WISF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_zamzam_foundation__zamzam_",
+    "name": "ZamZam Foundation (ZAMZAM)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_danish_refugee_council__drc_",
+    "name": "Danish Refugee Council (DRC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_tayo_for_education__tfe_",
+    "name": "Tayo for Education (TFE)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_wardi_relief_and_development_i",
+    "name": "Wardi Relief and Development Initiatives (WARDI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_against_disasters_somal",
+    "name": "Action Against Disasters Somalia (AADSOM)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_horn_international_relief___de",
+    "name": "Horn International Relief & Development Organization (HIRDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_relief__rehabilitation_",
+    "name": "Somali Relief, Rehabilitation and Development Organization (SORRDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aamin_organziation__aamin_",
+    "name": "Aamin Organziation (AAMIN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aussie_association_of_somalia_",
+    "name": "Aussie Association of Somalia (AAS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_direct_aid_somalia__das_",
+    "name": "Direct-Aid Somalia (DAS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_label_relief_and_development_o",
+    "name": "Label Relief and Development Organization (LARDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mercy_usa_for_aid_and_developm",
+    "name": "Mercy-USA for Aid and Development (Mercy-USA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mission_for_emergency_aid_and_",
+    "name": "Mission for Emergency Aid and Lifesaving (MEAL)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hornafric_relief_foundation__h",
+    "name": "Hornafric Relief Foundation (HRF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_trocaire__trocaire_",
+    "name": "Trocaire (Trocaire)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mercy_corps__mc_",
+    "name": "Mercy Corps (MC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_deeg_roor_medical_organization",
+    "name": "Deeg-Roor Medical Organization (DMO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_integrated_services_for_displa",
+    "name": "Integrated Services for Displaced Population (ISDP)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_women_development_",
+    "name": "Ministry Of Women Development And Family Affairs (MOWDAFA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_interior__federal_",
+    "name": "Ministry of Interior, Federal Affairs and Reconciliation (MOIFAR)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_oxfam_netherlands__novib_",
+    "name": "OXFAM Netherlands (NOVIB)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_puntland_minority_women_develo",
+    "name": "Puntland Minority Women Development Organization (PMWDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_taakulo__taakulo_",
+    "name": "Taakulo (Taakulo)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_tadamun_social_society__tass_",
+    "name": "Tadamun Social Society (TASS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_red_crescent_society_pu",
+    "name": "Somali Red Crescent Society Puntland (SRCS_PUNTLAND)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_ta_awun_social_service__tss",
+    "name": "Al Ta’Awun Social Service (TSS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_kaalo_aid_and_development_orga",
+    "name": "KAALO Aid And Development Organization (KAALO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_aid_international__aai_",
+    "name": "Action Aid International (AAI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ayuub_ngo__ayuub_",
+    "name": "Ayuub NGO (AYUUB)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_banadir_development_foundation",
+    "name": "Banadir Development Foundation (BADEF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_centre_for_peace_and_democracy",
+    "name": "Centre for Peace and Democracy (CPD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_development_and_huma",
+    "name": "Community Development and Humanitarian Netork (CoDHNet)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_deegroor_medical_organization_",
+    "name": "Deegroor Medical Organization (DMO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_diakonie_katastrophenhilfe__dk",
+    "name": "Diakonie Katastrophenhilfe (DKH)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_food_and_agriculture_organizat",
+    "name": "Food and Agriculture Organization (FAO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_help_action_network__han_",
+    "name": "Help Action Network (HAN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hidig_relief_and_development_o",
+    "name": "Hidig Relief and Development Organization (HIDIG)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_horn_of_africa_aid_and_develop",
+    "name": "Horn of Africa Aid and Development Organization (HADO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_irman_human_rights_development",
+    "name": "IRMAN Human Rights Development Organization (IHRDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_juba_foundation__jf_",
+    "name": "Juba Foundation (JF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_new_ways_organisation__nwo_",
+    "name": "New Ways Organisation (NWO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_association_for_rehabil",
+    "name": "Somali Association for Rehabilitation and Development (SARD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_safe_child_right_volunt",
+    "name": "Somali Safe Child Right Volunteers (SSCRV)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_nations_population_fund",
+    "name": "United Nations Population Fund (UNFPA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_volunteers_for_relief_and_deve",
+    "name": "Volunteers for Relief and Developmen (VRD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_youth_volunteers_for_developme",
+    "name": "Youth Volunteers For Development And Environment Conservation (YOVENCO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_burhakaba_town_section_committ",
+    "name": "Burhakaba Town Section Committee (BTSC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_gargaar_humanitarian___develop",
+    "name": "Gargaar Humanitarian & Development Organization (GARGAR)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_serving_together_for_social_de",
+    "name": "Serving Together for Social Development (STS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_wadajir_rural_development_orga",
+    "name": "Wadajir Rural Development Organization (WARDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_himilo_organization_for_develo",
+    "name": "Himilo Organization for Development (HOD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_kaah_relief_and_development_or",
+    "name": "Kaah Relief and Development Organization (KAAH)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_vulnerable_actors__sova",
+    "name": "Somali Vulnerable Actors (SOVA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_umbrella_for_relief_and_rehabi",
+    "name": "Umbrella for Relief and Rehabilitation Organization (URRO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_galmudug_commission_for_refuge",
+    "name": "Galmudug Commission for Refugees and IDPs (GCRI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_himilo_relief_and_development_",
+    "name": "Himilo Relief and Development Association (HIRDA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_peace_line__spl_",
+    "name": "Somali Peace Line (SPL)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_towfiiq_umbrella_organizations",
+    "name": "Towfiiq Umbrella Organizations (TUOS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_cadaado_district_administratio",
+    "name": "Cadaado District Administration Office (CDAO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_juweyria_women_relief__jwr_",
+    "name": "Juweyria Women Relief (JWR)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_geeska_afrika_social_developme",
+    "name": "Geeska Afrika Social Development Organization (GASDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_relief_center__src_",
+    "name": "Somali Relief Center (SRC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_relief_and_care_organiz",
+    "name": "Somali Relief and Care Organization (SRCO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_cooperazione_internazionale__c",
+    "name": "Cooperazione Internazionale (COOPI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_minority_righ",
+    "name": "Organization For Minority Rights Advocate (OMRA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_social_and_economic",
+    "name": "Action for Social and Economic Progress (ASEP)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_energy_and_water_r",
+    "name": "Ministry of Energy and Water Resources (MOEWR)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_socio_economic_development_and",
+    "name": "Socio-Economic Development And Human Rights Organization (SEDHURO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_jubaland_mine_action_network__",
+    "name": "Jubaland Mine Action Network (JUMAN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_jubbaland_mine_action_consorti",
+    "name": "Jubbaland Mine Action Consortium ( JUMAC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_kaalmo_relief_and_development_",
+    "name": "Kaalmo Relief And Development Organization (KRDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_norwegian_church_aid___nca",
+    "name": "Norwegian Church Aid - NCA",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_women_study_center__sws",
+    "name": "Somali Women Study Center (SWSC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_vision_corps_initiative__vci_",
+    "name": "Vision Corps Initiative (VCI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_active_in_development_aid__ada",
+    "name": "Active in Development Aid (ADA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_wadani_relief_organization__wa",
+    "name": "Wadani Relief Organization (WARO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_catholic_relief_services",
+    "name": "Catholic Relief Services",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_empowerment_and_deve",
+    "name": "Community Empowerment and Development Action (CEDA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_lifeline_organization__",
+    "name": "Somali Lifeline Organization (SOLO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_gedo_women_development_organiz",
+    "name": "Gedo Women Development Organization (GEWDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rain_water_association_of_soma",
+    "name": "Rain Water Association of Somalia (RAAS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_animal_welfare_plant_pr",
+    "name": "Somali Animal Welfare Plant Protection Organization (SAWPPO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_children_development_as",
+    "name": "Somali Children Development Asociation (SOCDA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_centre_for_research_and_integr",
+    "name": "Centre for Research and Integrated Development (CERID)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_humanitarian_relief_act",
+    "name": "Somali Humanitarian Relief Action (SHRA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_humanities_relief_actio",
+    "name": "Somali Humanities Relief Action (SHRA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_somali_women_roots_orga",
+    "name": "United Somali Women Roots Organization (USWRO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hirshabelle_commission_for_ref",
+    "name": "Hirshabelle Commission for Refugees and IDPs (HCRI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_integrity_for_wom",
+    "name": "Humanitarian Integrity For Women Action (HIWA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_intersom_relief_and_developmen",
+    "name": "Intersom Relief And Development Organization (Intersom)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_islamic_relief__ir_",
+    "name": "Islamic Relief (IR)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rajo_relief_and_development_or",
+    "name": "Rajo Relief and Development Organization (RARDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_life_and_agricultural_d",
+    "name": "Social Life and Agricultural Development Organisation (SADO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somalia_humanitarian_fund__shf",
+    "name": "Somalia Humanitarian Fund (SHF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_fayadhowr_orientation_organiza",
+    "name": "Fayadhowr Orientation Organization (FOO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sustainable_development_and_pe",
+    "name": "Sustainable Development and Peace Building Initiative (SYPD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_association_of_volunteers_in_i",
+    "name": "Association of Volunteers in International Service (AVSI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_candle_of_hope_foundation__coh",
+    "name": "Candle of Hope Foundation (COHF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_lutheran_world_federation__lwf",
+    "name": "Lutheran World Federation (LWF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_solutions_for_humanity_interna",
+    "name": "Solutions for Humanity International (SFH)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_advocacy_and_relief_org",
+    "name": "Somali Advocacy and Relief Organization  (SARO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_red_crescent_society__s",
+    "name": "Somali Red Crescent Society (SRCS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_wamo_relief_and_rehabilitation",
+    "name": "Wamo Relief and Rehabilitation Services (WRRS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_initiative_for_society_e",
+    "name": "Women Initiative for Society Empowerment (WISE)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_concern__wc_",
+    "name": "World Concern (WC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_relief_and_developm",
+    "name": "Action for Relief and Development (ARD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_african_network_for_the_preven",
+    "name": "African Network for The Prevention and Protection Against Child Abuse and Neglect (ANPPCAN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_arche_nova",
+    "name": "Arche Nova",
+    "type": "INGO"
+  },
+  {
+    "id": "org_himilo_foundation__himfo_",
+    "name": "Himilo Foundation (HIMFO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_jubaland_commission_for_refuge",
+    "name": "Jubaland Commission for Refugees and IDPs (JUCRI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_resilience_hope_foundation__rh",
+    "name": "Resilience Hope foundation (RHF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_relief_and_development_",
+    "name": "SOMALI RELIEF AND DEVELOPMENT SOCIETY (SORDES)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_environmental_agency__s",
+    "name": "Social Environmental Agency (sea)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_rural_development_initi",
+    "name": "Social Rural Development Initiative (SRDI)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agro_pastoral_charity_centre__",
+    "name": "Agro Pastoral Charity Centre (APCC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_initiative_just_r",
+    "name": "Humanitarian Initiative Just Relief Aid (HIJRA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_munazzamat_al_dawa__dawa_",
+    "name": "Munazzamat Al-Dawa (DAWA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_physicians_across_continent__p",
+    "name": "Physicians Across Continent (PAC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_shabelle_community_development",
+    "name": "Shabelle Community Development Organization (SHACDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_peace_and_development_action__",
+    "name": "Peace and Development Action (PDA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sts_international_solidarity__",
+    "name": "STS International Solidarity (STS)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_emergency_aid__sea_",
+    "name": "Somali Emergency Aid (SEA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_outreachplus_organization__opo",
+    "name": "OutreachPlus Organization (OPO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_relief_organisation",
+    "name": "Action for Relief Organisation (AFR)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_kardo_aid__ka_",
+    "name": "Kardo Aid (KA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_africa_for_rural_development__",
+    "name": "Africa for Rural Development (ARD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_empowering_the_vulnerable_soci",
+    "name": "Empowering the Vulnerable Society Organization (EVSO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_development_and_empowerment_fo",
+    "name": "Development and Empowerment for Humanity (DEH)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_moh_puntland",
+    "name": "MOH Puntland",
+    "type": "INGO"
+  },
+  {
+    "id": "org_skills_active_forward_united_k",
+    "name": "Skills Active Forward United Kingdom (SAF-UK)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_moh_jubaland",
+    "name": "MOH Jubaland",
+    "type": "INGO"
+  },
+  {
+    "id": "org_puntland_y_peer_network__pypn_",
+    "name": "Puntland Y-peer Network (PYPN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somali_minority_women_and_chil",
+    "name": "Somali Minority Women and Children Development (SMWCD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_health_education_agro_pastoral",
+    "name": "Health Education Agro-Pastoralist Liaison (HEAL)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_garsoor_social_development_org",
+    "name": "Garsoor Social Development Organization (GSDO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_king_salman_humanitarian_aid_a",
+    "name": "King Salman Humanitarian Aid and Relief Centre (KSRELIEF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_kaalo_relief_and_development__",
+    "name": "Kaalo Relief and Development (KRD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_african_children_s_rights_foun",
+    "name": "African Children's Rights Foundation (ACRIF)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agricultural_development_organ",
+    "name": "Agricultural Development Organization (ADO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_legal_aid__la_",
+    "name": "Legal Aid (LA)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_somaliland_youth_development__",
+    "name": "Somaliland Youth Development & Voluntary Organization (SOYDAVO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_horn_of_africa_voluntary_youth",
+    "name": "Horn Of Africa Voluntary Youth Committee (HAVOYOCO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_baahi_koob_centre__bkc_",
+    "name": "Baahi-Koob Centre (BKC)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_disability_action_network__dan",
+    "name": "Disability Action Network (DAN)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nagaad_network__nagaad_",
+    "name": "Nagaad Network (NAGAAD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_bangladesh_rural_advancement_c",
+    "name": "Bangladesh Rural Advancement Committee Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_against_hunger___us",
+    "name": "Action against Hunger - US",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aga_khan_agency_for_habitat",
+    "name": "Aga Khan Agency for Habitat",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aga_khan_foundation",
+    "name": "Aga Khan Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aga_khan_health_service",
+    "name": "Aga Khan Health Service",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_paramount_welfare_and_d",
+    "name": "Afghan Paramount Welfare and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan__youth_service_organiza",
+    "name": "Afghan  Youth Service Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_bu_ali_rehabilitation_and_aid_",
+    "name": "Bu Ali Rehabilitation and Aid Network",
+    "type": "INGO"
+  },
+  {
+    "id": "org_bakhtar_development_network",
+    "name": "Bakhtar Development Network",
+    "type": "INGO"
+  },
+  {
+    "id": "org_coordination_of_humanitarian_a",
+    "name": "Coordination of Humanitarian Assistance",
+    "type": "INGO"
+  },
+  {
+    "id": "org_improvement_of_agriculture_tra",
+    "name": "Improvement of Agriculture Training Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mission_east",
+    "name": "Mission East",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_mine_clearanc",
+    "name": "Organization for Mine Clearance and Afghan Rehabilitation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_un_refugee_agency",
+    "name": "UN Refugee Agency",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_nations_mine_action_ser",
+    "name": "United Nations Mine Action Service",
+    "type": "INGO"
+  },
+  {
+    "id": "org_welfare_association_for_develo",
+    "name": "Welfare Association for Development of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_abyan_youth_foundation",
+    "name": "Abyan Youth Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_care_international",
+    "name": "CARE International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_field_medical_foundation",
+    "name": "Field Medical Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_education",
+    "name": "Ministry of Education",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_public_health_and_",
+    "name": "Ministry of Public Health and Population",
+    "type": "INGO"
+  },
+  {
+    "id": "org_steps_foundation_for_civil_dev",
+    "name": "Steps Foundation for Civil Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_solidarities_international",
+    "name": "Solidarities International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_small_and_micro_enterprise_pro",
+    "name": "Small and Micro Enterprise Promotion Service",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_food_programme",
+    "name": "World Food Programme",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_health_organization",
+    "name": "World Health Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_executive_mine_action_ce",
+    "name": "Yemen Executive Mine Action Center",
+    "type": "INGO"
+  },
+  {
+    "id": "org_marie_stopes_international_yem",
+    "name": "Marie Stopes International Yemen",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yanabia_al_khair_charity_found",
+    "name": "Yanabia Al khair Charity Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_women_union",
+    "name": "Yemen Women Union",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_contre_la_faim____franc",
+    "name": "Action Contre La Faim) - France",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ahdaf_assosiation_for_developm",
+    "name": "Ahdaf Assosiation for Development & Work Humanitarian",
+    "type": "INGO"
+  },
+  {
+    "id": "org_alaman_organization_for_blind_",
+    "name": "Alaman Organization for Blind Women Care",
+    "type": "INGO"
+  },
+  {
+    "id": "org_altwasul_for_human_development",
+    "name": "Altwasul for Human Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_estijabah_foundation_for_human",
+    "name": "Estijabah Foundation for Humanitarian Aid and Relief",
+    "type": "INGO"
+  },
+  {
+    "id": "org_the_halo_trust",
+    "name": "The Halo Trust",
+    "type": "INGO"
+  },
+  {
+    "id": "org_intersos___humanitarian_aid_or",
+    "name": "INTERSOS - Humanitarian Aid Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_light_foundation_for_developme",
+    "name": "Light Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_agriculture_and_ir",
+    "name": "Ministry of Agriculture and Irrigation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_m_decins_du_monde",
+    "name": "Médecins du Monde",
+    "type": "INGO"
+  },
+  {
+    "id": "org_muslim_hands",
+    "name": "Muslim Hands",
+    "type": "INGO"
+  },
+  {
+    "id": "org_norwegian_people_s_aid",
+    "name": "Norwegian People's Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_norwegian_refugee_council",
+    "name": "Norwegian Refugee Council",
+    "type": "INGO"
+  },
+  {
+    "id": "org_responsiveness_for_relief_and_",
+    "name": "Responsiveness for Relief and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_medical_and_healthcare_action_",
+    "name": "Medical and Healthcare Action for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_building_foundation_for_develo",
+    "name": "Building Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_child___youth_protection_found",
+    "name": "Child & Youth Protection Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_diversity_organization",
+    "name": "Diversity Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_dorcas_aid_international",
+    "name": "Dorcas Aid International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_development_progr",
+    "name": "Humanitarian Development Program",
+    "type": "INGO"
+  },
+  {
+    "id": "org_helpcode",
+    "name": "HelpCode",
+    "type": "INGO"
+  },
+  {
+    "id": "org_king_salman_humanitarian_aid__",
+    "name": "King Salman Humanitarian Aid & Relief Centre",
+    "type": "INGO"
+  },
+  {
+    "id": "org_read_foundation_yemen",
+    "name": "Read Foundation-Yemen",
+    "type": "INGO"
+  },
+  {
+    "id": "org_society_for_humanitarian_solid",
+    "name": "Society for Humanitarian Solidarity",
+    "type": "INGO"
+  },
+  {
+    "id": "org_selah_foundation_for_developme",
+    "name": "Selah Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yamany_foundation_for_developm",
+    "name": "Yamany Foundation for Development and Humanitarian Work",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_family_care_association",
+    "name": "Yemen Family Care Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_international_medical_corps",
+    "name": "International Medical Corps",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sustainable_development_founda",
+    "name": "Sustainable Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_aid",
+    "name": "Yemen Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_abs_development_organization",
+    "name": "Abs Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_red_crescent_society",
+    "name": "Yemen Red Crescent Society",
+    "type": "INGO"
+  },
+  {
+    "id": "org_deem_for_development_organizat",
+    "name": "DEEM for Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_nations_office_for_the_",
+    "name": "United Nations Office for the Coordination of Humanitarian Affairs",
+    "type": "INGO"
+  },
+  {
+    "id": "org_qatar_red_crescent_society",
+    "name": "Qatar Red Crescent Society",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_brhan_foundation_for_develo",
+    "name": "Al Brhan Foundation For Development & Relief",
+    "type": "INGO"
+  },
+  {
+    "id": "org_caritas",
+    "name": "Caritas",
+    "type": "INGO"
+  },
+  {
+    "id": "org_family_counseling_and_developm",
+    "name": "Family Counseling and Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_gift_of_the_givers_foundation",
+    "name": "Gift of the Givers Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanity___inclusion",
+    "name": "Humanity & Inclusion",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_hikma_al_yamania_associatio",
+    "name": "Al-hikma Al-yamania Association for Charity",
+    "type": "INGO"
+  },
+  {
+    "id": "org_human_access_for_partnership_a",
+    "name": "Human Access for Partnership and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_inclusive_n_b_organization",
+    "name": "Inclusive N.B Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rofqa_for_humanitarian_develop",
+    "name": "Rofqa for Humanitarian Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_relief_international",
+    "name": "Relief International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_samaritan_s_purse",
+    "name": "Samaritan's Purse",
+    "type": "INGO"
+  },
+  {
+    "id": "org_taybah_foundation_for_developm",
+    "name": "Taybah Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_triangle_g_n_ration_humanitair",
+    "name": "Triangle Génération Humanitaire",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_nations_human_settlemen",
+    "name": "United Nations Human Settlements Programme",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yamaan_foundation_for_health_a",
+    "name": "Yamaan Foundation for Health and Social Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_humanity",
+    "name": "Action For Humanity",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aden_foundation_for_arts_and_s",
+    "name": "Aden Foundation for Arts and Sciences",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_ameen",
+    "name": "Al-Ameen",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemeni_association_for_reprodu",
+    "name": "Yemeni Association for Reproductive Health",
+    "type": "INGO"
+  },
+  {
+    "id": "org_basamat_development_foundation",
+    "name": "Basamat Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ministry_of_social_affairs___l",
+    "name": "Ministry of Social Affairs & Labour",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_association_charity_pove",
+    "name": "Women Association Charity Poverty",
+    "type": "INGO"
+  },
+  {
+    "id": "org_local_water_and_sanitation_cor",
+    "name": "Local Water and Sanitation Corporation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_psychiatric_care_foundation",
+    "name": "Psychiatric Care Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_mission_for_relief___de",
+    "name": "United Mission for Relief & Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_medglobal",
+    "name": "MedGlobal",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_services_association",
+    "name": "Social Services Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_awn_foundation_for_developm",
+    "name": "Al-awn Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_benevolence_coalition_for_huma",
+    "name": "Benevolence Coalition for Humanitarian Relief",
+    "type": "INGO"
+  },
+  {
+    "id": "org_coalition_of_relief_and_buildi",
+    "name": "Coalition of Relief and Building",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nahda_makers_organization",
+    "name": "Nahda Makers Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_researcher_foundation_f",
+    "name": "Social Researcher Foundation For Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_mine_action_center",
+    "name": "Yemen Mine Action Center",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_scout_foundation",
+    "name": "Yemen Scout Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemeni_scouts_and_guides_assoc",
+    "name": "Yemeni Scouts and Guides Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_relief_and_development_peer_fo",
+    "name": "Relief and Development Peer Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_fund_for_development",
+    "name": "Social Fund for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_national_foundation_for_develo",
+    "name": "National Foundation for Development and Human Response",
+    "type": "INGO"
+  },
+  {
+    "id": "org_danish_refugee_council",
+    "name": "Danish Refugee Council",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mercy_corps_international",
+    "name": "Mercy Corps International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_doctors_without_borders_switze",
+    "name": "Doctors Without Borders Switzerland",
+    "type": "INGO"
+  },
+  {
+    "id": "org_vision_hope_international",
+    "name": "Vision Hope International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_direct_aid",
+    "name": "Direct Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_jeel_albena_association_for_hu",
+    "name": "Jeel Albena Association for Humanitarian Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_life_makers_meeting_place_orga",
+    "name": "Life Makers Meeting Place Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_prosthetic_and_physiotherapy_c",
+    "name": "Prosthetic and Physiotherapy Center",
+    "type": "INGO"
+  },
+  {
+    "id": "org_islamic_relief___yemen",
+    "name": "Islamic Relief - Yemen",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mozn_foundation",
+    "name": "Mozn Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_for_human_development_foundati",
+    "name": "For Human Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_polish_humanitarian_action",
+    "name": "Polish Humanitarian Action",
+    "type": "INGO"
+  },
+  {
+    "id": "org_soul_for_development",
+    "name": "SOUL for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_premi_re_urgence_international",
+    "name": "Première Urgence Internationale",
+    "type": "INGO"
+  },
+  {
+    "id": "org_general_authority_for_rural_wa",
+    "name": "General Authority for Rural Water Supply Projects",
+    "type": "INGO"
+  },
+  {
+    "id": "org_qatar_charity",
+    "name": "Qatar Charity",
+    "type": "INGO"
+  },
+  {
+    "id": "org_all_girls_foundation_for_devel",
+    "name": "All Girls Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_tamkeen",
+    "name": "Al Tamkeen",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_alkhair_for_relief_and_d",
+    "name": "Yemen AlKhair for Relief and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_school_feeding_and_humanitaria",
+    "name": "School Feeding and Humanitarian Relief Project",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nabd_development_and_evolution",
+    "name": "Nabd Development and Evolution Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yem__gen__union_of_sociologist",
+    "name": "Yem. Gen. Union of Sociologists, S. Workers and Psychologists",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sada_foundation_for_building_a",
+    "name": "Sada Foundation for Building and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yomken_foundation_for_developm",
+    "name": "Yomken Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_badyh_foundation_for_develo",
+    "name": "Al-Badyh Foundation for Development and Humanitarian Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hadramout_foundation",
+    "name": "Hadramout Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nahd_developmental_foundation",
+    "name": "NAHD Developmental Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_noon_academy",
+    "name": "Noon Academy",
+    "type": "INGO"
+  },
+  {
+    "id": "org_roh_health_foundation",
+    "name": "ROH HEALTH FOUNDATION",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_amal_foundation",
+    "name": "Al Amal Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_aid_and_developme",
+    "name": "Humanitarian Aid and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ghadaq_for_development",
+    "name": "Ghadaq for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_youth_leadership_development_f",
+    "name": "Youth Leadership Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_bena_charity_for_humanitarian_",
+    "name": "Bena Charity for Humanitarian Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_oxfam",
+    "name": "OXFAM",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rawabi_al_nahdah_developmental",
+    "name": "Rawabi AL-Nahdah Developmental Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_solidarity_social_foundation_f",
+    "name": "Solidarity Social Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_best_future_foundation",
+    "name": "Best Future Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sada_for_supportive_technology",
+    "name": "SADA for Supportive Technology and Response",
+    "type": "INGO"
+  },
+  {
+    "id": "org_zoa_international",
+    "name": "Zoa International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nada_fundation",
+    "name": "Nada Fundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_safe_road_for_peace_and_develo",
+    "name": "Safe Road for Peace and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_tamdeen_youth_foundation",
+    "name": "Tamdeen Youth Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ma_akum_development_foundation",
+    "name": "Ma’akum Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_alatta_for_relief___developmen",
+    "name": "Alatta for Relief & Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mawadah_foundation_for_charita",
+    "name": "Mawadah Foundation for charitable Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mawada_foundation_for_women_an",
+    "name": "Mawada Foundation for Women and Child Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_khadira_foundation_for_deve",
+    "name": "Al-Khadira Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_concern_worldwide",
+    "name": "Concern Worldwide",
+    "type": "INGO"
+  },
+  {
+    "id": "org_international_training_and_dev",
+    "name": "International Training and Development Center",
+    "type": "INGO"
+  },
+  {
+    "id": "org_secours_islamique_france",
+    "name": "Secours Islamique France",
+    "type": "INGO"
+  },
+  {
+    "id": "org_catholic_organization_for_reli",
+    "name": "Catholic Organization for Relief and Development Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_resalty_foundation_for_waman_d",
+    "name": "Resalty Foundation for Waman Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_heteen_charitable_and_developm",
+    "name": "Heteen Charitable and Development Corporation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_accept_international",
+    "name": "ACCEPT INTERNATIONAL",
+    "type": "INGO"
+  },
+  {
+    "id": "org_foundation_coalition_of_humani",
+    "name": "Foundation Coalition of Humanitarian Relief and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_idea_foundation_for_eduaction",
+    "name": "IDEA FOUNDATION FOR EDUACTION",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_international_agency_for",
+    "name": "Yemen International Agency for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_raimah_foundation_for_developm",
+    "name": "Raimah Foundation for Development and Humanitarian Response",
+    "type": "INGO"
+  },
+  {
+    "id": "org_doctors_without_borders_france",
+    "name": "Doctors Without Borders France",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_zahra_foundation_and_develo",
+    "name": "AL-ZAHRA Foundation and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_human_appeal",
+    "name": "Human Appeal",
+    "type": "INGO"
+  },
+  {
+    "id": "org_national_irrigation_program__m",
+    "name": "National Irrigation Program- Ministry of Agriculture",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_dar_al_arabia_for_legalitie",
+    "name": "Al-Dar Al-Arabia for Legalities and Protection",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yemen_organization_for_humanit",
+    "name": "Yemen Organization for Humanitarian Relief and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_y30_yemen",
+    "name": "Y30-Yemen",
+    "type": "INGO"
+  },
+  {
+    "id": "org_banan_benevolent_corporation_f",
+    "name": "Banan Benevolent Corporation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mysarah_national_foundation_fo",
+    "name": "Mysarah National Foundation For Prisoners’ care",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ola_al_majd_for_development",
+    "name": "Ola Al Majd for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_namaa_development_foundation",
+    "name": "Namaa Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ramz_development_foundation",
+    "name": "Ramz Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_al_bedaya_organization_for_tho",
+    "name": "Al-Bedaya Organization for Thought and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_fikr_organization_for_developm",
+    "name": "Fikr Organization for Development and Humanitarian Action",
+    "type": "INGO"
+  },
+  {
+    "id": "org_generations_without_qat",
+    "name": "Generations Without Qat",
+    "type": "INGO"
+  },
+  {
+    "id": "org_assistance_for_response_and_de",
+    "name": "Assistance for Response and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_pure_hands",
+    "name": "Pure Hands",
+    "type": "INGO"
+  },
+  {
+    "id": "org_salam_yemen",
+    "name": "Salam Yemen",
+    "type": "INGO"
+  },
+  {
+    "id": "org_reyadah_for_development_founda",
+    "name": "Reyadah for Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_oxygen_relief_and_development",
+    "name": "Oxygen Relief and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yobe_state_ministry_of_youth__",
+    "name": "Yobe State Ministry Of Youth, Sport And Social Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sudan_social_development_organ",
+    "name": "Sudan Social Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_africa_help_internation",
+    "name": "Action Africa Help International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_association_of_christian_resou",
+    "name": "Association of Christian Resource Organizations Serving Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_act_alliance___finn_church_aid",
+    "name": "ACT Alliance / Finn Church Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_act_alliance___norwegian_churc",
+    "name": "ACT Alliance / Norwegian Church Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aid_link_organisation",
+    "name": "Aid Link Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aid_link_organization",
+    "name": "Aid Link Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_women_initiative_ne",
+    "name": "Action for Women Initiative Network",
+    "type": "INGO"
+  },
+  {
+    "id": "org_access_for_humanity",
+    "name": "Access for Humanity",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_community_health",
+    "name": "Action for Community Health",
+    "type": "INGO"
+  },
+  {
+    "id": "org_building_bridges_for_change",
+    "name": "Building Bridges for Change",
+    "type": "INGO"
+  },
+  {
+    "id": "org_base_net",
+    "name": "Base Net",
+    "type": "INGO"
+  },
+  {
+    "id": "org_confident_children_out_of_conf",
+    "name": "Confident Children out of Conflict",
+    "type": "INGO"
+  },
+  {
+    "id": "org_compassionate_institute_for_st",
+    "name": "Compassionate Institute for Street Children",
+    "type": "INGO"
+  },
+  {
+    "id": "org_crisis_resilience_initiative",
+    "name": "Crisis Resilience Initiative",
+    "type": "INGO"
+  },
+  {
+    "id": "org_empower_youth_africa",
+    "name": "Empower Youth Africa",
+    "type": "INGO"
+  },
+  {
+    "id": "org_facilitating_action_for_commun",
+    "name": "Facilitating Action for Community Empowerment",
+    "type": "INGO"
+  },
+  {
+    "id": "org_farson_for_better_tomorrow_sou",
+    "name": "Farson for better tomorrow south Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_farson_for_better_tomorrow",
+    "name": "Farson for Better Tomorrow",
+    "type": "INGO"
+  },
+  {
+    "id": "org_for_afrika_to_thrive",
+    "name": "For Afrika To Thrive",
+    "type": "INGO"
+  },
+  {
+    "id": "org_group_4_securicor",
+    "name": "Group 4 Securicor",
+    "type": "INGO"
+  },
+  {
+    "id": "org_global_health_and_humanitarian",
+    "name": "Global Health and Humanitarian Action South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_grassroot_empowerment_and_deve",
+    "name": "Grassroot Empowerment and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humane_aid_for_community_organ",
+    "name": "Humane Aid for Community Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_human_appeal_development_organ",
+    "name": "Human Appeal Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_and_development_c",
+    "name": "Humanitarian and Development Consortium",
+    "type": "INGO"
+  },
+  {
+    "id": "org_health_link_south_sudan",
+    "name": "Health Link South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_the_israel_forum_for_internati",
+    "name": "The Israel Forum for International Humanitarian Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_israaid",
+    "name": "IsraAid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_justice_for_the_girls",
+    "name": "Justice for the Girls",
+    "type": "INGO"
+  },
+  {
+    "id": "org_jamnel_care_organization",
+    "name": "Jamnel Care Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_light_for_the_world",
+    "name": "Light For The World",
+    "type": "INGO"
+  },
+  {
+    "id": "org_luckista_unite",
+    "name": "Luckista Unite",
+    "type": "INGO"
+  },
+  {
+    "id": "org_lulu_care___south_sudan",
+    "name": "Lulu Care - South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mobile_theatre_team",
+    "name": "Mobile Theatre Team",
+    "type": "INGO"
+  },
+  {
+    "id": "org_malteser_international_order_o",
+    "name": "Malteser International Order of Malta Worldwide Relief",
+    "type": "INGO"
+  },
+  {
+    "id": "org_media_theatre_team",
+    "name": "Media Theatre Team",
+    "type": "INGO"
+  },
+  {
+    "id": "org_norwegian_church_aid",
+    "name": "Norwegian Church Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nonviolent_peaceforce",
+    "name": "Nonviolent Peaceforce",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nile_sustainable_development_o",
+    "name": "Nile Sustainable Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nile_hope",
+    "name": "Nile Hope",
+    "type": "INGO"
+  },
+  {
+    "id": "org_plan_international",
+    "name": "Plan International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_people_s_initiative_developmen",
+    "name": "People's Initiative Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_peace_winds_japan",
+    "name": "Peace Winds Japan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rural_community_development_in",
+    "name": "Rural Community Development Initiative",
+    "type": "INGO"
+  },
+  {
+    "id": "org_reach_alternatives",
+    "name": "Reach Alternatives",
+    "type": "INGO"
+  },
+  {
+    "id": "org_re_intergration_lifeline_organ",
+    "name": "Re-Intergration Lifeline Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_standard_action_liaison_force_",
+    "name": "Standard Action Liaison Force (SALF-NGO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_safelane_global",
+    "name": "SafeLane Global",
+    "type": "INGO"
+  },
+  {
+    "id": "org_south_sudan_grassroots_initiat",
+    "name": "South Sudan Grassroots Initiative for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_south_sudan_red_cross",
+    "name": "South Sudan Red Cross",
+    "type": "INGO"
+  },
+  {
+    "id": "org_the_development_initiative",
+    "name": "The Development Initiative",
+    "type": "INGO"
+  },
+  {
+    "id": "org_the_rescue_mission",
+    "name": "The Rescue Mission",
+    "type": "INGO"
+  },
+  {
+    "id": "org_trust_guarantee_community_deve",
+    "name": "Trust Guarantee Community Development Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_tukul_africa",
+    "name": "Tukul Africa",
+    "type": "INGO"
+  },
+  {
+    "id": "org_upper_nile_religious_initiativ",
+    "name": "Upper Nile Religious Initiative for Peace and Reconciliation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_v_t_rinaires_sans_fronti_res__",
+    "name": "Vétérinaires Sans Frontières - Switzerland",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_advancement_organization",
+    "name": "Women Advancement Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_agency_for_resilience_an",
+    "name": "Women Agency for Resilience and Transformation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_aid_vision",
+    "name": "Women Aid Vision",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_for_change",
+    "name": "Women for Change",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_for_justice_and_equality",
+    "name": "Women for Justice and Equality",
+    "type": "INGO"
+  },
+  {
+    "id": "org_windle_trust_international",
+    "name": "Windle Trust International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_vision_international",
+    "name": "World Vision International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_vision_south_sudan",
+    "name": "World Vision South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_youth_vision_development_found",
+    "name": "Youth Vision Development Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_across_africa_development_orga",
+    "name": "Across Africa Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_child_relief_aid",
+    "name": "Agency for Child Relief Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_development",
+    "name": "Action for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_american_refugee_committee__al",
+    "name": "American Refugee Committee (Alight)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_christoffel_blindenmission_chr",
+    "name": "Christoffel-Blindenmission Christian Blind Mission e.V.",
+    "type": "INGO"
+  },
+  {
+    "id": "org_goal",
+    "name": "Goal",
+    "type": "INGO"
+  },
+  {
+    "id": "org_islamic_relief_worldwide",
+    "name": "Islamic Relief Worldwide",
+    "type": "INGO"
+  },
+  {
+    "id": "org_peace_and_development_partners",
+    "name": "Peace and Development Partners",
+    "type": "INGO"
+  },
+  {
+    "id": "org_south_sudan_health_association",
+    "name": "South Sudan Health Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_children_and_women_",
+    "name": "Action for Children and Women Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_institute_for_promotion_of_civ",
+    "name": "Institute for Promotion of Civil Society",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mission_to_alleviate_suffering",
+    "name": "Mission to Alleviate Suffering In South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mugwo_development_organization",
+    "name": "Mugwo Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_impact_health_organization",
+    "name": "Impact Health Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_impact_relief_and_development",
+    "name": "Impact Relief and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_leadership_initiative_for_deve",
+    "name": "Leadership Initiative for Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_farm_south_sudan",
+    "name": "FARM South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_farm_stew_south_sudan",
+    "name": "FARM STEW South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rural_women_for_development_so",
+    "name": "Rural Women for Development South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_support_for_peace_and_educatio",
+    "name": "Support For Peace And Education Development Programme",
+    "type": "INGO"
+  },
+  {
+    "id": "org_stromme_foundation",
+    "name": "Stromme Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_act_alliance___christian_aid",
+    "name": "ACT Alliance / Christian Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_act_alliance___danish_church_a",
+    "name": "ACT Alliance / Danish Church Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_development_aid",
+    "name": "Community Development Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_act_alliance___danchurchaid",
+    "name": "ACT Alliance / DanChurchAid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_danish_church_aid",
+    "name": "Danish Church Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_root_of_generations",
+    "name": "ROOT OF GENERATIONS",
+    "type": "INGO"
+  },
+  {
+    "id": "org_associazione_volontari_per_il_",
+    "name": "Associazione Volontari per il Servizio Internazionale",
+    "type": "INGO"
+  },
+  {
+    "id": "org_johanniter_international",
+    "name": "Johanniter International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_andre_foods_south_sudan",
+    "name": "Andre Foods South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_emergency_response_a",
+    "name": "Community Emergency Response and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_caritas_torit_south_sudan",
+    "name": "Caritas Torit South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_peace__relief",
+    "name": "Organization for Peace, Relief and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_touch_africa_development_organ",
+    "name": "Touch Africa Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_bride_ssd",
+    "name": "BRIDE-SSD",
+    "type": "INGO"
+  },
+  {
+    "id": "org_professional_alliance_south_su",
+    "name": "Professional Alliance South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_reach_africa_organization",
+    "name": "Reach Africa Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ark_for_humanity",
+    "name": "Ark for Humanity",
+    "type": "INGO"
+  },
+  {
+    "id": "org_food_against_hunger",
+    "name": "Food Against Hunger",
+    "type": "INGO"
+  },
+  {
+    "id": "org_outreach_initiative",
+    "name": "Outreach Initiative",
+    "type": "INGO"
+  },
+  {
+    "id": "org_act_alliance___lutheran_world_",
+    "name": "ACT Alliance / Lutheran World Federation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_in_need_aid",
+    "name": "Community in Need Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_caritas_switzerland",
+    "name": "Caritas Switzerland",
+    "type": "INGO"
+  },
+  {
+    "id": "org_drop_in_the_bucket",
+    "name": "Drop In The Bucket",
+    "type": "INGO"
+  },
+  {
+    "id": "org_fondation_partage_luxembourg",
+    "name": "Fondation Partage Luxembourg",
+    "type": "INGO"
+  },
+  {
+    "id": "org_global_aim",
+    "name": "Global AIM",
+    "type": "INGO"
+  },
+  {
+    "id": "org_lutheran_world_federation",
+    "name": "Lutheran World Federation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sustain_initiative_south_sudan",
+    "name": "Sustain Initiative South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_titi_foundation",
+    "name": "Titi Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_youth_empowerment_foundation",
+    "name": "Youth Empowerment Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_initiative_for_women",
+    "name": "Community Initiative for Women Empowerment",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_and_children_health_orga",
+    "name": "Women and Children Health Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_africa_development_aid",
+    "name": "Africa Development Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_coalition_for_humanity",
+    "name": "Coalition For Humanity",
+    "type": "INGO"
+  },
+  {
+    "id": "org_coalition_for_humanity_south_s",
+    "name": "Coalition for Humanity South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_initiative_for_devel",
+    "name": "Community Initiative for Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_environmental_action_for_susta",
+    "name": "Environmental Action for Sustainable Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hold_the_child_organisation",
+    "name": "Hold the Child Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mobile_humanitarian_agency",
+    "name": "Mobile Humanitarian Agency",
+    "type": "INGO"
+  },
+  {
+    "id": "org_medical_incident_for_field_hea",
+    "name": "Medical Incident for Field Health",
+    "type": "INGO"
+  },
+  {
+    "id": "org_oxfam_international",
+    "name": "Oxfam International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_alaska_health_project_south_su",
+    "name": "Alaska Health Project South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_women_and_children_",
+    "name": "Agency for Women and Children Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_humanitarian_inter__",
+    "name": "Community Humanitarian Inter - Livelihoods and Emergency Focus",
+    "type": "INGO"
+  },
+  {
+    "id": "org_christian_mission_for_developm",
+    "name": "Christian Mission for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_child_relief_and_support_fund",
+    "name": "Child Relief and Support Fund",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ima_world_health",
+    "name": "IMA World Health",
+    "type": "INGO"
+  },
+  {
+    "id": "org_inter_church_medical_assistanc",
+    "name": "Inter-Church Medical Assistance World Health",
+    "type": "INGO"
+  },
+  {
+    "id": "org_africa_educational_trust",
+    "name": "Africa Educational Trust",
+    "type": "INGO"
+  },
+  {
+    "id": "org_africa_initiative_for_rural_de",
+    "name": "Africa Initiative for Rural Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_support_initiative",
+    "name": "Community Support Initiative",
+    "type": "INGO"
+  },
+  {
+    "id": "org_lm_international_south_sudan",
+    "name": "LM International South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rural_development_action_aid",
+    "name": "Rural Development Action Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_save_a_life_international",
+    "name": "Save a Life International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_smile_charity_south_sudan",
+    "name": "Smile Charity South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sudan_medical_care",
+    "name": "Sudan Medical Care",
+    "type": "INGO"
+  },
+  {
+    "id": "org_yo__care_south_sudan",
+    "name": "Yo' Care South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_zoa_dorcas_south_sudan",
+    "name": "ZOA Dorcas South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_against_hunger",
+    "name": "Action against Hunger",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_social_and_economic_",
+    "name": "COMMUNITY SOCIAL AND ECONOMIC DEVELOPMENT AGENCY",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_skills_development",
+    "name": "Community Skills Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_healthcare_foundation_organiza",
+    "name": "HealthCare Foundation Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_tearfund",
+    "name": "TEARFUND",
+    "type": "INGO"
+  },
+  {
+    "id": "org_akot_kuot_health_foundation",
+    "name": "AKOT KUOT HEALTH FOUNDATION",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_action_organization",
+    "name": "Community Action Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_center_for_community_services_",
+    "name": "Center for Community Services South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_christian_mission_aid",
+    "name": "Christian Mission Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hope_and_resilience_initiative",
+    "name": "Hope and Resilience Initiative",
+    "type": "INGO"
+  },
+  {
+    "id": "org_immediate_relief_mission_afric",
+    "name": "Immediate Relief Mission Africa",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mission_community_development_",
+    "name": "Mission Community Development Agency",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_relief",
+    "name": "World Relief",
+    "type": "INGO"
+  },
+  {
+    "id": "org_christian_concern_development_",
+    "name": "Christian Concern Development Trust",
+    "type": "INGO"
+  },
+  {
+    "id": "org_medecins_sans_frontiers__holla",
+    "name": "Medecins Sans Frontiers- Holland",
+    "type": "INGO"
+  },
+  {
+    "id": "org_amani_orphans_and_widows_welfa",
+    "name": "Amani Orphans And Widows Welfare Services Inc.",
+    "type": "INGO"
+  },
+  {
+    "id": "org_children_aid_south_sudan",
+    "name": "Children Aid South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_dialogue_and_research_institut",
+    "name": "Dialogue and Research Institute",
+    "type": "INGO"
+  },
+  {
+    "id": "org_help_a_child_international",
+    "name": "Help a Child International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_servants_heart_south_sudan",
+    "name": "Servants Heart South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_voice_of_the_peace",
+    "name": "Voice of the Peace",
+    "type": "INGO"
+  },
+  {
+    "id": "org_peace_corps_organization",
+    "name": "Peace Corps Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_salvation_and_light_developmen",
+    "name": "Salvation and Light Development Action",
+    "type": "INGO"
+  },
+  {
+    "id": "org_givehealth_organization__go_",
+    "name": "Givehealth Organization (GO)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_your_aid_for_health",
+    "name": "YOUR AID for HEALTH",
+    "type": "INGO"
+  },
+  {
+    "id": "org_medici_con_l_africa_cuamm",
+    "name": "Medici con l'Africa CUAMM",
+    "type": "INGO"
+  },
+  {
+    "id": "org_help___hilfe_zur_selbsthilfe_e",
+    "name": "Help - Hilfe zur Selbsthilfe e.V.",
+    "type": "INGO"
+  },
+  {
+    "id": "org_help___hilfe_zur_selbsthilfe",
+    "name": "Help – Hilfe Zur Selbsthilfe",
+    "type": "INGO"
+  },
+  {
+    "id": "org_help_education_south_sudan",
+    "name": "Help Education South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_care_plus_foundation",
+    "name": "Care Plus Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_actors_for_grassr",
+    "name": "Humanitarian Actors for Grassroot Initiative",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_aid_intervention_for_de",
+    "name": "Action Aid Intervention for Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_centre_for_emergency_and_devel",
+    "name": "Centre for Emergency and Development Support",
+    "type": "INGO"
+  },
+  {
+    "id": "org_malaria_consortium",
+    "name": "Malaria Consortium",
+    "type": "INGO"
+  },
+  {
+    "id": "org_narrative_hub",
+    "name": "Narrative Hub",
+    "type": "INGO"
+  },
+  {
+    "id": "org_the_organisation_for_children_",
+    "name": "The Organisation for Children's Harmony",
+    "type": "INGO"
+  },
+  {
+    "id": "org_welthungerhilfe",
+    "name": "Welthungerhilfe",
+    "type": "INGO"
+  },
+  {
+    "id": "org_alternative_poverty_eradicatio",
+    "name": "Alternative Poverty Eradication Bureau for Africa",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_initiative_for_partn",
+    "name": "Community Initiative for Partnership and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_christian_restore_hope___south",
+    "name": "Christian Restore Hope - South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_lukluk_community_association_f",
+    "name": "Lukluk Community Association For Develoment",
+    "type": "INGO"
+  },
+  {
+    "id": "org_medicair___south_sudan",
+    "name": "Medicair - South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_southern_sudan_healthcare_orga",
+    "name": "Southern Sudan Healthcare Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_universal_network_for_knowledg",
+    "name": "Universal Network for Knowledge and Empowerment Agency",
+    "type": "INGO"
+  },
+  {
+    "id": "org_water_for_south_sudan",
+    "name": "Water for South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_care_for_children_and_old_age_",
+    "name": "Care for Children and Old Age in South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_healthnet_tpo",
+    "name": "HealthNet TPO",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aid_support_community_organiza",
+    "name": "Aid Support Community Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_christian_action_for_developme",
+    "name": "Christian Action for Development and Support",
+    "type": "INGO"
+  },
+  {
+    "id": "org_centre_for_democracy_and_devel",
+    "name": "Centre for Democracy and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_farmer_s_life_development_agen",
+    "name": "Farmer's Life Development Agency",
+    "type": "INGO"
+  },
+  {
+    "id": "org_christian_aid",
+    "name": "Christian Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_integrated_humanitarian_aid",
+    "name": "Integrated Humanitarian Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_universal_intervention_and_dev",
+    "name": "Universal Intervention and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_aid_for_developme",
+    "name": "Humanitarian Aid for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hope_restoration_south_sudan",
+    "name": "Hope Restoration South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_south_sudan_women_united",
+    "name": "South Sudan Women United",
+    "type": "INGO"
+  },
+  {
+    "id": "org_alliance_for_action_aid",
+    "name": "Alliance For Action Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_clip_poverty_organization",
+    "name": "CLIP-POVERTY ORGANIZATION",
+    "type": "INGO"
+  },
+  {
+    "id": "org_givehealth_organization",
+    "name": "Givehealth Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nile_relief_and_development_or",
+    "name": "Nile Relief and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_union_des_groupes_d_etudes_et_",
+    "name": "Union Des Groupes D'Etudes Et Actions Pour Le Developpement De Fizi-Itombwe",
+    "type": "INGO"
+  },
+  {
+    "id": "org_unions_des_groupes_d_etudes_et",
+    "name": "Unions des Groupes d'Etudes et d'Actions pour le Développement de FIZI-ITOMBWE",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_conflict_resolution",
+    "name": "Action for Conflict Resolution",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_accelerated_rural_d",
+    "name": "Agency for Accelerated Rural Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_greater_upper_nile_organizatio",
+    "name": "Greater Upper Nile Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_health_education___relief_orga",
+    "name": "Health Education & Relief Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_finn_church_aid",
+    "name": "Finn Church Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_war_child_holland",
+    "name": "WAR CHILD HOLLAND",
+    "type": "INGO"
+  },
+  {
+    "id": "org_cafod_and_trocaire_in_partners",
+    "name": "CAFOD and Trocaire in Partnership",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hope_foundation_for_developmen",
+    "name": "Hope Foundation for Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nile_initiative_development_or",
+    "name": "Nile Initiative Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_comprehensive",
+    "name": "Organization for Comprehensive Integrated Aims",
+    "type": "INGO"
+  },
+  {
+    "id": "org_white_hands_for_reconstruction",
+    "name": "White Hands for Reconstruction and development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_african_community_health_organ",
+    "name": "African Community Health Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_development_and_rel",
+    "name": "Agency for Development and Relief Services",
+    "type": "INGO"
+  },
+  {
+    "id": "org_restorers_hope_organisation",
+    "name": "Restorers Hope Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_south_sudan_widows_and_orphans",
+    "name": "South Sudan Widows and Orphans Charitable Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_war_child_holland___canada",
+    "name": "War Child Holland / Canada",
+    "type": "INGO"
+  },
+  {
+    "id": "org_national_rural_development_org",
+    "name": "National Rural Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_equalife_africa",
+    "name": "EquaLife Africa",
+    "type": "INGO"
+  },
+  {
+    "id": "org_jesuit_refugee_service",
+    "name": "Jesuit Refugee Service",
+    "type": "INGO"
+  },
+  {
+    "id": "org_star_trust_organization",
+    "name": "Star Trust Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_the_rescue_initiative_south_su",
+    "name": "The Rescue Initiative South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_catholic_agency_for_overseas_d",
+    "name": "Catholic Agency for Overseas Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_cafod_hope_agency_for_relief_a",
+    "name": "CAFOD/Hope Agency for Relief and Development (HARD)",
+    "type": "INGO"
+  },
+  {
+    "id": "org_smile_again_africa_development",
+    "name": "Smile Again Africa Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_amref_health_africa",
+    "name": "Amref Health Africa",
+    "type": "INGO"
+  },
+  {
+    "id": "org_gender_empowerment_for_all_of_",
+    "name": "Gender Empowerment for All of South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mada_women_development_south_s",
+    "name": "Mada Women Development South Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mada_women_development",
+    "name": "MADA Women Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_johanniter_international_assis",
+    "name": "Johanniter International Assistance",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mary_help_association",
+    "name": "Mary Help Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_human_appeal_associates",
+    "name": "Human Appeal Associates",
+    "type": "INGO"
+  },
+  {
+    "id": "org_inter_fund__relief",
+    "name": "INTER-FUND  RELIEF",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hope_agency_for_relief_and_dev",
+    "name": "Hope Agency for Relief and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_new_hope_world_wide",
+    "name": "NEW HOPE WORLD WIDE",
+    "type": "INGO"
+  },
+  {
+    "id": "org_people_s_aid_relief_agency",
+    "name": "People's Aid Relief Agency",
+    "type": "INGO"
+  },
+  {
+    "id": "org_war_child_canada",
+    "name": "War Child Canada",
+    "type": "INGO"
+  },
+  {
+    "id": "org_catholic_medical_missons_board",
+    "name": "Catholic Medical Missons Board",
+    "type": "INGO"
+  },
+  {
+    "id": "org_save_lives_initiative_sout_sud",
+    "name": "Save Lives Initiative Sout Sudan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_amref_health_africa___comitato",
+    "name": "Amref Health Africa - Comitato Collaborazione Medica Foundation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_eve_organization_for_women_dev",
+    "name": "Eve Organization for Women Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_road_to_economic_development_o",
+    "name": "Road to Economic Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_assistance_and_deve",
+    "name": "Agency for Assistance and Development of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_association_of_chief_human_res",
+    "name": "Association of Chief Human Resource Officers",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_development___welf",
+    "name": "Afghanistan Development & Welfare Services Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_women_s_rights_organiza",
+    "name": "Afghan Women’s Rights Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_just_for_afghan_capacity_and_k",
+    "name": "Just for Afghan Capacity and Knowledge",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_uplift_organization",
+    "name": "Social Uplift Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_human_resource_development_age",
+    "name": "Human Resource Development Agency",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_research_and_",
+    "name": "Organization for Research and Community Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_humanitarian_develo",
+    "name": "Agency for Humanitarian Development Assistance for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_landmine_survivors_orga",
+    "name": "Afghan Landmine Survivors Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_women_s_education_cente",
+    "name": "Afghan Women's Education Center",
+    "type": "INGO"
+  },
+  {
+    "id": "org_children_in_crisis",
+    "name": "Children in Crisis",
+    "type": "INGO"
+  },
+  {
+    "id": "org_danish_committee_for_aid_to_af",
+    "name": "Danish Committee for Aid to Afghan Refugees",
+    "type": "INGO"
+  },
+  {
+    "id": "org_emergency_ngo",
+    "name": "EMERGENCY NGO",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hewad_reconstruction_on_health",
+    "name": "Hewad Reconstruction on Health and Humanitarian Assistance Committee",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_community_coo",
+    "name": "Organization for Community Coordination of Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_for_afghan_women",
+    "name": "Women for Afghan Women",
+    "type": "INGO"
+  },
+  {
+    "id": "org_youth_health_and_development_o",
+    "name": "Youth Health and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_shining_star_educational_organ",
+    "name": "Shining Star Educational Organisation of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_women_profession_and_li",
+    "name": "Afghan Women Profession and Livestock Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_halo_trust",
+    "name": "Halo Trust",
+    "type": "INGO"
+  },
+  {
+    "id": "org_norwegian_afghanistan_committe",
+    "name": "Norwegian Afghanistan Committee",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_relief_and_de",
+    "name": "Organization for Relief and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_people_action_for_change_organ",
+    "name": "People Action For Change organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_war_child_uk",
+    "name": "War Child UK",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_social_and_legal_o",
+    "name": "Afghanistan Social and Legal Orgnization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_creative_think_for_change_orga",
+    "name": "Creative Think for Change Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_helping_hands_for_women_organi",
+    "name": "Helping Hands for Women Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_nations_entity_for_gend",
+    "name": "United Nations Entity for Gender Equality and the Empowerment of Women",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_aid",
+    "name": "Afghan Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_human_management___leadership_",
+    "name": "Human Management & Leadership Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_swedish_committee_for_afghanis",
+    "name": "Swedish Committee for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_nations_office_for_proj",
+    "name": "United Nations Office for Project Services",
+    "type": "INGO"
+  },
+  {
+    "id": "org_homeland_youths_social_institu",
+    "name": "Homeland Youths Social Institution",
+    "type": "INGO"
+  },
+  {
+    "id": "org_the_homeland_youths_social_inv",
+    "name": "The Homeland Youths Social Inventive Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_care_of_afghan_families",
+    "name": "Care of Afghan Families",
+    "type": "INGO"
+  },
+  {
+    "id": "org_care_international_in_afghanis",
+    "name": "Care International in Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_people_s_heal",
+    "name": "Organization For People's Health In Action",
+    "type": "INGO"
+  },
+  {
+    "id": "org_village_development_organizati",
+    "name": "Village Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_family_guidance_associa",
+    "name": "Afghan Family Guidance Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_new_society_reconstruction_dev",
+    "name": "New Society Reconstruction Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_health_net___trans_cultural_ps",
+    "name": "Health Net - Trans cultural Psychosocial Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_promotion_of_",
+    "name": "Organization for Promotion of Health & Community Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_assistance_for_de",
+    "name": "Humanitarian Assistance for Development of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_amputee_bicyclist_for_r",
+    "name": "Afghan Amputee Bicyclist for Rehabilitation and Recreation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_community_development_o",
+    "name": "Afghan Community Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_health___development_se",
+    "name": "Afghan Health & Development Services",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ansari_rehabilitation_associat",
+    "name": "Ansari Rehabilitation Association for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_equality_for_peace_and_develop",
+    "name": "Equality for Peace and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_move_welfare_organization",
+    "name": "MOVE Welfare Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_razi_social_development_organi",
+    "name": "Razi Social Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_solidarity_for_afghan_families",
+    "name": "Solidarity for Afghan Families",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_aid_afghanistan",
+    "name": "Action Aid Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hilfe_zur_selbsthilfe_e_v_",
+    "name": "Hilfe zur Selbsthilfe e.V.",
+    "type": "INGO"
+  },
+  {
+    "id": "org_watan_social_and_technical_ser",
+    "name": "Watan Social and Technical Services Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_bureau_collaboration_of",
+    "name": "Afghan Bureau Collaboration Office",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_activities___social_serv",
+    "name": "Women Activities & Social Services Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rehabilitation_association_and",
+    "name": "Rehabilitation Association and Agriculture Development for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_management_systems_internation",
+    "name": "Management Systems International, Inc.",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_institute_of_learning",
+    "name": "Afghan Institute of Learning",
+    "type": "INGO"
+  },
+  {
+    "id": "org_international_assistance_missi",
+    "name": "International Assistance Mission",
+    "type": "INGO"
+  },
+  {
+    "id": "org_doctors_without_borders",
+    "name": "Doctors Without Borders",
+    "type": "INGO"
+  },
+  {
+    "id": "org_health__disability_and_develop",
+    "name": "Health, Disability and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_community_emp",
+    "name": "Organization for Community Empowerment and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_development_and_ed",
+    "name": "Afghanistan Development and Education Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_technical_consultants",
+    "name": "Afghan Technical Consultants",
+    "type": "INGO"
+  },
+  {
+    "id": "org_mine_clearence_program_for_afg",
+    "name": "Mine Clearence Program for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_council_of_churches",
+    "name": "World Council of Churches",
+    "type": "INGO"
+  },
+  {
+    "id": "org_justice_and_civil_society_supp",
+    "name": "Justice and Civil Society Support Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_magna",
+    "name": "MAGNA",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_social_improvement",
+    "name": "Afghanistan Social Improvement Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_ctg_global",
+    "name": "CTG Global",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_health_promot",
+    "name": "Organization for Health Promotion Management",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sfl_international",
+    "name": "SFL International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_welfare_organization_for_rehab",
+    "name": "Welfare Organization for Rehabilitation Livelihood and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hungarian_interchurch_aid___hu",
+    "name": "Hungarian InterChurch Aid - Hungary",
+    "type": "INGO"
+  },
+  {
+    "id": "org_change_and_development_youths_",
+    "name": "Change and Development Youths Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_management_science_for_health",
+    "name": "Management Science for Health",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_afghan_women_",
+    "name": "Organization for Afghan Women Capacity and Knowledge",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hand_in_hand_afghanistan_organ",
+    "name": "Hand In Hand Afghanistan Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_jahed_agricultural_and_constru",
+    "name": "Jahed Agricultural and Construction Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_of_human_welfare",
+    "name": "Organization of Human Welfare",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rehabilitation_center_of_youth",
+    "name": "Rehabilitation Center of Youth",
+    "type": "INGO"
+  },
+  {
+    "id": "org_help_humanity_organization_afg",
+    "name": "Help Humanity Organization Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_operation_mercy_afghanistan",
+    "name": "Operation Mercy Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_relief_humanitarian_developmen",
+    "name": "Relief Humanitarian Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_and_humanitarian_assist",
+    "name": "Social and Humanitarian Assistance Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_union_aid",
+    "name": "Union Aid",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_development_association",
+    "name": "Afghan Development Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_amitie_franco_afghane",
+    "name": "Amitie Franco-Afghane",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_strategic_and_poli",
+    "name": "Afghanistan Strategic and Policy Studies Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_skateboarding_trai",
+    "name": "Afghanistan Skateboarding Training Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_daweo",
+    "name": "DAWEO",
+    "type": "INGO"
+  },
+  {
+    "id": "org_labour_spring_organization",
+    "name": "Labour Spring Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_shuhada_organization",
+    "name": "Shuhada Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_watan_development_and_initiati",
+    "name": "Watan Development and Initiative Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_terre_des_hommes",
+    "name": "Terre des Hommes",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghans_4_tomorrow",
+    "name": "Afghans 4 Tomorrow",
+    "type": "INGO"
+  },
+  {
+    "id": "org_central_asia_institution",
+    "name": "Central Asia Institution",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nai_qala_association",
+    "name": "Nai Qala Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_action_for_welfare_and_develop",
+    "name": "Action For Welfare And Development In Rural Environments Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rah_e_rahnaward_social_welfare",
+    "name": "Rah-e-Rahnaward Social Welfare Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_national_urban_and",
+    "name": "Afghanistan National Urban and Rural Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_social_organization_for",
+    "name": "Afghan Social Organization for Women",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_rehabilitation_and_",
+    "name": "Agency for Rehabilitation and Energy Conservation in Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_norwegian_project_office___rur",
+    "name": "Norwegian Project Office / Rural Rehabilitation Association for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_the_liaison_office",
+    "name": "The Liaison Office",
+    "type": "INGO"
+  },
+  {
+    "id": "org_development_and_humanitarian_s",
+    "name": "Development and Humanitarian Services for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_vento_di_terra",
+    "name": "Vento di Terra",
+    "type": "INGO"
+  },
+  {
+    "id": "org_faradata_social_change_and_wom",
+    "name": "Faradata Social Change and Women Empowerment Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rural_development_and_women_sk",
+    "name": "Rural Development and Women Skills Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_coordination_",
+    "name": "Organization for Coordination of Humanitarian Relief",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_development_o",
+    "name": "Organization for Development of Economic Social and Capacity Building",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sustainable_goals_organization",
+    "name": "Sustainable Goals Organization for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_danish_assistance_to_afghan_re",
+    "name": "Danish Assistance to Afghan Rehabilitation and Technical Training",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hemayat_humanitarian_assistanc",
+    "name": "Hemayat Humanitarian Assistance Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_association_for_develop",
+    "name": "Social Association for Development of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_turkish_international_cooperat",
+    "name": "Turkish International Cooperation and Development Agency",
+    "type": "INGO"
+  },
+  {
+    "id": "org_coordination_of_afghan_relief",
+    "name": "Coordination of Afghan Relief",
+    "type": "INGO"
+  },
+  {
+    "id": "org_move_against_poverty_women_org",
+    "name": "Move Against Poverty Women Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_medical_management_research_co",
+    "name": "Medical Management Research Courses Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_center_for_trainin",
+    "name": "Afghanistan Center for Training and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_assistance_and_de",
+    "name": "Humanitarian Assistance and Development Association for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_people_in_need",
+    "name": "People in Need",
+    "type": "INGO"
+  },
+  {
+    "id": "org_association_of_aid_and_relief",
+    "name": "Association of Aid and Relief",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_and_youth_future_assist_",
+    "name": "Women and Youth Future Assist Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_jesuit_refugee_services",
+    "name": "Jesuit Refugee Services",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_rehabilitation_and",
+    "name": "Afghanistan Rehabilitation and Women Education Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_dutch_committee_for_afghanista",
+    "name": "Dutch Committee for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_coordination_of_rehabilitation",
+    "name": "Coordination Of Rehabilitation and Development Services For Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_social_awareness_for_humanitar",
+    "name": "Social Awareness for Humanitarian and Environmental Resource Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_kandahar_refugee_organisation",
+    "name": "Kandahar Refugee Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_humanitarian_",
+    "name": "Organization for Humanitarian Assistance",
+    "type": "INGO"
+  },
+  {
+    "id": "org_human_rights_research_and_advo",
+    "name": "Human Rights Research and Advocacy Consortium",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_development_nation",
+    "name": "Afghanistan Development National Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_peace_builders_humanita",
+    "name": "Afghan Peace Builders Humanitarian Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_action_for_people",
+    "name": "Humanitarian Action for People of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_assistance_societ",
+    "name": "Humanitarian Assistance Society",
+    "type": "INGO"
+  },
+  {
+    "id": "org_missionaries_of_charity",
+    "name": "Missionaries of Charity",
+    "type": "INGO"
+  },
+  {
+    "id": "org_handicap_international___human",
+    "name": "Handicap International - Humanity & Inclusion",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanischer_frauenverein_e_v_",
+    "name": "Afghanischer Frauenverein e.V.",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rehabilitation_and_welfare_dev",
+    "name": "Rehabilitation and Welfare Development Organization for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_shelter_now_international",
+    "name": "Shelter Now International",
+    "type": "INGO"
+  },
+  {
+    "id": "org_tawhid_welfare_organization_fo",
+    "name": "Tawhid Welfare Organization for Afghanistan's Orphans",
+    "type": "INGO"
+  },
+  {
+    "id": "org_welfare_and_development_organi",
+    "name": "Welfare and Development Organization for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_empowerment_in_the_field",
+    "name": "Women Empowerment in the Field of Self-sufficiency Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_green_social_research_organiza",
+    "name": "Green Social Research Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_management_studies_organizatio",
+    "name": "Management Studies Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_weworld",
+    "name": "WEWORLD",
+    "type": "INGO"
+  },
+  {
+    "id": "org_help_the_afghan_children",
+    "name": "Help the Afghan Children",
+    "type": "INGO"
+  },
+  {
+    "id": "org_jawanan_andishmand_cultural_an",
+    "name": "Jawanan Andishmand Cultural and Service Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_modern_agriculture_and_animal_",
+    "name": "Modern Agriculture and Animal Husbandry Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_pen_tongue_of_peace_org",
+    "name": "Pen Tongue of Peace Org",
+    "type": "INGO"
+  },
+  {
+    "id": "org_canadian_international_communi",
+    "name": "Canadian International Community Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_wellness__prosperity___socio_e",
+    "name": "Wellness, Prosperity & Socio-Empowerment Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_aschiana__afghansitan_s_childr",
+    "name": "ASCHIANA: Afghansitan's Children - a New Approach",
+    "type": "INGO"
+  },
+  {
+    "id": "org_la_cha_ne_de_l_espoir",
+    "name": "La Chaîne de L'Espoir",
+    "type": "INGO"
+  },
+  {
+    "id": "org_danish_demining_group",
+    "name": "Danish Demining Group",
+    "type": "INGO"
+  },
+  {
+    "id": "org_georg_dechentreiter_welfare_so",
+    "name": "Georg Dechentreiter Welfare Society",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sustainable_development_organi",
+    "name": "Sustainable Development Organization of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_world_federation",
+    "name": "World Federation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_relief_and_sustain",
+    "name": "Afghanistan Relief and Sustainable Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_educational_and_he",
+    "name": "Afghanistan Educational and Health Development Aids Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_enabled_children_initiative",
+    "name": "Enabled Children Initiative",
+    "type": "INGO"
+  },
+  {
+    "id": "org_international_psychosocial_org",
+    "name": "International Psychosocial Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_kabul_orthopedic_organisation",
+    "name": "Kabul Orthopedic Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_tawhid_social_and_development_",
+    "name": "Tawhid Social and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_demining_agency_for_afghanista",
+    "name": "Demining Agency For Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_safi_demining_group",
+    "name": "Safi Demining Group",
+    "type": "INGO"
+  },
+  {
+    "id": "org_skills_training_and_rehabilita",
+    "name": "Skills Training And Rehabilitation Society",
+    "type": "INGO"
+  },
+  {
+    "id": "org_cooperation_for_social_improve",
+    "name": "Cooperation for Social Improvement Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_humanitarian_organization_for_",
+    "name": "Humanitarian Organization for the People of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_action_for_healing_p",
+    "name": "Community Action for Healing Poverty Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_green_kandahar_rehabilitation_",
+    "name": "Green Kandahar Rehabilitation Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_health_and_social_development_",
+    "name": "Health and Social Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_integrity_watch_afghanistan",
+    "name": "Integrity Watch Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_loy_kandahar_reconstuction_org",
+    "name": "Loy Kandahar Reconstuction Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_serving_emergency_relief_and_v",
+    "name": "Serving Emergency Relief and Vocational Enterprises",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_women_skill_development",
+    "name": "Afghan Women Skill Development Centre",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_youth_education_and_hea",
+    "name": "Afghan Youth Education and Health Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_poma",
+    "name": "POMA",
+    "type": "INGO"
+  },
+  {
+    "id": "org_green_afghanistan_agriculture_",
+    "name": "Green Afghanistan Agriculture and Livestock Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_society_educational_awareness_",
+    "name": "Society Educational Awareness Research Consultancy and Health Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_planning_agency",
+    "name": "Afghan Planning Agency",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_resilience_and_cli",
+    "name": "Afghanistan Resilience and Climate Initiative",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_resilience___clima",
+    "name": "Afghanistan Resilience & Climate Initiative Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_women_united_developmen",
+    "name": "Afghan Women United Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_development_and_soci",
+    "name": "Community Development and Social Affairs Charity Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_future_generations_afghanistan",
+    "name": "Future Generations Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_management__e",
+    "name": "Organization for Management, Education, Enviroment and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_support_children_and_afghan_wo",
+    "name": "Support Children and Afghan Women Needs Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_sound_humanitarian_participato",
+    "name": "Sound Humanitarian Participatory and Organization Uplift",
+    "type": "INGO"
+  },
+  {
+    "id": "org_development_and_ability_organi",
+    "name": "Development and Ability Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_emergency_care_organization_fo",
+    "name": "Emergency Care Organization for Humanity",
+    "type": "INGO"
+  },
+  {
+    "id": "org_shanti_volunteer_association",
+    "name": "Shanti Volunteer Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_your_voice_organisation",
+    "name": "Your Voice Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_swiss_foundation_for_mine_acti",
+    "name": "Swiss Foundation for Mine Action",
+    "type": "INGO"
+  },
+  {
+    "id": "org_new_way_social_and_development",
+    "name": "New Way Social and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_actions_for_integrated_nutriti",
+    "name": "Actions for Integrated Nutrition Health and Home Economics Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_blumount",
+    "name": "Blumount",
+    "type": "INGO"
+  },
+  {
+    "id": "org_educational___training_center_",
+    "name": "Educational & Training Center for Poor Girls and Women of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_relief_committee",
+    "name": "Afghanistan Relief Committee",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rural_rehabilitation_and_devel",
+    "name": "Rural Rehabilitation and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_teach_for_afghanistan_organisa",
+    "name": "Teach for Afghanistan Organisation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_blind_management",
+    "name": "Afghan Blind Management",
+    "type": "INGO"
+  },
+  {
+    "id": "org_new_constancy_and_relief_organ",
+    "name": "New Constancy and Relief Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_the_water_aid_for_afghanistan",
+    "name": "The Water Aid for Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_betterment_and_dev",
+    "name": "Afghanistan Betterment and Development Initiative Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_canadian_public_health_associa",
+    "name": "Canadian Public Health Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_noor_educational_and_capacity_",
+    "name": "Noor Educational and Capacity Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_khairul_bashar_health_and_aid_",
+    "name": "Khairul Bashar Health and Aid Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_rescue_mother_and_child_in_afg",
+    "name": "Rescue Mother and Child in Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_medical_refresher_courses_for_",
+    "name": "Medical Refresher Courses for Afghans",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_disabled_and_vulnerable",
+    "name": "Afghan Disabled and Vulnerable Society",
+    "type": "INGO"
+  },
+  {
+    "id": "org_agency_for_rehabilitation_assi",
+    "name": "Agency for Rehabilitation Assistance & Development of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_women_and_kids_educatio",
+    "name": "Afghan Women and Kids Education and Necessities",
+    "type": "INGO"
+  },
+  {
+    "id": "org_community_world_services_asia",
+    "name": "Community World Services Asia",
+    "type": "INGO"
+  },
+  {
+    "id": "org_japan_emergency_ngo",
+    "name": "Japan Emergency NGO",
+    "type": "INGO"
+  },
+  {
+    "id": "org_joint_efforts_national_humanit",
+    "name": "Joint Efforts National Humanitarian Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_nangarhar_valley_development_a",
+    "name": "Nangarhar Valley Development Association",
+    "type": "INGO"
+  },
+  {
+    "id": "org_peace_japan_medical_services",
+    "name": "Peace Japan Medical Services",
+    "type": "INGO"
+  },
+  {
+    "id": "org_high_afghanistan_rehabilitatio",
+    "name": "High Afghanistan Rehabilitation Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_united_medical_center_for_afgh",
+    "name": "United Medical Center for Afghan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_youths_empowerment_and_",
+    "name": "Afghan Youths Empowerment and Support Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghnaistan_women_devolopment_",
+    "name": "Afghnaistan Women Devolopment Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_women_and_children_charity_sup",
+    "name": "Women and Children Charity Support Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_human_relief",
+    "name": "Organization for Human Relief",
+    "type": "INGO"
+  },
+  {
+    "id": "org_health_efficient__accessible__",
+    "name": "Health Efficient, Accessible, Long-Lasting and Treatment at Homeland Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_assitant_for_health_education_",
+    "name": "Assitant for Health Education and Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_accessibility_organization_for",
+    "name": "Accessibility Organization for Afghan Disabled",
+    "type": "INGO"
+  },
+  {
+    "id": "org_equality_for_peace_and_democra",
+    "name": "Equality for Peace and Democracy",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_research__developm",
+    "name": "Afghanistan Research, Development and Health Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_help_and_reconstruction_progra",
+    "name": "Help and Reconstruction Program For Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_of_rural_developm",
+    "name": "Organization of Rural Development and Rehabilitation",
+    "type": "INGO"
+  },
+  {
+    "id": "org_partners_in_revitalization_and",
+    "name": "Partners in Revitalization and Building",
+    "type": "INGO"
+  },
+  {
+    "id": "org_care_for_life_organization",
+    "name": "Care for Life Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_hoda_e_sharq_organization_for_",
+    "name": "Hoda-e-Sharq Organization for Development of Afghanistan",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_development_and_as",
+    "name": "Afghanistan Development and Assistance Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_organization_for_developing_se",
+    "name": "Organization for Developing Services and Agriculture Development",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghanistan_national_re_constr",
+    "name": "Afghanistan National Re-construction Coordination",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_humanitarian_aids_and_d",
+    "name": "Afghan Humanitarian Aids and Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_afghan_literacy_organization",
+    "name": "Afghan Literacy Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_friends_community_development_",
+    "name": "Friends Community Development Organization",
+    "type": "INGO"
+  },
+  {
+    "id": "org_conseil_r_gional_des_organisat",
+    "name": "Conseil Régional des Organisations Paysanes de la Partie Septentrionale du Cameroun",
+    "type": "INGO"
+  },
+  {
+    "id": "org_apsef",
+    "name": "APSEF",
+    "type": "INGO"
+  }
+]

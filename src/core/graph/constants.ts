@@ -108,6 +108,10 @@ export const CURATED_COUNTRIES = [
   'yemen',
   'south_sudan',
   'afghanistan',
+  'xinjiang',
+  'palestine',
+  'sudan',
+  'kashmir',
 ] as const;
 
 export type CuratedCountry = typeof CURATED_COUNTRIES[number];

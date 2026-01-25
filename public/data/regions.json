@@ -1,0 +1,1069 @@
+[
+  {
+    "id": "somalia_awdal",
+    "countryId": "somalia",
+    "name": "Awdal",
+    "centroid": [
+      45,
+      6
+    ],
+    "population": 76951,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_bay",
+    "countryId": "somalia",
+    "name": "Bay",
+    "centroid": [
+      44,
+      6.5
+    ],
+    "population": 104373,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_bakool",
+    "countryId": "somalia",
+    "name": "Bakool",
+    "centroid": [
+      45.5,
+      6.5
+    ],
+    "population": 37652,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_banadir",
+    "countryId": "somalia",
+    "name": "Banadir",
+    "centroid": [
+      46,
+      6.5
+    ],
+    "population": 1650228,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_gedo",
+    "countryId": "somalia",
+    "name": "Gedo",
+    "centroid": [
+      44.5,
+      4
+    ],
+    "population": 69660,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_bari",
+    "countryId": "somalia",
+    "name": "Bari",
+    "centroid": [
+      44.5,
+      6.5
+    ],
+    "population": 85588,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_lower_juba",
+    "countryId": "somalia",
+    "name": "Lower Juba",
+    "centroid": [
+      42.5,
+      6.5
+    ],
+    "population": 97911,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_galgaduud",
+    "countryId": "somalia",
+    "name": "Galgaduud",
+    "centroid": [
+      47,
+      4
+    ],
+    "population": 109870,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_nugaal",
+    "countryId": "somalia",
+    "name": "Nugaal",
+    "centroid": [
+      45.5,
+      7.5
+    ],
+    "population": 81032,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_hiraan",
+    "countryId": "somalia",
+    "name": "Hiraan",
+    "centroid": [
+      45.5,
+      4.5
+    ],
+    "population": 147189,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_lower_shabelle",
+    "countryId": "somalia",
+    "name": "Lower Shabelle",
+    "centroid": [
+      44.5,
+      6.5
+    ],
+    "population": 113035,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_middle_shabelle",
+    "countryId": "somalia",
+    "name": "Middle Shabelle",
+    "centroid": [
+      45,
+      7
+    ],
+    "population": 86896,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_middle_juba",
+    "countryId": "somalia",
+    "name": "Middle Juba",
+    "centroid": [
+      43,
+      7
+    ],
+    "population": 79116,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_mudug",
+    "countryId": "somalia",
+    "name": "Mudug",
+    "centroid": [
+      45,
+      7
+    ],
+    "population": 51961,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_sanaag",
+    "countryId": "somalia",
+    "name": "Sanaag",
+    "centroid": [
+      45.5,
+      5
+    ],
+    "population": 238855,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_sool",
+    "countryId": "somalia",
+    "name": "Sool",
+    "centroid": [
+      44.5,
+      5
+    ],
+    "population": 38380,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_togdheer",
+    "countryId": "somalia",
+    "name": "Togdheer",
+    "centroid": [
+      46.5,
+      5.5
+    ],
+    "population": 75904,
+    "needLevel": "low"
+  },
+  {
+    "id": "somalia_woqooyi_galbeed",
+    "countryId": "somalia",
+    "name": "Woqooyi Galbeed",
+    "centroid": [
+      45,
+      7
+    ],
+    "population": 106914,
+    "needLevel": "low"
+  },
+  {
+    "id": "bangladesh_laghman",
+    "countryId": "bangladesh",
+    "name": "Laghman",
+    "centroid": [
+      91,
+      24.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "bangladesh_nangarhar",
+    "countryId": "bangladesh",
+    "name": "Nangarhar",
+    "centroid": [
+      92,
+      25.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_badakhshan",
+    "countryId": "yemen",
+    "name": "Badakhshan",
+    "centroid": [
+      45.5,
+      16
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_abyan",
+    "countryId": "yemen",
+    "name": "Abyan",
+    "centroid": [
+      48,
+      15.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_ad_dali_",
+    "countryId": "yemen",
+    "name": "Ad Dali'",
+    "centroid": [
+      49.5,
+      15.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_aden",
+    "countryId": "yemen",
+    "name": "Aden",
+    "centroid": [
+      47.5,
+      15.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_al_bayda",
+    "countryId": "yemen",
+    "name": "Al Bayda",
+    "centroid": [
+      49.5,
+      15.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_al_hodeidah",
+    "countryId": "yemen",
+    "name": "Al Hodeidah",
+    "centroid": [
+      46,
+      15.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_al_jawf",
+    "countryId": "yemen",
+    "name": "Al Jawf",
+    "centroid": [
+      49,
+      15.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_al_maharah",
+    "countryId": "yemen",
+    "name": "Al Maharah",
+    "centroid": [
+      45.5,
+      15.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_al_mahwit",
+    "countryId": "yemen",
+    "name": "Al Mahwit",
+    "centroid": [
+      50,
+      15.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_amran",
+    "countryId": "yemen",
+    "name": "Amran",
+    "centroid": [
+      48,
+      15.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_dhamar",
+    "countryId": "yemen",
+    "name": "Dhamar",
+    "centroid": [
+      48.5,
+      17
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_hadramawt",
+    "countryId": "yemen",
+    "name": "Hadramawt",
+    "centroid": [
+      50,
+      14
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_hajjah",
+    "countryId": "yemen",
+    "name": "Hajjah",
+    "centroid": [
+      48.5,
+      14
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_ibb",
+    "countryId": "yemen",
+    "name": "Ibb",
+    "centroid": [
+      47,
+      14.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_lahj",
+    "countryId": "yemen",
+    "name": "Lahj",
+    "centroid": [
+      47.5,
+      16
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_ma_rib",
+    "countryId": "yemen",
+    "name": "Ma'rib",
+    "centroid": [
+      48.5,
+      16.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_raymah",
+    "countryId": "yemen",
+    "name": "Raymah",
+    "centroid": [
+      48.5,
+      14
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_sa_dah",
+    "countryId": "yemen",
+    "name": "Sa'dah",
+    "centroid": [
+      48.5,
+      14.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_sana_a",
+    "countryId": "yemen",
+    "name": "Sana'a",
+    "centroid": [
+      48.5,
+      14.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_sana_a_city",
+    "countryId": "yemen",
+    "name": "Sana'a City",
+    "centroid": [
+      46,
+      14.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_shabwah",
+    "countryId": "yemen",
+    "name": "Shabwah",
+    "centroid": [
+      49,
+      14.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_socotra",
+    "countryId": "yemen",
+    "name": "Socotra",
+    "centroid": [
+      49,
+      14.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "yemen_ta_iz",
+    "countryId": "yemen",
+    "name": "Ta'iz",
+    "centroid": [
+      48,
+      15
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_yobe",
+    "countryId": "south_sudan",
+    "name": "Yobe",
+    "centroid": [
+      29.5,
+      9
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_aj_jazirah",
+    "countryId": "south_sudan",
+    "name": "Aj Jazirah",
+    "centroid": [
+      27.5,
+      7
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_blue_nile",
+    "countryId": "south_sudan",
+    "name": "Blue Nile",
+    "centroid": [
+      32,
+      7.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_kassala",
+    "countryId": "south_sudan",
+    "name": "Kassala",
+    "centroid": [
+      31,
+      7
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_north_kordofan",
+    "countryId": "south_sudan",
+    "name": "North Kordofan",
+    "centroid": [
+      29.5,
+      8.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_white_nile",
+    "countryId": "south_sudan",
+    "name": "White Nile",
+    "centroid": [
+      27.5,
+      8
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_central_equatoria",
+    "countryId": "south_sudan",
+    "name": "Central Equatoria",
+    "centroid": [
+      31,
+      8
+    ],
+    "population": 24840,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_eastern_equatoria",
+    "countryId": "south_sudan",
+    "name": "Eastern Equatoria",
+    "centroid": [
+      31,
+      9
+    ],
+    "population": 2456,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_jonglei",
+    "countryId": "south_sudan",
+    "name": "Jonglei",
+    "centroid": [
+      31,
+      6.5
+    ],
+    "population": 5760,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_lakes",
+    "countryId": "south_sudan",
+    "name": "Lakes",
+    "centroid": [
+      30,
+      7.5
+    ],
+    "population": 13748,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_northern_bahr_el_ghazal",
+    "countryId": "south_sudan",
+    "name": "Northern Bahr el Ghazal",
+    "centroid": [
+      29,
+      8.5
+    ],
+    "population": 8970,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_unity",
+    "countryId": "south_sudan",
+    "name": "Unity",
+    "centroid": [
+      30,
+      7
+    ],
+    "population": 31304,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_upper_nile",
+    "countryId": "south_sudan",
+    "name": "Upper Nile",
+    "centroid": [
+      27.5,
+      7
+    ],
+    "population": 11982,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_warrap",
+    "countryId": "south_sudan",
+    "name": "Warrap",
+    "centroid": [
+      30.5,
+      8
+    ],
+    "population": 19119,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_western_bahr_el_ghazal",
+    "countryId": "south_sudan",
+    "name": "Western Bahr el Ghazal",
+    "centroid": [
+      28.5,
+      8
+    ],
+    "population": 6659,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_western_equatoria",
+    "countryId": "south_sudan",
+    "name": "Western Equatoria",
+    "centroid": [
+      31,
+      8
+    ],
+    "population": 5545,
+    "needLevel": "low"
+  },
+  {
+    "id": "south_sudan_abyan",
+    "countryId": "south_sudan",
+    "name": "Abyan",
+    "centroid": [
+      30,
+      7
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_badakhshan",
+    "countryId": "afghanistan",
+    "name": "Badakhshan",
+    "centroid": [
+      63.5,
+      33.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_badghis",
+    "countryId": "afghanistan",
+    "name": "Badghis",
+    "centroid": [
+      67,
+      33.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_baghlan",
+    "countryId": "afghanistan",
+    "name": "Baghlan",
+    "centroid": [
+      67,
+      33.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_balkh",
+    "countryId": "afghanistan",
+    "name": "Balkh",
+    "centroid": [
+      66,
+      33.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_bamyan",
+    "countryId": "afghanistan",
+    "name": "Bamyan",
+    "centroid": [
+      66.5,
+      33.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_daykundi",
+    "countryId": "afghanistan",
+    "name": "Daykundi",
+    "centroid": [
+      67.5,
+      34.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_farah",
+    "countryId": "afghanistan",
+    "name": "Farah",
+    "centroid": [
+      66,
+      30.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_faryab",
+    "countryId": "afghanistan",
+    "name": "Faryab",
+    "centroid": [
+      66.5,
+      30.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_ghazni",
+    "countryId": "afghanistan",
+    "name": "Ghazni",
+    "centroid": [
+      66.5,
+      31
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_ghor",
+    "countryId": "afghanistan",
+    "name": "Ghor",
+    "centroid": [
+      65.5,
+      31
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_hilmand",
+    "countryId": "afghanistan",
+    "name": "Hilmand",
+    "centroid": [
+      67,
+      31.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_hirat",
+    "countryId": "afghanistan",
+    "name": "Hirat",
+    "centroid": [
+      66,
+      31.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_jawzjan",
+    "countryId": "afghanistan",
+    "name": "Jawzjan",
+    "centroid": [
+      67,
+      32.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_kabul",
+    "countryId": "afghanistan",
+    "name": "Kabul",
+    "centroid": [
+      66,
+      33
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_kandahar",
+    "countryId": "afghanistan",
+    "name": "Kandahar",
+    "centroid": [
+      67.5,
+      33
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_kapisa",
+    "countryId": "afghanistan",
+    "name": "Kapisa",
+    "centroid": [
+      66.5,
+      33
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_khost",
+    "countryId": "afghanistan",
+    "name": "Khost",
+    "centroid": [
+      66,
+      33
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_kunar",
+    "countryId": "afghanistan",
+    "name": "Kunar",
+    "centroid": [
+      66,
+      33
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_kunduz",
+    "countryId": "afghanistan",
+    "name": "Kunduz",
+    "centroid": [
+      66.5,
+      33
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_laghman",
+    "countryId": "afghanistan",
+    "name": "Laghman",
+    "centroid": [
+      67,
+      33.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_logar",
+    "countryId": "afghanistan",
+    "name": "Logar",
+    "centroid": [
+      66,
+      33.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_maidan_wardak",
+    "countryId": "afghanistan",
+    "name": "Maidan Wardak",
+    "centroid": [
+      65,
+      34
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_nangarhar",
+    "countryId": "afghanistan",
+    "name": "Nangarhar",
+    "centroid": [
+      68,
+      34.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_nimroz",
+    "countryId": "afghanistan",
+    "name": "Nimroz",
+    "centroid": [
+      66.5,
+      34.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_nuristan",
+    "countryId": "afghanistan",
+    "name": "Nuristan",
+    "centroid": [
+      67.5,
+      34.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_paktika",
+    "countryId": "afghanistan",
+    "name": "Paktika",
+    "centroid": [
+      67,
+      30.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_paktya",
+    "countryId": "afghanistan",
+    "name": "Paktya",
+    "centroid": [
+      66.5,
+      30.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_panjsher",
+    "countryId": "afghanistan",
+    "name": "Panjsher",
+    "centroid": [
+      67.5,
+      30.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_parwan",
+    "countryId": "afghanistan",
+    "name": "Parwan",
+    "centroid": [
+      66.5,
+      30.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_samangan",
+    "countryId": "afghanistan",
+    "name": "Samangan",
+    "centroid": [
+      67.5,
+      32
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_sar_e_pul",
+    "countryId": "afghanistan",
+    "name": "Sar-e-Pul",
+    "centroid": [
+      68,
+      32
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_takhar",
+    "countryId": "afghanistan",
+    "name": "Takhar",
+    "centroid": [
+      66.5,
+      32.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_uruzgan",
+    "countryId": "afghanistan",
+    "name": "Uruzgan",
+    "centroid": [
+      67,
+      33
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_zabul",
+    "countryId": "afghanistan",
+    "name": "Zabul",
+    "centroid": [
+      66,
+      30.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "afghanistan_lower_shabelle",
+    "countryId": "afghanistan",
+    "name": "Lower Shabelle",
+    "centroid": [
+      65.5,
+      33.5
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "palestine_far_north",
+    "countryId": "palestine",
+    "name": "Far-North",
+    "centroid": [
+      37.2,
+      29.4
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  },
+  {
+    "id": "palestine_koulikoro",
+    "countryId": "palestine",
+    "name": "Koulikoro",
+    "centroid": [
+      37.2,
+      31.9
+    ],
+    "population": 100000,
+    "needLevel": "low"
+  }
+]

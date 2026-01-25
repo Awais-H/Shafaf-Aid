@@ -1,22 +1,112 @@
 [
-  {"id": "org_wfp", "name": "World Food Programme", "type": "UN"},
-  {"id": "org_unhcr", "name": "UNHCR", "type": "UN"},
-  {"id": "org_unicef", "name": "UNICEF", "type": "UN"},
-  {"id": "org_who", "name": "World Health Organization", "type": "UN"},
-  {"id": "org_icrc", "name": "ICRC", "type": "International"},
-  {"id": "org_msf", "name": "Médecins Sans Frontières", "type": "International"},
-  {"id": "org_irc", "name": "International Rescue Committee", "type": "International"},
-  {"id": "org_oxfam", "name": "Oxfam International", "type": "International"},
-  {"id": "org_care", "name": "CARE International", "type": "International"},
-  {"id": "org_save", "name": "Save the Children", "type": "International"},
-  {"id": "org_mercy", "name": "Mercy Corps", "type": "International"},
-  {"id": "org_nrc", "name": "Norwegian Refugee Council", "type": "International"},
-  {"id": "org_acted", "name": "ACTED", "type": "International"},
-  {"id": "org_iom", "name": "IOM", "type": "UN"},
-  {"id": "org_fao", "name": "FAO", "type": "UN"},
-  {"id": "org_undp", "name": "UNDP", "type": "UN"},
-  {"id": "org_wvi", "name": "World Vision International", "type": "International"},
-  {"id": "org_crs", "name": "Catholic Relief Services", "type": "International"},
-  {"id": "org_drc", "name": "Danish Refugee Council", "type": "International"},
-  {"id": "org_hi", "name": "Humanity & Inclusion", "type": "International"}
+  {
+    "id": "org_wfp",
+    "name": "World Food Programme",
+    "type": "UN"
+  },
+  {
+    "id": "org_unhcr",
+    "name": "UNHCR",
+    "type": "UN"
+  },
+  {
+    "id": "org_unicef",
+    "name": "UNICEF",
+    "type": "UN"
+  },
+  {
+    "id": "org_who",
+    "name": "World Health Organization",
+    "type": "UN"
+  },
+  {
+    "id": "org_icrc",
+    "name": "ICRC",
+    "type": "International"
+  },
+  {
+    "id": "org_msf",
+    "name": "Médecins Sans Frontières",
+    "type": "International"
+  },
+  {
+    "id": "org_irc",
+    "name": "International Rescue Committee",
+    "type": "International"
+  },
+  {
+    "id": "org_oxfam",
+    "name": "Oxfam International",
+    "type": "International"
+  },
+  {
+    "id": "org_care",
+    "name": "CARE International",
+    "type": "International"
+  },
+  {
+    "id": "org_save",
+    "name": "Save the Children",
+    "type": "International"
+  },
+  {
+    "id": "org_mercy",
+    "name": "Mercy Corps",
+    "type": "International"
+  },
+  {
+    "id": "org_nrc",
+    "name": "Norwegian Refugee Council",
+    "type": "International"
+  },
+  {
+    "id": "org_acted",
+    "name": "ACTED",
+    "type": "International"
+  },
+  {
+    "id": "org_iom",
+    "name": "IOM",
+    "type": "UN"
+  },
+  {
+    "id": "org_fao",
+    "name": "FAO",
+    "type": "UN"
+  },
+  {
+    "id": "org_undp",
+    "name": "UNDP",
+    "type": "UN"
+  },
+  {
+    "id": "org_wvi",
+    "name": "World Vision International",
+    "type": "International"
+  },
+  {
+    "id": "org_crs",
+    "name": "Catholic Relief Services",
+    "type": "International"
+  },
+  {
+    "id": "org_drc",
+    "name": "Danish Refugee Council",
+    "type": "International"
+  },
+  {
+    "id": "org_hi",
+    "name": "Humanity & Inclusion",
+    "type": "International"
+  },
+  {
+    "id": "org_unrwa",
+    "name": "UNRWA",
+    "type": "UN"
+  },
+  {
+    "id": "org_wua",
+    "name": "World Uyghur Congress",
+    "type": "Advocacy"
+  }
 ]
