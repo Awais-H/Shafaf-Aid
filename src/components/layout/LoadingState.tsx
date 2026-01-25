@@ -17,9 +17,9 @@ export default function LoadingState({ message = 'Loading data...' }: LoadingSta
       className="fixed inset-0 flex items-center justify-center z-50"
       style={{ background: '#050505' }}
     >
-      <div className="text-center">
+      <div className="flex flex-col items-center text-center">
         {/* Animated globe/circle */}
-        <div className="relative mb-8">
+        <div className="relative mb-8 w-16 h-16">
           {/* Outer glow ring */}
           <div 
             className="absolute inset-0 rounded-full animate-pulse"
