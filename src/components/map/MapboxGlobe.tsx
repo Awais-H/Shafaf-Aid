@@ -344,64 +344,82 @@ export default function MapboxGlobe({
     };
   }, [hasInteracted, introComplete, autoRotate]);
 
+  // Calculate globe position - in intro mode, push it down so only top half shows
+  const globeOffset = showTitle ? '45vh' : '0';
+
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-full" 
+      className="relative w-full h-full overflow-hidden" 
       style={{ background: '#050505' }}
       onWheel={handleWheel}
     >
-      <Map
-        ref={mapRef}
-        {...viewState}
-        onMove={handleMove}
-        onDragStart={handleInteractionStart}
-        onZoomStart={handleInteractionStart}
-        onClick={handleClick}
-        onMouseMove={handleMouseMove}
-        onLoad={onMapLoad}
-        mapboxAccessToken={MAPBOX_TOKEN}
-        mapStyle="mapbox://styles/mapbox/dark-v11"
-        projection={{ name: 'globe' }}
-        fog={{
-          color: 'rgba(10, 10, 10, 1)',
-          'high-color': 'rgba(15, 15, 20, 1)',
-          'horizon-blend': 0.1,
-          'space-color': 'rgba(5, 5, 5, 1)',
-          'star-intensity': 0.15,
+      {/* Map container - slides up when transitioning to explore mode */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          transform: `translateY(${globeOffset})`,
+          transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
         }}
-        interactiveLayerIds={['markers', 'country-fills']}
-        style={{ width: '100%', height: '100%' }}
-        attributionControl={false}
-        cursor={hasInteracted ? 'grab' : 'default'}
-        scrollZoom={hasInteracted}
       >
-        <Source id="markers-source" type="geojson" data={geojsonData}>
-          <Layer {...glowLayerStyle} />
-          <Layer {...markerLayerStyle} />
-        </Source>
-      </Map>
+        <Map
+          ref={mapRef}
+          {...viewState}
+          onMove={handleMove}
+          onDragStart={handleInteractionStart}
+          onZoomStart={handleInteractionStart}
+          onClick={handleClick}
+          onMouseMove={handleMouseMove}
+          onLoad={onMapLoad}
+          mapboxAccessToken={MAPBOX_TOKEN}
+          mapStyle="mapbox://styles/mapbox/dark-v11"
+          projection={{ name: 'globe' }}
+          fog={{
+            color: 'rgba(5, 5, 5, 1)',
+            'high-color': 'rgba(8, 8, 10, 1)',
+            'horizon-blend': 0.05,
+            'space-color': 'rgba(5, 5, 5, 1)',
+            'star-intensity': 0,
+          }}
+          interactiveLayerIds={['markers', 'country-fills']}
+          style={{ width: '100%', height: '100%' }}
+          attributionControl={false}
+          cursor={hasInteracted ? 'grab' : 'default'}
+          scrollZoom={hasInteracted}
+        >
+          <Source id="markers-source" type="geojson" data={geojsonData}>
+            <Layer {...glowLayerStyle} />
+            <Layer {...markerLayerStyle} />
+          </Source>
+        </Map>
+      </div>
 
       {/* Shafaf Title - shows on load, fades out on scroll */}
       {showTitle && (
         <div
-          className="absolute inset-0 pointer-events-none flex items-start justify-center"
+          className="absolute inset-x-0 top-0 pointer-events-none flex flex-col items-center"
           style={{
             opacity: titleOpacity,
-            transition: 'opacity 0.5s ease-out',
-            paddingTop: '8vh',
+            transition: 'opacity 0.6s ease-out',
+            paddingTop: '12vh',
           }}
         >
           <h1
             style={{
-              fontSize: 'clamp(4rem, 12vw, 10rem)',
+              fontSize: 'clamp(5rem, 15vw, 12rem)',
               fontWeight: 600,
-              color: 'white',
+              color: 'rgba(180, 180, 180, 0.95)',
               fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              letterSpacing: '-0.02em',
-              textShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
+              letterSpacing: '-0.03em',
               margin: 0,
               lineHeight: 1,
+              position: 'relative',
+              // Gradient mask for shadow effect at bottom
+              background: 'linear-gradient(to bottom, rgba(200, 200, 200, 1) 0%, rgba(200, 200, 200, 1) 60%, rgba(100, 100, 100, 0.4) 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
             }}
           >
             Shafaf
@@ -414,11 +432,11 @@ export default function MapboxGlobe({
         <div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 pointer-events-none"
           style={{
-            opacity: titleOpacity * 0.6,
-            transition: 'opacity 0.5s ease-out',
+            opacity: titleOpacity * 0.5,
+            transition: 'opacity 0.6s ease-out',
           }}
         >
-          <div className="flex flex-col items-center gap-2 text-white/50 text-sm">
+          <div className="flex flex-col items-center gap-2 text-white/40 text-sm">
             <span>Scroll to explore</span>
             <svg 
               className="w-5 h-5 animate-bounce" 
@@ -432,13 +450,15 @@ export default function MapboxGlobe({
         </div>
       )}
 
-      {/* Atmospheric glow overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, transparent 50%, rgba(5,5,5,0.4) 80%, rgba(5,5,5,0.9) 100%)',
-        }}
-      />
+      {/* Atmospheric glow overlay - only in explore mode */}
+      {!showTitle && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at center, transparent 50%, rgba(5,5,5,0.4) 80%, rgba(5,5,5,0.9) 100%)',
+          }}
+        />
+      )}
     </div>
   );
 }
