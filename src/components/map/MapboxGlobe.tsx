@@ -98,7 +98,10 @@ export default function MapboxGlobe({
   autoRotate = true,
 }: MapboxGlobeProps) {
   const mapRef = useRef<MapRef>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [showTitle, setShowTitle] = useState(true);
+  const [titleOpacity, setTitleOpacity] = useState(1);
   const [viewState, setViewState] = useState({
     longitude: 20,
     latitude: 15,
@@ -133,11 +136,14 @@ export default function MapboxGlobe({
     setViewState(evt.viewState);
   }, []);
 
-  // Handle user interaction
+  // Handle user interaction (drag/zoom)
   const handleInteractionStart = useCallback(() => {
     if (!hasInteracted) {
       setHasInteracted(true);
       onIntroComplete?.();
+      // Fade out title
+      setTitleOpacity(0);
+      setTimeout(() => setShowTitle(false), 500);
     }
     // Stop rotation
     if (rotationRef.current) {
@@ -145,6 +151,25 @@ export default function MapboxGlobe({
       rotationRef.current = null;
     }
   }, [hasInteracted, onIntroComplete]);
+
+  // Handle scroll to exit intro mode
+  const handleWheel = useCallback((e: React.WheelEvent) => {
+    if (!hasInteracted && showTitle) {
+      e.preventDefault();
+      setHasInteracted(true);
+      onIntroComplete?.();
+      
+      // Fade out title
+      setTitleOpacity(0);
+      setTimeout(() => setShowTitle(false), 500);
+      
+      // Stop rotation
+      if (rotationRef.current) {
+        cancelAnimationFrame(rotationRef.current);
+        rotationRef.current = null;
+      }
+    }
+  }, [hasInteracted, showTitle, onIntroComplete]);
 
   // Handle marker click
   const handleClick = useCallback((event: any) => {
@@ -320,7 +345,12 @@ export default function MapboxGlobe({
   }, [hasInteracted, introComplete, autoRotate]);
 
   return (
-    <div className="relative w-full h-full" style={{ background: '#050505' }}>
+    <div 
+      ref={containerRef}
+      className="relative w-full h-full" 
+      style={{ background: '#050505' }}
+      onWheel={handleWheel}
+    >
       <Map
         ref={mapRef}
         {...viewState}
@@ -343,13 +373,64 @@ export default function MapboxGlobe({
         interactiveLayerIds={['markers', 'country-fills']}
         style={{ width: '100%', height: '100%' }}
         attributionControl={false}
-        cursor="grab"
+        cursor={hasInteracted ? 'grab' : 'default'}
+        scrollZoom={hasInteracted}
       >
         <Source id="markers-source" type="geojson" data={geojsonData}>
           <Layer {...glowLayerStyle} />
           <Layer {...markerLayerStyle} />
         </Source>
       </Map>
+
+      {/* Shafaf Title - shows on load, fades out on scroll */}
+      {showTitle && (
+        <div
+          className="absolute inset-0 pointer-events-none flex items-start justify-center"
+          style={{
+            opacity: titleOpacity,
+            transition: 'opacity 0.5s ease-out',
+            paddingTop: '8vh',
+          }}
+        >
+          <h1
+            style={{
+              fontSize: 'clamp(4rem, 12vw, 10rem)',
+              fontWeight: 600,
+              color: 'white',
+              fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              letterSpacing: '-0.02em',
+              textShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
+              margin: 0,
+              lineHeight: 1,
+            }}
+          >
+            Shafaf
+          </h1>
+        </div>
+      )}
+
+      {/* Scroll hint - shows during intro */}
+      {showTitle && (
+        <div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 pointer-events-none"
+          style={{
+            opacity: titleOpacity * 0.6,
+            transition: 'opacity 0.5s ease-out',
+          }}
+        >
+          <div className="flex flex-col items-center gap-2 text-white/50 text-sm">
+            <span>Scroll to explore</span>
+            <svg 
+              className="w-5 h-5 animate-bounce" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
+      )}
 
       {/* Atmospheric glow overlay */}
       <div
