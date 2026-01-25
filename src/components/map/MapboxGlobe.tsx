@@ -109,7 +109,7 @@ export default function MapboxGlobe({
     zoom: 1.5,
   });
   const rotationRef = useRef<number | null>(null);
-  
+
   // Country hover state - track hovered country name
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -161,14 +161,14 @@ export default function MapboxGlobe({
       e.preventDefault();
       setHasInteracted(true);
       onIntroComplete?.();
-      
+
       // Fade out title
       setTitleOpacity(0);
       setTimeout(() => setShowTitle(false), 500);
-      
+
       // Enable scroll zoom after transition completes (delay prevents first scroll from zooming)
       setTimeout(() => setScrollZoomEnabled(true), 800);
-      
+
       // Stop rotation
       if (rotationRef.current) {
         cancelAnimationFrame(rotationRef.current);
@@ -178,7 +178,7 @@ export default function MapboxGlobe({
   }, [hasInteracted, showTitle, onIntroComplete]);
 
   // Handle marker click
-  const handleClick = useCallback((event: any) => {
+  const handleClick = useCallback((event: MapLayerMouseEvent) => {
     const features = event.features;
     if (features && features.length > 0) {
       const clickedFeature = features[0];
@@ -198,7 +198,7 @@ export default function MapboxGlobe({
     if (viewState.zoom < 5) {
       // Check if country-fills layer exists before querying
       if (!map.getLayer('country-fills')) return;
-      
+
       // Query our invisible country fill layer
       const features = map.queryRenderedFeatures(event.point, {
         layers: ['country-fills']
@@ -207,13 +207,13 @@ export default function MapboxGlobe({
       if (features && features.length > 0) {
         const countryFeature = features[0];
         const name = countryFeature.properties?.name_en || countryFeature.properties?.name;
-        
+
         if (name && name !== hoveredCountry) {
           // Clear any pending timeout
           if (hoverTimeoutRef.current) {
             clearTimeout(hoverTimeoutRef.current);
           }
-          
+
           // Show instantly - no delay
           setHoveredCountry(name);
           updateCountryLabelVisibility(map, name);
@@ -227,7 +227,7 @@ export default function MapboxGlobe({
       if (hoverTimeoutRef.current) {
         clearTimeout(hoverTimeoutRef.current);
       }
-      
+
       hoverTimeoutRef.current = setTimeout(() => {
         setHoveredCountry(null);
         const map = mapRef.current?.getMap();
@@ -245,7 +245,7 @@ export default function MapboxGlobe({
 
     style.layers.forEach((layer) => {
       const layerId = layer.id.toLowerCase();
-      
+
       // Find country label layers
       if (layerId.includes('country') && layerId.includes('label')) {
         if (countryName) {
@@ -305,12 +305,12 @@ export default function MapboxGlobe({
     if (style?.layers) {
       style.layers.forEach((layer) => {
         const layerId = layer.id.toLowerCase();
-        
+
         // Hide country labels initially (they show on hover)
         if (layerId.includes('country') && layerId.includes('label')) {
           map.setLayoutProperty(layer.id, 'visibility', 'none');
         }
-        
+
         // Hide continent labels
         if (layerId.includes('continent')) {
           map.setLayoutProperty(layer.id, 'visibility', 'none');
@@ -360,9 +360,9 @@ export default function MapboxGlobe({
   const globeOffsetX = showTitle ? '-112px' : '0'; // Half of sidebar width (224/2)
 
   return (
-    <div 
+    <div
       ref={containerRef}
-      className="relative w-full h-full overflow-hidden" 
+      className="relative w-full h-full overflow-hidden"
       style={{ background: '#050505' }}
       onWheel={handleWheel}
     >
@@ -452,10 +452,10 @@ export default function MapboxGlobe({
         >
           <div className="flex flex-col items-center gap-2 text-white/40 text-sm">
             <span>Scroll to explore</span>
-            <svg 
-              className="w-5 h-5 animate-bounce" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-5 h-5 animate-bounce"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />

@@ -165,21 +165,21 @@ export default function GlobeMapView({
   }, [introComplete, hasInteracted, onIntroComplete]);
 
   const handlePointClick = useCallback(
-    (info: any) => {
+    (info: { object?: MapPoint }) => {
       if (info.object && onPointClick) {
-        onPointClick(info.object as MapPoint);
+        onPointClick(info.object);
       }
     },
     [onPointClick]
   );
 
-  const handlePointHover = useCallback((info: any) => {
+  const handlePointHover = useCallback((info: { object?: MapPoint; x: number; y: number }) => {
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
     }
 
     if (info.object) {
-      const point = info.object as MapPoint;
+      const point = info.object;
       setHoverInfo({ x: info.x, y: info.y, object: point });
       hoverTimeoutRef.current = setTimeout(() => {
         setHoveredId(point.id);

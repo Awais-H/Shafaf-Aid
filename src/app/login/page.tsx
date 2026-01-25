@@ -89,8 +89,8 @@ export default function LoginPage() {
                     }
                 }
             }
-        } catch (err: any) {
-            setError(err.message);
+        } catch (err: unknown) {
+            setError(err instanceof Error ? err.message : 'An error occurred');
         } finally {
             setLoading(false);
         }
@@ -148,8 +148,8 @@ export default function LoginPage() {
                                     type="button"
                                     onClick={() => setSelectedRole('donor')}
                                     className={`p-4 rounded-lg border-2 transition-all text-center ${selectedRole === 'donor'
-                                            ? 'border-blue-500 bg-blue-500/20 text-white'
-                                            : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'
+                                        ? 'border-blue-500 bg-blue-500/20 text-white'
+                                        : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'
                                         }`}
                                 >
                                     <div className="text-2xl mb-1">💝</div>
@@ -160,8 +160,8 @@ export default function LoginPage() {
                                     type="button"
                                     onClick={() => setSelectedRole('mosque')}
                                     className={`p-4 rounded-lg border-2 transition-all text-center ${selectedRole === 'mosque'
-                                            ? 'border-emerald-500 bg-emerald-500/20 text-white'
-                                            : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'
+                                        ? 'border-emerald-500 bg-emerald-500/20 text-white'
+                                        : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'
                                         }`}
                                 >
                                     <div className="text-2xl mb-1">🕌</div>
