@@ -7,6 +7,8 @@ import { create } from 'zustand';
 import { subscribeWithSelector } from 'zustand/middleware';
 import type { MapViewState, AppData, WorldScore, RegionScore, RegionDetail, AidType } from '@/core/data/schema';
 import { MAP_CONFIG } from '@/core/graph/constants';
+import type { CrisisScenario } from '@/core/graph/constants';
+import type { UrgencyRankItem, DeploymentPlanItem, CoordinationSuggestion } from '@/core/recommendations';
 
 // ============================================================================
 // Simulation Types
@@ -17,6 +19,32 @@ export interface SimulationState {
   additionalAid: number;
   aidType: AidType;
   targetRegionId: string | null;
+}
+
+// ============================================================================
+// Recommendations / Action Mode Types
+// ============================================================================
+
+export interface BeforeAfterMetrics {
+  globalCoverageBefore: number;
+  globalCoverageAfter: number;
+  improvementPercent: number;
+  countriesImproved: string[];
+  regionsLiftedCritical: string[];
+}
+
+export interface RecommendationsState {
+  priorityRegions: UrgencyRankItem[];
+  deploymentPlan: DeploymentPlanItem[];
+  coordinationSuggestions: CoordinationSuggestion[];
+  scenarioMode: CrisisScenario;
+  availableAidBudget: number;
+  beforeAfterMetrics: BeforeAfterMetrics | null;
+  actionModeOpen: boolean;
+  beforeAfterView: 'before' | 'after';
+  demoStep: number;
+  actionPlanGenerated: boolean;
+  demoActive: boolean;
 }
 
 // ============================================================================
@@ -49,6 +77,9 @@ interface ViewStore {
   // Simulation overlay state
   simulation: SimulationState;
   
+  // Recommendations / Action Mode
+  recommendations: RecommendationsState;
+  
   // Animation state
   animationTime: number;
   
@@ -76,6 +107,19 @@ interface ViewStore {
   setSimulationAid: (amount: number) => void;
   setSimulationAidType: (type: AidType) => void;
   resetSimulation: () => void;
+  // Recommendations actions
+  setPriorityRegions: (regions: UrgencyRankItem[]) => void;
+  setDeploymentPlan: (plan: DeploymentPlanItem[]) => void;
+  setCoordinationSuggestions: (suggestions: CoordinationSuggestion[]) => void;
+  setScenarioMode: (mode: CrisisScenario) => void;
+  setAvailableAidBudget: (budget: number) => void;
+  setBeforeAfterMetrics: (m: BeforeAfterMetrics | null) => void;
+  toggleActionMode: () => void;
+  setBeforeAfterView: (view: 'before' | 'after') => void;
+  setDemoStep: (step: number) => void;
+  setActionPlanGenerated: (v: boolean) => void;
+  setDemoActive: (v: boolean) => void;
+  resetRecommendations: () => void;
   reset: () => void;
 }
 
@@ -96,6 +140,20 @@ const initialSimulation: SimulationState = {
   additionalAid: 0,
   aidType: 'food',
   targetRegionId: null,
+};
+
+const initialRecommendations: RecommendationsState = {
+  priorityRegions: [],
+  deploymentPlan: [],
+  coordinationSuggestions: [],
+  scenarioMode: 'none',
+  availableAidBudget: 20,
+  beforeAfterMetrics: null,
+  actionModeOpen: false,
+  beforeAfterView: 'before',
+  demoStep: 0,
+  actionPlanGenerated: false,
+  demoActive: false,
 };
 
 // ============================================================================
@@ -120,6 +178,7 @@ export const useViewStore = create<ViewStore>()(
     countryScores: [],
     regionDetail: null,
     simulation: initialSimulation,
+    recommendations: initialRecommendations,
     animationTime: 0,
     
     // Actions
@@ -201,6 +260,41 @@ export const useViewStore = create<ViewStore>()(
     
     resetSimulation: () => set({ simulation: initialSimulation }),
     
+    setPriorityRegions: (regions) => set((s) => ({
+      recommendations: { ...s.recommendations, priorityRegions: regions },
+    })),
+    setDeploymentPlan: (plan) => set((s) => ({
+      recommendations: { ...s.recommendations, deploymentPlan: plan },
+    })),
+    setCoordinationSuggestions: (suggestions) => set((s) => ({
+      recommendations: { ...s.recommendations, coordinationSuggestions: suggestions },
+    })),
+    setScenarioMode: (mode) => set((s) => ({
+      recommendations: { ...s.recommendations, scenarioMode: mode },
+    })),
+    setAvailableAidBudget: (budget) => set((s) => ({
+      recommendations: { ...s.recommendations, availableAidBudget: budget },
+    })),
+    setBeforeAfterMetrics: (m) => set((s) => ({
+      recommendations: { ...s.recommendations, beforeAfterMetrics: m },
+    })),
+    toggleActionMode: () => set((s) => ({
+      recommendations: { ...s.recommendations, actionModeOpen: !s.recommendations.actionModeOpen },
+    })),
+    setBeforeAfterView: (view) => set((s) => ({
+      recommendations: { ...s.recommendations, beforeAfterView: view },
+    })),
+    setDemoStep: (step) => set((s) => ({
+      recommendations: { ...s.recommendations, demoStep: step },
+    })),
+    setActionPlanGenerated: (v) => set((s) => ({
+      recommendations: { ...s.recommendations, actionPlanGenerated: v },
+    })),
+    setDemoActive: (v) => set((s) => ({
+      recommendations: { ...s.recommendations, demoActive: v },
+    })),
+    resetRecommendations: () => set({ recommendations: initialRecommendations }),
+    
     reset: () => set({
       currentView: 'world',
       selectedCountryId: null,
@@ -215,6 +309,7 @@ export const useViewStore = create<ViewStore>()(
       countryScores: [],
       regionDetail: null,
       simulation: initialSimulation,
+      recommendations: initialRecommendations,
       animationTime: 0,
     }),
   }))

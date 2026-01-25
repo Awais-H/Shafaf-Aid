@@ -21,6 +21,7 @@ import ViewToggle from '@/components/layout/ViewToggle';
 import Header from '@/components/layout/Header';
 import Legend from '@/components/layout/Legend';
 import DisclaimerBanner from '@/components/layout/DisclaimerBanner';
+import CrisisScenarioBanner from '@/components/layout/CrisisScenarioBanner';
 import ExplainDrawer from '@/components/layout/ExplainDrawer';
 import LoadingState from '@/components/layout/LoadingState';
 

@@ -100,7 +100,7 @@ export const MAP_CONFIG = {
 // ============================================================================
 // Curated Countries
 // ============================================================================
-// These are the 5 countries highlighted in the demo
+// Countries highlighted in demo (includes Ukraine, Palestine for crisis scenarios)
 
 export const CURATED_COUNTRIES = [
   'somalia',
@@ -108,9 +108,24 @@ export const CURATED_COUNTRIES = [
   'yemen',
   'south_sudan',
   'afghanistan',
+  'ukraine',
+  'palestine',
 ] as const;
 
-export type CuratedCountry = typeof CURATED_COUNTRIES[number];
+export type CuratedCountry = (typeof CURATED_COUNTRIES)[number];
+
+// ============================================================================
+// Crisis Scenario Modifiers
+// ============================================================================
+
+export const CRISIS_SCENARIOS = {
+  none: { volatilityDelta: 0, needFactorDelta: 0, populationDelta: 0, infrastructureWeightDelta: 0 },
+  conflict_escalation: { volatilityDelta: 0.3, needFactorDelta: 0.2, populationDelta: 0, infrastructureWeightDelta: 0 },
+  population_displacement: { volatilityDelta: 0, needFactorDelta: 0, populationDelta: 0.25, infrastructureWeightDelta: 0 },
+  infrastructure_collapse: { volatilityDelta: 0, needFactorDelta: 0, populationDelta: 0, infrastructureWeightDelta: 0.4 },
+} as const;
+
+export type CrisisScenario = keyof typeof CRISIS_SCENARIOS;
 
 // ============================================================================
 // Formula Documentation
@@ -148,5 +163,16 @@ export const FORMULAS = {
     name: 'Overlap Intensity',
     formula: 'Degree Centrality = Number of Orgs / Max Possible Connections',
     description: 'Measures how many organizations operate in a region relative to total organizations.',
+  },
+  URGENCY_SCORE: {
+    name: 'Urgency Score',
+    formula: 'Urgency = (1 − normalizedCoverage) × dynamicNeedFactor × log(population) × (1 + volatility)',
+    description: 'Ranks regions by priority for aid deployment. Higher = more critical.',
+    components: [
+      { name: 'Coverage Gap', formula: '1 − normalizedCoverage', description: 'Low coverage = high gap' },
+      { name: 'Dynamic Need Factor', formula: 'From region', description: 'Adjusted by volatility' },
+      { name: 'Population Weight', formula: 'log(population)', description: 'Scale by population' },
+      { name: 'Volatility Weight', formula: '1 + volatility', description: 'Conflict/crisis intensity' },
+    ],
   },
 } as const;

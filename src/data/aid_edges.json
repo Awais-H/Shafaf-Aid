@@ -1,209 +1,5681 @@
 [
-  {"id": "e001", "orgId": "org_wfp", "regionId": "somalia_banadir", "aidType": "food", "projectCount": 12, "isSynthetic": true, "source": "demo"},
-  {"id": "e002", "orgId": "org_unicef", "regionId": "somalia_banadir", "aidType": "medical", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e003", "orgId": "org_who", "regionId": "somalia_banadir", "aidType": "medical", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e004", "orgId": "org_msf", "regionId": "somalia_banadir", "aidType": "medical", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e005", "orgId": "org_icrc", "regionId": "somalia_banadir", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e006", "orgId": "org_wfp", "regionId": "somalia_bay", "aidType": "food", "projectCount": 15, "isSynthetic": true, "source": "demo"},
-  {"id": "e007", "orgId": "org_fao", "regionId": "somalia_bay", "aidType": "food", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e008", "orgId": "org_care", "regionId": "somalia_bay", "aidType": "food", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e009", "orgId": "org_wfp", "regionId": "somalia_gedo", "aidType": "food", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e010", "orgId": "org_unhcr", "regionId": "somalia_gedo", "aidType": "infrastructure", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e011", "orgId": "org_wfp", "regionId": "somalia_hiraan", "aidType": "food", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e012", "orgId": "org_unicef", "regionId": "somalia_hiraan", "aidType": "medical", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e013", "orgId": "org_mercy", "regionId": "somalia_hiraan", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e014", "orgId": "org_acted", "regionId": "somalia_hiraan", "aidType": "infrastructure", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e015", "orgId": "org_icrc", "regionId": "somalia_lower_juba", "aidType": "food", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e016", "orgId": "org_wfp", "regionId": "somalia_middle_juba", "aidType": "food", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e017", "orgId": "org_care", "regionId": "somalia_middle_juba", "aidType": "food", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e018", "orgId": "org_wfp", "regionId": "somalia_lower_shabelle", "aidType": "food", "projectCount": 14, "isSynthetic": true, "source": "demo"},
-  {"id": "e019", "orgId": "org_fao", "regionId": "somalia_lower_shabelle", "aidType": "food", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e020", "orgId": "org_unicef", "regionId": "somalia_lower_shabelle", "aidType": "medical", "projectCount": 7, "isSynthetic": true, "source": "demo"},
-  {"id": "e021", "orgId": "org_oxfam", "regionId": "somalia_lower_shabelle", "aidType": "infrastructure", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e022", "orgId": "org_wfp", "regionId": "somalia_middle_shabelle", "aidType": "food", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e023", "orgId": "org_irc", "regionId": "somalia_middle_shabelle", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e024", "orgId": "org_wfp", "regionId": "somalia_bakool", "aidType": "food", "projectCount": 2, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e025", "orgId": "org_wfp", "regionId": "somalia_mudug", "aidType": "food", "projectCount": 7, "isSynthetic": true, "source": "demo"},
-  {"id": "e026", "orgId": "org_unicef", "regionId": "somalia_mudug", "aidType": "medical", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e027", "orgId": "org_save", "regionId": "somalia_mudug", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e028", "orgId": "org_nrc", "regionId": "somalia_mudug", "aidType": "infrastructure", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e029", "orgId": "org_wfp", "regionId": "somalia_galgaduud", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e030", "orgId": "org_mercy", "regionId": "somalia_galgaduud", "aidType": "food", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e031", "orgId": "org_undp", "regionId": "somalia_nugaal", "aidType": "infrastructure", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e032", "orgId": "org_wfp", "regionId": "somalia_nugaal", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e033", "orgId": "org_unicef", "regionId": "somalia_nugaal", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e034", "orgId": "org_who", "regionId": "somalia_nugaal", "aidType": "medical", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-
-  {"id": "e101", "orgId": "org_unhcr", "regionId": "bangladesh_coxs_bazar", "aidType": "infrastructure", "projectCount": 25, "isSynthetic": true, "source": "demo"},
-  {"id": "e102", "orgId": "org_wfp", "regionId": "bangladesh_coxs_bazar", "aidType": "food", "projectCount": 22, "isSynthetic": true, "source": "demo"},
-  {"id": "e103", "orgId": "org_unicef", "regionId": "bangladesh_coxs_bazar", "aidType": "medical", "projectCount": 18, "isSynthetic": true, "source": "demo"},
-  {"id": "e104", "orgId": "org_msf", "regionId": "bangladesh_coxs_bazar", "aidType": "medical", "projectCount": 15, "isSynthetic": true, "source": "demo"},
-  {"id": "e105", "orgId": "org_iom", "regionId": "bangladesh_coxs_bazar", "aidType": "infrastructure", "projectCount": 14, "isSynthetic": true, "source": "demo"},
-  {"id": "e106", "orgId": "org_save", "regionId": "bangladesh_coxs_bazar", "aidType": "medical", "projectCount": 12, "isSynthetic": true, "source": "demo"},
-  {"id": "e107", "orgId": "org_wvi", "regionId": "bangladesh_coxs_bazar", "aidType": "food", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e108", "orgId": "org_care", "regionId": "bangladesh_coxs_bazar", "aidType": "food", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e109", "orgId": "org_unhcr", "regionId": "bangladesh_teknaf", "aidType": "infrastructure", "projectCount": 12, "isSynthetic": true, "source": "demo"},
-  {"id": "e110", "orgId": "org_wfp", "regionId": "bangladesh_teknaf", "aidType": "food", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e111", "orgId": "org_msf", "regionId": "bangladesh_teknaf", "aidType": "medical", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e112", "orgId": "org_unicef", "regionId": "bangladesh_dhaka", "aidType": "medical", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e113", "orgId": "org_who", "regionId": "bangladesh_dhaka", "aidType": "medical", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e114", "orgId": "org_undp", "regionId": "bangladesh_dhaka", "aidType": "infrastructure", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e115", "orgId": "org_unicef", "regionId": "bangladesh_chittagong", "aidType": "medical", "projectCount": 7, "isSynthetic": true, "source": "demo"},
-  {"id": "e116", "orgId": "org_wfp", "regionId": "bangladesh_chittagong", "aidType": "food", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e117", "orgId": "org_care", "regionId": "bangladesh_sylhet", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e118", "orgId": "org_oxfam", "regionId": "bangladesh_sylhet", "aidType": "infrastructure", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e119", "orgId": "org_wfp", "regionId": "bangladesh_rajshahi", "aidType": "food", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e120", "orgId": "org_unicef", "regionId": "bangladesh_rajshahi", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e121", "orgId": "org_oxfam", "regionId": "bangladesh_khulna", "aidType": "infrastructure", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e122", "orgId": "org_care", "regionId": "bangladesh_khulna", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e123", "orgId": "org_wfp", "regionId": "bangladesh_barishal", "aidType": "food", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e124", "orgId": "org_wfp", "regionId": "bangladesh_rangpur", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e125", "orgId": "org_wvi", "regionId": "bangladesh_rangpur", "aidType": "food", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e126", "orgId": "org_undp", "regionId": "bangladesh_mymensingh", "aidType": "infrastructure", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e127", "orgId": "org_unicef", "regionId": "bangladesh_mymensingh", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e128", "orgId": "org_care", "regionId": "bangladesh_mymensingh", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-
-  {"id": "e201", "orgId": "org_wfp", "regionId": "yemen_sanaa", "aidType": "food", "projectCount": 15, "isSynthetic": true, "source": "demo"},
-  {"id": "e202", "orgId": "org_unicef", "regionId": "yemen_sanaa", "aidType": "medical", "projectCount": 12, "isSynthetic": true, "source": "demo"},
-  {"id": "e203", "orgId": "org_who", "regionId": "yemen_sanaa", "aidType": "medical", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e204", "orgId": "org_msf", "regionId": "yemen_sanaa", "aidType": "medical", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e205", "orgId": "org_icrc", "regionId": "yemen_sanaa", "aidType": "food", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e206", "orgId": "org_wfp", "regionId": "yemen_aden", "aidType": "food", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e207", "orgId": "org_unhcr", "regionId": "yemen_aden", "aidType": "infrastructure", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e208", "orgId": "org_iom", "regionId": "yemen_aden", "aidType": "infrastructure", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e209", "orgId": "org_wfp", "regionId": "yemen_taiz", "aidType": "food", "projectCount": 12, "isSynthetic": true, "source": "demo"},
-  {"id": "e210", "orgId": "org_msf", "regionId": "yemen_taiz", "aidType": "medical", "projectCount": 7, "isSynthetic": true, "source": "demo"},
-  {"id": "e211", "orgId": "org_icrc", "regionId": "yemen_taiz", "aidType": "medical", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e212", "orgId": "org_wfp", "regionId": "yemen_hodeidah", "aidType": "food", "projectCount": 18, "isSynthetic": true, "source": "demo"},
-  {"id": "e213", "orgId": "org_unicef", "regionId": "yemen_hodeidah", "aidType": "medical", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e214", "orgId": "org_who", "regionId": "yemen_hodeidah", "aidType": "medical", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e215", "orgId": "org_fao", "regionId": "yemen_hodeidah", "aidType": "food", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e216", "orgId": "org_wfp", "regionId": "yemen_hajjah", "aidType": "food", "projectCount": 14, "isSynthetic": true, "source": "demo"},
-  {"id": "e217", "orgId": "org_unicef", "regionId": "yemen_hajjah", "aidType": "medical", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e218", "orgId": "org_msf", "regionId": "yemen_hajjah", "aidType": "medical", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e219", "orgId": "org_wfp", "regionId": "yemen_ibb", "aidType": "food", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e220", "orgId": "org_unicef", "regionId": "yemen_ibb", "aidType": "medical", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e221", "orgId": "org_care", "regionId": "yemen_ibb", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e222", "orgId": "org_icrc", "regionId": "yemen_marib", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e223", "orgId": "org_unhcr", "regionId": "yemen_marib", "aidType": "infrastructure", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e224", "orgId": "org_wfp", "regionId": "yemen_lahij", "aidType": "food", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e225", "orgId": "org_oxfam", "regionId": "yemen_lahij", "aidType": "infrastructure", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e226", "orgId": "org_wfp", "regionId": "yemen_abyan", "aidType": "food", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e227", "orgId": "org_wfp", "regionId": "yemen_dhamar", "aidType": "food", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e228", "orgId": "org_unicef", "regionId": "yemen_dhamar", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-
-  {"id": "e301", "orgId": "org_wfp", "regionId": "south_sudan_juba", "aidType": "food", "projectCount": 12, "isSynthetic": true, "source": "demo"},
-  {"id": "e302", "orgId": "org_unicef", "regionId": "south_sudan_juba", "aidType": "medical", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e303", "orgId": "org_who", "regionId": "south_sudan_juba", "aidType": "medical", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e304", "orgId": "org_undp", "regionId": "south_sudan_juba", "aidType": "infrastructure", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e305", "orgId": "org_iom", "regionId": "south_sudan_juba", "aidType": "infrastructure", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e306", "orgId": "org_wfp", "regionId": "south_sudan_unity", "aidType": "food", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e307", "orgId": "org_msf", "regionId": "south_sudan_unity", "aidType": "medical", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e308", "orgId": "org_icrc", "regionId": "south_sudan_unity", "aidType": "food", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e309", "orgId": "org_wfp", "regionId": "south_sudan_upper_nile", "aidType": "food", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e310", "orgId": "org_unhcr", "regionId": "south_sudan_upper_nile", "aidType": "infrastructure", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e311", "orgId": "org_msf", "regionId": "south_sudan_upper_nile", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e312", "orgId": "org_wfp", "regionId": "south_sudan_jonglei", "aidType": "food", "projectCount": 14, "isSynthetic": true, "source": "demo"},
-  {"id": "e313", "orgId": "org_unicef", "regionId": "south_sudan_jonglei", "aidType": "medical", "projectCount": 9, "isSynthetic": true, "source": "demo"},
-  {"id": "e314", "orgId": "org_msf", "regionId": "south_sudan_jonglei", "aidType": "medical", "projectCount": 7, "isSynthetic": true, "source": "demo"},
-  {"id": "e315", "orgId": "org_nrc", "regionId": "south_sudan_jonglei", "aidType": "infrastructure", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e316", "orgId": "org_wfp", "regionId": "south_sudan_lakes", "aidType": "food", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e317", "orgId": "org_unicef", "regionId": "south_sudan_lakes", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e318", "orgId": "org_wfp", "regionId": "south_sudan_warrap", "aidType": "food", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e319", "orgId": "org_icrc", "regionId": "south_sudan_warrap", "aidType": "food", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e320", "orgId": "org_wfp", "regionId": "south_sudan_nbg", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e321", "orgId": "org_unicef", "regionId": "south_sudan_nbg", "aidType": "medical", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e322", "orgId": "org_wfp", "regionId": "south_sudan_wbg", "aidType": "food", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e323", "orgId": "org_wfp", "regionId": "south_sudan_we", "aidType": "food", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e324", "orgId": "org_care", "regionId": "south_sudan_we", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e325", "orgId": "org_mercy", "regionId": "south_sudan_we", "aidType": "infrastructure", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e326", "orgId": "org_wfp", "regionId": "south_sudan_ee", "aidType": "food", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e327", "orgId": "org_fao", "regionId": "south_sudan_ee", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e328", "orgId": "org_unicef", "regionId": "south_sudan_ee", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-
-  {"id": "e401", "orgId": "org_wfp", "regionId": "afghanistan_kabul", "aidType": "food", "projectCount": 15, "isSynthetic": true, "source": "demo"},
-  {"id": "e402", "orgId": "org_unicef", "regionId": "afghanistan_kabul", "aidType": "medical", "projectCount": 12, "isSynthetic": true, "source": "demo"},
-  {"id": "e403", "orgId": "org_who", "regionId": "afghanistan_kabul", "aidType": "medical", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e404", "orgId": "org_undp", "regionId": "afghanistan_kabul", "aidType": "infrastructure", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e405", "orgId": "org_irc", "regionId": "afghanistan_kabul", "aidType": "medical", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e406", "orgId": "org_wfp", "regionId": "afghanistan_herat", "aidType": "food", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e407", "orgId": "org_unhcr", "regionId": "afghanistan_herat", "aidType": "infrastructure", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e408", "orgId": "org_unicef", "regionId": "afghanistan_herat", "aidType": "medical", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e409", "orgId": "org_nrc", "regionId": "afghanistan_herat", "aidType": "infrastructure", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e410", "orgId": "org_wfp", "regionId": "afghanistan_kandahar", "aidType": "food", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e411", "orgId": "org_icrc", "regionId": "afghanistan_kandahar", "aidType": "medical", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e412", "orgId": "org_msf", "regionId": "afghanistan_kandahar", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e413", "orgId": "org_wfp", "regionId": "afghanistan_balkh", "aidType": "food", "projectCount": 9, "isSynthetic": true, "source": "demo"},
-  {"id": "e414", "orgId": "org_unicef", "regionId": "afghanistan_balkh", "aidType": "medical", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e415", "orgId": "org_acted", "regionId": "afghanistan_balkh", "aidType": "infrastructure", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e416", "orgId": "org_drc", "regionId": "afghanistan_balkh", "aidType": "infrastructure", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e417", "orgId": "org_wfp", "regionId": "afghanistan_nangarhar", "aidType": "food", "projectCount": 10, "isSynthetic": true, "source": "demo"},
-  {"id": "e418", "orgId": "org_unhcr", "regionId": "afghanistan_nangarhar", "aidType": "infrastructure", "projectCount": 8, "isSynthetic": true, "source": "demo"},
-  {"id": "e419", "orgId": "org_iom", "regionId": "afghanistan_nangarhar", "aidType": "infrastructure", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e420", "orgId": "org_unicef", "regionId": "afghanistan_nangarhar", "aidType": "medical", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e421", "orgId": "org_wfp", "regionId": "afghanistan_helmand", "aidType": "food", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e422", "orgId": "org_icrc", "regionId": "afghanistan_helmand", "aidType": "medical", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e423", "orgId": "org_wfp", "regionId": "afghanistan_kunduz", "aidType": "food", "projectCount": 7, "isSynthetic": true, "source": "demo"},
-  {"id": "e424", "orgId": "org_msf", "regionId": "afghanistan_kunduz", "aidType": "medical", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e425", "orgId": "org_icrc", "regionId": "afghanistan_kunduz", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e426", "orgId": "org_wfp", "regionId": "afghanistan_faryab", "aidType": "food", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e427", "orgId": "org_unicef", "regionId": "afghanistan_faryab", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e428", "orgId": "org_acted", "regionId": "afghanistan_faryab", "aidType": "infrastructure", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e429", "orgId": "org_wfp", "regionId": "afghanistan_baghlan", "aidType": "food", "projectCount": 6, "isSynthetic": true, "source": "demo"},
-  {"id": "e430", "orgId": "org_unicef", "regionId": "afghanistan_baghlan", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e431", "orgId": "org_wfp", "regionId": "afghanistan_badghis", "aidType": "food", "projectCount": 3, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e432", "orgId": "org_wfp", "regionId": "afghanistan_ghor", "aidType": "food", "projectCount": 2, "isSynthetic": true, "source": "demo"},
-  
-  {"id": "e433", "orgId": "org_wfp", "regionId": "afghanistan_bamyan", "aidType": "food", "projectCount": 5, "isSynthetic": true, "source": "demo"},
-  {"id": "e434", "orgId": "org_unicef", "regionId": "afghanistan_bamyan", "aidType": "medical", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e435", "orgId": "org_undp", "regionId": "afghanistan_bamyan", "aidType": "infrastructure", "projectCount": 4, "isSynthetic": true, "source": "demo"},
-  {"id": "e436", "orgId": "org_hi", "regionId": "afghanistan_bamyan", "aidType": "medical", "projectCount": 3, "isSynthetic": true, "source": "demo"}
+  {
+    "id": "e0001",
+    "orgId": "org_mercy",
+    "regionId": "somalia_banadir",
+    "aidType": "infrastructure",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0002",
+    "orgId": "org_drc",
+    "regionId": "somalia_banadir",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0003",
+    "orgId": "org_iom",
+    "regionId": "somalia_banadir",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0004",
+    "orgId": "org_undp",
+    "regionId": "somalia_banadir",
+    "aidType": "infrastructure",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0005",
+    "orgId": "org_who",
+    "regionId": "somalia_banadir",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0006",
+    "orgId": "org_wfp",
+    "regionId": "somalia_banadir",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0007",
+    "orgId": "org_icrc",
+    "regionId": "somalia_banadir",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0008",
+    "orgId": "org_msf",
+    "regionId": "somalia_banadir",
+    "aidType": "infrastructure",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0009",
+    "orgId": "org_irc",
+    "regionId": "somalia_bay",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0010",
+    "orgId": "org_acted",
+    "regionId": "somalia_bay",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0011",
+    "orgId": "org_unhcr",
+    "regionId": "somalia_bay",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0012",
+    "orgId": "org_msf",
+    "regionId": "somalia_bay",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0013",
+    "orgId": "org_mercy",
+    "regionId": "somalia_bay",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0014",
+    "orgId": "org_undp",
+    "regionId": "somalia_bay",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0015",
+    "orgId": "org_wfp",
+    "regionId": "somalia_bay",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0016",
+    "orgId": "org_wfp",
+    "regionId": "somalia_gedo",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0017",
+    "orgId": "org_who",
+    "regionId": "somalia_gedo",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0018",
+    "orgId": "org_drc",
+    "regionId": "somalia_gedo",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0019",
+    "orgId": "org_icrc",
+    "regionId": "somalia_gedo",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0020",
+    "orgId": "org_irc",
+    "regionId": "somalia_gedo",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0021",
+    "orgId": "org_acted",
+    "regionId": "somalia_gedo",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0022",
+    "orgId": "org_fao",
+    "regionId": "somalia_gedo",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0023",
+    "orgId": "org_nrc",
+    "regionId": "somalia_gedo",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0024",
+    "orgId": "org_hi",
+    "regionId": "somalia_hiraan",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0025",
+    "orgId": "org_care",
+    "regionId": "somalia_hiraan",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0026",
+    "orgId": "org_oxfam",
+    "regionId": "somalia_hiraan",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0027",
+    "orgId": "org_acted",
+    "regionId": "somalia_hiraan",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0028",
+    "orgId": "org_wfp",
+    "regionId": "somalia_hiraan",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0029",
+    "orgId": "org_wfp",
+    "regionId": "somalia_lower_juba",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0030",
+    "orgId": "org_irc",
+    "regionId": "somalia_lower_juba",
+    "aidType": "medical",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0031",
+    "orgId": "org_mercy",
+    "regionId": "somalia_lower_juba",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0032",
+    "orgId": "org_msf",
+    "regionId": "somalia_lower_juba",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0033",
+    "orgId": "org_hi",
+    "regionId": "somalia_lower_juba",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0034",
+    "orgId": "org_wvi",
+    "regionId": "somalia_lower_juba",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0035",
+    "orgId": "org_irc",
+    "regionId": "somalia_middle_juba",
+    "aidType": "food",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0036",
+    "orgId": "org_unicef",
+    "regionId": "somalia_middle_juba",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0037",
+    "orgId": "org_save",
+    "regionId": "somalia_middle_juba",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0038",
+    "orgId": "org_unhcr",
+    "regionId": "somalia_middle_juba",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0039",
+    "orgId": "org_drc",
+    "regionId": "somalia_middle_juba",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0040",
+    "orgId": "org_fao",
+    "regionId": "somalia_middle_juba",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0041",
+    "orgId": "org_mercy",
+    "regionId": "somalia_middle_juba",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0042",
+    "orgId": "org_unhcr",
+    "regionId": "somalia_lower_shabelle",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0043",
+    "orgId": "org_irc",
+    "regionId": "somalia_lower_shabelle",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0044",
+    "orgId": "org_hi",
+    "regionId": "somalia_lower_shabelle",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0045",
+    "orgId": "org_acted",
+    "regionId": "somalia_lower_shabelle",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0046",
+    "orgId": "org_icrc",
+    "regionId": "somalia_lower_shabelle",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0047",
+    "orgId": "org_fao",
+    "regionId": "somalia_lower_shabelle",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0048",
+    "orgId": "org_msf",
+    "regionId": "somalia_lower_shabelle",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0049",
+    "orgId": "org_icrc",
+    "regionId": "somalia_middle_shabelle",
+    "aidType": "medical",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0050",
+    "orgId": "org_undp",
+    "regionId": "somalia_middle_shabelle",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0051",
+    "orgId": "org_msf",
+    "regionId": "somalia_middle_shabelle",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0052",
+    "orgId": "org_unhcr",
+    "regionId": "somalia_middle_shabelle",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0053",
+    "orgId": "org_undp",
+    "regionId": "somalia_bakool",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0054",
+    "orgId": "org_irc",
+    "regionId": "somalia_bakool",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0055",
+    "orgId": "org_oxfam",
+    "regionId": "somalia_bakool",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0056",
+    "orgId": "org_mercy",
+    "regionId": "somalia_bakool",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0057",
+    "orgId": "org_care",
+    "regionId": "somalia_bakool",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0058",
+    "orgId": "org_iom",
+    "regionId": "somalia_bakool",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0059",
+    "orgId": "org_fao",
+    "regionId": "somalia_bakool",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0060",
+    "orgId": "org_crs",
+    "regionId": "somalia_mudug",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0061",
+    "orgId": "org_wfp",
+    "regionId": "somalia_mudug",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0062",
+    "orgId": "org_oxfam",
+    "regionId": "somalia_mudug",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0063",
+    "orgId": "org_care",
+    "regionId": "somalia_mudug",
+    "aidType": "food",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0064",
+    "orgId": "org_save",
+    "regionId": "somalia_mudug",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0065",
+    "orgId": "org_iom",
+    "regionId": "somalia_mudug",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0066",
+    "orgId": "org_acted",
+    "regionId": "somalia_mudug",
+    "aidType": "food",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0067",
+    "orgId": "org_unicef",
+    "regionId": "somalia_galgaduud",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0068",
+    "orgId": "org_who",
+    "regionId": "somalia_galgaduud",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0069",
+    "orgId": "org_wfp",
+    "regionId": "somalia_galgaduud",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0070",
+    "orgId": "org_wvi",
+    "regionId": "somalia_galgaduud",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0071",
+    "orgId": "org_fao",
+    "regionId": "somalia_galgaduud",
+    "aidType": "food",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0072",
+    "orgId": "org_oxfam",
+    "regionId": "somalia_nugaal",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0073",
+    "orgId": "org_iom",
+    "regionId": "bangladesh_dhaka",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0074",
+    "orgId": "org_oxfam",
+    "regionId": "bangladesh_dhaka",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0075",
+    "orgId": "org_unhcr",
+    "regionId": "bangladesh_dhaka",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0076",
+    "orgId": "org_msf",
+    "regionId": "bangladesh_dhaka",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0077",
+    "orgId": "org_care",
+    "regionId": "bangladesh_dhaka",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0078",
+    "orgId": "org_fao",
+    "regionId": "bangladesh_chittagong",
+    "aidType": "medical",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0079",
+    "orgId": "org_irc",
+    "regionId": "bangladesh_chittagong",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0080",
+    "orgId": "org_nrc",
+    "regionId": "bangladesh_chittagong",
+    "aidType": "medical",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0081",
+    "orgId": "org_hi",
+    "regionId": "bangladesh_chittagong",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0082",
+    "orgId": "org_unhcr",
+    "regionId": "bangladesh_chittagong",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0083",
+    "orgId": "org_save",
+    "regionId": "bangladesh_coxs_bazar",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0084",
+    "orgId": "org_unicef",
+    "regionId": "bangladesh_coxs_bazar",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0085",
+    "orgId": "org_acted",
+    "regionId": "bangladesh_coxs_bazar",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0086",
+    "orgId": "org_fao",
+    "regionId": "bangladesh_coxs_bazar",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0087",
+    "orgId": "org_wvi",
+    "regionId": "bangladesh_coxs_bazar",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0088",
+    "orgId": "org_unhcr",
+    "regionId": "bangladesh_coxs_bazar",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0089",
+    "orgId": "org_crs",
+    "regionId": "bangladesh_coxs_bazar",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0090",
+    "orgId": "org_acted",
+    "regionId": "bangladesh_sylhet",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0091",
+    "orgId": "org_hi",
+    "regionId": "bangladesh_sylhet",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0092",
+    "orgId": "org_wfp",
+    "regionId": "bangladesh_sylhet",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0093",
+    "orgId": "org_iom",
+    "regionId": "bangladesh_rajshahi",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0094",
+    "orgId": "org_nrc",
+    "regionId": "bangladesh_rajshahi",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0095",
+    "orgId": "org_icrc",
+    "regionId": "bangladesh_rajshahi",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0096",
+    "orgId": "org_who",
+    "regionId": "bangladesh_rajshahi",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0097",
+    "orgId": "org_acted",
+    "regionId": "bangladesh_rajshahi",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0098",
+    "orgId": "org_crs",
+    "regionId": "bangladesh_khulna",
+    "aidType": "food",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0099",
+    "orgId": "org_oxfam",
+    "regionId": "bangladesh_khulna",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0100",
+    "orgId": "org_msf",
+    "regionId": "bangladesh_khulna",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0101",
+    "orgId": "org_care",
+    "regionId": "bangladesh_barishal",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0102",
+    "orgId": "org_irc",
+    "regionId": "bangladesh_barishal",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0103",
+    "orgId": "org_unhcr",
+    "regionId": "bangladesh_barishal",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0104",
+    "orgId": "org_msf",
+    "regionId": "bangladesh_barishal",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0105",
+    "orgId": "org_fao",
+    "regionId": "bangladesh_barishal",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0106",
+    "orgId": "org_undp",
+    "regionId": "bangladesh_barishal",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0107",
+    "orgId": "org_drc",
+    "regionId": "bangladesh_barishal",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0108",
+    "orgId": "org_icrc",
+    "regionId": "bangladesh_rangpur",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0109",
+    "orgId": "org_iom",
+    "regionId": "bangladesh_rangpur",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0110",
+    "orgId": "org_unicef",
+    "regionId": "bangladesh_rangpur",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0111",
+    "orgId": "org_undp",
+    "regionId": "bangladesh_rangpur",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0112",
+    "orgId": "org_nrc",
+    "regionId": "bangladesh_rangpur",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0113",
+    "orgId": "org_wfp",
+    "regionId": "bangladesh_rangpur",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0114",
+    "orgId": "org_wvi",
+    "regionId": "bangladesh_rangpur",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0115",
+    "orgId": "org_wfp",
+    "regionId": "bangladesh_mymensingh",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0116",
+    "orgId": "org_nrc",
+    "regionId": "bangladesh_mymensingh",
+    "aidType": "infrastructure",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0117",
+    "orgId": "org_irc",
+    "regionId": "bangladesh_mymensingh",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0118",
+    "orgId": "org_who",
+    "regionId": "bangladesh_mymensingh",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0119",
+    "orgId": "org_crs",
+    "regionId": "bangladesh_teknaf",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0120",
+    "orgId": "org_who",
+    "regionId": "bangladesh_teknaf",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0121",
+    "orgId": "org_wfp",
+    "regionId": "bangladesh_teknaf",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0122",
+    "orgId": "org_irc",
+    "regionId": "bangladesh_teknaf",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0123",
+    "orgId": "org_oxfam",
+    "regionId": "bangladesh_teknaf",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0124",
+    "orgId": "org_unhcr",
+    "regionId": "bangladesh_teknaf",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0125",
+    "orgId": "org_undp",
+    "regionId": "bangladesh_teknaf",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0126",
+    "orgId": "org_save",
+    "regionId": "bangladesh_teknaf",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0127",
+    "orgId": "org_iom",
+    "regionId": "yemen_sanaa",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0128",
+    "orgId": "org_undp",
+    "regionId": "yemen_sanaa",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0129",
+    "orgId": "org_crs",
+    "regionId": "yemen_sanaa",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0130",
+    "orgId": "org_unicef",
+    "regionId": "yemen_sanaa",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0131",
+    "orgId": "org_care",
+    "regionId": "yemen_sanaa",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0132",
+    "orgId": "org_nrc",
+    "regionId": "yemen_sanaa",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0133",
+    "orgId": "org_msf",
+    "regionId": "yemen_sanaa",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0134",
+    "orgId": "org_unhcr",
+    "regionId": "yemen_sanaa",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0135",
+    "orgId": "org_hi",
+    "regionId": "yemen_aden",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0136",
+    "orgId": "org_oxfam",
+    "regionId": "yemen_aden",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0137",
+    "orgId": "org_unhcr",
+    "regionId": "yemen_aden",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0138",
+    "orgId": "org_drc",
+    "regionId": "yemen_aden",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0139",
+    "orgId": "org_undp",
+    "regionId": "yemen_aden",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0140",
+    "orgId": "org_irc",
+    "regionId": "yemen_aden",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0141",
+    "orgId": "org_crs",
+    "regionId": "yemen_aden",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0142",
+    "orgId": "org_nrc",
+    "regionId": "yemen_aden",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0143",
+    "orgId": "org_care",
+    "regionId": "yemen_aden",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0144",
+    "orgId": "org_care",
+    "regionId": "yemen_taiz",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0145",
+    "orgId": "org_unicef",
+    "regionId": "yemen_taiz",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0146",
+    "orgId": "org_who",
+    "regionId": "yemen_taiz",
+    "aidType": "medical",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0147",
+    "orgId": "org_oxfam",
+    "regionId": "yemen_taiz",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0148",
+    "orgId": "org_msf",
+    "regionId": "yemen_taiz",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0149",
+    "orgId": "org_icrc",
+    "regionId": "yemen_taiz",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0150",
+    "orgId": "org_unhcr",
+    "regionId": "yemen_taiz",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0151",
+    "orgId": "org_acted",
+    "regionId": "yemen_hodeidah",
+    "aidType": "food",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0152",
+    "orgId": "org_mercy",
+    "regionId": "yemen_hodeidah",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0153",
+    "orgId": "org_crs",
+    "regionId": "yemen_hodeidah",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0154",
+    "orgId": "org_undp",
+    "regionId": "yemen_hodeidah",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0155",
+    "orgId": "org_wvi",
+    "regionId": "yemen_hodeidah",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0156",
+    "orgId": "org_msf",
+    "regionId": "yemen_hodeidah",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0157",
+    "orgId": "org_who",
+    "regionId": "yemen_hodeidah",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0158",
+    "orgId": "org_drc",
+    "regionId": "yemen_hodeidah",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0159",
+    "orgId": "org_crs",
+    "regionId": "yemen_hajjah",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0160",
+    "orgId": "org_nrc",
+    "regionId": "yemen_hajjah",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0161",
+    "orgId": "org_irc",
+    "regionId": "yemen_hajjah",
+    "aidType": "infrastructure",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0162",
+    "orgId": "org_drc",
+    "regionId": "yemen_hajjah",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0163",
+    "orgId": "org_wfp",
+    "regionId": "yemen_hajjah",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0164",
+    "orgId": "org_undp",
+    "regionId": "yemen_hajjah",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0165",
+    "orgId": "org_wvi",
+    "regionId": "yemen_hajjah",
+    "aidType": "medical",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0166",
+    "orgId": "org_mercy",
+    "regionId": "yemen_hajjah",
+    "aidType": "food",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0167",
+    "orgId": "org_save",
+    "regionId": "yemen_hajjah",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0168",
+    "orgId": "org_acted",
+    "regionId": "yemen_ibb",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0169",
+    "orgId": "org_wfp",
+    "regionId": "yemen_ibb",
+    "aidType": "medical",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0170",
+    "orgId": "org_icrc",
+    "regionId": "yemen_ibb",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0171",
+    "orgId": "org_crs",
+    "regionId": "yemen_ibb",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0172",
+    "orgId": "org_care",
+    "regionId": "yemen_ibb",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0173",
+    "orgId": "org_wvi",
+    "regionId": "yemen_marib",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0174",
+    "orgId": "org_acted",
+    "regionId": "yemen_marib",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0175",
+    "orgId": "org_crs",
+    "regionId": "yemen_marib",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0176",
+    "orgId": "org_mercy",
+    "regionId": "yemen_marib",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0177",
+    "orgId": "org_unicef",
+    "regionId": "yemen_marib",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0178",
+    "orgId": "org_iom",
+    "regionId": "yemen_marib",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0179",
+    "orgId": "org_fao",
+    "regionId": "yemen_lahij",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0180",
+    "orgId": "org_save",
+    "regionId": "yemen_lahij",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0181",
+    "orgId": "org_msf",
+    "regionId": "yemen_lahij",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0182",
+    "orgId": "org_icrc",
+    "regionId": "yemen_lahij",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0183",
+    "orgId": "org_unhcr",
+    "regionId": "yemen_lahij",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0184",
+    "orgId": "org_care",
+    "regionId": "yemen_abyan",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0185",
+    "orgId": "org_undp",
+    "regionId": "yemen_abyan",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0186",
+    "orgId": "org_irc",
+    "regionId": "yemen_abyan",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0187",
+    "orgId": "org_mercy",
+    "regionId": "yemen_abyan",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0188",
+    "orgId": "org_drc",
+    "regionId": "yemen_abyan",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0189",
+    "orgId": "org_iom",
+    "regionId": "yemen_abyan",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0190",
+    "orgId": "org_nrc",
+    "regionId": "yemen_abyan",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0191",
+    "orgId": "org_fao",
+    "regionId": "yemen_abyan",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0192",
+    "orgId": "org_mercy",
+    "regionId": "yemen_dhamar",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0193",
+    "orgId": "org_wfp",
+    "regionId": "yemen_dhamar",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0194",
+    "orgId": "org_acted",
+    "regionId": "yemen_dhamar",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0195",
+    "orgId": "org_undp",
+    "regionId": "yemen_dhamar",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0196",
+    "orgId": "org_unhcr",
+    "regionId": "south_sudan_juba",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0197",
+    "orgId": "org_wfp",
+    "regionId": "south_sudan_juba",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0198",
+    "orgId": "org_iom",
+    "regionId": "south_sudan_juba",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0199",
+    "orgId": "org_acted",
+    "regionId": "south_sudan_juba",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0200",
+    "orgId": "org_nrc",
+    "regionId": "south_sudan_juba",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0201",
+    "orgId": "org_irc",
+    "regionId": "south_sudan_juba",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0202",
+    "orgId": "org_unicef",
+    "regionId": "south_sudan_juba",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0203",
+    "orgId": "org_save",
+    "regionId": "south_sudan_juba",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0204",
+    "orgId": "org_hi",
+    "regionId": "south_sudan_juba",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0205",
+    "orgId": "org_crs",
+    "regionId": "south_sudan_unity",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0206",
+    "orgId": "org_drc",
+    "regionId": "south_sudan_unity",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0207",
+    "orgId": "org_hi",
+    "regionId": "south_sudan_unity",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0208",
+    "orgId": "org_unicef",
+    "regionId": "south_sudan_unity",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0209",
+    "orgId": "org_fao",
+    "regionId": "south_sudan_unity",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0210",
+    "orgId": "org_msf",
+    "regionId": "south_sudan_unity",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0211",
+    "orgId": "org_care",
+    "regionId": "south_sudan_unity",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0212",
+    "orgId": "org_wfp",
+    "regionId": "south_sudan_unity",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0213",
+    "orgId": "org_save",
+    "regionId": "south_sudan_unity",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0214",
+    "orgId": "org_who",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0215",
+    "orgId": "org_oxfam",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0216",
+    "orgId": "org_unicef",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0217",
+    "orgId": "org_undp",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0218",
+    "orgId": "org_save",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0219",
+    "orgId": "org_acted",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0220",
+    "orgId": "org_fao",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0221",
+    "orgId": "org_crs",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0222",
+    "orgId": "org_unhcr",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0223",
+    "orgId": "org_care",
+    "regionId": "south_sudan_upper_nile",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0224",
+    "orgId": "org_irc",
+    "regionId": "south_sudan_jonglei",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0225",
+    "orgId": "org_unicef",
+    "regionId": "south_sudan_jonglei",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0226",
+    "orgId": "org_wvi",
+    "regionId": "south_sudan_jonglei",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0227",
+    "orgId": "org_icrc",
+    "regionId": "south_sudan_jonglei",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0228",
+    "orgId": "org_care",
+    "regionId": "south_sudan_jonglei",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0229",
+    "orgId": "org_oxfam",
+    "regionId": "south_sudan_jonglei",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0230",
+    "orgId": "org_wfp",
+    "regionId": "south_sudan_jonglei",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0231",
+    "orgId": "org_unhcr",
+    "regionId": "south_sudan_jonglei",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0232",
+    "orgId": "org_save",
+    "regionId": "south_sudan_jonglei",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0233",
+    "orgId": "org_msf",
+    "regionId": "south_sudan_lakes",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0234",
+    "orgId": "org_undp",
+    "regionId": "south_sudan_lakes",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0235",
+    "orgId": "org_care",
+    "regionId": "south_sudan_lakes",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0236",
+    "orgId": "org_hi",
+    "regionId": "south_sudan_lakes",
+    "aidType": "food",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0237",
+    "orgId": "org_drc",
+    "regionId": "south_sudan_lakes",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0238",
+    "orgId": "org_acted",
+    "regionId": "south_sudan_lakes",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0239",
+    "orgId": "org_crs",
+    "regionId": "south_sudan_warrap",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0240",
+    "orgId": "org_fao",
+    "regionId": "south_sudan_warrap",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0241",
+    "orgId": "org_mercy",
+    "regionId": "south_sudan_warrap",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0242",
+    "orgId": "org_who",
+    "regionId": "south_sudan_warrap",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0243",
+    "orgId": "org_wfp",
+    "regionId": "south_sudan_warrap",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0244",
+    "orgId": "org_care",
+    "regionId": "south_sudan_warrap",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0245",
+    "orgId": "org_wvi",
+    "regionId": "south_sudan_warrap",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0246",
+    "orgId": "org_unhcr",
+    "regionId": "south_sudan_warrap",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0247",
+    "orgId": "org_drc",
+    "regionId": "south_sudan_warrap",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0248",
+    "orgId": "org_undp",
+    "regionId": "south_sudan_nbg",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0249",
+    "orgId": "org_hi",
+    "regionId": "south_sudan_nbg",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0250",
+    "orgId": "org_acted",
+    "regionId": "south_sudan_nbg",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0251",
+    "orgId": "org_unicef",
+    "regionId": "south_sudan_nbg",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0252",
+    "orgId": "org_irc",
+    "regionId": "south_sudan_nbg",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0253",
+    "orgId": "org_drc",
+    "regionId": "south_sudan_nbg",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0254",
+    "orgId": "org_oxfam",
+    "regionId": "south_sudan_nbg",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0255",
+    "orgId": "org_msf",
+    "regionId": "south_sudan_nbg",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0256",
+    "orgId": "org_wfp",
+    "regionId": "south_sudan_nbg",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0257",
+    "orgId": "org_unhcr",
+    "regionId": "south_sudan_nbg",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0258",
+    "orgId": "org_mercy",
+    "regionId": "south_sudan_wbg",
+    "aidType": "food",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0259",
+    "orgId": "org_unicef",
+    "regionId": "south_sudan_wbg",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0260",
+    "orgId": "org_irc",
+    "regionId": "south_sudan_wbg",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0261",
+    "orgId": "org_crs",
+    "regionId": "south_sudan_wbg",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0262",
+    "orgId": "org_iom",
+    "regionId": "south_sudan_wbg",
+    "aidType": "food",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0263",
+    "orgId": "org_fao",
+    "regionId": "south_sudan_wbg",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0264",
+    "orgId": "org_care",
+    "regionId": "south_sudan_wbg",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0265",
+    "orgId": "org_nrc",
+    "regionId": "south_sudan_we",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0266",
+    "orgId": "org_crs",
+    "regionId": "south_sudan_we",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0267",
+    "orgId": "org_wfp",
+    "regionId": "south_sudan_we",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0268",
+    "orgId": "org_unicef",
+    "regionId": "south_sudan_we",
+    "aidType": "infrastructure",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0269",
+    "orgId": "org_oxfam",
+    "regionId": "south_sudan_ee",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0270",
+    "orgId": "org_unicef",
+    "regionId": "south_sudan_ee",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0271",
+    "orgId": "org_unhcr",
+    "regionId": "south_sudan_ee",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0272",
+    "orgId": "org_icrc",
+    "regionId": "south_sudan_ee",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0273",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_badakhshan",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0274",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_badakhshan",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0275",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_badakhshan",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0276",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_badakhshan",
+    "aidType": "food",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0277",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_badakhshan",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0278",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_badakhshan",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0279",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_badakhshan",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0280",
+    "orgId": "org_save",
+    "regionId": "afghanistan_badghis",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0281",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_badghis",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0282",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_badghis",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0283",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_badghis",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0284",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_badghis",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0285",
+    "orgId": "org_drc",
+    "regionId": "afghanistan_badghis",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0286",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_badghis",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0287",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_baghlan",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0288",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_baghlan",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0289",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_baghlan",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0290",
+    "orgId": "org_who",
+    "regionId": "afghanistan_baghlan",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0291",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_baghlan",
+    "aidType": "medical",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0292",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_baghlan",
+    "aidType": "food",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0293",
+    "orgId": "org_unhcr",
+    "regionId": "afghanistan_balkh",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0294",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_balkh",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0295",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_balkh",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0296",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_balkh",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0297",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_bamyan",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0298",
+    "orgId": "org_mercy",
+    "regionId": "afghanistan_bamyan",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0299",
+    "orgId": "org_hi",
+    "regionId": "afghanistan_bamyan",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0300",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_bamyan",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0301",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_bamyan",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0302",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_daykundi",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0303",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_daykundi",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0304",
+    "orgId": "org_hi",
+    "regionId": "afghanistan_daykundi",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0305",
+    "orgId": "org_fao",
+    "regionId": "afghanistan_daykundi",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0306",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_daykundi",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0307",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_daykundi",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0308",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_daykundi",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0309",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_farah",
+    "aidType": "medical",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0310",
+    "orgId": "org_mercy",
+    "regionId": "afghanistan_farah",
+    "aidType": "medical",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0311",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_farah",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0312",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_farah",
+    "aidType": "medical",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0313",
+    "orgId": "org_who",
+    "regionId": "afghanistan_farah",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0314",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_farah",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0315",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_farah",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0316",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_faryab",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0317",
+    "orgId": "org_mercy",
+    "regionId": "afghanistan_faryab",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0318",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_faryab",
+    "aidType": "food",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0319",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_ghazni",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0320",
+    "orgId": "org_care",
+    "regionId": "afghanistan_ghazni",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0321",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_ghazni",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0322",
+    "orgId": "org_unhcr",
+    "regionId": "afghanistan_ghazni",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0323",
+    "orgId": "org_drc",
+    "regionId": "afghanistan_ghazni",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0324",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_ghazni",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0325",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_ghazni",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0326",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_ghazni",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0327",
+    "orgId": "org_care",
+    "regionId": "afghanistan_ghor",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0328",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_ghor",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0329",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_ghor",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0330",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_ghor",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0331",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_ghor",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0332",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_ghor",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0333",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_ghor",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0334",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_ghor",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0335",
+    "orgId": "org_care",
+    "regionId": "afghanistan_helmand",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0336",
+    "orgId": "org_fao",
+    "regionId": "afghanistan_helmand",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0337",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_helmand",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0338",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_helmand",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0339",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_helmand",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0340",
+    "orgId": "org_mercy",
+    "regionId": "afghanistan_helmand",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0341",
+    "orgId": "org_drc",
+    "regionId": "afghanistan_helmand",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0342",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_helmand",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0343",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_helmand",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0344",
+    "orgId": "org_save",
+    "regionId": "afghanistan_herat",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0345",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_herat",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0346",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_herat",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0347",
+    "orgId": "org_hi",
+    "regionId": "afghanistan_jowzjan",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0348",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_jowzjan",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0349",
+    "orgId": "org_who",
+    "regionId": "afghanistan_jowzjan",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0350",
+    "orgId": "org_save",
+    "regionId": "afghanistan_jowzjan",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0351",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_kabul",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0352",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_kabul",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0353",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_kabul",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0354",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_kabul",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0355",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_kabul",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0356",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_kabul",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0357",
+    "orgId": "org_care",
+    "regionId": "afghanistan_kabul",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0358",
+    "orgId": "org_who",
+    "regionId": "afghanistan_kabul",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0359",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_kabul",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0360",
+    "orgId": "org_fao",
+    "regionId": "afghanistan_kandahar",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0361",
+    "orgId": "org_care",
+    "regionId": "afghanistan_kandahar",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0362",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_kandahar",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0363",
+    "orgId": "org_who",
+    "regionId": "afghanistan_kandahar",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0364",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_kandahar",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0365",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_kandahar",
+    "aidType": "infrastructure",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0366",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_kandahar",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0367",
+    "orgId": "org_who",
+    "regionId": "afghanistan_kapisa",
+    "aidType": "infrastructure",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0368",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_kapisa",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0369",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_kapisa",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0370",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_kapisa",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0371",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_kapisa",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0372",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_khost",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0373",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_khost",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0374",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_khost",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0375",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_khost",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0376",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_khost",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0377",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_khost",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0378",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_khost",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0379",
+    "orgId": "org_hi",
+    "regionId": "afghanistan_kunar",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0380",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_kunar",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0381",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_kunar",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0382",
+    "orgId": "org_who",
+    "regionId": "afghanistan_kunar",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0383",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_kunar",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0384",
+    "orgId": "org_mercy",
+    "regionId": "afghanistan_kunar",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0385",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_kunar",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0386",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_kunar",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0387",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_kunar",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0388",
+    "orgId": "org_care",
+    "regionId": "afghanistan_kunduz",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0389",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_kunduz",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0390",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_kunduz",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0391",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_kunduz",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0392",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_kunduz",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0393",
+    "orgId": "org_fao",
+    "regionId": "afghanistan_kunduz",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0394",
+    "orgId": "org_who",
+    "regionId": "afghanistan_kunduz",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0395",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_laghman",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0396",
+    "orgId": "org_hi",
+    "regionId": "afghanistan_laghman",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0397",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_laghman",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0398",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_logar",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0399",
+    "orgId": "org_care",
+    "regionId": "afghanistan_logar",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0400",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_logar",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0401",
+    "orgId": "org_save",
+    "regionId": "afghanistan_logar",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0402",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_logar",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0403",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_logar",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0404",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_logar",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0405",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_nangarhar",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0406",
+    "orgId": "org_who",
+    "regionId": "afghanistan_nangarhar",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0407",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_nangarhar",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0408",
+    "orgId": "org_hi",
+    "regionId": "afghanistan_nangarhar",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0409",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_nangarhar",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0410",
+    "orgId": "org_mercy",
+    "regionId": "afghanistan_nangarhar",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0411",
+    "orgId": "org_drc",
+    "regionId": "afghanistan_nangarhar",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0412",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_nangarhar",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0413",
+    "orgId": "org_save",
+    "regionId": "afghanistan_nangarhar",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0414",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_nimroz",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0415",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_nimroz",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0416",
+    "orgId": "org_unhcr",
+    "regionId": "afghanistan_nimroz",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0417",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_nimroz",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0418",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_nimroz",
+    "aidType": "medical",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0419",
+    "orgId": "org_drc",
+    "regionId": "afghanistan_nuristan",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0420",
+    "orgId": "org_save",
+    "regionId": "afghanistan_nuristan",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0421",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_nuristan",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0422",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_nuristan",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0423",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_nuristan",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0424",
+    "orgId": "org_fao",
+    "regionId": "afghanistan_nuristan",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0425",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_nuristan",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0426",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_nuristan",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0427",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_nuristan",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0428",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_paktika",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0429",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_paktika",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0430",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_paktika",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0431",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_paktika",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0432",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_paktika",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0433",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_paktika",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0434",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_paktika",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0435",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_paktika",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0436",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_paktia",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0437",
+    "orgId": "org_care",
+    "regionId": "afghanistan_paktia",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0438",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_paktia",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0439",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_paktia",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0440",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_paktia",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0441",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_paktia",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0442",
+    "orgId": "org_hi",
+    "regionId": "afghanistan_paktia",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0443",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_paktia",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0444",
+    "orgId": "org_who",
+    "regionId": "afghanistan_paktia",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0445",
+    "orgId": "org_hi",
+    "regionId": "afghanistan_panjshir",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0446",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_panjshir",
+    "aidType": "medical",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0447",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_panjshir",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0448",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_parwan",
+    "aidType": "infrastructure",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0449",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_parwan",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0450",
+    "orgId": "org_hi",
+    "regionId": "afghanistan_parwan",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0451",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_samangan",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0452",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_samangan",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0453",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_samangan",
+    "aidType": "medical",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0454",
+    "orgId": "org_mercy",
+    "regionId": "afghanistan_sar_e_pol",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0455",
+    "orgId": "org_drc",
+    "regionId": "afghanistan_sar_e_pol",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0456",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_sar_e_pol",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0457",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_sar_e_pol",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0458",
+    "orgId": "org_care",
+    "regionId": "afghanistan_sar_e_pol",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0459",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_sar_e_pol",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0460",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_sar_e_pol",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0461",
+    "orgId": "org_unhcr",
+    "regionId": "afghanistan_takhar",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0462",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_takhar",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0463",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_takhar",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0464",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_takhar",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0465",
+    "orgId": "org_care",
+    "regionId": "afghanistan_takhar",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0466",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_takhar",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0467",
+    "orgId": "org_fao",
+    "regionId": "afghanistan_takhar",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0468",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_takhar",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0469",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_uruzgan",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0470",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_uruzgan",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0471",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_uruzgan",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0472",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_uruzgan",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0473",
+    "orgId": "org_unhcr",
+    "regionId": "afghanistan_uruzgan",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0474",
+    "orgId": "org_oxfam",
+    "regionId": "afghanistan_uruzgan",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0475",
+    "orgId": "org_mercy",
+    "regionId": "afghanistan_uruzgan",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0476",
+    "orgId": "org_unicef",
+    "regionId": "afghanistan_uruzgan",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0477",
+    "orgId": "org_who",
+    "regionId": "afghanistan_uruzgan",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0478",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_wardak",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0479",
+    "orgId": "org_who",
+    "regionId": "afghanistan_wardak",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0480",
+    "orgId": "org_drc",
+    "regionId": "afghanistan_wardak",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0481",
+    "orgId": "org_irc",
+    "regionId": "afghanistan_wardak",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0482",
+    "orgId": "org_save",
+    "regionId": "afghanistan_wardak",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0483",
+    "orgId": "org_iom",
+    "regionId": "afghanistan_wardak",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0484",
+    "orgId": "org_wvi",
+    "regionId": "afghanistan_wardak",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0485",
+    "orgId": "org_undp",
+    "regionId": "afghanistan_wardak",
+    "aidType": "medical",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0486",
+    "orgId": "org_msf",
+    "regionId": "afghanistan_zabul",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0487",
+    "orgId": "org_save",
+    "regionId": "afghanistan_zabul",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0488",
+    "orgId": "org_icrc",
+    "regionId": "afghanistan_zabul",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0489",
+    "orgId": "org_crs",
+    "regionId": "afghanistan_zabul",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0490",
+    "orgId": "org_care",
+    "regionId": "afghanistan_zabul",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0491",
+    "orgId": "org_wfp",
+    "regionId": "afghanistan_zabul",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0492",
+    "orgId": "org_acted",
+    "regionId": "afghanistan_zabul",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0493",
+    "orgId": "org_nrc",
+    "regionId": "afghanistan_zabul",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0494",
+    "orgId": "org_fao",
+    "regionId": "afghanistan_zabul",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0495",
+    "orgId": "org_nrc",
+    "regionId": "ukraine_kyiv",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0496",
+    "orgId": "org_acted",
+    "regionId": "ukraine_kyiv",
+    "aidType": "medical",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0497",
+    "orgId": "org_mercy",
+    "regionId": "ukraine_kyiv",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0498",
+    "orgId": "org_care",
+    "regionId": "ukraine_kharkiv",
+    "aidType": "medical",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0499",
+    "orgId": "org_fao",
+    "regionId": "ukraine_kharkiv",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0500",
+    "orgId": "org_save",
+    "regionId": "ukraine_kharkiv",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0501",
+    "orgId": "org_oxfam",
+    "regionId": "ukraine_kharkiv",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0502",
+    "orgId": "org_icrc",
+    "regionId": "ukraine_kharkiv",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0503",
+    "orgId": "org_crs",
+    "regionId": "ukraine_kharkiv",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0504",
+    "orgId": "org_irc",
+    "regionId": "ukraine_kharkiv",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0505",
+    "orgId": "org_who",
+    "regionId": "ukraine_kharkiv",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0506",
+    "orgId": "org_crs",
+    "regionId": "ukraine_donetsk",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0507",
+    "orgId": "org_hi",
+    "regionId": "ukraine_donetsk",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0508",
+    "orgId": "org_fao",
+    "regionId": "ukraine_donetsk",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0509",
+    "orgId": "org_oxfam",
+    "regionId": "ukraine_donetsk",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0510",
+    "orgId": "org_iom",
+    "regionId": "ukraine_donetsk",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0511",
+    "orgId": "org_irc",
+    "regionId": "ukraine_donetsk",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0512",
+    "orgId": "org_drc",
+    "regionId": "ukraine_donetsk",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0513",
+    "orgId": "org_nrc",
+    "regionId": "ukraine_donetsk",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0514",
+    "orgId": "org_oxfam",
+    "regionId": "ukraine_luhansk",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0515",
+    "orgId": "org_nrc",
+    "regionId": "ukraine_luhansk",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0516",
+    "orgId": "org_undp",
+    "regionId": "ukraine_luhansk",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0517",
+    "orgId": "org_who",
+    "regionId": "ukraine_luhansk",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0518",
+    "orgId": "org_mercy",
+    "regionId": "ukraine_luhansk",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0519",
+    "orgId": "org_acted",
+    "regionId": "ukraine_luhansk",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0520",
+    "orgId": "org_unicef",
+    "regionId": "ukraine_luhansk",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0521",
+    "orgId": "org_icrc",
+    "regionId": "ukraine_luhansk",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0522",
+    "orgId": "org_wvi",
+    "regionId": "ukraine_zaporizhzhia",
+    "aidType": "medical",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0523",
+    "orgId": "org_irc",
+    "regionId": "ukraine_zaporizhzhia",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0524",
+    "orgId": "org_drc",
+    "regionId": "ukraine_zaporizhzhia",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0525",
+    "orgId": "org_nrc",
+    "regionId": "ukraine_zaporizhzhia",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0526",
+    "orgId": "org_unhcr",
+    "regionId": "ukraine_zaporizhzhia",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0527",
+    "orgId": "org_msf",
+    "regionId": "ukraine_zaporizhzhia",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0528",
+    "orgId": "org_crs",
+    "regionId": "ukraine_zaporizhzhia",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0529",
+    "orgId": "org_undp",
+    "regionId": "ukraine_kherson",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0530",
+    "orgId": "org_who",
+    "regionId": "ukraine_kherson",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0531",
+    "orgId": "org_mercy",
+    "regionId": "ukraine_kherson",
+    "aidType": "infrastructure",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0532",
+    "orgId": "org_icrc",
+    "regionId": "ukraine_kherson",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0533",
+    "orgId": "org_oxfam",
+    "regionId": "ukraine_kherson",
+    "aidType": "medical",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0534",
+    "orgId": "org_save",
+    "regionId": "ukraine_kherson",
+    "aidType": "medical",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0535",
+    "orgId": "org_fao",
+    "regionId": "ukraine_kherson",
+    "aidType": "food",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0536",
+    "orgId": "org_wfp",
+    "regionId": "ukraine_kherson",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0537",
+    "orgId": "org_drc",
+    "regionId": "ukraine_kherson",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0538",
+    "orgId": "org_acted",
+    "regionId": "ukraine_odesa",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0539",
+    "orgId": "org_undp",
+    "regionId": "ukraine_odesa",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0540",
+    "orgId": "org_save",
+    "regionId": "ukraine_odesa",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0541",
+    "orgId": "org_icrc",
+    "regionId": "ukraine_odesa",
+    "aidType": "food",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0542",
+    "orgId": "org_irc",
+    "regionId": "ukraine_odesa",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0543",
+    "orgId": "org_undp",
+    "regionId": "ukraine_dnipro",
+    "aidType": "medical",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0544",
+    "orgId": "org_icrc",
+    "regionId": "ukraine_dnipro",
+    "aidType": "food",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0545",
+    "orgId": "org_acted",
+    "regionId": "ukraine_dnipro",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0546",
+    "orgId": "org_fao",
+    "regionId": "ukraine_dnipro",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0547",
+    "orgId": "org_care",
+    "regionId": "ukraine_dnipro",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0548",
+    "orgId": "org_wfp",
+    "regionId": "ukraine_lviv",
+    "aidType": "medical",
+    "projectCount": 2,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0549",
+    "orgId": "org_nrc",
+    "regionId": "ukraine_lviv",
+    "aidType": "medical",
+    "projectCount": 2,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0550",
+    "orgId": "org_unhcr",
+    "regionId": "ukraine_lviv",
+    "aidType": "food",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0551",
+    "orgId": "org_iom",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0552",
+    "orgId": "org_icrc",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "medical",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0553",
+    "orgId": "org_drc",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0554",
+    "orgId": "org_unicef",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0555",
+    "orgId": "org_fao",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0556",
+    "orgId": "org_crs",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "infrastructure",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0557",
+    "orgId": "org_unhcr",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0558",
+    "orgId": "org_save",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0559",
+    "orgId": "org_wfp",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0560",
+    "orgId": "org_who",
+    "regionId": "ukraine_mykolaiv",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0561",
+    "orgId": "org_hi",
+    "regionId": "ukraine_chernihiv",
+    "aidType": "food",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0562",
+    "orgId": "org_undp",
+    "regionId": "ukraine_chernihiv",
+    "aidType": "medical",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0563",
+    "orgId": "org_irc",
+    "regionId": "ukraine_chernihiv",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0564",
+    "orgId": "org_save",
+    "regionId": "ukraine_chernihiv",
+    "aidType": "infrastructure",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0565",
+    "orgId": "org_who",
+    "regionId": "ukraine_chernihiv",
+    "aidType": "infrastructure",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0566",
+    "orgId": "org_fao",
+    "regionId": "ukraine_chernihiv",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0567",
+    "orgId": "org_irc",
+    "regionId": "ukraine_sumy",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0568",
+    "orgId": "org_care",
+    "regionId": "ukraine_sumy",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0569",
+    "orgId": "org_drc",
+    "regionId": "ukraine_sumy",
+    "aidType": "infrastructure",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0570",
+    "orgId": "org_save",
+    "regionId": "ukraine_sumy",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0571",
+    "orgId": "org_mercy",
+    "regionId": "ukraine_sumy",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0572",
+    "orgId": "org_unicef",
+    "regionId": "ukraine_sumy",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0573",
+    "orgId": "org_unicef",
+    "regionId": "palestine_north_gaza",
+    "aidType": "medical",
+    "projectCount": 3,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0574",
+    "orgId": "org_unhcr",
+    "regionId": "palestine_north_gaza",
+    "aidType": "food",
+    "projectCount": 4,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0575",
+    "orgId": "org_oxfam",
+    "regionId": "palestine_gaza_city",
+    "aidType": "medical",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0576",
+    "orgId": "org_msf",
+    "regionId": "palestine_deir_balah",
+    "aidType": "medical",
+    "projectCount": 4,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0577",
+    "orgId": "org_drc",
+    "regionId": "palestine_khan_younis",
+    "aidType": "food",
+    "projectCount": 2,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0578",
+    "orgId": "org_nrc",
+    "regionId": "palestine_khan_younis",
+    "aidType": "food",
+    "projectCount": 2,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0579",
+    "orgId": "org_oxfam",
+    "regionId": "palestine_rafah",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0580",
+    "orgId": "org_crs",
+    "regionId": "palestine_rafah",
+    "aidType": "medical",
+    "projectCount": 5,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0581",
+    "orgId": "org_nrc",
+    "regionId": "palestine_rafah",
+    "aidType": "medical",
+    "projectCount": 4,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0582",
+    "orgId": "org_mercy",
+    "regionId": "palestine_ramallah",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0583",
+    "orgId": "org_acted",
+    "regionId": "palestine_ramallah",
+    "aidType": "food",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0584",
+    "orgId": "org_nrc",
+    "regionId": "palestine_ramallah",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0585",
+    "orgId": "org_unhcr",
+    "regionId": "palestine_ramallah",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0586",
+    "orgId": "org_iom",
+    "regionId": "palestine_ramallah",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0587",
+    "orgId": "org_crs",
+    "regionId": "palestine_ramallah",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0588",
+    "orgId": "org_hi",
+    "regionId": "palestine_ramallah",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0589",
+    "orgId": "org_drc",
+    "regionId": "palestine_nablus",
+    "aidType": "food",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0590",
+    "orgId": "org_unicef",
+    "regionId": "palestine_nablus",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0591",
+    "orgId": "org_fao",
+    "regionId": "palestine_nablus",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0592",
+    "orgId": "org_wvi",
+    "regionId": "palestine_nablus",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0593",
+    "orgId": "org_msf",
+    "regionId": "palestine_nablus",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0594",
+    "orgId": "org_care",
+    "regionId": "palestine_nablus",
+    "aidType": "infrastructure",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0595",
+    "orgId": "org_acted",
+    "regionId": "palestine_nablus",
+    "aidType": "medical",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0596",
+    "orgId": "org_save",
+    "regionId": "palestine_nablus",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0597",
+    "orgId": "org_crs",
+    "regionId": "palestine_nablus",
+    "aidType": "infrastructure",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0598",
+    "orgId": "org_iom",
+    "regionId": "palestine_nablus",
+    "aidType": "infrastructure",
+    "projectCount": 15,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0599",
+    "orgId": "org_irc",
+    "regionId": "palestine_hebron",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0600",
+    "orgId": "org_icrc",
+    "regionId": "palestine_hebron",
+    "aidType": "food",
+    "projectCount": 14,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0601",
+    "orgId": "org_msf",
+    "regionId": "palestine_hebron",
+    "aidType": "food",
+    "projectCount": 16,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0602",
+    "orgId": "org_undp",
+    "regionId": "palestine_hebron",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0603",
+    "orgId": "org_who",
+    "regionId": "palestine_hebron",
+    "aidType": "infrastructure",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0604",
+    "orgId": "org_hi",
+    "regionId": "palestine_hebron",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0605",
+    "orgId": "org_wvi",
+    "regionId": "palestine_hebron",
+    "aidType": "medical",
+    "projectCount": 9,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0606",
+    "orgId": "org_iom",
+    "regionId": "palestine_hebron",
+    "aidType": "food",
+    "projectCount": 17,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0607",
+    "orgId": "org_care",
+    "regionId": "palestine_jenin",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0608",
+    "orgId": "org_iom",
+    "regionId": "palestine_jenin",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0609",
+    "orgId": "org_msf",
+    "regionId": "palestine_jenin",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0610",
+    "orgId": "org_unicef",
+    "regionId": "palestine_jenin",
+    "aidType": "food",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0611",
+    "orgId": "org_wvi",
+    "regionId": "palestine_jenin",
+    "aidType": "food",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0612",
+    "orgId": "org_mercy",
+    "regionId": "palestine_jenin",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0613",
+    "orgId": "org_nrc",
+    "regionId": "palestine_jenin",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0614",
+    "orgId": "org_unicef",
+    "regionId": "palestine_bethlehem",
+    "aidType": "medical",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0615",
+    "orgId": "org_iom",
+    "regionId": "palestine_bethlehem",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0616",
+    "orgId": "org_fao",
+    "regionId": "palestine_bethlehem",
+    "aidType": "infrastructure",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0617",
+    "orgId": "org_nrc",
+    "regionId": "palestine_bethlehem",
+    "aidType": "food",
+    "projectCount": 7,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0618",
+    "orgId": "org_who",
+    "regionId": "palestine_jericho",
+    "aidType": "food",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0619",
+    "orgId": "org_oxfam",
+    "regionId": "palestine_jericho",
+    "aidType": "medical",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0620",
+    "orgId": "org_hi",
+    "regionId": "palestine_jericho",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0621",
+    "orgId": "org_unicef",
+    "regionId": "palestine_jericho",
+    "aidType": "food",
+    "projectCount": 3,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0622",
+    "orgId": "org_unhcr",
+    "regionId": "palestine_tulkarm",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0623",
+    "orgId": "org_wvi",
+    "regionId": "palestine_tulkarm",
+    "aidType": "medical",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0624",
+    "orgId": "org_irc",
+    "regionId": "palestine_tulkarm",
+    "aidType": "food",
+    "projectCount": 10,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0625",
+    "orgId": "org_msf",
+    "regionId": "palestine_tulkarm",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0626",
+    "orgId": "org_acted",
+    "regionId": "palestine_tulkarm",
+    "aidType": "infrastructure",
+    "projectCount": 12,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0627",
+    "orgId": "org_unhcr",
+    "regionId": "palestine_qalqilya",
+    "aidType": "medical",
+    "projectCount": 8,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0628",
+    "orgId": "org_wfp",
+    "regionId": "palestine_qalqilya",
+    "aidType": "infrastructure",
+    "projectCount": 6,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0629",
+    "orgId": "org_unicef",
+    "regionId": "palestine_qalqilya",
+    "aidType": "infrastructure",
+    "projectCount": 13,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0630",
+    "orgId": "org_oxfam",
+    "regionId": "palestine_qalqilya",
+    "aidType": "infrastructure",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  },
+  {
+    "id": "e0631",
+    "orgId": "org_who",
+    "regionId": "palestine_qalqilya",
+    "aidType": "food",
+    "projectCount": 11,
+    "isSynthetic": true,
+    "source": "shafaf-aid-2.0"
+  }
 ]

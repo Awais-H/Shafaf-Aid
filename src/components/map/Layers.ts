@@ -146,13 +146,15 @@ export function createGlowLayer(props: LayerProps) {
 // ============================================================================
 
 /**
- * Creates animated pulse rings around high-gap areas
+ * Creates animated pulse rings around high-gap areas and top-priority regions
  */
-export function createPulseLayer(props: LayerProps) {
-  const { points, time } = props;
+export function createPulseLayer(props: LayerProps & { priorityRegionIds?: string[] }) {
+  const { points, time, priorityRegionIds } = props;
 
-  // Filter to only show pulse for high-gap areas (low coverage)
-  const highGapPoints = points.filter((p) => p.normalizedValue < 0.4);
+  // Show pulse for high-gap areas (low coverage) OR top-priority regions
+  const highGapPoints = points.filter(
+    (p) => p.normalizedValue < 0.4 || (priorityRegionIds && priorityRegionIds.includes(p.id))
+  );
 
   return new ScatterplotLayer({
     id: 'pulse-layer',
@@ -247,6 +249,8 @@ export interface AllLayersProps {
   hoveredId?: string | null;
   showGlow?: boolean;
   showPulse?: boolean;
+  /** Top priority region IDs – get pulsing red rings even if coverage &gt; 0.4 */
+  priorityRegionIds?: string[];
 }
 
 /**
@@ -262,6 +266,7 @@ export function createAllPointLayers(props: AllLayersProps) {
     hoveredId,
     showGlow = true,
     showPulse = true,
+    priorityRegionIds,
   } = props;
 
   const layers = [];
@@ -271,9 +276,9 @@ export function createAllPointLayers(props: AllLayersProps) {
     layers.push(createGlowLayer({ points, time, hoveredId }));
   }
 
-  // Pulse layer (middle)
+  // Pulse layer (middle) – high-gap + priority regions
   if (showPulse) {
-    layers.push(createPulseLayer({ points, time }));
+    layers.push(createPulseLayer({ points, time, priorityRegionIds }));
   }
 
   // Base points (top)

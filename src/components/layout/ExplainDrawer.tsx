@@ -96,6 +96,29 @@ export default function ExplainDrawer() {
             </div>
           </section>
 
+          {/* Urgency Score (Recommendation Engine) */}
+          <section>
+            <h3 className="text-lg font-semibold text-white mb-3">
+              {FORMULAS.URGENCY_SCORE.name}
+            </h3>
+            <div className="bg-gray-800 rounded-lg p-4 font-mono text-sm text-cyan-400 mb-3">
+              {FORMULAS.URGENCY_SCORE.formula}
+            </div>
+            <p className="text-gray-300 text-sm mb-4">
+              {FORMULAS.URGENCY_SCORE.description}
+            </p>
+            <h4 className="text-sm font-medium text-gray-400 mb-2">Components</h4>
+            <div className="space-y-3">
+              {FORMULAS.URGENCY_SCORE.components.map((comp, i) => (
+                <div key={i} className="bg-gray-800/50 rounded-lg p-3">
+                  <div className="font-medium text-white text-sm">{comp.name}</div>
+                  <div className="font-mono text-xs text-cyan-400/80 mt-1">{comp.formula}</div>
+                  <div className="text-gray-400 text-xs mt-1">{comp.description}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Aid Type Weights */}
           <section>
             <h3 className="text-lg font-semibold text-white mb-3">

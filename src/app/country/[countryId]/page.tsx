@@ -8,7 +8,7 @@
 import React, { useEffect, useCallback, useMemo, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useViewStore } from '@/app_state/viewStore';
-import { useRegionMapPoints } from '@/app_state/selectors';
+import { useRegionMapPoints, useUrgencyRanking } from '@/app_state/selectors';
 import { loadAppData, loadCountryData } from '@/core/data/loadData';
 import { computeCountryScores, getRegionDetail } from '@/core/graph/metrics';
 import { getCountryViewState } from '@/components/map/MapUtils';
@@ -20,6 +20,7 @@ import Header from '@/components/layout/Header';
 import Legend from '@/components/layout/Legend';
 import SidePanel from '@/components/layout/SidePanel';
 import DisclaimerBanner from '@/components/layout/DisclaimerBanner';
+import CrisisScenarioBanner from '@/components/layout/CrisisScenarioBanner';
 import ExplainDrawer from '@/components/layout/ExplainDrawer';
 import LoadingState from '@/components/layout/LoadingState';
 
@@ -283,6 +284,7 @@ export default function CountryPage() {
             showGlow={true}
             showPulse={true}
             initialViewState={initialViewState}
+            priorityRegionIds={[]}
           />
 
           {/* Legend - Bottom Right */}

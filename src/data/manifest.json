@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "generated": "2026-01-25T13:42:49.547Z",
+  "stats": {
+    "countries": 7,
+    "regions": 101,
+    "organizations": 20,
+    "aidEdges": 631
+  },
+  "files": {
+    "countries": "countries.json",
+    "regions": "regions.json",
+    "organizations": "orgs.json",
+    "aidEdges": "aid_edges.json"
+  }
+}

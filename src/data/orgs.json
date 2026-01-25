@@ -1,22 +1,142 @@
 [
-  {"id": "org_wfp", "name": "World Food Programme", "type": "UN"},
-  {"id": "org_unhcr", "name": "UNHCR", "type": "UN"},
-  {"id": "org_unicef", "name": "UNICEF", "type": "UN"},
-  {"id": "org_who", "name": "World Health Organization", "type": "UN"},
-  {"id": "org_icrc", "name": "ICRC", "type": "International"},
-  {"id": "org_msf", "name": "Médecins Sans Frontières", "type": "International"},
-  {"id": "org_irc", "name": "International Rescue Committee", "type": "International"},
-  {"id": "org_oxfam", "name": "Oxfam International", "type": "International"},
-  {"id": "org_care", "name": "CARE International", "type": "International"},
-  {"id": "org_save", "name": "Save the Children", "type": "International"},
-  {"id": "org_mercy", "name": "Mercy Corps", "type": "International"},
-  {"id": "org_nrc", "name": "Norwegian Refugee Council", "type": "International"},
-  {"id": "org_acted", "name": "ACTED", "type": "International"},
-  {"id": "org_iom", "name": "IOM", "type": "UN"},
-  {"id": "org_fao", "name": "FAO", "type": "UN"},
-  {"id": "org_undp", "name": "UNDP", "type": "UN"},
-  {"id": "org_wvi", "name": "World Vision International", "type": "International"},
-  {"id": "org_crs", "name": "Catholic Relief Services", "type": "International"},
-  {"id": "org_drc", "name": "Danish Refugee Council", "type": "International"},
-  {"id": "org_hi", "name": "Humanity & Inclusion", "type": "International"}
+  {
+    "id": "org_wfp",
+    "name": "World Food Programme",
+    "type": "UN",
+    "website_url": "https://www.wfp.org",
+    "logo_url": "https://cdn.wfp.org/logos/wfp-logo-standard-blue-en.png"
+  },
+  {
+    "id": "org_unhcr",
+    "name": "UNHCR",
+    "type": "UN",
+    "website_url": "https://www.unhcr.org",
+    "logo_url": "https://www.unhcr.org/sites/all/themes/developer_starter_kit/logo.png"
+  },
+  {
+    "id": "org_unicef",
+    "name": "UNICEF",
+    "type": "UN",
+    "website_url": "https://www.unicef.org",
+    "logo_url": "https://www.unicef.org/sites/default/files/unicef-logo-og.png"
+  },
+  {
+    "id": "org_who",
+    "name": "World Health Organization",
+    "type": "UN",
+    "website_url": "https://www.who.int",
+    "logo_url": "https://www.who.int/images/default-source/fallback/who-logo.png"
+  },
+  {
+    "id": "org_icrc",
+    "name": "ICRC",
+    "type": "International",
+    "website_url": "https://www.icrc.org",
+    "logo_url": "https://www.icrc.org/sites/default/files/icrc_logo.png"
+  },
+  {
+    "id": "org_msf",
+    "name": "Médecins Sans Frontières",
+    "type": "International",
+    "website_url": "https://www.msf.org",
+    "logo_url": "https://www.msf.org/themes/custom/msf/logo.svg"
+  },
+  {
+    "id": "org_irc",
+    "name": "International Rescue Committee",
+    "type": "International",
+    "website_url": "https://www.rescue.org",
+    "logo_url": "https://www.rescue.org/sites/default/files/irc_logo.png"
+  },
+  {
+    "id": "org_oxfam",
+    "name": "Oxfam International",
+    "type": "International",
+    "website_url": "https://www.oxfam.org",
+    "logo_url": "https://www.oxfam.org/sites/default/files/oxfam_logo.png"
+  },
+  {
+    "id": "org_care",
+    "name": "CARE International",
+    "type": "International",
+    "website_url": "https://www.care.org",
+    "logo_url": "https://www.care.org/wp-content/uploads/2020/05/CARE-logo.png"
+  },
+  {
+    "id": "org_save",
+    "name": "Save the Children",
+    "type": "International",
+    "website_url": "https://www.savethechildren.org",
+    "logo_url": "https://www.savethechildren.org/content/dam/global/images/logos/stc-logo.png"
+  },
+  {
+    "id": "org_mercy",
+    "name": "Mercy Corps",
+    "type": "International",
+    "website_url": "https://www.mercycorps.org",
+    "logo_url": "https://www.mercycorps.org/sites/default/files/mercy_corps_logo.png"
+  },
+  {
+    "id": "org_nrc",
+    "name": "Norwegian Refugee Council",
+    "type": "International",
+    "website_url": "https://www.nrc.no",
+    "logo_url": "https://www.nrc.no/globalassets/nrc-logo.png"
+  },
+  {
+    "id": "org_acted",
+    "name": "ACTED",
+    "type": "International",
+    "website_url": "https://www.acted.org",
+    "logo_url": "https://www.acted.org/wp-content/uploads/2020/01/acted-logo.png"
+  },
+  {
+    "id": "org_iom",
+    "name": "IOM",
+    "type": "UN",
+    "website_url": "https://www.iom.int",
+    "logo_url": "https://www.iom.int/sites/default/files/iom_logo.png"
+  },
+  {
+    "id": "org_fao",
+    "name": "FAO",
+    "type": "UN",
+    "website_url": "https://www.fao.org",
+    "logo_url": "https://www.fao.org/images/corporatelibraries/fao-logo/fao-logo-en.png"
+  },
+  {
+    "id": "org_undp",
+    "name": "UNDP",
+    "type": "UN",
+    "website_url": "https://www.undp.org",
+    "logo_url": "https://www.undp.org/sites/g/files/zskgke326/files/undp-logo.png"
+  },
+  {
+    "id": "org_wvi",
+    "name": "World Vision International",
+    "type": "International",
+    "website_url": "https://www.wvi.org",
+    "logo_url": "https://www.wvi.org/sites/default/files/wv-logo.png"
+  },
+  {
+    "id": "org_crs",
+    "name": "Catholic Relief Services",
+    "type": "International",
+    "website_url": "https://www.crs.org",
+    "logo_url": "https://www.crs.org/sites/default/files/crs-logo.png"
+  },
+  {
+    "id": "org_drc",
+    "name": "Danish Refugee Council",
+    "type": "International",
+    "website_url": "https://drc.ngo",
+    "logo_url": "https://drc.ngo/media/jvvn5zqz/drc-logo.png"
+  },
+  {
+    "id": "org_hi",
+    "name": "Humanity & Inclusion",
+    "type": "International",
+    "website_url": "https://www.hi.org",
+    "logo_url": "https://www.hi.org/sn_uploads/federation/hi-logo.png"
+  }
 ]

@@ -15,6 +15,21 @@ export default function Header() {
   const appData = useViewStore((state) => state.appData);
   const toggleExplainDrawer = useViewStore((state) => state.toggleExplainDrawer);
   const toggleSearch = useViewStore((state) => state.toggleSearch);
+  const toggleActionMode = useViewStore((state) => state.toggleActionMode);
+  const actionModeOpen = useViewStore((state) => state.recommendations.actionModeOpen);
+  const demoActive = useViewStore((state) => state.recommendations.demoActive);
+  const setDemoActive = useViewStore((state) => state.setDemoActive);
+  const setDemoStep = useViewStore((state) => state.setDemoStep);
+
+  const handleDemoClick = () => {
+    if (!demoActive) {
+      setDemoActive(true);
+      setDemoStep(0);
+    } else {
+      setDemoActive(false);
+      setDemoStep(0);
+    }
+  };
 
   const selectedCountry = appData?.countries.find(
     (c) => c.id === selectedCountryId
@@ -88,6 +103,33 @@ export default function Header() {
             </svg>
             <span className="hidden sm:inline">Search</span>
             <kbd className="hidden md:inline px-1.5 py-0.5 text-xs bg-white/10 rounded font-mono">⌘K</kbd>
+          </button>
+
+          {/* Demo flow */}
+          <button
+            onClick={handleDemoClick}
+            className={`px-3 py-1.5 rounded-lg text-sm flex items-center gap-2 font-inter transition-all duration-200 ${
+              demoActive ? 'bg-amber-500/20 text-amber-400 border border-amber-500/40' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+            }`}
+            style={demoActive ? {} : { border: '1px solid rgba(255, 255, 255, 0.06)' }}
+          >
+            <span className="hidden sm:inline">{demoActive ? 'Demo on' : 'Demo'}</span>
+          </button>
+
+          {/* Action Mode / Recommendations */}
+          <button
+            onClick={toggleActionMode}
+            className={`px-3 py-1.5 rounded-lg text-sm flex items-center gap-2 font-inter transition-all duration-200 ${
+              actionModeOpen
+                ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/40'
+                : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+            }`}
+            style={actionModeOpen ? {} : { border: '1px solid rgba(255, 255, 255, 0.06)' }}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+            <span className="hidden sm:inline">Action Mode</span>
           </button>
 
           {/* Explain button */}

@@ -9,6 +9,11 @@ import { useViewStore } from './viewStore';
 import type { MapPoint, WorldScore, RegionScore, ViewportBounds, Region, Organization } from '@/core/data/schema';
 import { COVERAGE_COLORS } from '@/core/graph/constants';
 import { simulateAidAddition, calculateCoverageIndex } from '@/core/coverage';
+import {
+  computeUrgencyRanking,
+  computeDeploymentPlan,
+  computeCoordinationSuggestions,
+} from '@/core/recommendations';
 
 // ============================================================================
 // Stable Selectors (use Zustand shallow for performance)
@@ -104,6 +109,62 @@ export function useSimulatedCoverage() {
     
     return result;
   }, [regionDetail, simulation, appData]);
+}
+
+// ============================================================================
+// Recommendation Engine Selectors
+// ============================================================================
+
+/**
+ * Top priority regions by urgency score (filterable by country, scenario)
+ */
+export function useUrgencyRanking() {
+  const appData = useViewStore((state) => state.appData);
+  const scenarioMode = useViewStore((state) => state.recommendations.scenarioMode);
+  const selectedCountryId = useViewStore((state) => state.selectedCountryId);
+
+  return useMemo(() => {
+    if (!appData) return [];
+    return computeUrgencyRanking({
+      data: appData,
+      scenario: scenarioMode,
+      countryFilter: selectedCountryId,
+      maxPriorityRegions: 20,
+    });
+  }, [appData, scenarioMode, selectedCountryId]);
+}
+
+/**
+ * Greedy deployment plan given available aid budget
+ */
+export function useAidOptimization() {
+  const appData = useViewStore((state) => state.appData);
+  const availableAidBudget = useViewStore((state) => state.recommendations.availableAidBudget);
+  const scenarioMode = useViewStore((state) => state.recommendations.scenarioMode);
+  const selectedCountryId = useViewStore((state) => state.selectedCountryId);
+
+  return useMemo(() => {
+    if (!appData) return [];
+    return computeDeploymentPlan({
+      data: appData,
+      availableBudget: availableAidBudget,
+      scenario: scenarioMode,
+      countryFilter: selectedCountryId || undefined,
+    });
+  }, [appData, availableAidBudget, scenarioMode, selectedCountryId]);
+}
+
+/**
+ * Coordination / redistribution suggestions (high-overlap → high-urgency)
+ */
+export function useCoordinationSuggestions() {
+  const appData = useViewStore((state) => state.appData);
+  const scenarioMode = useViewStore((state) => state.recommendations.scenarioMode);
+
+  return useMemo(() => {
+    if (!appData) return [];
+    return computeCoordinationSuggestions({ data: appData, scenario: scenarioMode });
+  }, [appData, scenarioMode]);
 }
 
 // ============================================================================

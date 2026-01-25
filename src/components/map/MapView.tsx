@@ -33,6 +33,8 @@ interface MapViewProps {
   showGlow?: boolean;
   showPulse?: boolean;
   initialViewState?: MapViewState;
+  /** Top priority region IDs – pulse red rings (Action Mode) */
+  priorityRegionIds?: string[];
 }
 
 // ============================================================================
@@ -48,6 +50,7 @@ export default function MapView({
   showGlow = true,
   showPulse = true,
   initialViewState,
+  priorityRegionIds = [],
 }: MapViewProps) {
   const setMapViewState = useViewStore((state) => state.setMapViewState);
   const storeViewState = useViewStore((state) => state.mapViewState);
@@ -196,6 +199,7 @@ export default function MapView({
       hoveredId,
       showGlow,
       showPulse,
+      priorityRegionIds,
     })
   );
 
