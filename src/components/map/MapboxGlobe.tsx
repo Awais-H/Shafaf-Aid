@@ -100,6 +100,7 @@ export default function MapboxGlobe({
   const mapRef = useRef<MapRef>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [scrollZoomEnabled, setScrollZoomEnabled] = useState(false); // Delayed after intro
   const [showTitle, setShowTitle] = useState(true);
   const [titleOpacity, setTitleOpacity] = useState(1);
   const [viewState, setViewState] = useState({
@@ -144,6 +145,8 @@ export default function MapboxGlobe({
       // Fade out title
       setTitleOpacity(0);
       setTimeout(() => setShowTitle(false), 500);
+      // Enable scroll zoom after transition
+      setTimeout(() => setScrollZoomEnabled(true), 800);
     }
     // Stop rotation
     if (rotationRef.current) {
@@ -162,6 +165,9 @@ export default function MapboxGlobe({
       // Fade out title
       setTitleOpacity(0);
       setTimeout(() => setShowTitle(false), 500);
+      
+      // Enable scroll zoom after transition completes (delay prevents first scroll from zooming)
+      setTimeout(() => setScrollZoomEnabled(true), 800);
       
       // Stop rotation
       if (rotationRef.current) {
@@ -389,7 +395,7 @@ export default function MapboxGlobe({
           style={{ width: '100%', height: '100%' }}
           attributionControl={false}
           cursor={hasInteracted ? 'grab' : 'default'}
-          scrollZoom={hasInteracted}
+          scrollZoom={scrollZoomEnabled}
         >
           <Source id="markers-source" type="geojson" data={geojsonData}>
             <Layer {...glowLayerStyle} />
